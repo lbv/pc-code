@@ -1,0 +1,9 @@
+title: The Decoder
+keywords: beginner, strings
+judges:
+  uva: 458
+comments: >
+  The tricky part in this problem is handling the I/O in a way that handles raw
+  bytes, with ASCII values that could go beyond 127. Java tends to handle
+  everything in UTF-8, which is a problem here, so special care needs to be
+  taken.

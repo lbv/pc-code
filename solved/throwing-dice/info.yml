@@ -1,0 +1,7 @@
+title: Throwing Dice
+keywords: dynamic programming, probability
+judges:
+  lightoj: 1064
+  uva:
+    id: 10759
+    title: Dice Throwing

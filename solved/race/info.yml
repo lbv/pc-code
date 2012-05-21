@@ -1,0 +1,12 @@
+title: Race
+keywords: counting, dynamic programming, combinatorial
+judges:
+  lightoj: 1326
+setter: Md. Mahbubul Hasan
+comments: >
+  Let N(a) be the number of ways a race can finish, if the race has a horses.
+  Let M(a, b) be the number of ways a race can finish with a horses, if b
+  horses end up in first place. Then, N(a) = \sum_{i=1}^{a}{M(a,i)}.
+
+  And M(a, b) can be calculated using binomial coefficients:
+  M(a, b) = aCb*N(a-b), where aCb is "a choose b".

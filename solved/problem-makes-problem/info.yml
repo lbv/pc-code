@@ -1,0 +1,7 @@
+title: Problem Makes Problem
+keywords: counting, modular arithmetic
+judges:
+  lightoj: 1102
+comments: >
+  Notice that the question of "in how many ways can I form n adding k numbers"
+  is equivalent to calculating choose(n+k-1, k-1).

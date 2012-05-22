@@ -1,0 +1,10 @@
+title: Parallelogram Counting
+keywords: counting, geometry
+judges:
+  lightoj: 1058
+  poj: 1971
+comments: >
+  An useful observation is that a parallelogram is a figure formed by 4 points
+  where the sum of x-coordinates of one pair of points is equal to the sum
+  of x-coordinates of the other two points, and the same happens with the
+  y-coordinates.

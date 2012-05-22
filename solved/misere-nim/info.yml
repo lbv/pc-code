@@ -1,0 +1,8 @@
+title: Misere Nim
+keywords: nim
+judges:
+  lightoj: 1253
+comments: >
+  The evaluation of who wins at the misere version is exactly like in the
+  normal version of Nim, except when all the piles have one stone. In that
+  case, the decision of which player wins is reversed.

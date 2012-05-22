@@ -1,0 +1,6 @@
+title: LCM Sum
+keywords: Number theory
+judges:
+  spoj: LCMSUM
+comments: >
+  The calculation is based on the formula described at http://oeis.org/A051193

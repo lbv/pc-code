@@ -1,0 +1,8 @@
+title: Fibsieve's Fantabulous Birthday
+keywords: beginner, math
+judges:
+  lightoj: 1008
+comments: >
+  An important thing to notice is that numbers seem to propragate from the
+  origin (row 1 column 1) in the form of "rings", and every ring ends in a
+  perfect square (1, 4, 9, 16, ...).

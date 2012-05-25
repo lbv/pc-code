@@ -1,0 +1,4 @@
+title: Farthest Nodes in a Tree
+keywords: graph diameter, breadth first search, depth first search
+judges:
+  lightoj: 1094

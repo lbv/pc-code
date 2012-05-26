@@ -1,0 +1,12 @@
+2
+VISIT http://a.com/
+VISIT http://b.com/
+VISIT http://c.com/
+BACK
+BACK
+BACK
+VISIT http://d.com/
+FORWARD
+QUIT
+FORWARD
+QUIT

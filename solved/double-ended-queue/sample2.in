@@ -1,0 +1,6 @@
+2
+1 1
+pushLeft 10
+1 2
+pushLeft 20
+popRight

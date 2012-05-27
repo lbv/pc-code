@@ -8,10 +8,10 @@ public class gen {
     Random rnd;
 
     final int T = 25;
-//    final int N = 200;
-//    final int W = 1000;
-    final int N = 5;
-    final int W = 10;
+    final int N = 200;
+    final int W = 1000;
+//    final int N = 5;
+//    final int W = 10;
     final int L = 10000;
 
     void run() {

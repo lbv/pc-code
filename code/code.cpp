@@ -33,7 +33,6 @@ struct Reader {
         if (bi==bz) { bi=0; bz = fread(buf, 1, BUF, stdin); }
         b = bz ? buf[bi++] : 0; }
     void skip() { while (b > 0 && b <= 32) read(); }
-    // Optional methods
     u32 next_u32() {
         u32 v = 0; for (skip(); b > 32; read()) v = v*10 + b-48; return v; }
     int next_int() {
@@ -65,13 +64,12 @@ struct Graph {
     struct Edge { int v; w_t w; Edge(int V, w_t W) : v(V), w(W) {} };
     typedef list<Edge> EL;
     typedef vector<EL> ELV;
-    ELV adj;
-    void init(int n) { adj.clear(); adj.resize(n); }
+    ELV adj; int n;
+    void init(int N) { n=N; adj.clear(); adj.resize(n); }
     void add(int u, int v, w_t w) { adj[u].push_back(Edge(v, w)); }
 
-    void primMin(ELV &g, int src) {
+    void prim_min(ELV &g, int src) {
         IIS q;
-        int n = g.size();
         IV dis(n, INF);
         BV flg(n);
         dis[src] = 0;
@@ -91,7 +89,6 @@ struct Graph {
         }
     }
     void dijkstra(ELV &g) {
-        int n = g.size();
         IIS q;
         IV dis(n, INF);
         BV flg(n);
@@ -113,6 +110,55 @@ struct Graph {
                 }
             }
         }
+    }
+
+    // Tarjan
+    struct Tarjan {
+        IVV sccs; IS s; BV flg; IV low, idx; int cnt;
+        Tarjan(int n) {
+            flg = BV(n);
+            low = IV(n);
+            idx = IV(n);
+            cnt = 1;
+        }
+    };
+    void tarjan_scc(IVV &sccs) {
+        Tarjan t(n);
+        for (int i = 0; i < n; ++i)
+            if (t.low[i] == 0) tarjan_visit(i, t);
+        sccs = t.sccs;
+    }
+    void tarjan_visit(int v, Tarjan &t) {
+        t.idx[v] = t.low[v] = t.cnt++;
+        t.s.push(v); t.flg[v] = true;
+        cFor (EL, e, adj[v]) {
+            if (t.low[e->v] == 0) {
+                tarjan_visit(e->v, t);
+                t.low[v] = min(t.low[v], t.low[e->v]);
+            }
+            else if (t.flg[e->v])
+                t.low[v] = min(t.low[v], t.idx[e->v]);
+        }
+        if (t.low[v] != t.idx[v]) return;
+        IV scc;
+        for (int u=-1; u != v;) {
+            u=t.s.top(); t.s.pop();
+            t.flg[u]=false;
+            scc.push_back(u);
+        }
+        t.sccs.push_back(scc);
+    }
+    void scc_to_dag(const IVV &sccs, Graph &dag) {
+        int ndag = sccs.size();
+        IV vcomp(n);
+        for (int i=0; i < ndag; ++i)
+            for (int j=0, lim=sccs[i].size(); j < lim; ++j)
+                vcomp[sccs[i][j]] = i;
+        dag.init(ndag);
+        for (int u=0; u < n; u++)
+            cFor (EL, e, adj[u])
+                if (vcomp[u] != vcomp[e->v])
+                    dag.add(vcomp[u], vcomp[e->v], 0);
     }
 };
 struct Graph {
@@ -215,7 +261,7 @@ namespace Num
         return res;
     }
     int gcd(int a, int b) { for (int c = a%b; c; a=b,b=c,c=a%b); return b; }
-    void extEuclid(int a, int b, int &x, int &y, int &gcd) {
+    void ext_euclid(int a, int b, int &x, int &y, int &gcd) {
         x = 0; y = 1; gcd = b;
         int m, n, q, r;
         for (int u=1, v=0; a != 0; gcd=a, a=r) {
@@ -224,9 +270,9 @@ namespace Num
             x=u; y=v; u=m; v=n;
         }
     }
-    int modInv(int n, int m) {
+    int mod_inv(int n, int m) {
         int x, y, gcd;
-        extEuclid(n, m, x, y, gcd);
+        ext_euclid(n, m, x, y, gcd);
         if (gcd == 1) return x % m;
         return 0;
     }
@@ -238,7 +284,7 @@ namespace Num
     // Binomial coefficients
 #define BCSIZE 1000
     int bc[BCSIZE + 1][BCSIZE + 1];
-    void chooseTable() {
+    void choose_table() {
         for (int n = 1; n <= BCSIZE; n++) { bc[n][n] = 1; bc[n][1] = n; }
         for (int n = 3; n <= BCSIZE; n++)
             for (int k = 2; k < n; k++)
@@ -346,6 +392,52 @@ struct Fraction {
         return Fraction(p % (m*q), q);
     }
 };
+
+// Matrix Exponentiation
+typedef u32 t_m;
+#define MAXR (MAXK + 2)
+#define MAXC (MAXK + 2)
+struct Matrix {
+    int r, c;
+    t_m m[MAXR][MAXC];
+    void init(int R, int C) { Zero(m); r=R; c=C; }
+    void print() {
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j)
+                printf("%4d  ", m[i][j]);
+            printf("\n");
+        }
+    }
+};
+
+void matrix_mul(const Matrix &a, const Matrix &b, Matrix &c)
+{
+    c.r = a.r, c.c = b.c;
+    t_m x;
+    for (int i = 0; i < c.r; ++i)
+        for (int j = 0; j < c.c; ++j) {
+            x = 0;
+            for (int k = 0; k < a.c; ++k)
+                x += a.m[i][k] * b.m[k][j];
+            c.m[i][j] = x;
+        }
+}
+
+void matrix_exp(const Matrix &m, u64 e, Matrix &r)
+{
+    if (e == 1) { r = m; return; }
+
+    Matrix x;
+    if (e % 2 == 0) {
+        matrix_exp(m, e / 2, x);
+        matrix_mul(x, x, r);
+        return;
+    }
+
+    matrix_exp(m, e-1, x);
+    matrix_mul(x, m, r);
+}
+
 
 // Geometry
 namespace Geometry {

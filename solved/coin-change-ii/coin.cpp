@@ -1,7 +1,5 @@
-#include <algorithm>
 #include <cstdio>
 #include <cstring>
-using namespace std;
 
 #define MAXK 10000
 #define MAXN 100
@@ -17,7 +15,6 @@ int n, K;
 
 void run_dp()
 {
-    sort(A, A + n);
     Zero(dp);
     dp[0] = 1;
 

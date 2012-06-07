@@ -51,7 +51,7 @@ int main() {
 	srand(time(NULL));
 	while( cases-- ) {
 		int i, M;
-		n = rand() % 10 + 1;
+		n = rand() % 100 + 1;
 
 //		if( cases % 4 == 0 ) n = rand() % 100 + 1;
 

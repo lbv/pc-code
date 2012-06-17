@@ -88,20 +88,19 @@ struct Graph {
                 }
         }
     }
-    void dijkstra(ELV &g) {
+    void dijkstra(int src, IV &dis) {
         IIS q;
-        IV dis(n, INF);
+        dis = IV(n, INF);
         BV flg(n);
-        dis[0] = 0;
-        q.insert(II(0, 0));
+        dis[src] = 0;
+        q.insert(II(0, src));
         while (! q.empty()) {
             IISi it = q.begin();
-            int d = it->first;
             int v = it->second;
             q.erase(it);
             if (flg[v]) continue;
             flg[v] = true;
-            cFor (EL, e, g[v]) {
+            cFor (EL, e, adj[v]) {
                 int d = dis[v] + e->w;
                 if (!flg[e->v] && d < dis[e->v]) {
                     if (dis[e->v] != INF) q.erase(II(dis[e->v], e->v));
@@ -112,6 +111,40 @@ struct Graph {
         }
     }
 
+    // Kosaraju's algorithm
+    struct Kos {
+        IVV sccs; IV scc; IK vs; BV vis; ELV radj;
+        Kos(int n) { vis = BV(n); radj.resize(n); }
+    };
+    void kosaraju_scc(IVV &sccs) {
+        Kos k(n);
+        for (int v=0; v<n; ++v) if (! k.vis[v]) kosaraju_dfs(v, k);
+        k.vis = BV(n);
+        while (! k.vs.empty()) {
+            int v = k.vs.top(); k.vs.pop();
+            if (k.vis[v]) continue;
+            k.scc = IV();
+            kosaraju_dfs2(v, k);
+            k.sccs.push_back(k.scc);
+        }
+        sccs = k.sccs;
+    }
+    void kosaraju_dfs(int v, Kos &k) {
+        k.vis[v] = true;
+        cFor (EL, ep, adj[v]) {
+            Edge e = *ep;
+            int u = e.v; e.v = v;
+            k.radj[u].push_back(e);
+            if (! k.vis[u]) kosaraju_dfs(u, k);
+        }
+        k.vs.push(v);
+    }
+    void kosaraju_dfs2(int v, Kos &k) {
+        k.vis[v] = true;
+        k.scc.push_back(v);
+        cFor (EL, e, k.radj[v])
+            if (! k.vis[e->v]) kosaraju_dfs2(e->v, k);
+    }
     // Tarjan
     struct Tarjan {
         IVV sccs; IS s; BV flg; IV low, idx; int cnt;
@@ -217,6 +250,36 @@ struct Graph {
     }
 };
 
+// 2-SAT
+struct TwoSat {
+    Graph g;
+    int n;
+    TwoSat(int N) : n(N) { g.init(2*N); }
+    void add_cons(int a, bool ta, int b, bool tb) {
+        int p = val(a, ta), q = val(b, tb);
+        g.add(neg(p), q); g.add(neg(q), p);
+    }
+    int val(int v, bool t) { return 2*v + (t ? 0 : 1); }
+    int neg(int p) { return p ^ 1; }
+    bool solve(IV &sol) {
+        IVV sccs;
+        g.kosaraju_scc(sccs);
+        IV vscc(n);
+        sol.clear();
+        for (int i = 0, I = sccs.size(); i < I; ++i) {
+            for (int j=0, J=sccs[i].size(); j < J; ++j) {
+                int p = sccs[i][j];
+                int v = p/2;
+                if (vscc[v] == i+1) return false;
+                if (vscc[v] != 0) break;
+                vscc[v] = i+1;
+                if (p & 1) sol.push_back(v);
+            }
+        }
+        return true;
+    }
+};
+
 // Number Theory
 #define IsComp(n)  (_c[n>>6]&(1<<((n>>1)&31)))
 #define SetComp(n) _c[n>>6]|=(1<<((n>>1)&31))
@@ -226,13 +289,29 @@ namespace Num
     const int LMT =    1000;  // sqrt(MAX)
     int _c[(MAX>>6)+1];
     IV primes;
-    void primeSieve() {
+    void prime_sieve() {
         for (int i = 3; i <= LMT; i += 2)
             if (!IsComp(i)) for (int j = i*i; j <= MAX; j+=i+i) SetComp(j);
         primes.push_back(2);
         for (int i=3; i <= MAX; i+=2) if (!IsComp(i)) primes.push_back(i);
     }
-    void primeFactorization(int n, IIV &f) {
+    // Finds prime numbers between a and b, using basic primes up to sqrt(b)
+    void prime_seg_sieve(i64 a, i64 b, IV &seg_primes) {
+        BV pmap(b - a + 1, true);
+        i64 sqr_b = sqrt(b);
+        cFor (IV, pp, primes) {
+            int p = *pp;
+            if (p > sqr_b) break;
+            for (i64 j = (a+p-1)/p, v=(j==1?p+p:j*p); v <= b; v += p)
+                pmap[v-a] = false;
+        }
+        seg_primes.clear();
+        if (a == 1) pmap[0] = false;
+        for (int i = a%2 ? 0 : 1, I = b - a + 1; i < I; i += 2)
+            if (pmap[i])
+                seg_primes.push_back(a + i);
+    }
+    void prime_factorize(int n, IIV &f) {
         int sn = sqrt(n);
         cFor (IV, p, primes) {
             int prime = *p;
@@ -243,7 +322,7 @@ namespace Num
         }
         if (n > 1) f.push_back(II(n, 1));
     }
-    void eulerPhi(int a[], int N) {
+    void euler_phi(int a[], int N) {
         for (int i = 1; i <= N; i++) a[i] = i;
         for (int i = 2; i <= N; i += 2) a[i] = i/2;
         for (int i = 3; i <= N; i += 2)
@@ -277,7 +356,7 @@ namespace Num
         return 0;
     }
     // Calculates the highest exponent of prime p that divides n!
-    int powDivFact(int n, int p) {
+    int pow_div_fact(int n, int p) {
         int sd = 0; for (int N=n; N; N /= p) sd += N % p; return (n-sd)/(p-1);
     }
 
@@ -347,12 +426,12 @@ struct Bigint {
             else printf(BIFMT, *i);
         } putchar('\n');
     }
-    int toInt() {
+    int to_int() {
         int res = 0, p = 1;
         for (int i=0, I=len(); i < I; i++) { res += d[i] * p; p *= BIBAS; }
         return sgn ? -res : res;
     }
-    string toString() {
+    string to_string() {
         char buf[BIDIG+1]; string str;
         if (sgn) str.push_back('-');
         bool flg = true;

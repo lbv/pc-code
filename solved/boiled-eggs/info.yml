@@ -1,5 +1,10 @@
 title: Boiled Eggs
-keywords: beginner
+keywords:
+  - beginner
 judges:
   lightoj: 1227
+  uva: 11900
 setter: Jane Alam Jan
+thanks: Sohel Hafiz
+contests:
+  - A National Bangladeshi Contest

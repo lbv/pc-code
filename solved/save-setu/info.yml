@@ -1,5 +1,10 @@
 title: Save Setu
-keywords: beginner, simulation
+keywords:
+  - beginner
+  - simulation
 judges:
   lightoj: 1387
+  uva: 12403
 setter: Jane Alam Jan
+thanks: Sohel Hafiz
+contests: An easy Bangladeshi Contest

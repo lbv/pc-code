@@ -1,5 +1,12 @@
 title: Instant View of Big Bang
-keywords: bellman ford, strongly connected component, depth first search
+keywords:
+  - bellman ford
+  - strongly connected components
+  - depth first search
 judges:
   lightoj: 1108
   uva: 11721
+setter: Jane Alam Jan
+thanks: Md. Abirul Islam
+contest:
+  - IIUPC 2009

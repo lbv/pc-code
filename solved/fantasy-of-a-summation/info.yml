@@ -1,4 +1,11 @@
 title: Fantasy of a Summation
-keywords: math, modular arithmetic
+keywords:
+  - math
+  - modular arithmetic
 judges:
   lightoj: 1213
+  uva: 11718
+setter: Jane Alam Jan
+thanks: Anna Fariha
+contests:
+  - IIUPC 2009

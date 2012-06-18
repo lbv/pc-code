@@ -1,9 +1,11 @@
 title: Paths in a Tree
-keywords: depth first search
+keywords:
+  - depth first search
 judges:
   lightoj: 1353
   icpc-la: 5731
   uva: 12354
-contests:
-  2011 ACM-ICPC Asia Phuket Regional
 setter: Jane Alam Jan
+thanks: Derek Kisman
+contests:
+  - 2011 ACM-ICPC Asia Phuket Regional

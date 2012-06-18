@@ -1,5 +1,8 @@
 title: Game of CS
-keywords: green hackenbush
+keywords:
+  - green hackenbush
 judges:
   lightoj: 1355
+  uva: 12033
 setter: Jane Alam Jan
+thanks: Md. Mahbubul Hasan

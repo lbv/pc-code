@@ -414,7 +414,7 @@ struct Bigint {
         return *this;
     }
     void clean() {
-        Iter(IV, i); for (i=d.end()-1; *i == 0 && i != d.begin(); i--);
+        IVi i; for (i=d.end()-1; *i == 0 && i != d.begin(); i--);
         d.erase(i+1, d.end());
         if (sgn && d.size() == 1 && d[0] == 0) sgn = false;
     }

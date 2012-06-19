@@ -1,0 +1,13 @@
+title: Traffic
+keywords:
+  - bellman ford
+judges:
+  uva: 10449
+  lightoj:
+    id: 1074
+    title: Extended Traffic
+setter: Mustaq Ahmed
+contests:
+  - February 2003 Monthly Contest
+comments: >
+  Bad input in UVa's judge.

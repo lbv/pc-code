@@ -1,0 +1,13 @@
+title: Fun with Strings
+keywords:
+  - matrix exponentiation
+  - recurrence
+judges:
+  uva: 12045
+  lightoj:
+    id: 1052
+    title: String Growth
+setter: Md. Towhidul Islam Talukder
+thanks: Jane Alam Jan
+contests:
+  - Next Generation Contest 6

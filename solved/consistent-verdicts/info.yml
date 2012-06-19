@@ -1,6 +1,10 @@
 title: Consistent Verdicts
-keywords: math
+keywords:
+  - math
 judges:
   lightoj: 1410
   uva: 12435
 setter: Shahriar Manzoor
+thanks: Jane Alam Jan
+contests:
+  - World Finals Warmup 2012

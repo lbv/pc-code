@@ -1,6 +1,11 @@
 title: A New Function
-keywords: number theory, divisors
+keywords:
+  - number theory
+  - divisors
 judges:
   lightoj: 1098
   uva: 10830
 setter: Shahriar Manzoor
+thanks: Mohammad Sajjad Hossain
+contests:
+  - ACM ICPC World Finals Warmup 2

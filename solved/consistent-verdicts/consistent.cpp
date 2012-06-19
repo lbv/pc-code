@@ -6,7 +6,7 @@ typedef unsigned int u32;
 
 #define cFor(t,v,c)  for(t::const_iterator v=c.begin(); v != c.end(); ++v)
 
-#define MAXN 700
+#define MAXN 1000
 
 // I/O
 #define BUF 65536

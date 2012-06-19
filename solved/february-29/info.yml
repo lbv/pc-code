@@ -1,5 +1,12 @@
 title: February 29
-keywords: beginner, math, calendar
+keywords:
+  - beginner
+  - math
+  - calendar
 judges:
   lightoj: 1414
+  uva: 12439
 setter: Md. Arifuzzaman Arif
+thanks: Jane Alam Jan
+contests:
+  - World Finals Warmup 2012

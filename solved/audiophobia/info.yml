@@ -1,5 +1,9 @@
 title: Audiophobia
-keywords: floyd warshall, minimax
+keywords:
+  - floyd warshall
+  - minimax
 judges:
   uva: 10048
 setter: Rezaul Alam Chowdhury
+contests:
+  - University of Valladolid End Of Millenium Contest

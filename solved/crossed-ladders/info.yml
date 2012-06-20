@@ -1,4 +1,11 @@
 title: Crossed Ladders
-keywords: binary search, geometry, trigonometry
+keywords:
+  - binary search
+  - geometry
+  - trigonometry
 judges:
   uva: 10566
+  lightoj: 1062
+setter: Derek Kisman
+contests:
+  - ACM ICPC Regional Contests - Warmup - First Contest

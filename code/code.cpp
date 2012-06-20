@@ -400,6 +400,20 @@ struct Bigint {
         } clean();
     }
     size_t len() const { return d.size(); }
+    bool operator==(const Bigint &b) const {
+        return sgn == b.sgn && d == b.d;
+    }
+    bool operator<(const Bigint &b) const {
+        if (sgn && !b.sgn) return true;
+        if ((!sgn) && b.sgn) return false;
+        if (d.size() < b.d.size()) return true;
+        if (d.size() > b.d.size()) return false;
+        for (int i = d.size() - 1; i >= 0; --i) {
+            if (d[i] < b.d[i]) return true;
+            else if (d[i] > b.d[i]) return false;
+        }
+        return false;
+    }
     Bigint &operator*=(const Bigint &b) {
         int s1 = len(), s2 = b.len(), s3 = s1+s2;
         IV res(s3); int c = 0;
@@ -412,6 +426,18 @@ struct Bigint {
         }
         d = res; sgn ^= b.sgn; clean();
         return *this;
+    }
+    Bigint pow(int e) {
+        if (e == 0) return Bigint(1);
+        if (e == 1) return *this;
+        if (e % 2 == 0) {
+            Bigint tmp = this->pow(e/2);
+            tmp *= tmp;
+            return tmp;
+        }
+        Bigint tmp = this->pow(e-1);
+        tmp *= *this;
+        return tmp;
     }
     void clean() {
         IVi i; for (i=d.end()-1; *i == 0 && i != d.begin(); i--);

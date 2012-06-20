@@ -1,4 +1,6 @@
 title: Rider
-keywords: breadth first search
+keywords:
+  - breadth first search
+  - chess
 judges:
   lightoj: 1046

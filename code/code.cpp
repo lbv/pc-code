@@ -616,6 +616,9 @@ struct Point {
         return x < p.x || (x == p.x && y < p.y);
     }
     Point operator-(const Point &b) const { return Point(x - b.x, y - b.y); }
+    bool collinear(const Point &b, const Point &c) const {
+        return (b.y - y) * (c.x - x) == (c.y - y) * (b.x - x);
+    }
 };
 struct Vector {
     p_t x, y;

@@ -681,3 +681,15 @@ struct Trie {
         }
     }
 };
+
+// Misc functions
+
+// next higher number with same number of 1's in binary
+u32 next_popcount(u32 n)
+{
+    u32 c = (n & -n);
+    u32 r = n+c;
+    return (((r ^ n) >> 2) / c) | r;
+}
+// Returns first integer with exactly n bits set
+u32 init_popcount(int n) { return (1 << n) - 1; }

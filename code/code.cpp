@@ -193,6 +193,59 @@ struct Graph {
                 if (vcomp[u] != vcomp[e->v])
                     dag.add(vcomp[u], vcomp[e->v], 0);
     }
+    // Hopcroft-Karp for bipartite matching. Receives the vertices in G1,
+    // and depends on vertex #0 being reserved as the NIL vertex
+    struct HK {
+        IV pair_g1, pair_g2, dist;
+        Graph &g;
+        IV &g1;
+        HK(Graph &G, IV &G1) : g(G), g1(G1) {
+            pair_g1 = IV(g.n); pair_g2 = IV(g.n); dist = IV(g.n); }
+        bool bfs() {
+            IQ q;
+            cFor (IV, v, g1) {
+                if (pair_g1[*v] == 0) {
+                    dist[*v] = 0;
+                    q.push(*v);
+                }
+                else
+                    dist[*v] = INF;
+            }
+            dist[0] = INF;
+            while (! q.empty()) {
+                int v = q.front(); q.pop();
+                cFor (EL, e, g.adj[v]) {
+                    int p = pair_g2[e->v];
+                    if (dist[p] != INF) continue;
+                    dist[p] = dist[v] + 1;
+                    q.push(p);
+                }
+            }
+            return dist[0] != INF;
+        }
+        bool dfs(int v) {
+            if (v == 0) return true;
+            cFor (EL, e, g.adj[v]) {
+                int p = pair_g2[e->v];
+                if (dist[p] == dist[v] + 1 && dfs(p)) {
+                    pair_g2[e->v] = v;
+                    pair_g1[v] = e->v;
+                    return true;
+                }
+            }
+            dist[v] = INF;
+            return false;
+        }
+    };
+    int hopcroft(IV &g1) {
+        HK hk(*this, g1);
+        int m = 0;
+        while (hk.bfs())
+            cFor (IV, v, g1)
+                if (hk.pair_g1[*v] == 0 && hk.dfs(*v))
+                    ++m;
+        return m;
+    }
 };
 struct Graph {
     struct Edge {

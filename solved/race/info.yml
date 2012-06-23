@@ -1,8 +1,13 @@
 title: Race
-keywords: counting, dynamic programming, combinatorial
+keywords:
+  - counting
+  - dynamic programming
+  - combinatorial
 judges:
   lightoj: 1326
+  uva: 12034
 setter: Md. Mahbubul Hasan
+thanks: Shahriar Rouf Nafi, Tanaeem M Mossa, Jane Alam Jan
 comments: >
   Let N(a) be the number of ways a race can finish, if the race has a horses.
   Let M(a, b) be the number of ways a race can finish with a horses, if b

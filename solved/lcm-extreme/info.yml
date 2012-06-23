@@ -1,8 +1,11 @@
 title: LCM Extreme
-keywords: number theory, least common multiple
+keywords:
+  - number theory
+  - least common multiple
 judges:
   lightoj: 1375
   icpc-la: 5964
 contests:
-  Regionals 2011, Asia-Kanpur
+  - Regionals 2011, Asia-Kanpur
 setter: Jane Alam Jan
+thanks: Derek Kisman, Tasnim Imran Sunny

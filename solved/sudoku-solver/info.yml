@@ -1,5 +1,8 @@
 title: Sudoku Solver
-keywords: backtracking, pruning
+keywords:
+  - backtracking
+  - pruning
 judges:
   lightoj: 1397
 setter: Jane Alam Jan
+thanks: Muhammad Rifayat Samee

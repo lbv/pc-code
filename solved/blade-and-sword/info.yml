@@ -1,7 +1,10 @@
 title: Blade and Sword
-keywords: breadth first search
+keywords:
+  - breadth first search
 judges:
   lightoj: 1377
   icpc-la: 5966
-contests: Regionals 2011, Asia - Kanpur
+contests:
+  - Regionals 2011, Asia - Kanpur
 setter: Jane Alam Jan
+thanks: Md. Mahbubul Hasan, Md. Towhidul Islam Talukder, Md. Hamim-Ur-Rahman

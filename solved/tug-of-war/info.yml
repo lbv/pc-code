@@ -1,4 +1,9 @@
 title: Tug of War
-keywords: dynamic programming
+keywords:
+  - dynamic programming
 judges:
+  uva: 10032
   lightoj: 1147
+setter: Gordon V. Cormack
+contests:
+  - University of Valladolid Qualification for SWERC '2000 Local Contest

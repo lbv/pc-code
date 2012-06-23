@@ -1,7 +1,11 @@
 title: Fibsieve's Fantabulous Birthday
-keywords: beginner, math
+keywords:
+  - beginner
+  - math
 judges:
   lightoj: 1008
+setter: Muntasir Muzahid Chowdhury
+thanks: Jane Alam Jan
 comments: >
   An important thing to notice is that numbers seem to propragate from the
   origin (row 1 column 1) in the form of "rings", and every ring ends in a

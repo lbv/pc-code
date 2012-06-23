@@ -1,0 +1,13 @@
+title: Dice Throwing
+keywords:
+  - dynamic programming
+  - probability
+judges:
+  lightoj:
+    id: 1064
+    title: Throwing Dice
+  uva: 10759
+setter: Piotr Rudnicki
+contests:
+  - UVa OJ - A bonus Contest
+  - 2004 Alberta Collegiate Programming Contest

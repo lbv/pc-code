@@ -1,0 +1,13 @@
+title: Lighting Away
+keywords:
+  - topological sort
+  - strongly connected components
+judges:
+  uva: 11770
+  lightoj:
+    id: 1034
+    title: Hit the Light Switches
+setter: Samee Zahur
+thanks: Jane Alam Jan
+contests:
+  - World Finals 2010 Warmup II

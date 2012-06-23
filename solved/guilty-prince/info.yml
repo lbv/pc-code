@@ -1,4 +1,8 @@
 title: Guilty Prince
-keywords: breadth first search, depth first search
+keywords:
+  - breadth first search
+  - depth first search
 judges:
   lightoj: 1012
+setter: AKM Mubashwir Alam
+thanks: Jane Alam Jan

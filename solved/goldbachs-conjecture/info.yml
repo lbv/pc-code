@@ -1,4 +1,7 @@
 title: Goldbach's Conjecture
-keywords: number theory, primes
+keywords:
+  - number theory
+  - primes
 judges:
   lightoj: 1259
+setter: Jane Alam Jan

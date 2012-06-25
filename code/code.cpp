@@ -696,3 +696,10 @@ u32 next_popcount(u32 n)
 }
 // Returns first integer with exactly n bits set
 u32 init_popcount(int n) { return (1 << n) - 1; }
+
+// returns the position of the last visited in range [0, n-1]
+int josephus(int n, int k)
+{
+    if (n == 1) return 0;
+    return (josephus(n-1, k) + k) % n;
+}

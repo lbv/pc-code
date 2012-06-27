@@ -246,6 +246,45 @@ struct Graph {
                     ++m;
         return m;
     }
+    // Articulations/bridges
+    struct Artic {
+        IV low, idx;
+        BV is_art;
+        IIV bridges;
+        int cnt;
+        Graph &g;
+        Artic(Graph &G) : g(G) {
+            low = IV(g.n);
+            idx = IV(g.n);
+            is_art = BV(g.n);
+            cnt = 1;
+        }
+        void dfs(int u, int v) {
+            int children = 0;
+            low[v] = idx[v] = cnt++;
+            cFor(EL, e, g.adj[v]) {
+                if (idx[e->v] == 0) {
+                    ++children;
+                    dfs(v, e->v);
+                    low[v] = min(low[v], low[e->v]);
+                    if (low[e->v] >= idx[v] && u != v)
+                        is_art[v] = true;
+                    if (low[e->v] == idx[e->v])
+                        bridges.push_back(II(v, e->v));
+                }
+                else if (e->v != u)
+                    low[v] = min(low[v], idx[e->v]);
+            }
+            if (u == v && children > 1)
+                is_art[v] = true;
+        }
+    };
+    void articulations(IIV &bridges) {
+        Artic a(*this);
+        for (int i = 0; i < n; ++i)
+            if (a.idx[i] == 0) a.dfs(i, i);
+        bridges = a.bridges;
+    }
 };
 struct Graph {
     struct Edge {

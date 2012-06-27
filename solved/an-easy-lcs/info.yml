@@ -1,4 +1,7 @@
 title: An Easy LCS
-keywords: dynamic programming
+keywords:
+  - dynamic programming
+  - longest common subsequence
 judges:
   lightoj: 1110
+setter: Jane Alam Jan

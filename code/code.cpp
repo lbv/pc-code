@@ -492,6 +492,8 @@ struct Bigint {
         } clean();
     }
     size_t len() const { return d.size(); }
+    Bigint neg() const { Bigint x = *this; x.sgn = !x.sgn; return x; }
+    void flip() { sgn = !sgn; }
     bool operator==(const Bigint &b) const {
         return sgn == b.sgn && d == b.d;
     }
@@ -509,14 +511,41 @@ struct Bigint {
     Bigint &operator*=(const Bigint &b) {
         int s1 = len(), s2 = b.len(), s3 = s1+s2;
         IV res(s3); int c = 0;
-        for (int k=0; k < s3; k++) {
+        for (int k=0; k < s3; ++k) {
             int sum = c;
-            for (int i=max(0,k-s2+1), I=min(k+1, s1), j=k-i; i < I; i++, j--)
+            for (int i=max(0,k-s2+1), I=min(k+1, s1), j=k-i; i < I; ++i, --j)
                 sum += d[i] * b.d[j];
             if (sum >= BIBAS) { c = sum / BIBAS; sum %= BIBAS; } else c = 0;
             res[k] = sum;
         }
         d = res; sgn ^= b.sgn; clean();
+        return *this;
+    }
+    Bigint &operator+=(const Bigint &b) {
+        if (sgn != b.sgn) { (*this) -= b.neg(); return *this; }
+        int s1 = len(), s2 = b.len(), s3 = max(s1, s2) + 1;
+        IV res(s3); int c = 0;
+        for (int i = 0; i < s3; ++i) {
+            int sum = c;
+            sum += i < s1 ? d[i] : 0;
+            sum += i < s2 ? b.d[i] : 0;
+            if (sum >= BIBAS) { c = sum / BIBAS; sum %= BIBAS; } else c = 0;
+            res[i] = sum;
+        }
+        d = res; clean();
+        return *this;
+    }
+    Bigint &operator-=(const Bigint &b) {
+        if (sgn != b.sgn) { (*this) += b.neg(); return *this; }
+        if (*this < b) { Bigint x = b; x -= *this; return *this = x.neg(); }
+        int s1 = len(), s2 = b.len(), s3 = s1;
+        IV res(s3); int c = 0;
+        for (int i = 0; i < s3; ++i) {
+            int sum = d[i] - (i < s2 ? b.d[i] : 0) - c;
+            if (sum < 0) { sum += BIBAS; c = 1; } else c = 0;
+            res[i] = sum;
+        }
+        d = res; clean();
         return *this;
     }
     Bigint pow(int e) {
@@ -735,6 +764,12 @@ u32 next_popcount(u32 n)
 }
 // Returns first integer with exactly n bits set
 u32 init_popcount(int n) { return (1 << n) - 1; }
+// Finds the most significant bit set on n. The bit is left in b, and its
+// zero-indexed position in p
+void msb(i64 n, i64 &b, int &p)
+{
+    for (b = 1, p = 0, n >>= 1; n; b <<= 1, n >>= 1, ++p);
+}
 
 // returns the position of the last visited in range [0, n-1]
 int josephus(int n, int k)

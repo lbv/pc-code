@@ -1,0 +1,18 @@
+title: Bits
+keywords:
+  - counting
+  - bits
+  - big integers
+judges:
+  uva: 11645
+  lightoj:
+    id: 1032
+    title: Fast Bit Calculations
+setter: Mohiul Alam Prince
+thanks: Sabbir Yousuf Sanny
+contests:
+  - Yet another Bangladeshi Contest
+comments: >
+  UVa's version of this problem requires using big integers for the answer.
+  LightOJ's version is saner. There also exists dynamic programming methods
+  to solve this, bit I find the plain counting solution easier.

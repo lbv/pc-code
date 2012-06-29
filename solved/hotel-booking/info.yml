@@ -1,0 +1,13 @@
+title: Hotel Booking
+keywords:
+  - dijkstra
+judges:
+  uva: 11635
+contests:
+  - ULM Local Contest
+summary: >
+  There are n cities and m roads, producing a weighted graph. h cities have
+  hotels. You will travel through the graph, and any path between any two
+  nodes must have a cost of maximum 10 hours, considering that you can stop
+  and rest at cities with hotels. Find the path from the source to the
+  destination minimizing the number of hotel stops.

@@ -1,0 +1,10 @@
+title: Baker Vai
+keywords:
+  - dynamic programming
+judges:
+  lightoj: 1071
+setter: Jane Alam Jan
+summary: >
+  Maximize the sum from the top-left corner of a M*N matrix to the
+  bottom-right corner, using two disjoint paths (except for the two
+  corners).

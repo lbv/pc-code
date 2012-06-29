@@ -1,0 +1,9 @@
+title: Josephus Problem
+keywords:
+  - josephus
+  - recursion
+judges:
+  lightoj: 1179
+setter: Jane Alam Jan
+summary: >
+  Classical Josephus problem. n up to 10^5 and k up to 2^31.

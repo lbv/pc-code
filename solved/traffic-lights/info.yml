@@ -1,0 +1,16 @@
+title: Traffic Lights
+keywords:
+  - simulation
+judges:
+  uva: 161
+summary: >
+  A traffic light is said to have a cycle time T, which means that it will
+  spend T - 5 seconds green, then 5 seconds orange and then T seconds red
+  before repeating the pattern.  The cycle times of at least 2 lights are
+  given, and it is assumed that at time 0 all lights have just turned green.
+  The lowest time when all lights are green again, from the moment one of
+  them becomes orange for the first time, has to be printed. If it doesn't
+  happen in 5 hours, then print a message to that effect.
+comments: >
+  Watch out for the strange format of the input. It might be possible that
+  the solution is _exactly_ 5 hours.

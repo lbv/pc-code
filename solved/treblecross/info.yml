@@ -1,0 +1,16 @@
+title: Treblecross
+keywords:
+  - game theory
+  - sprague-grundy numbers
+  - impartial game
+judges:
+  lightoj: 1229
+  uva: 10561
+setter: Jimmy Mårdell
+contests:
+  - ACM ICPC Regional Contests - Warmup - First Contest
+summary: >
+  Treblecross is a game played in a 1-D board. Players place an X in a cell
+  at each turn. The winner is the player who forms 3 consecutive X's. Given
+  a certain state of the board, identify all positions from which a win is
+  possible, assuming both players play optimally.

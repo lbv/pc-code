@@ -10,7 +10,6 @@ using namespace std;
 // Macros
 #define Sc(t,v) static_cast<t>(v)
 #define Zero(v) memset(v, 0, sizeof(v))
-#define Iter(t,v)  t::iterator v
 #define cIter(t,v) t::const_iterator v
 #define For(t,v,c)   for(t::iterator v=c.begin(); v != c.end(); ++v)
 #define cFor(t,v,c)  for(t::const_iterator v=c.begin(); v != c.end(); ++v)
@@ -95,9 +94,8 @@ struct Graph {
         dis[src] = 0;
         q.insert(II(0, src));
         while (! q.empty()) {
-            IISi it = q.begin();
-            int v = it->second;
-            q.erase(it);
+            int v = q.begin()->second;
+            q.erase(q.begin());
             if (flg[v]) continue;
             flg[v] = true;
             cFor (EL, e, adj[v]) {

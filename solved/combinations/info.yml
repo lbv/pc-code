@@ -1,5 +1,9 @@
 title: Combinations
-keywords: counting, modular arithmetic
+keywords:
+  - counting
+  - modular arithmetic
 judges:
   lightoj: 1067
 setter: Jane Alam Jan
+summary: >
+  Calculate nCk, where n can be up to 10^6.

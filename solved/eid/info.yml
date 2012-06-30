@@ -1,4 +1,11 @@
 title: Eid
-keywords: big integer, number theory
+keywords:
+  - big integers
+  - number theory
 judges:
   lightoj: 1024
+setter: Jane Alam Jan
+summary: >
+  Given a number of events with certain time periods, find the period of the
+  global event where all events occur simultaneously. The result can be a
+  big integer.

@@ -1,0 +1,11 @@
+title: Booklet Printing
+keywords:
+  - math
+  - recursion
+judges:
+  uva: 637
+summary: >
+  Consider a booklet formed by sheets of paper which, folded by the middle,
+  form 4 distinct pages. Given the number n of pages required to form a
+  booklet, report the way the pages must be printed on the sheets of paper
+  so they produce a booklet in the correct order.

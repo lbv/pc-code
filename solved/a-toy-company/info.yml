@@ -1,0 +1,11 @@
+title: A Toy Company
+keywords:
+  - breadth first search
+judges:
+  lightoj: 1039
+summary: >
+  A 3-letter string is to be converted into another 3-letter string, where
+  at each step any of the letters can be swapped with the next or previous
+  alphabetical character (wrapping at both ends). Find the minimum number of
+  steps to make the transformation. However, a number of forbidden strings
+  are also specified, which cannot be used as any of the intermediate steps.

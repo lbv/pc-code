@@ -1,0 +1,12 @@
+title: Perfection
+keywords:
+  - number theory
+  - divisors
+judges:
+  uva: 382
+summary: >
+  Given a number $n$, find if it's perfect, abundant or deficient. This is
+  related to the sum of all proper divisors of $n$.
+comments: >
+  Be careful with the format of the output, and notice that 1 is a deficient
+  number.

@@ -1,0 +1,12 @@
+title: Aladdin and the Flying Carpet
+keywords:
+  - number theory
+  - divisors
+  - prime numbers
+judges:
+  lightoj: 1341
+setter: Jane Alam Jan
+summary: >
+  The area of a rectangle $a$ is given, and a number $b$. Find the number of
+  ways in which the rectangle can be formed, where the shortest side is
+  greater than $b$, and the two sides can't be equal (can't be a square).

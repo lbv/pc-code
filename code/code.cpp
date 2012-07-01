@@ -412,6 +412,29 @@ namespace Num
         }
         if (n > 1) f.push_back(II(n, 1));
     }
+    void divisors(int n, IV &ds)
+    {
+        ds.clear();
+        ds.push_back(1);
+        int sn = sqrt(n);
+        cFor(IV, pp, primes) {
+            int p = *pp;
+            if (p > sn) break;
+            if (n % p != 0) continue;
+            IV aux(ds.begin(), ds.end());
+            int q = 1;
+            while (n % p == 0) {
+                q *= p; n /= p;
+                cFor(IV, v, ds) aux.push_back(*v * q);
+            }
+            sn = sqrt(n); ds = aux;
+        }
+        if (n > 1) {
+            IV aux(ds.begin(), ds.end());
+            cFor(IV, v, ds) aux.push_back(*v * n);
+            ds = aux;
+        }
+    }
     void euler_phi(int a[], int N) {
         for (int i = 1; i <= N; i++) a[i] = i;
         for (int i = 2; i <= N; i += 2) a[i] = i/2;

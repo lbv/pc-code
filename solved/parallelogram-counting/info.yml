@@ -1,8 +1,11 @@
 title: Parallelogram Counting
-keywords: counting, geometry
+keywords:
+  - counting
+  - geometry
 judges:
   lightoj: 1058
-  poj: 1971
+summary: >
+  Count the number of parallelograms formed by a set of lattice points.
 comments: >
   An useful observation is that a parallelogram is a figure formed by 4 points
   where the sum of x-coordinates of one pair of points is equal to the sum

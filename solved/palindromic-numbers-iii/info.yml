@@ -1,6 +1,10 @@
 title: Palindromic Numbers (III)
-keywords: greedy
+keywords:
+  - greedy
 judges:
   lightoj: 1396
 setter: S. M. Ijaz-ul-Amin Chowdhury
 thanks: AKM Mubashwir Alam
+summary: >
+  Given a large integer (up to $10^5$ digits), report the closest integer
+  that is strictly greater than the original, and a palindromic number.

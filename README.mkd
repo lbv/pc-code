@@ -1,9 +1,11 @@
 This is my repository of solved problems from online judges such as UVa,
 LightOJ, SPOJ, etc.
 
-All of this is released to the public domain. Feel free to do whatever you
-want with this. If you are a beginner in algorithms and problem solving,
-here are my recommendations:
+All of this is released into the public domain; feel free to do whatever you
+want with this.
+
+If you are a beginner in algorithms and problem solving, here are my
+recommendations:
 
 - Read as much as you can about the theory behind the problems. On the net
   there is plenty of information about most topics (like dynamic
@@ -37,7 +39,7 @@ here are my recommendations:
   - [UVa toolkit](http://uvatoolkit.com/problemssolve.php)
 
   Finally, I also try to keep my solutions to the problems organised, and
-  include as much useful information on them as possible. See the info.yml
+  include as much useful information on them as possible. See the `info.yml`
   files in each problem's directory.
 
 - Use the forum systems from the online judges! You can find many useful
@@ -46,7 +48,7 @@ here are my recommendations:
   you're just starting.
 
 - An excellent tool to know which problems to solve next is Felix Halim's
-  [uHunt](http://uhunt.felix-halim.net/id/120450) for the UVa OJ. If you
+  [uHunt](http://uhunt.felix-halim.net/) for the UVa OJ. If you
   haven't used it yet, give it a try!
 
 - Try to solve the problems yourself as much as possible. The point of all

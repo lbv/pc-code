@@ -1,0 +1,10 @@
+title: Y3K Problem
+keywords:
+  - math
+  - time
+judges:
+  uva: 893
+summary: >
+  Given a date, between the years 1998 and 2999, and a number of days to add
+  to that date (up to $10^9$), calculate the resulting date, taking into
+  account leap years.

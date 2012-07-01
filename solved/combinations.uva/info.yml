@@ -1,0 +1,8 @@
+title: Combinations
+keywords:
+  - counting
+  - binomial coefficients
+judges:
+  uva: 369
+summary: >
+  Calculate $\binom{N}{M}$, where $N \le 100$.

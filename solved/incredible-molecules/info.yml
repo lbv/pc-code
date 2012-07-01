@@ -1,4 +1,8 @@
 title: Incredible Molecules
-keywords: geometry
+keywords:
+  - geometry
 judges:
   lightoj: 1118
+setter: Jane Alam Jan
+summary: >
+  Calculate the area of intersection of two circles.

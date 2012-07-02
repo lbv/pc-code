@@ -1,0 +1,8 @@
+title: 500!
+keywords:
+  - big integers
+  - multiplication
+judges:
+  uva: 623
+summary: >
+  Calculate the factorial of a number up to 1000.

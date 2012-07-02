@@ -5,3 +5,6 @@ keywords:
 judges:
   lightoj: 1077
 setter: Jane Alam Jan
+summary: >
+  Given the coordinates of two points A and B, find the number of lattice
+  points in the segment line AB.

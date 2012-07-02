@@ -1,0 +1,18 @@
+title: Conquering Keokradong
+keywords:
+  - binary search
+  - greedy
+judges:
+  lightoj: 1048
+setter: Jane Alam Jan
+summary: >
+  A trip is to be planned. The road is linear and there are N campsites
+  along the way. A number K of stops have to be done to rest and spend the
+  night at any campsite. Given the distances between all points, plan the
+  trip minimasing the amount of walking that has to be done in any
+  particular day.
+comments: >
+  Note that, although it's important to assume that you can walk as much
+  possible each day when calculating the minimised cost, when printing the
+  result, the number of lines has to be exactly K+1, and that means that
+  some days it might be necessary to *not* walk as much as possible.

@@ -1,0 +1,14 @@
+title: Partitioning by Palindromes
+keywords:
+  - dynamic programming
+  - palindromes
+judges:
+  uva: 11584
+setter: Kevin Waugh
+contests:
+  - Another high quality contest
+summary: >
+  Find the minimum number of groups in any palindrome partition of the
+  original string.
+comments: >
+  See also "Palindrome Partitioning" (LightOJ ID 1044).

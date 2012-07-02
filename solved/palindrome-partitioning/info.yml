@@ -1,0 +1,15 @@
+title: Palindrome Partitioning
+keywords:
+  - dynamic programming
+  - palindromes
+judges:
+  lightoj: 1044
+summary: >
+  Given a string of length up to 1000, find the minimum number of substrings
+  found in any palindrome partition of the string. A palindrome partition is
+  a partition of the string where all substrings are palindromes.
+comments: >
+  Think about first determining if each substring is a palindrome or not.
+  This requires visiting pairs of positions (i, j), so it's a $O(n^2)$
+  process. Then with that, find another $O(n^2)$ process to calculate the
+  answer.

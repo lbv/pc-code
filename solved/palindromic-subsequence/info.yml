@@ -1,0 +1,9 @@
+title: Palindromic Subsequence
+keywords:
+  - dynamic programming
+judges:
+  uva: 11404
+setter: Rajesh S. R., Vijay S.
+summary: >
+  Find and print the lexicographically lowest, longest palindromic
+  subsequence of a string of up to 1000 characters.

@@ -1,0 +1,16 @@
+title: Word Scramble
+keywords:
+  - beginner
+  - strings
+judges:
+  uva: 483
+summary: >
+  Reverse each word inside each line of the input.
+comments: >
+  The problem description is short on details about what a whitespace is,
+  where can it occur, and how many consecutive whitespaces can be expected.
+
+  Make sure to consider any non-printable characters as whitespace, and try
+  to be very strict in printing all whitespace characters as-is (don't add
+  any newlines or whitespaces if they are not in the input). Keep a large
+  buffer to store words (size 1024 works fine).

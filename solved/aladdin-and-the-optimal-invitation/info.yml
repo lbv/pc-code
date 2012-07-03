@@ -1,0 +1,22 @@
+title: Aladdin and the Optimal Invitation
+keywords:
+  - math
+  - median
+  - sorting
+judges:
+  lightoj: 1349
+summary: >
+  Given a town modeled as an m*n grid of cells, and a list of people living
+  in each cell (multiple people can live at each cell), find one cell where
+  the cost of moving everyong to that place is minimum.
+comments: >
+  Think about the problem in 1 dimension (see for example Vito's Family, UVa
+  ID 10041) and apply the solution to 2D.
+
+  Notice the constraints of the problem, and the maximum number of people
+  that could be described. This means that a naive sorting of an array might
+  be too slow. Instead, you can implement your own algorithm to find the
+  median. A useful algorithm for this is known as quickselect, and is very
+  similar to a standard quicksort. Make sure to randomise the selection of
+  the pivot, and make all your data points unique (even if the input values
+  for u, v, and w are equal), to avoid a worst case complexity.

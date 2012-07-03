@@ -1,0 +1,9 @@
+title: Big Mod
+keywords:
+  - math
+  - modular arithmetic
+  - exponentiation by squaring
+judges:
+  uva: 374
+summary: >
+  Calculate $B^P % M$.

@@ -1,0 +1,12 @@
+title: Cancer or Scorpio
+keywords:
+  - ad-hoc
+  - time
+judges:
+  uva: 11947
+contests:
+  - México Occidental and Pacific 2010 hosted by ITESO
+summary: >
+  A date is given in format MMDDYYYY. The date forty weeks later has to be
+  printed, as well as the corresponding zodiac sign. Leap yars have to be
+  considered.

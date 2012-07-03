@@ -1,0 +1,11 @@
+title: Triangle Wave
+keywords:
+  - beginner
+  - ad-hoc
+judges:
+  uva: 488
+summary: >
+  Two integers are given,representing the amplitude and frequency of a wave.
+  Use those numbers to produce a representation of a wave with the given
+  amplitude (width in characters) and frequency (number of times the graph
+  must be repeated).

@@ -1,0 +1,14 @@
+title: Amazing
+keywords:
+  - simulation
+judges:
+  uva: 556
+summary: >
+  A robot is placed in a rectangular maze. The robot is programmed to always
+  keep a wall at its right, and whenever it can't move forward, it turns
+  left. It starts on the bottom left corner, looking east, and finishes its
+  trip when it returns to that cell. Report the number of cells that are
+  visited 0, 1, 2, 3 or 4 times.
+comments: >
+  The maximum size of a maze is not specified (!), but you can make a guess
+  using the fact that the output has to be printed in a field of width 3.

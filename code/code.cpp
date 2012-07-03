@@ -23,7 +23,9 @@ typedef vector<int> IV;
 typedef pair<int, int> II;
 typedef set<II> IIS;
 
+//
 // I/O
+//
 #define BUF 65536
 struct Reader {
     char buf[BUF]; char b; int bi, bz;
@@ -57,7 +59,9 @@ struct Set {
     void merge(int i, int j) { s[find(i)] = find(j); }
 };
 
+//
 // Graphs
+//
 typedef int w_t;
 struct Graph {
     struct Edge { int v; w_t w; Edge(int V, w_t W) : v(V), w(W) {} };
@@ -340,7 +344,9 @@ struct Graph {
     }
 };
 
+//
 // 2-SAT
+//
 struct TwoSat {
     Graph g;
     int n;
@@ -370,7 +376,9 @@ struct TwoSat {
     }
 };
 
+//
 // Number Theory
+//
 #define IsComp(n)  (_c[n>>6]&(1<<((n>>1)&31)))
 #define SetComp(n) _c[n>>6]|=(1<<((n>>1)&31))
 namespace Num
@@ -493,7 +501,9 @@ namespace Num
     }
 }
 
+//
 // Big Integer
+//
 #define BIBAS 1000
 #define BIDIG 3
 #define BIFMT "%03d"
@@ -612,7 +622,9 @@ struct Bigint {
     }
 };
 
+//
 // Fraction
+//
 struct Fraction {
     int p, q;
 
@@ -640,7 +652,9 @@ struct Fraction {
     }
 };
 
+//
 // Matrix Exponentiation
+//
 typedef u32 t_m;
 #define MAXR (MAXK + 2)
 #define MAXC (MAXK + 2)
@@ -685,8 +699,9 @@ void matrix_exp(const Matrix &m, u64 e, Matrix &r)
     matrix_mul(x, m, r);
 }
 
-
+//
 // Geometry
+//
 namespace Geometry {
     const double Eps = 1e-6;
     double circle_angle(double a) { return a >= 0 ? a : Pi2 + a; }
@@ -748,7 +763,9 @@ namespace Geometry {
     }
 }
 
+//
 // Trie
+//
 struct Trie {
     struct Node {
         int ch[26];
@@ -774,8 +791,54 @@ struct Trie {
     }
 };
 
-// Misc functions
+//
+// Time - Leap years
+//
+// A[i] has the accumulated number of days from months previous to i
+const int A[13] = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
+// same as A, but for a leap year
+const int B[13] = { 0, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 };
+// returns number of leap years up to, and including, y
+int leap_years(int y) { return y / 4 - y / 100 + y / 400; }
+bool is_leap(int y) { return y % 400 == 0 || (y % 4 == 0 && y % 100 != 0); }
+// number of days in blocks of years
+const int p400 = 400*365 + leap_years(400);
+const int p100 = 100*365 + leap_years(100);
+const int p4   = 4*365 + 1;
+const int p1   = 365;
+int date_to_days(int d, int m, int y)
+{
+    return (y - 1) * 365 + leap_years(y - 1) + (is_leap(y) ? B[m] : A[m]) + d;
+}
+void days_to_date(int days, int &d, int &m, int &y)
+{
+    bool top100;  // are we in the top 100 years of a 400 block?
+    bool top4;    // are we in the top 4 years of a 100 block?
+    bool top1;    // are we in the top year of a 4 block?
 
+    y = 1;
+    top100 = top4 = top1 = false;
+
+    y += ((days-1) / p400) * 400;
+    d = (days-1) % p400 + 1;
+
+    if (d > p100*3) top100 = true, d -= 3*p100, y += 300;
+    else y += ((d-1) / p100) * 100, d = (d-1) % p100 + 1;
+
+    if (d > p4*24) top4 = true, d -= 24*p4, y += 24*4;
+    else y += ((d-1) / p4) * 4, d = (d-1) % p4 + 1;
+
+    if (d > p1*3) top1 = true, d -= p1*3, y += 3;
+    else y += (d-1) / p1, d = (d-1) % p1 + 1;
+
+    const int *ac = top1 && (!top4 || top100) ? B : A;
+    for (m = 1; m < 12; ++m) if (d <=  ac[m + 1]) break;
+    d -= ac[m];
+}
+
+//
+// Misc functions
+//
 // next higher number with same number of 1's in binary
 u32 next_popcount(u32 n)
 {
@@ -791,7 +854,6 @@ void msb(i64 n, i64 &b, int &p)
 {
     for (b = 1, p = 0, n >>= 1; n; b <<= 1, n >>= 1, ++p);
 }
-
 // returns the position of the last visited in range [0, n-1]
 int josephus(int n, int k)
 {

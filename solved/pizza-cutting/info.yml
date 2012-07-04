@@ -1,0 +1,14 @@
+title: Pizza Cutting
+keywords:
+  - math
+judges:
+  uva: 10079
+setter: Rezaul Alam Chowdhury
+thanks: Shahriar Manzoor
+summary: >
+  If a pizza is cut with a straight line $N$ times, what is the maximum
+  number of pieces produced?
+comments: >
+  Also known as the lazy caterer's sequence, or pancake cutting problem. To
+  deduce the equation that answers the problem, think recursively about the
+  problem, and try to express the recursion in closed form.

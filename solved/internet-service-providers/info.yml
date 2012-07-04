@@ -1,0 +1,14 @@
+title: Internet Service Providers
+keywords:
+  - math
+  - maximizing a function
+judges:
+  lightoj: 1275
+summary: >
+  There's a polynomial function that depends on an integer parameter T. Find
+  the minimum T such that the value of the function is maximised.
+comments: >
+  Note that the answer has to be an integer number, but that doesn't
+  necessarily mean that all your calculations should be using integer
+  arithmetic. Also, There may be more than one T that provides the maximum
+  profit; make sure you always choose the lowest one.

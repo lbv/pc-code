@@ -1,0 +1,12 @@
+title: Throwing Balls into the Baskets
+keywords:
+  - probability
+  - expected value
+judges:
+  lightoj: 1317
+setter: Muhammad Rifayat Samee
+thanks: Jane Alam Jan
+summary: >
+  $N$ people throw balls into $M$ baskets. The probability of a ball going
+  into a basket is always P. What is the expected amount of balls inside the
+  baskets after K turns?

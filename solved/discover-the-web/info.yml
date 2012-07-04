@@ -1,4 +1,12 @@
 title: Discover the Web
-keywords: beginner, data structures
+keywords:
+  - beginner
+  - data structures
+  - stacks
+  - simulation
+  - following rules
 title:
   lightoj: 1113
+summary: >
+  Simulate the behaviour of a web browser history, with four operations:
+  BACK, FORWARD, VISIT, QUIT.

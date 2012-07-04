@@ -1,4 +1,4 @@
-2
+3
 VISIT http://a.com/
 VISIT http://b.com/
 VISIT http://c.com/
@@ -9,4 +9,8 @@ VISIT http://d.com/
 FORWARD
 QUIT
 FORWARD
+QUIT
+BACK
+FORWARD
+VISIT http://google.com/
 QUIT

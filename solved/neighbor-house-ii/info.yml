@@ -1,0 +1,11 @@
+title: Neighbor House (II)
+keywords:
+  - dynamic programming
+  - circular data structure
+judges:
+  lightoj: 1217
+summary: >
+  A circular array of positive integer values is given. You have to choose a
+  group of elements of the array such that the total sum is maximum. When an
+  element is chosen, then their two neighbours in the circular array can't
+  be chosen.

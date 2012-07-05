@@ -1,0 +1,15 @@
+title: Collecting Gold
+keywords:
+  - dynamic programming
+  - bitmask calculations
+judges:
+  lightoj: 1057
+setter: Jane Alam Jan
+summary: >
+  Given a rectangular grid, a starting position, and a number of cells that
+  have to be visited, print the minimum number of steps required to visit
+  all required cells and go back to the starting point.
+comments: >
+  Although it might look like a pure B.F.S. problem at first, notice the
+  constraints of the problem and the complexity in the worst case scenario.
+  Instead, a D.P. approach works much better.

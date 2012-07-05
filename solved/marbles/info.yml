@@ -1,0 +1,21 @@
+title: Marbles
+keywords:
+  - dynamic programming
+  - probability
+judges:
+  lightoj: 1050
+summary: >
+  You're playing a game against a friend. There are $R$ red marbles and $B$
+  blue marbles in a bag. You start, and at each turn you pick one marble at
+  random, and after that your friend picks a blue marble, if possible. If
+  the very last marble is blue, you win, otherwise, if there are no blue
+  marbles left but still red marbles remaining in the bag, you lose. Given
+  the values of $R$ and $B$, what is the probability of winning?
+comments: >
+  This problem is borrowed from TopCoder's SRM 408. See the links.
+
+  Think about a way to calculate the interesting values once, and then
+  answer each test case in O(1).
+links:
+  - url: http://community.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm408
+    description: Analysis for SRM 408. See the problem *MarblesInABag*.

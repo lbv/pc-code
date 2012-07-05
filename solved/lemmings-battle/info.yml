@@ -1,0 +1,24 @@
+title: Lemmings Battle!
+keywords:
+  - simulation
+  - sorting
+  - data structures
+judges:
+  uva: 978
+setter: Pedro Ribeiro
+contests:
+  - Concurso de Programação da Universidade do Porto 2006
+summary: >
+  Two armies fight against each other in a number of rounds. There are $B$
+  battlefields, and at each round one fighter from each army fights on each
+  battlefield. The fighter with the higher power wins and survives, while
+  the loser dies, but the power of the winner is reduced by the value of the
+  loser's power. If both fighters have the same power, both die.
+
+  The fighters selected at each round are always the ones with the highest
+  power from each army, until one army is completely depleted or both are
+  empty at the same time. Who wins?
+comments: >
+  Choose the right data structure so obtaining the elements in order for
+  each round is fast, without having to sort the whole list of elements
+  continuously.

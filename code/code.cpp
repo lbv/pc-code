@@ -879,6 +879,8 @@ u32 next_popcount(u32 n)
 }
 // Returns first integer with exactly n bits set
 u32 init_popcount(int n) { return (1 << n) - 1; }
+#define Back(b)    ((b) & -(b))
+#define PopBack(b) (b &= ~Back(b))
 // Finds the most significant bit set on n. The bit is left in b, and its
 // zero-indexed position in p
 void msb(i64 n, i64 &b, int &p)

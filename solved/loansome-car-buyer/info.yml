@@ -1,0 +1,22 @@
+title: Loansome Car Buyer
+keywords:
+  - math
+  - simulation
+judges:
+  uva: 10114
+contests:
+  - University of Valladolid Local Contest
+summary: >
+  You get a loan from the bank to pay a car. You have to pay the loan in a
+  certain number of months, you have to give a down payment, and then each
+  month there is a certain depreciation, which is a percentage that is lost
+  from the car's value each month, starting from month 0 (meaning the moment
+  the car gets out of the lot). Find out the number of months that have to
+  pass until you owe less than the car's value at that moment.
+comments: >
+  With so much information going on it's easy to get confused. Make sure you
+  understand the meaning of all the information you're given. The down
+  payment is a fixed amont of money you pay only once (the moment you buy
+  the car), and that value, plus the loan from the bank is the original
+  value of the car. The monthly payments are equal to the value of the loan
+  divided by the number of months of the loan.

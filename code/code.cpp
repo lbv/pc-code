@@ -702,12 +702,6 @@ void matrix_exp(const Matrix &m, u64 e, Matrix &r)
 //
 // Geometry
 //
-namespace Geometry {
-    const double Eps = 1e-6;
-    double circle_angle(double a) { return a >= 0 ? a : Pi2 + a; }
-    bool eps_eq(double a, double b) { return abs(a-b) <= Eps; }
-}
-
 typedef double p_t;
 struct Point {
     p_t x, y;
@@ -742,25 +736,52 @@ struct Vector {
     }
 };
 typedef vector<Point> PV;
-namespace Geometry {
-    p_t cross(const Point &o, const Point &a, const Point &b) {
-        return (a.x-o.x)*(b.y-o.y) - (a.y-o.y)*(b.x-o.x);
+
+double circle_angle(double a) { return a >= 0 ? a : Pi2 + a; }
+bool eps_less(double a, double b) { return b - a > EPS; }
+bool eps_equal(double a, double b) { return fabs(a - b) < EPS; }
+
+p_t cross(const Point &o, const Point &a, const Point &b) {
+    return (a.x-o.x)*(b.y-o.y) - (a.y-o.y)*(b.x-o.x);
+}
+void convex_hull(PV &p, PV &h) {
+    // Post-cond: p.size() > 1 => h.front() == h.back()
+    int n = p.size(), k = 0;
+    h.resize(2*n);
+    sort(p.begin(), p.end());
+    for (int i = 0; i < n; ++i) {
+        while (k >= 2 && cross(h[k-2], h[k-1], p[i]) <= 0) k--;
+        h[k++] = p[i];
     }
-    void convex_hull(PV &p, PV &h) {
-        // Post-cond: p.size() > 1 => h.front() == h.back()
-        int n = p.size(), k = 0;
-        h.resize(2*n);
-        sort(p.begin(), p.end());
-        for (int i = 0; i < n; ++i) {
-            while (k >= 2 && cross(h[k-2], h[k-1], p[i]) <= 0) k--;
-            h[k++] = p[i];
-        }
-        for (int i = n-2, t=k+1; i >= 0; --i) {
-            while (k >= t && cross(h[k-2], h[k-1], p[i]) <= 0) k--;
-            h[k++] = p[i];
-        }
-        h.resize(k);
+    for (int i = n-2, t=k+1; i >= 0; --i) {
+        while (k >= t && cross(h[k-2], h[k-1], p[i]) <= 0) k--;
+        h[k++] = p[i];
     }
+    h.resize(k);
+}
+// Finds the circle formed by three points
+void find_circle(Point &p1, Point &p2, Point &p3, Point &c, double &r)
+{
+    Point m, a, b;
+    if (! eps_equal(p1.x, p2.x) && ! eps_equal(p1.x, p3.x))
+        m = p1, a = p2, b = p3;
+    else if (! eps_equal(p2.x, p1.x) && ! eps_equal(p2.x, p3.x))
+        m = p2, a = p1, b = p3;
+    else
+        m = p3, a = p1, b = p2;
+
+    double ma = (m.y - a.y) / (m.x - a.x);
+    double mb = (b.y - m.y) / (b.x - m.x);
+
+    c.x = ma*mb*(a.y - b.y) + mb*(a.x + m.x) - ma*(m.x + b.x);
+    c.x /= (mb - ma)*2.0;
+
+    if (eps_equal(0.0, ma))
+        c.y = (m.y + b.y) / 2.0 - (c.x - (m.x + b.x)/2.0) / mb;
+    else
+        c.y = (a.y + m.y) / 2.0 - (c.x - (a.x + m.x)/2.0) / ma;
+
+    r = c.distance(p1);
 }
 
 //

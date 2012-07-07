@@ -1,0 +1,12 @@
+title: Peter's Smokes
+keywords:
+  - simulation
+  - modular arithmetic
+annotations:
+  - assumptions
+judges:
+  uva: 10346
+summary: >
+  You have $n$ cigarettes. After smoking them, you keep the butts, and out
+  of $k$ butts (k is greater than 1) you can make a new cigerette. How many
+  cigerettes in total can be smoked?

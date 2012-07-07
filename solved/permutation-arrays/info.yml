@@ -1,0 +1,12 @@
+title: Permutation Arrays
+keywords:
+  - data structures
+annotations:
+  - assumptions
+  - irregular input
+judges:
+  uva: 482
+summary: >
+  A list of floating point numbers is given, and a "permutation array",
+  which is an array of integer numbers that denote how to arrange the
+  elements in the list of floating point numbers. Print the permutation.

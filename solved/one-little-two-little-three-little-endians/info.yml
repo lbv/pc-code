@@ -1,0 +1,12 @@
+title: One Little, Two Little, Three Little Endians
+keywords:
+  - ad-hoc
+  - bitmask calculations
+judges:
+  uva: 594
+summary: >
+  Swap the bytes from a 32-bit signed integer, to show its representation in
+  the opposite endianness.
+comments: >
+  Really nice, short problem which is seen fairly frequently in real-life
+  applications.

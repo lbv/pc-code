@@ -1,0 +1,16 @@
+title: All in All
+keywords:
+  - beginner
+  - strings
+  - subsequences
+  - greedy
+annotations:
+  - assumptions
+judges:
+  uva: 10340
+summary: >
+  Given two strings, find out if one is a subsequence of the other.
+comments: >
+  If you reserve memory for the strings, make sure to make the buffers about
+  1MB for each string. A submission made with 1KB per string resulted in
+  Runtime Error.

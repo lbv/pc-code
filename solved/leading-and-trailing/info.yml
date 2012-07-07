@@ -1,0 +1,24 @@
+title: Leading and Trailing
+keywords:
+  - number theory
+  - exponentiation by squaring
+judges:
+  uva: 11029
+  lightoj: 1282
+setter: Shamim Hafiz
+thanks: Jane Alam Jan
+contests:
+  - The Next Generation - Contest II
+summary: >
+  Given two integers $n$ and $k$, find out the three most significant digits
+  and the three least significant digits of $n^k$.
+comments: >
+  The last 3 digits can be obtained using a simple modular exponentiation
+  routine. For the first 3 digits, use the same routine, and try to keep
+  track of only the significant figures you need. It can be useful to use a
+  small function to figure out the number of digits (to the left of the
+  decimal point) of a number.
+
+  A conclusive proof that this kind of approach (using floating point
+  representations) always provide the right answer is not known, but all you
+  need is to pass the test cases, which should not be very hard.

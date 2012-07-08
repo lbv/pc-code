@@ -1,4 +1,9 @@
 title: Trailing Zeroes (II)
-keywords: number theory
+keywords:
+  - number theory
 judges:
   lightoj: 1090
+setter: Jane Alam Jan
+summary: >
+  Find the number of trailing zeroes of the result value after evaluating
+  the function $F(n, r, p, q) = \binom{n}{r} * p^q$.

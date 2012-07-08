@@ -1,5 +1,11 @@
 title: Positive Negative Sign
-keywords: math
+keywords:
+  - math
 judges:
   lightoj: 1294
 setter: Jane Alam Jan
+summary: >
+  Consider a sequence of the first $n$ positive integers. Now split them in
+  gropus or $m$ elements each, and multiply the numbers in the first, third,
+  fifth, etc. groups by -1. Report the total sum of the numbers in the
+  sequence.

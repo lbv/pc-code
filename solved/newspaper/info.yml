@@ -1,0 +1,23 @@
+title: Newspaper
+keywords:
+  - ad-hoc
+  - data structures
+  - strings
+annotations:
+  - assumptions
+judges:
+  uva: 11340
+setter: A. Augusto Sousa, Aleksej Viktorchik, Leonid Shishlo
+contests:
+  - Huge Easy Contest
+summary: >
+  A table of characters and integer values is given. Then a number of lines
+  of text is presented. Calculate the total value of the text, as per the
+  table.
+comments: >
+  There is a big gotcha in this problem, and it's that the lines of text can
+  have characters with ASCII values above 127, so you have to handle that
+  correctly (using `unsigned char`, for example).
+
+  Make sure that the number of cents after the decimal point has exactly two
+  digits.

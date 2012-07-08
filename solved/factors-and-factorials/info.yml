@@ -1,0 +1,12 @@
+title: Factors and Factorials
+keywords:
+  - number theory
+  - factorials
+  - primes
+annotations:
+  - output formatting
+judges:
+  uva: 160
+summary: >
+  Given an integer $N$, print the number of times each prime number appears
+  in $N!$.

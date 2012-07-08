@@ -1,0 +1,20 @@
+title: Good or Bad
+keywords:
+  - dynamic programming
+  - greedy
+  - strings
+judges:
+  lightoj: 1051
+summary: >
+  A string with 3 consecutive vowels, or 5 consecutive consonants is called
+  "bad". Conversely, a "good" string is a string that is not "bad". You are
+  given a string which can contain "wildcard" characters, which are
+  positions where either a vowel or a consonant can be placed. Report if the
+  string is definitely good, or definitely bad, or could be both.
+comments: >
+  This problem is borrowed from TopCoder's SRM 327. See the links. As you
+  can see from the SRM's analysis, it is possible to write D.P. or greedy
+  solutions for this problem.
+links:
+  - url: http://community.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm327
+    description: SRM 327 editorial. Read about the problem "NiceOrUgly".

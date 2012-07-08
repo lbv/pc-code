@@ -1,0 +1,17 @@
+title: Going Together
+keywords:
+  - breadth first search
+  - maze
+judges:
+  uva: 11160
+  lightoj: 1055
+setter: Sohel Hafiz
+thanks: Jane Alam Jan
+contests:
+  - Next Generation Contest III
+summary: >
+  Three robots are placed in a maze, where there are three "exit" cells.
+  When you issue a movement, all robots move at the same time, and only move
+  to an adjacent cell if it's going to be empty the next turn. Find the
+  minimum number of movements until all three robots are placed on the three
+  exits.

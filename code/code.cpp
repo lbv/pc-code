@@ -45,9 +45,10 @@ struct Reader {
     void next_line(char *s) {
         for (; b != 10 && b != 13 && b != 0; read()) *s++ = b; *s = 0;
         while (b == 10 || b == 13) read(); }
-    void next_real_line(char *s) {
-        for (; b != 10 && b != 13 && b != 0; read()) *s++ = b; *s = 0;
-        char p = b; read();
+    char next_char() { skip(); char c = b; read(); return c; }
+    void next_real_line(char *s, int &l) {
+        for (l = 0; b != 10 && b != 13 && b != 0; read()) *s++ = b, ++l;
+        *s = 0; char p = b; read();
         if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
 };
 

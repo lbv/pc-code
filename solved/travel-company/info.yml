@@ -1,6 +1,13 @@
 title: Travel Company
-keywords: bellman ford
+keywords:
+  - bellman ford
 judges:
   lightoj: 1221
   uva: 11874
 setter: Md. Towhidul Islam Talukder
+thanks: Jane Alam Jan
+summary: >
+  A description of cities connected by roads is given. Each road has
+  associated two values: an income and an expense. You have to determine if
+  there exists a cyclic route in this graph such that the ratio between the
+  total of incomes to the total expenses is greater than some constant $P$.

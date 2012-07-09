@@ -1,5 +1,14 @@
 title: Convex Fence
-keywords: geometry, convex hull
+keywords:
+  - geometry
+  - convex hull
+annotations:
+  - special judge
+  - large input
 judges:
   lightoj: 1239
 setter: Jane Alam Jan
+summary: >
+  A number of 2D points are given and a distance $d$. Calculate the
+  perimeter of the closed area formed by the minimum convex enclosing figure
+  such that all points are at a distance of minimum $d$ from the perimeter.

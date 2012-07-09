@@ -1,4 +1,11 @@
 title: Discovering Permutations
-keywords: recursion, lexicographic permutation
+keywords:
+  - recursion
+  - permutations
 judges:
   lightoj: 1023
+setter: Jane Alam Jan
+summary: >
+  You receive two integers, $N$ and $K$. You have to start with the sequence
+  of the first $N$ letters in the english alphabet, and print the first $K$
+  permutations of that list, in lexicographical order.

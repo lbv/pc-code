@@ -1,0 +1,11 @@
+title: nth Permutation
+keywords:
+  - permutations
+  - counting
+  - recursion
+judges:
+  lightoj: 1060
+setter: Jane Alam Jan
+summary: >
+  Given a string of characters and an integer $n$, find the nth unique
+  permutation of the string, in lexicographical order.

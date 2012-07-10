@@ -1,0 +1,12 @@
+title: Parentheses Balance
+keywords:
+  - data structures
+  - stacks
+judges:
+  uva: 673
+summary: >
+  Report if a string formed by the characters '(', ')', '[', ']' is
+  well-formed or not. A string is well formed if their parentheses are
+  correctly balanced.
+comments: >
+  Note that the input can include empty strings.

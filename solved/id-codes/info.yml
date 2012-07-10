@@ -1,0 +1,8 @@
+title: ID Codes
+keywords:
+  - permutations
+judges:
+  uva: 146
+summary: >
+  Given a string of up to 50 characters, print the next lexicographical
+  permutation from the original string.

@@ -3,6 +3,9 @@ keywords:
   - math
   - median
   - sorting
+annotations:
+  - special judge
+  - large input
 judges:
   lightoj: 1349
 summary: >

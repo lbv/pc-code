@@ -36,6 +36,10 @@ struct Reader {
     void skip() { while (b > 0 && b <= 32) read(); }
     u32 next_u32() {
         u32 v = 0; for (skip(); b > 32; read()) v = v*10 + b-48; return v; }
+    void skip_line() {
+        for (; b != 10 && b != 13 && b != 0; read());
+        char p = b; read();
+        if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
     int next_int() {
         int v = 0; bool s = false;
         skip(); if (b == '-') { s = true; read(); }
@@ -393,6 +397,10 @@ namespace Num
             if (!IsComp(i)) for (int j = i*i; j <= MAX; j+=i+i) SetComp(j);
         primes.push_back(2);
         for (int i=3; i <= MAX; i+=2) if (!IsComp(i)) primes.push_back(i);
+    }
+    bool is_prime(int n) {
+        if (n < 2 || n % 2 == 0) return false;
+        return ! IsComp(n);
     }
     // Finds prime numbers between a and b, using basic primes up to sqrt(b)
     void prime_seg_sieve(i64 a, i64 b, IV &seg_primes) {

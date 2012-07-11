@@ -1,0 +1,10 @@
+title: Goldbach's Conjecture
+keywords:
+  - number theory
+  - primes
+judges:
+  lightoj: 1259
+setter: Jane Alam Jan
+summary: >
+  Given a number $n$, find the number of distinct ways in which a pair of
+  primes $a$ and $b$ can be chosen such that $a + b = n$.

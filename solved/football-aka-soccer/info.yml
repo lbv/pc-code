@@ -1,0 +1,14 @@
+title: Football (aka Soccer)
+keywords:
+  - data structures
+  - sorting
+  - following rules
+annotations:
+  - irregular input
+judges:
+  uva: 10194
+contests:
+  - Universidade do Brasil (UFRJ) Internal Contest 2001
+summary: >
+  Given the description of the results in a football tournament, print the
+  final standings.

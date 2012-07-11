@@ -1,0 +1,9 @@
+title: Goldbach's Conjecture
+keywords:
+  - number theory
+judge :
+  uva: 543
+summary: >
+  Given an input number $n$ (an even integer between 6 and one million),
+  print an expression that shows $n$ as a sum of two primes, where the
+  difference between the primes is maximised.

@@ -1,0 +1,11 @@
+title: Hartals
+keywords:
+  - simulation
+judges:
+  uva: 10050
+setter: Rezaul Alam Chowdhury
+summary: >
+  A number of political parties calls strikes (a.k.a. hartals) periodically.
+  Given the number of days to study, and the hartal periodicity of each
+  political party, calculate the number of days in the range where a strike
+  is called.  Note: Strikes on Fridays and Saturdays are ignored.

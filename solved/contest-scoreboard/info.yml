@@ -1,0 +1,14 @@
+title: Contest Scoreboard
+keywords:
+  - data structures
+  - sorting
+annotations:
+  - irregular input
+judges:
+  uva: 10258
+setter: Michael Van Biesbrouck
+contests:
+  - UVA Local Contest - First Round
+summary: >
+  Given a snapshot of the queue of a programming contest judge, produce the
+  scoreboard, according to the standard ACM rules.

@@ -9,7 +9,8 @@ using namespace std;
 
 // Macros
 #define Sc(t,v) static_cast<t>(v)
-#define Zero(v) memset(v, 0, sizeof(v))
+#define Neg(v)  memset((v), -1, sizeof(v))
+#define Zero(v) memset((v), 0, sizeof(v))
 #define cIter(t,v) t::const_iterator v
 #define For(t,v,c)   for(t::iterator v=c.begin(); v != c.end(); ++v)
 #define cFor(t,v,c)  for(t::const_iterator v=c.begin(); v != c.end(); ++v)

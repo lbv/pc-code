@@ -1,4 +1,10 @@
 title: Civil and Evil Engineer
-keywords: minimum spanning tree
+keywords:
+  - minimum spanning tree
 judges:
   lightoj: 1029
+setter: Jane Alam Jan
+summary: >
+  Given the description of a group of houses (including a power station),
+  and the cost of connecting any two of them, find the average between the
+  best and worst possible connection schemes.

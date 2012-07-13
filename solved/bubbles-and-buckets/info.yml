@@ -1,0 +1,24 @@
+title: Bubbles and Buckets
+keywords:
+  - sorting
+judges:
+  uva: 11495
+summary: >
+  A game is played between two players with a permutation of the first $N$
+  positive integers. Each player has to choose two consecutive elements from
+  the permutation which are not in order (the first element is greater than
+  the second) and swap them. The person who can't make any move (because the
+  list is sorted) loses. Find out the winner.
+comments: >
+  Looking at the samples, try to come up with an idea for figuring out the
+  number of swaps required to sort the list. Hint: for each number,
+  calculate how many times does it have to be swapped right-to-left (or
+  left-to-right) to get to its rightful place in the sorted list.
+
+  Using a sorting algorithm, adapt it to count the number of times each
+  number has to move in some specific orientation.  Note, however, that
+  because of the constraints of the problem, a standard bubble-sort-like
+  algorithm, with complexity of $O(n^2)$ would not work.  However, any of
+  the $O(n \log{n})$ sorting algorithms can be useful, in particular merge
+  sort because of its implementation details might be the most comfortable
+  to work with here.

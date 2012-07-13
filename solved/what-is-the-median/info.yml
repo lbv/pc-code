@@ -1,0 +1,12 @@
+title: What is the Median?
+keywords:
+  - data structures
+  - sorting
+  - median
+judges:
+  uva: 10107
+setter: Sadi Khan
+summary: >
+  You will be given a number of positive integers (all in the range of a
+  32-bit signed integer) and, for each number, you have to print the median
+  of the list up to that point.

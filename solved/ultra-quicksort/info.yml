@@ -1,0 +1,15 @@
+title: Ultra-QuickSort
+keywords:
+  - sorting
+judges:
+  uva: 10810
+setter: Stefan Büttcher
+contests:
+  - Waterloo Winter Contest
+summary: >
+  A sorting algorithm works by swapping adjacent elemtents in the list to
+  sort. Calculate the number of swaps required to sort a given list.
+comments: >
+  Try adapting a known sorting algorithm to count the number times that an
+  element has to "travel" in one particular direction.  See also problem
+  _Bubbles and Buckets_ (UVa ID 11495).

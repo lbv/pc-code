@@ -924,3 +924,22 @@ int josephus(int n, int k)
     if (n == 1) return 0;
     return (josephus(n-1, k) + k) % n;
 }
+// merge sort, useful for adapting it to sorting-related problems
+void merge(IVi lo, IVi hi, IVi mid)
+{
+    IV x;
+    for (IVi a = lo, b = mid; a < mid || b < hi; ) {
+        if (a >= mid) { x.push_back(*b++); continue; }
+        if (b >= hi) { x.push_back(*a++); continue; }
+        if (*a < *b) { x.push_back(*a++); continue; }
+        x.push_back(*b++);
+    }
+    for (IVi a = lo, b = x.begin(); a < hi; ++a, ++b) *a = *b;
+}
+void merge_sort(IVi lo, IVi hi)
+{
+    if (hi <= lo + 1) return;
+    IVi mid = lo + ((hi - lo) / 2);
+    merge_sort(lo, mid); merge_sort(mid, hi); merge(lo, hi, mid);
+}
+

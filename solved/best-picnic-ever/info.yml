@@ -1,4 +1,9 @@
 title: Best Picnic Ever
-keywords: depth first search, breadth first search
+keywords:
+  - depth first search
 judges:
   lightoj: 1111
+summary: >
+  $K$ people live in $N$ cities. They want to gather in some common place.
+  Given the description of the one-way roads that connect the cities,
+  indicate how many places are reachable by all of them.

@@ -8,3 +8,6 @@ judges:
   lightoj: 1018
 setter: AKM Mubashwir Alam
 thanks: Jane Alam Jan
+summary: >
+  Some points (16 maximum) on a 2D plane are given. Find out the minimum
+  number of lines necessary to cover all points.

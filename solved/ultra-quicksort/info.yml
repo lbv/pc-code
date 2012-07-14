@@ -1,6 +1,7 @@
 title: Ultra-QuickSort
 keywords:
   - sorting
+  - inversion number
 judges:
   uva: 10810
 setter: Stefan Büttcher

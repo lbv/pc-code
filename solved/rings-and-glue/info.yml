@@ -1,0 +1,16 @@
+title: Rings and Glue
+keywords:
+  - geometry
+  - union-find
+judges:
+  uva: 10301
+summary: >
+  A number of "rings" (circumferences) are described by the coordinates of
+  their centres and their radii. Find the size of the largest subset of
+  overlapping rings. Two rings overlap if their perimeters touch.
+comments: >
+  Visit all pairs of rings and if they overlap, unite their sets. If the
+  answer is 1, make sure to print "... contains 1 ring" and "rings" in all
+  other cases (including zero).  From testing, it seems like no test case
+  from the input has rings that only touch in one point, or rings that touch
+  in infinite points (identical rings).

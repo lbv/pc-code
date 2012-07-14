@@ -1,0 +1,14 @@
+title: Error Correction
+keywords:
+  - beginner
+  - ad-hoc
+  - matrices
+judges:
+  uva: 541
+setter: Miguel Filgueiras
+summary: >
+  A boolean matrix (filled with ones and zeroes) is given. It is said to
+  have the _parity property_ if all the rows and columns have an even number
+  of ones. Report if the matrix has the property, or can be turned into one
+  that has it by flipping just one cell inside the matrix, or if it's
+  corrupt (it doesn't have the property and can't be fixed with one flip).

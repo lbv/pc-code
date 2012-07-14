@@ -1,0 +1,16 @@
+title: Rails
+keywords:
+  - data structures
+  - stacks
+  - simulation
+judges:
+  uva: 514
+summary: >
+  Given a sequence of the first $N$ positive integers, determine if it's
+  possible to manipulate them to produce a given arbitrary permutation,
+  using only a stack.
+comments: >
+  If you look closely at the sample output, you'll notice a contradiction
+  which is that the problem description says to always print a blank line
+  after a block of input, but the sample output doesn't include a blank line
+  after the last test case. Follo the advice from the problem description.

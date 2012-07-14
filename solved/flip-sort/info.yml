@@ -1,0 +1,17 @@
+title: Flip Sort
+keywords:
+  - sorting
+  - inversion number
+annotations:
+  - assumptions
+judges:
+  uva: 10327
+setter: Md. Kamruzzaman
+summary: >
+  Report the number of swaps between adjacent element necessary to sort a
+  list of up to 1000 numbers.
+comments: >
+  An simpler (lower constraints) version of the classic problem also
+  presented in UVa's problems 11495 and 10810. A $O(n^2)$ algorithm might
+  work here. Note that in this problem the sequence can have repeated
+  numbers.

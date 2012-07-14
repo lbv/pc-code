@@ -4,6 +4,9 @@ keywords:
   - union-find
 judges:
   uva: 10301
+contests:
+  - The Joint Effort Contest (We and Rodrigo Malta)
+  - Swedish National Programming Contest
 summary: >
   A number of "rings" (circumferences) are described by the coordinates of
   their centres and their radii. Find the size of the largest subset of

@@ -60,7 +60,7 @@ struct Reader {
 // Union-Find disjoint set
 struct Set {
     IV s;
-    void init(int n) { s.clear(); for (int i=0; i <= n; ++i) s.push_back(i); }
+    Set(int n) { for (int i=0; i <= n; ++i) s.push_back(i); }
     int find(int i) { if (s[i] == i) return i; return s[i]=find(s[i]); }
     void merge(int i, int j) { s[find(i)] = find(j); }
 };
@@ -712,6 +712,10 @@ void matrix_exp(const Matrix &m, u64 e, Matrix &r)
 //
 // Geometry
 //
+double circle_angle(double a) { return a >= 0 ? a : Pi2 + a; }
+bool eps_less(double a, double b) { return b - a > EPS; }
+bool eps_equal(double a, double b) { return fabs(a - b) < EPS; }
+
 typedef double p_t;
 struct Point {
     p_t x, y;
@@ -746,10 +750,18 @@ struct Vector {
     }
 };
 typedef vector<Point> PV;
-
-double circle_angle(double a) { return a >= 0 ? a : Pi2 + a; }
-bool eps_less(double a, double b) { return b - a > EPS; }
-bool eps_equal(double a, double b) { return fabs(a - b) < EPS; }
+struct Circle {
+    double x, y, r;
+    Circle() {}
+    Circle(double X, double Y, double R) : x(X), y(Y), r(R) {}
+    bool perimeters_touch(const Circle &c) const {
+        double dx = x - c.x;
+        double dy = y - c.y;
+        double dist = sqrt(dx*dx + dy*dy);
+        return ! (eps_less(r + c.r, dist) ||
+                  eps_less(dist, fabs(r - c.r)));
+    }
+};
 
 p_t cross(const Point &o, const Point &a, const Point &b) {
     return (a.x-o.x)*(b.y-o.y) - (a.y-o.y)*(b.x-o.x);
@@ -899,6 +911,27 @@ int select_kth(DVi lo, DVi hi, int k)
 }
 
 //
+// Merge sort - useful for adapting it to sorting-related problems
+//
+void merge(IVi lo, IVi hi, IVi mid)
+{
+    IV x;
+    for (IVi a = lo, b = mid; a < mid || b < hi; ) {
+        if (a >= mid) { x.push_back(*b++); continue; }
+        if (b >= hi) { x.push_back(*a++); continue; }
+        if (*a < *b) { x.push_back(*a++); continue; }
+        x.push_back(*b++);
+    }
+    for (IVi a = lo, b = x.begin(); a < hi; ++a, ++b) *a = *b;
+}
+void merge_sort(IVi lo, IVi hi)
+{
+    if (hi <= lo + 1) return;
+    IVi mid = lo + ((hi - lo) / 2);
+    merge_sort(lo, mid); merge_sort(mid, hi); merge(lo, hi, mid);
+}
+
+//
 // Misc functions
 //
 // next higher number with same number of 1's in binary
@@ -924,22 +957,3 @@ int josephus(int n, int k)
     if (n == 1) return 0;
     return (josephus(n-1, k) + k) % n;
 }
-// merge sort, useful for adapting it to sorting-related problems
-void merge(IVi lo, IVi hi, IVi mid)
-{
-    IV x;
-    for (IVi a = lo, b = mid; a < mid || b < hi; ) {
-        if (a >= mid) { x.push_back(*b++); continue; }
-        if (b >= hi) { x.push_back(*a++); continue; }
-        if (*a < *b) { x.push_back(*a++); continue; }
-        x.push_back(*b++);
-    }
-    for (IVi a = lo, b = x.begin(); a < hi; ++a, ++b) *a = *b;
-}
-void merge_sort(IVi lo, IVi hi)
-{
-    if (hi <= lo + 1) return;
-    IVi mid = lo + ((hi - lo) / 2);
-    merge_sort(lo, mid); merge_sort(mid, hi); merge(lo, hi, mid);
-}
-

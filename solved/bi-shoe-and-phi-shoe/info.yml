@@ -1,7 +1,15 @@
 title: Bi-shoe and Phi-shoe
 keywords:
   - number theory
+  - primes
 judges:
   lightoj: 1370
 setter: Mir Wasi Ahmed
 thanks: F.A. Rezaur Rahman Chowdhury, Jane Alam Jan
+summary: >
+  A list of "lucky numbers" is given. For each lucky number, a bamboo of a
+  certain length has to be chosen, such that the "score" of the bamboo is
+  greater or equal to the lucky number.  The score of a bamboo of length $x$
+  is the amount of integers smaller than $x$ that are relatively prime to
+  $x$. Determine the minimum possible sum of lengths from the bamboos for
+  the set of lucky numbers.

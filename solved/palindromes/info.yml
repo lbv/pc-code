@@ -1,0 +1,15 @@
+title: Palindromes
+keywords:
+  - beginner
+  - strings
+  - palindromes
+judges:
+  uva: 401
+summary: >
+  There are two properties that a string can have and will be tested in this
+  problem: a string can be a palindrome (in the standard meaning), or a
+  mirrored string, whose definition is based on a character table that tells
+  you what is the "mirrored" version of each characters, if it exists.
+
+  Test a string and tell if it's just a palindrome, just a mirrored string,
+  both or neither.

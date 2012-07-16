@@ -1,0 +1,14 @@
+title: What's the Frequency, Kenneth?
+keywords:
+  - beginner
+  - strings
+annotations:
+  assumptions
+judges:
+  uva: 499
+summary: >
+  Count the letters that occur the most on each line of input, and report
+  those letters and their frequency.
+comments: >
+  Note that the process must be case sensitive; i.e. uppercase letters are
+  considered different than their lowercase counterparts.

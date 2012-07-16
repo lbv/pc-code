@@ -1,0 +1,21 @@
+title: Equation
+keywords:
+  - parsing
+  - stacks
+judges:
+  uva: 727
+summary: >
+  Given a tokenized arithmetic expression (with the four basic binary
+  operations), in infix notation, convert it into postfix.
+comments:
+  A very nice problem to get familiar with the basic of parsing techniques.
+
+  There is a way to solve this problem using a simple stack, but it requires
+  some careful manipulations to simulate the right behaviour of a proper
+  parser.
+
+  In any case, if you put the effort to build a recursive descent parser,
+  this problem has enough interesting elements to ensure that your solution
+  will be something useful in the future (maybe in real life problems):
+  abstract syntax trees, post-order traversals, a simple domain-specific
+  language, operators with different priorities, etc.

@@ -1,0 +1,10 @@
+title: Summation of Polynomials
+keywords:
+  - math
+judges:
+  uva: 10302
+setter: Rodrigo Malta Schmidt
+contests:
+  - The Joint Effort Contest (We and Rodrigo Malta)
+summary: >
+  Calculate $\sum_{i=1}^{n}{i^3}$.

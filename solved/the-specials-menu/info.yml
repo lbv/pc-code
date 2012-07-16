@@ -1,4 +1,11 @@
-title: Palindromes
-keywords: dynamic programming
+title: The Specials Menu
+keywords:
+  - dynamic programming
+  - palindromes
+  - subsequences
 judges:
   lightoj: 1025
+setter: Muntasir Muzahid Chowdhury
+thanks: Jane Alam Jan
+summary: >
+  Given a string, determine the number of palindromic subsequences in it.

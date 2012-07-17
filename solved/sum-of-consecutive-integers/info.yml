@@ -1,16 +1,19 @@
 title: Sum of Consecutive Integers
-keywords: number theory, prime factorization
+keywords:
+  - number theory
+  - prime factorization
 judges:
   lightoj: 1278
-comments: |
+setter: Jane Alam Jan
+comments: >
   First, notice that this problem asks for the number of ways that N can be
-  expressed as a sum of *positive* integers. Now, this problem can be solved as
-  follows. Given the prime factorization of N:
+  expressed as a sum of *positive* integers. Now, this problem can be solved
+  as follows. Given the prime factorization of N:
 
-    p_1^e1 * p_2^e2 * ... * p_k^ek
+    $p_1^e_1 * p_2^e_2 * ... * p_k^e_k$
 
-  where p_1 is 2 (the first prime) and ei >= 0, the number of ways to express
-  N is (1+e2)*(1+e3)*...*(1+ek).
+  where $p_1$ is 2 (the first prime) and $e_i \geq 0$, the number of ways to
+  express N is $(1+e_2)*(1+e_3)*...*(1+e_k)$.
 
   A detailed explanation of this can be found at:
   http://mathblag.wordpress.com/2011/11/13/sums-of-consecutive-integers/

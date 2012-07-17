@@ -1,0 +1,17 @@
+title: How Many Trees?
+keywords:
+  - counting
+  - catalan numbers
+  - big integers
+judges:
+  uva: 10303
+setter: Rodrigo Malta Schmidt
+contests:
+  - The Joint Effort Contest (We and Rodrigo Malta)
+summary: >
+  Calculate the number of different configurations for a binary tree with
+  $n$ nodes.
+comments: >
+  Calculating the catalan numbers themselves is not hard, however, it's very
+  likely that you're going to need a fairly good big integer division
+  routine for this.

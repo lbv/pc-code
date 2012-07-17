@@ -1,0 +1,11 @@
+title: A Node Too Far
+keywords:
+  - breadth first search
+judges:
+  uva: 336
+summary: >
+  A network consists of a number of nodes. A packet travelling in the
+  network comes with a time-to-live (TTL) field which indicates the
+  remaining number of nodes that it can visit before being dropped. Given a
+  network, and a series of queries of the form (starting node, TTL),
+  determine the number of nodes that are not reached by the packet.

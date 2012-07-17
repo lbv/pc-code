@@ -533,34 +533,18 @@ struct Bigint {
         } clean();
     }
     size_t len() const { return d.size(); }
-    Bigint neg() const { Bigint x = *this; x.sgn = !x.sgn; return x; }
+    bool is_zero() const { return len() == 1 && d[0] == 0; }
     void flip() { sgn = !sgn; }
+    Bigint neg() const { Bigint x = *this; x.flip(); return x; }
     bool operator==(const Bigint &b) const {
         return sgn == b.sgn && d == b.d;
     }
     bool operator<(const Bigint &b) const {
-        if (sgn && !b.sgn) return true;
-        if ((!sgn) && b.sgn) return false;
-        if (d.size() < b.d.size()) return true;
-        if (d.size() > b.d.size()) return false;
-        for (int i = d.size() - 1; i >= 0; --i) {
-            if (d[i] < b.d[i]) return true;
-            else if (d[i] > b.d[i]) return false;
-        }
+        if (sgn != b.sgn) return sgn;
+        if (len() != b.len()) return sgn ^ (len() < b.len());
+        for (int i = len() - 1; i >= 0; --i)
+            if (d[i] != b.d[i]) return sgn ^ (d[i] < b.d[i]);
         return false;
-    }
-    Bigint &operator*=(const Bigint &b) {
-        int s1 = len(), s2 = b.len(), s3 = s1+s2;
-        IV res(s3); int c = 0;
-        for (int k=0; k < s3; ++k) {
-            int sum = c;
-            for (int i=max(0,k-s2+1), I=min(k+1, s1), j=k-i; i < I; ++i, --j)
-                sum += d[i] * b.d[j];
-            if (sum >= BIBAS) { c = sum / BIBAS; sum %= BIBAS; } else c = 0;
-            res[k] = sum;
-        }
-        d = res; sgn ^= b.sgn; clean();
-        return *this;
     }
     Bigint &operator+=(const Bigint &b) {
         if (sgn != b.sgn) { (*this) -= b.neg(); return *this; }
@@ -588,6 +572,42 @@ struct Bigint {
         }
         d = res; clean();
         return *this;
+    }
+    Bigint &operator*=(const Bigint &b) {
+        int s1 = len(), s2 = b.len(), s3 = s1+s2;
+        IV res(s3); int c = 0;
+        for (int k=0; k < s3; ++k) {
+            int sum = c;
+            for (int i=max(0,k-s2+1), I=min(k+1, s1), j=k-i; i < I; ++i, --j)
+                sum += d[i] * b.d[j];
+            if (sum >= BIBAS) { c = sum / BIBAS; sum %= BIBAS; } else c = 0;
+            res[k] = sum;
+        }
+        d = res; sgn ^= b.sgn; clean();
+        return *this;
+    }
+    Bigint &short_div(int b) {
+        for (int r = 0, i = len() - 1; i >= 0; --i)
+            r = r*BIBAS + d[i], d[i] = r / b, r %= b;
+        clean(); return *this;
+    }
+    Bigint &operator/=(const Bigint &b) {
+        if (b.is_zero()) { int x=0; return *this=Bigint(x/x); }
+        sgn ^= b.sgn; size_t l = len(), n = b.len();
+        if (n == 1) return short_div(b.d[0]);
+        if (l < n || (l == n && d.back() < b.d.back()))
+            return *this = Bigint(0);
+        Bigint r(0); IV res(l);
+        for (int i = l - 1; i >= 0; --i) {
+            r.d.insert(r.d.begin(), d[i]); r.clean();
+            int x = r.len() >= n ? r.d[n-1] : 0;
+            if (r.len() > n) x += BIBAS * r.d[n];
+            int q = x / b.d[n-1];
+            Bigint g = b; g *= Bigint(q);
+            while (r < g) g -= b, --q;
+            res[i] = q, r -= g;
+        }
+        d = res; clean(); return *this;
     }
     Bigint pow(int e) {
         if (e == 0) return Bigint(1);

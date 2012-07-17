@@ -1,0 +1,24 @@
+title: Optimal Binary Search Tree
+keywords:
+  - dynamic programming
+  - binary trees
+judges:
+  uva: 10304
+setter: Rodrigo Malta Schmidt
+contests:
+  - The Joint Effort Contest (We and Rodrigo Malta)
+summary: >
+  A set of $n$ distinct elements are placed inside an optimal binary search
+  tree. You don't know how the tree looks, but you know the frequencies of
+  each element (denoted $f(e_i)$), used to form the tree. The total cost for
+  the tree is $\sum_{i=1}^{n}{f(e_i) c(e_i)}$, where $c(e_i)$ (the cost of
+  the ith element) is the number of edges between the root of the tree and
+  the element.
+
+  Determine the lowest cost of the optimal binary search tree.
+comments: >
+  First try to formulate a $O(n^3)$ D.P. solution, based on all possible
+  subtrees from the $n$ elements. Then, you can use an interesting
+  optimisation, credited to Knuth, to turn it into $\Theta(n^2)$. See
+  section 15.5 of *Introduction to Algorithms* (CLR), and exercise 15.5-4
+  from the same book.

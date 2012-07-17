@@ -1,0 +1,16 @@
+title: Ferry Loading III
+keywords:
+  - simulation
+  - data structures
+  - queues
+judges:
+  uva: 10901
+setter: Gordon V. Cormack
+contests:
+  - Waterloo ACM Programming Contest 1 (Fall)
+summary: >
+  A ferry transports cars across a river, moving them from either bank to
+  the opposite side. The cars are attended in a first-come-first-served
+  fashion.  Knowing the arriving time of the cars, the capacity of the ferry
+  and the time it takes to move across the river, report the times when each
+  car reaches its destination.

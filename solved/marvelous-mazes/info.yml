@@ -1,0 +1,9 @@
+title: Marvelous Mazes
+keywords:
+  - ad-hoc
+  - strings
+judges:
+  uva: 445
+summary: >
+  A series of mazes is described with a special syntax. Produce the mazes
+  from the input.

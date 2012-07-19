@@ -1,4 +1,10 @@
 title: Brush (III)
-keywords: dynamic programming
+keywords:
+  - dynamic programming
 judges:
   ligthoj: 1017
+setter: Jane Alam Jan
+summary: >
+  A number of points are located on a 2D plane. What is the maximum number
+  of points that can be covered with $k$ moves from a brush that has a
+  certain width $w$ and can be moved an arbitrary distance horizontally?

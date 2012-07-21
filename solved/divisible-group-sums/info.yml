@@ -1,5 +1,13 @@
 title: Divisible Group Sums
-keywords: dynamic programming
+keywords:
+  - dynamic programming
 judges:
   lightoj: 1125
   uva: 10616
+setter: Shahriar Manzoor
+contests:
+  - January 2004 Monthly Contest
+summary: >
+  Given a list of $N$ numbers, determine the number of ways to choose $M$ of
+  them, such that the sum of the chosen numbers is divisible by an integer
+  $D$.

@@ -1,0 +1,15 @@
+title: Perfect P-th Powers
+keywords:
+  - number theory
+judges:
+  uva: 10622
+  lightoj:
+    id: 1220
+    title: Mysterious Bacteria
+    thanks: Muhammad Rifayat Samee, Jane Alam Jan
+setter: Gordon V. Cormack
+contests:
+  - Winter Waterloo Contest
+summary: >
+  Given an integer $x$, find the largest possible integer $p$, such that
+  $x=b^p$.

@@ -1,0 +1,21 @@
+title: Rare Easy Problem
+keywords:
+  - math
+judges:
+  uva: 10633
+  lightoj:
+    id: 1163
+    title: Bank Robbery
+    thanks: S. M. Ijaz-ul-Amin Chowdhury, Jane Alam Jan
+setter: Derek Kisman
+thanks: Monirul Hasan
+contests:
+  - ACM ICPC World Finals Warmup - 2
+summary: >
+  Given an integer $N$ (greater than 9), if you remove its last digit, you
+  get $M$. If you know the value of $N-M$, you have to find out the possible
+  value(s) of $N$.
+comments: >
+  Try writing a small auxiliary program that shows you the value of $N-M$
+  for a few cases (N = 1, 2, 3, ...). You will find a pattern that can help
+  you with the algorithm.

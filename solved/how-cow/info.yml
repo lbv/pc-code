@@ -1,4 +1,11 @@
 title: How Cow
-keywords: beginner, geometry
+keywords:
+  - beginner
+  - geometry
 judges:
   lightoj: 1107
+setter: Jane Alam Jan
+summary: >
+  Given the description of a rectangle, with its sides parallel to the X and
+  Y axes, and a number of 2D points, find out for each point if it's inside
+  the rectangle or not.

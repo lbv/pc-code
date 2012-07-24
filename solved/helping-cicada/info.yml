@@ -1,0 +1,13 @@
+title: Helping Cicada
+keywords:
+  - least common multiple
+  - inclusion-exclusion
+judges:
+  lightoj: 1117
+setter: Khalid Mahmood
+thanks: Jane Alam Jan
+summary: >
+  An insect can emerge in any year between 1 and $N$. However, there are $M$
+  predators, which show up periodically every certain number of years.
+  Determine the number of years where it's safe for the insect to emerge
+  (years where no predator shows up).

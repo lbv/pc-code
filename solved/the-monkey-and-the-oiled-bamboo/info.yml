@@ -1,0 +1,17 @@
+title: The Monkey and the Oiled Bamboo
+keywords:
+  - greedy
+annotations:
+  - large input
+judges:
+  uva: 12032
+  lightoj: 1425
+setter: Jane Alam Jan
+thanks: Sohel Hafiz
+summary: >
+  A strictly increasing sequence of $n$ integers is given, representing $n$
+  steps that need to be taken. Each step requires a certain "strength" value
+  $k$. If a step has a distance of exactly $k$, then the strength value is
+  decreased by 1, but if the distance is less than $k$, then $k$ doesn't
+  change. Knowing the sequence of distances, find the minimum $k$ to be able
+  to take all the steps.

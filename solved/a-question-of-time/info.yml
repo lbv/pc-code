@@ -1,0 +1,16 @@
+title: A Question of Time
+keywords:
+  - math
+  - time
+judges:
+  lightoj: 1430
+setter: Leonardo Boshell
+thanks: Jane Alam Jan
+contests:
+  - A Contest Dedicated to Setu
+summary: >
+  An analog clock is said to have a symmetry line formed by the angle of
+  the hour hand at some arbitrary point in time. Find all instances inside a
+  range of time when the hour hand and the minute hand are symmetric; that
+  is, they are on opposite sides of the symmetry line, and at the same
+  distance from it.

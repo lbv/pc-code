@@ -1,0 +1,33 @@
+title: One Unit Machine
+keywords:
+  - counting
+  - modular arithmetic
+judges:
+  uva: 11904
+  lightoj: 1226
+setter: Kazi Rakibul Hossain
+thanks: Jane Alam Jan
+contests:
+  - A National Bangladeshi Contest
+summary: >
+  A number $n$ of jobs have to be executed by a machine. The machine can
+  only execute one unit of computation at a time and each job $i$ has a
+  number of units $k_i$. In how many ways can the jobs be scheduled such
+  that for any pair of jobs $i$ and $j$ with $i < j$, job $i$ finishes
+  before job $j$?
+comments: >
+  You can build the answer gradually. Let's say you have the sequence $k_1,
+  k_2, \dots, k_n$.
+
+  Start by considering the first job only. You can arrange the $k_1$ units
+  in one way. Now, consider the second job. Since the second job has to
+  finish after the first job, the last unit processed has to be a $J_2$. So,
+  you need to place $k_2 - 1$ units among the $k_1$ units already in place.
+  A little combinatorial analysis should reveal that there are $\binom{k_1 +
+  1 + k_2 - 1}{k_1 + 1 - 1}$ ways to place them, and now you have arranged
+  $k_1 + k_2$ units. A similar reasoning can be applied to $k_3, \dots,
+  k_n$.
+
+  Precalculate the values $1!, 2!, \dots 10^6!$ (taking into account the
+  modulo), and use the modular multiplicative inverse to quickly calculate
+  the binomial coefficients.

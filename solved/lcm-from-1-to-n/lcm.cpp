@@ -57,7 +57,6 @@ int main()
         for (i64 i = *p; i <= MAX; i *= *p)
             factors.push_back(II(i, *p));
     sort(factors.begin(), factors.end());
-    printf("  there are %d factors\n", factors.size());
 
     int T;
     scanf("%d", &T);

@@ -5,6 +5,8 @@ keywords:
   - binary search
 judges:
   uva: 113
+summary: >
+  Find the nth root of a given big integer.
 comments: >
   It is rumoured that using double data types and pow(p, 1/n) is enough for
   an AC, but that clearly is the wrong approach if the judge had good test

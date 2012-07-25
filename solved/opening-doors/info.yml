@@ -1,0 +1,20 @@
+title: Opening Doors
+keywords:
+  - big integer
+  - number theory
+  - binary search
+judges:
+  uva: 10606
+setter: Carlos M. Casas Cuadrado
+contests:
+  - UVa first school online contest
+summary: >
+  Given a number $N$ of doors (big integer), a sequence of operations is
+  performed as follows: initially, all doors are closed, then all multiples
+  of 1 are opened, then all multiples of 2 are changed (from open to
+  closed), then all multiples of 3 are changed, and so on. Find the highest
+  door that is opened in the end.
+comments: >
+  The answer has to be a number with an odd number of divisors. This happens
+  only if the number is a perfect square, so you can use a big integer
+  square root routine, or code your own based on binary search.

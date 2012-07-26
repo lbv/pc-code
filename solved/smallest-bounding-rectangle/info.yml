@@ -1,0 +1,13 @@
+title: Smallest Bounding Rectangle
+keywords:
+  - geometry
+  - convex hull
+  - rotating calipers
+judges:
+  uva: 10173
+setter: Rezaul Alam Chowdhury
+contests:
+  - 2001 Regionals Warmup Contest
+summary: >
+  Given the Cartesian coordinates of $n$ 2D points, compute the area of
+  their smallest bounding rectangle.

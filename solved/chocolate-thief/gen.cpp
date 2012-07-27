@@ -23,7 +23,7 @@ void adjust( int a[3] ) {
 }
 
 int main() {
-	freopen("a.in", "w", stdout);
+	// freopen("a.in", "w", stdout);
 
 	int cases = 97;
 	printf("%d\n", cases);

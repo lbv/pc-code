@@ -1,5 +1,12 @@
 title: Chocolate Thief
-keywords: beginner
+keywords:
+  - beginner
 judges:
   lightoj: 1249
 setter: Jane Alam Jan
+summary: >
+  A group of $n$ people have a 3D bar of chocolate each. The volume of all
+  the chocolates should be the same, but it's possible that one person has
+  stolen some portion of chocolate from another person. Determine if there
+  is a thief, and report the names of the thief and the victim, or if no
+  robbery occured.

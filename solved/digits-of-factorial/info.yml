@@ -1,4 +1,10 @@
 title: Digits of Factorial
-keywords: beginner, number theory
+keywords:
+  - beginner
+  - number theory
 judges:
   lightoj: 1045
+setter: Jane Alam Jan
+summary: >
+  Given two integers: $n$ and $base$, find out the number of digits of $n$
+  when represented in base $base$.

@@ -1,5 +1,9 @@
 title: Hidden Secret!
-keywords: strings, beginner
+keywords:
+  - strings
+  - beginner
 judges:
   lightoj: 1338
 setter: Jane Alam Jan
+summary: >
+  Find if two strings are anagrams of each other.

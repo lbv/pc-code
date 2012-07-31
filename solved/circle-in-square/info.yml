@@ -1,4 +1,10 @@
 title: Circle in Square
-keywords: beginner, geometry
+keywords:
+  - beginner
+  - geometry
 judges:
   lightoj: 1022
+setter: Jane Alam Jan
+summary: >
+  Consider a circle inscribed in a square. Given the radius of a circle $r$,
+  find the area of the square minus the area of the circle.

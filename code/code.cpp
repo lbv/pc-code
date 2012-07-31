@@ -753,15 +753,15 @@ struct Point {
     }
 };
 struct Vector {
-    p_t x, y;
-    Vector(p_t X, p_t Y) : x(X), y(Y) {}
+    double x, y;
+    Vector(double X, p_t Y) : x(X), y(Y) {}
     Vector(const Point &p) : x(p.x), y(p.y) {}
     double norm() { return sqrt(x*x + y*y); }
     double angle(const Vector &p) const {
-        return Geometry::circle_angle(atan2(p.y, p.x) - atan2(y, x));
+        return circle_angle(atan2(p.y, p.x) - atan2(y, x));
     }
     void rotate(double a) {
-        p_t px = x, py = y;
+        double px = x, py = y;
         x = px*cos(a) - py*sin(a);
         y = px*sin(a) + py*cos(a);
     }

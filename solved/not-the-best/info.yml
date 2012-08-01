@@ -1,5 +1,12 @@
 title: Not the Best
-keywords: dijkstra, shortest path
+keywords:
+  - dijkstra
+  - shortest path
 judges:
   lightoj: 1099
 setter: Jane Alam Jan
+summary: >
+  Given a weighted graph with $N$ vertices and $R$ edges, find the cost of
+  the *second* best path between two vertices. The second best path has a
+  cost strictly greater than the best path, but is the best among all
+  remaining paths, and it can visit vertices or edges more than once.

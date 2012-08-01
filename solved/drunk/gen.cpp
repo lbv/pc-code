@@ -27,7 +27,7 @@ set <string> S;
 char names[30001][12];
 
 int main() {
-	freopen("d.in","w",stdout);
+	// freopen("d.in","w",stdout);
 
 	for( int i = 0; i < 30000; i++ ) {
 		int len = rand() % 10 + 1;

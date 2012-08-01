@@ -1,5 +1,19 @@
 title: Drunk
-keywords: topological sort, graph cycle
+keywords:
+  - topological sort
+  - graph cycle
 judges:
   lightoj: 1003
 setter: Jane Alam Jan
+summary: >
+  A list of pairs (a, b) of names of drinks is given, where each pair (a, b)
+  denotes that $a$ must be drunk before $b$.  Determine if it's possible to
+  drink all items listed given the constraints.
+comments: >
+  This is equivalent to finding if there is a cycle in a directed graph or
+  not, which can be solved by applying a standard topological sorting
+  algorithm.
+
+  Just be aware that the nodes in the graph are represented by strings (the
+  names of the drinks), so use a data structure that allows you to quickly
+  and easily identify the nodes from their corresponding strings.

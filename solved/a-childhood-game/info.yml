@@ -1,5 +1,20 @@
 title: A Childhood Game
-keywords: grundy numbers
+keywords:
+  - math
+  - grundy numbers
 judges:
   lightoj: 1020
 setter: Jane Alam Jan
+summary: >
+  A two player game has the following rules: there is a number of marbles
+  and at each turn one player takes one or two marbles. Depending on the
+  player who starts, the end condition is different. It could be that the
+  player who takes the last marble wins, or that the player who makes the
+  last move loses the game.
+
+  Knowing the number of marbles, and the player who starts, determine the
+  winner.
+comments: >
+  Being an impartial game, the solution can be deduced by applying
+  Sprague-Grundy theory, but this can also be solved by observing the
+  behavoiur of the game and noticing a pattern.

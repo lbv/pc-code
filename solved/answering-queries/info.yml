@@ -1,4 +1,18 @@
 title: Answering Queries
-keywords: math
+keywords:
+  - math
+  - simulation
+annotations:
+  - large input
 judges:
   lightoj: 1369
+setter: Hasnain Heickal Jami
+thanks: Jane Alam Jan
+summary: >
+  An array $A$ of $n$ integers is given, and a sequence of operations, which
+  could be one of two options: changing the value of a single element inside
+  the array, or reporting the value of the expression $\sum_{i, j, j >
+  i}^{n}{A_i - A_j}$.
+
+  Apply the operations given and report the correct value of the expression
+  every time it is requested.

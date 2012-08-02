@@ -1,0 +1,17 @@
+title: Count on Cantor
+keywords:
+  - math
+  - binary search
+  - ad-hoc
+judges:
+  uva: 264
+summary: >
+  Find the *ith* term of the Centor's series of rational numbers (1/1, 1/2,
+  2/1, 3/1, 2/2, ...).
+comments: >
+  Given the relatively lax constraints of the problem, there are multiple
+  ways to solve it. In order of efficiency: simple simulation with
+  memoization, binary search, or math calculations.
+
+  The more efficient solutions require some interesting formulations based
+  on discrete mathematics. Think about triangular numbers.

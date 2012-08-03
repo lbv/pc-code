@@ -1,0 +1,13 @@
+title: Cantor Fractions
+keywords:
+  - binary search
+  - math
+annotations:
+  - assumptions
+judges:
+  uva: 880
+summary: >
+  Find the i'th element of the Cantor series.
+comments: >
+  See also "Count on Cantor" (UVa ID 264). However, note that the
+  enumeration described in this problem is different.

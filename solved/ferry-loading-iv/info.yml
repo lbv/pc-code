@@ -1,0 +1,17 @@
+title: Ferry Loading IV
+keywords:
+  - data structures
+  - queues
+  - simulation
+annotations:
+  - assumptions
+judges:
+  uva: 11034
+setter: Piotr Rudnicki
+contests:
+  - Waterloo Spring Contest 2006
+summary: >
+  A ferry is located on the left bank of a river. There are a number of cars
+  on both sides of the river, waiting to cross on top of the ferry. Given
+  the lengths of the cars (and the ferry), determine the minimum number of
+  times that the ferry has to cross the river to take care of all the cars.

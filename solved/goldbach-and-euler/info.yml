@@ -1,0 +1,11 @@
+title: Goldbach and Euler
+keywords:
+  - number theory
+  - primes
+judges:
+  uva: 10311
+setter: Michael Van Biesbrouck
+thanks: Shahriar Manzoor
+summary: >
+  For an integer $n$ in the range [0 : 10^8], find two primes $(p1, p2)$
+  such that $p1+p2=n$ and $p2-p1$ is positive and minimised.

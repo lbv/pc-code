@@ -1,0 +1,31 @@
+title: The Largest/Smallest Box ...
+keywords:
+  - math
+judges:
+  uva: 10215
+  lightoj:
+    id: 1297
+    title: Largest Box
+    thanks: Jane Alam Jan
+    summary: >
+      From a rectangular card, squares of side $x$ are removed from its
+      corners, to produce a 3D box without a lid. Given the width and length
+      of the original card, find the maximum volume possible of the final
+      box, for any value of $x$.
+setter: Shahriar Manzoor
+contests:
+  - Math & Number Theory Lovers' Contest
+summary: >
+  From a rectangular card, squares of side $x$ are removed from its corners,
+  to produce a 3D box without a lid. Given the width and length of the
+  original card, find the value of $x$ to make the box with maximum and
+  minimum volume.
+comments: >
+  Notice the UVa doesn't use a special judge for this problem, so it's more
+  sensitive to precision errors. Add a small epsilon to the answers in that
+  case.
+
+  To find the maximum volume, a standard mathematical optimisation can give
+  the answer. For the minimum volume, just think of how should the cuts be
+  done to produce a volume of 0.0. The answer always has three numbers in
+  UVa.

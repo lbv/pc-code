@@ -118,6 +118,17 @@ struct Graph {
             }
         }
     }
+    void topo_sort(IV &in, IV &order) {
+        IQ q;
+        for (int i = 0; i < n; ++i) if (in[i] == 0) q.push(i);
+        order.clear();
+        while (! q.empty()) {
+            int v = q.front(); q.pop();
+            order.push_back(v);
+            cFor (EL, e, adj[v])
+                if (--in[e->v] == 0) q.push(e->v);
+        }
+    }
 
     // Kosaraju's algorithm
     struct Kos {

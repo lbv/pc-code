@@ -1,0 +1,13 @@
+title: Hardwood Species
+keywords:
+  - beginner
+  - data structures
+judges:
+  uva: 10226
+setter: Gordon V. Cormack
+contests:
+  - University of Waterloo Local and Internet Contest January 2002
+summary: >
+  A series of strings identifying species of trees is given. Print a report
+  of each species and the percentage that each species represent with
+  respect to the complete set.

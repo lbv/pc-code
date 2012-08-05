@@ -1,0 +1,13 @@
+title: Ordering Tasks
+keywords:
+  - topological sort
+annotations:
+  - special judge
+judges:
+  uva: 10305
+setter: Rodrigo Malta Schmidt
+summary: >
+  A number of tasks $n$ has to be completed, but there are some
+  prerequisites given; a prerequisite is of the form (a, b) and means that
+  task $a$ has to be completed before taks $b$. Find a valid order in which
+  to complete the $n$ tasks.

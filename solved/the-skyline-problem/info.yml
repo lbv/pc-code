@@ -1,0 +1,20 @@
+title: The Skyline Problem
+keywords:
+  - sweep line
+  - brute force
+judges:
+  uva: 105
+summary: >
+  A set of rectangles, all of them with their sides parallel to the axes,
+  and with their bottoms on the X axis, are described by the triples $(L, H,
+  R)$, where $L$ is the X-coordinate of the left side, $H$ is the height,
+  and $R$ the X-coordinate of the right side.
+
+  Given a number of rectangles, print the description of the outline from
+  all the rectangles as a sequence of elements $(X_1, H_1, X_2, H_2, \dots,
+  H_{k-1}, X_k)$.
+comments: >
+  Given the constraints, it is possible to solve the problem using an array
+  of heights and updating it with each rectangle description (basically a
+  brute force approach), but a more efficient solution is possible using a
+  sweep-line algorithm.

@@ -1,4 +1,9 @@
 title: Brush (I)
-keywords: beginner
+keywords:
+  - beginner
 judges:
   lightoj: 1015
+setter: Jane Alam Jan
+summary: >
+  Given a sequence of integer numbers, find the sum of all non-negative
+  numbers in the sequence.

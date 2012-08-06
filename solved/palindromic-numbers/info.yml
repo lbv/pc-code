@@ -1,4 +1,11 @@
 title: Palindromic Numbers
-keywords: dynamic programming, counting
+keywords:
+  - dynamic programming
+  - counting
 judges:
   lightoj: 1205
+setter: Jane Alam Jan
+summary: >
+  Given two numbers $i$ and $j$ (with $0 \leq i, j \leq 10^{17}$), find the
+  amount of palindromic numbers (integers which read the same forward and
+  backwards) between $i$ and $j$.

@@ -10,7 +10,9 @@ using namespace std;
 int cases, caseno, n, m;
 
 int main() {
-	freopen("c.in", "w", stdout);
+	//freopen("c.in", "w", stdout);
+
+	srand(time(NULL));
 	cases = 95;
 	printf("%d\n", cases);
 	while( cases-- ) {

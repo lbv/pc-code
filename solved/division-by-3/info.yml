@@ -1,5 +1,10 @@
 title: Division by 3
-keywords: math
+keywords:
+  - math
 judges:
   lightoj: 1136
 setter: Jane Alam Jan
+summary: >
+  Consider the sequence $1, 12, 123, 1234, \dots, 1234567891011, \dots$.
+  Given two integers $A$ and $B$, find the amount of numbers in the
+  sequence, between the Ath and the Bth element, that are divisible by 3.

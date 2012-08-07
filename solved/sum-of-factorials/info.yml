@@ -1,5 +1,12 @@
 title: Sum of Factorials
-keywords: beginner, math, factorial
+keywords:
+  - beginner
+  - math
+  - factorial
 judges:
   lightoj: 1189
 setter: Jane Alam Jan
+summary: >
+  Given an integer $n$, find (is possible) a sequence of distinct factorials
+  such that $n = x_1! + x_2! + \dots + x_k!$ with $x_i < x_j$ for all
+  $i < j$.

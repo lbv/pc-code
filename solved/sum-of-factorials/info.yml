@@ -3,6 +3,8 @@ keywords:
   - beginner
   - math
   - factorial
+annotations:
+  - special judge
 judges:
   lightoj: 1189
 setter: Jane Alam Jan

@@ -1,0 +1,24 @@
+title: Exclusively Edible
+keywords:
+  - game theory
+  - nim
+judges:
+  uva: 11311
+setter: Darko Aleksic
+contests:
+  - Calgary U Collegiate Programming Contest 2007
+summary: >
+  Hansel and Gretel play a game with a cake. The cake is rectangular and cut
+  into a "grid" of $m \times n$ squares. One of those squares is the "bad"
+  square, which neither of the two players want to eat. The game is played
+  by taking turns and making a cut through any horizontal or vertical line
+  in the grid. The player then keeps the piece without the bad square and
+  passes the other piece to the rival. The loser is the player who is left
+  with only one square, the one with the bad piece.
+
+  Given the size of the cake, and the player who starts the game, determine
+  who will be the winner.
+comments: >
+  This is an impartial game that can be considered equivalent to a nim-game
+  with four piles. Think about the position of the "bad" square, and what
+  would be considered the "piles" in this game.

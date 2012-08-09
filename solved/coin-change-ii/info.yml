@@ -1,5 +1,9 @@
 title: Coin Change (II)
-keywords: dynamic programming
+keywords:
+  - dynamic programming
 judges:
   lightoj: 1232
 setter: Jane Alam Jan
+summary: >
+  Given the denominations of available coins, find out the number of ways in
+  which you can make an amount $K$, using the available coins $K$.

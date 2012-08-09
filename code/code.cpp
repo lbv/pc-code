@@ -852,7 +852,7 @@ struct Trie {
     void insert(const char *s) {
         int idx, cur = 0;
 
-        while (*s) {
+        for (; *s; ++s) {
             idx = *s - 'A';
             if (! nodes[cur].ch[idx]) {
                 nodes[cur].ch[idx] = sz++;
@@ -860,7 +860,6 @@ struct Trie {
             }
 
             cur = nodes[cur].ch[idx];
-            ++s;
         }
     }
 };

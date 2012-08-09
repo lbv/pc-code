@@ -1,0 +1,12 @@
+title: The Collatz Sequence
+keywords:
+  - simulation
+  - beginner
+judges:
+  uva: 694
+summary: >
+  The Collatz sequence is defined as a sequence of numbers where the k'th
+  term $C(k)$ is equal to $C(k-1) \div 2$ if $k-1$ is even or $3C(k-1) + 1$
+  otherwise, until one is reached. Find the number of elements that can be
+  computed from the sequence, starting with a value $A$, and without
+  exceeding a limit $L$.

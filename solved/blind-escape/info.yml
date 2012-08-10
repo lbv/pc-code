@@ -1,5 +1,17 @@
 title: Blind Escape
-keywords: breadth first search, depth first search
+keywords:
+  - breadth first search
+  - hashing
 judges:
   lightoj: 1426
 setter: Jane Alam Jan
+contests:
+  - A Contest Dedicated to Setu
+summary: >
+  A hero wants to get out of a maze. He knows the maze perfectly, but he's
+  blind. He doesn't know his current position inside the maze, and he wants
+  to get out applying a sequence of moves that guarantees that he will get
+  out, no matter where he is. It's important to note that a move consists of
+  him moving in one of the basic 4 directions, until he either meets a wall,
+  or is outside the maze. What is the shortest sequence that guarantees his
+  escape?

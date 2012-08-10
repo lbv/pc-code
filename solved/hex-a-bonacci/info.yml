@@ -1,4 +1,10 @@
 title: Hex-a-bonacci
-keywords: beginner
+keywords:
+  - beginner
 judges:
   lightoj: 1006
+setter: Jane Alam Jan
+summary: >
+  Calculate the result of a given function, similar to the Fibonacci series,
+  but where the value $fn(i)$ depends on the six previous terms for $i > 5$,
+  instead of two.

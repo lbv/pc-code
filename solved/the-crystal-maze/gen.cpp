@@ -46,7 +46,7 @@ void printWall( int x, int y ) {
 }
 
 int main() {
-	freopen("a.in", "w", stdout);
+	// freopen("a.in", "w", stdout);
 
     srand(time(NULL));
 	double cl = clock();

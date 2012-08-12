@@ -1,6 +1,20 @@
 title: Kingdom Division
-keywords: geometry
+keywords:
+  - geometry
 judges:
   lightoj: 1385
   uva: 11164
 setter: Tanvir Mahmud
+thanks: Jane Alam Jan
+contests:
+  - Next Generation Contest - III
+summary: >
+  A triangle is partitioned in the followng way: two straight lines are
+  drawn, each from a different vertex, to its opposite side. The areas of
+  three of the four resulting areas are given. Find the area of the
+  remaining area.
+comments: >
+  Split the $d$ area in two triangles: one formed by FEX and another one
+  formed by FEA. Using algebra and finding relations between all the
+  resulting sub-triangles, find the areas of the two triangles you have
+  created.

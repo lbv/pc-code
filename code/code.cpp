@@ -865,6 +865,29 @@ struct Trie {
 };
 
 //
+// Hash Map
+//
+#define HASHB 4096
+struct HM {
+    typedef IV Datum; typedef vector<Datum> DV; DV b[HASHB];
+    u32 fnv_hash(const Datum &k, int len) const {
+        uch *p = reinterpret_cast<uch*>(const_cast<int*>(&k[0]));
+        u32 h = 2166136261U;
+        for (int i = 0; i < len; ++i) h = (h * 16777619U ) ^ p[i];
+        return h;
+    }
+    bool add(const Datum &k, u64 &id) {
+        int i = fnv_hash(k, k.size() * sizeof(int)) % HASHB;
+        for (int j = 0, J = b[i].size(); j < J; ++j)
+            if (b[i][j] == k) { id = i; id <<= 32; id |= j; return false; }
+        b[i].push_back(k);
+        id = i; id <<= 32; id |= (b[i].size() - 1);
+        return true;
+    }
+    Datum get(u64 id) const { return b[id>>32][id&0xFFFFFFFF]; }
+};
+
+//
 // Time - Leap years
 //
 // A[i] has the accumulated number of days from months previous to i

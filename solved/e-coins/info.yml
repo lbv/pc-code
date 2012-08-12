@@ -1,0 +1,15 @@
+title: e-Coins
+keywords:
+  - dynamic programming
+judges:
+  uva: 10306
+contests:
+  - The Joint Effort Contest (We and Rodrigo Malta)
+summary: >
+  A new currency is defined as the composition of two different integer
+  values $V$ and $Y$. The total value of a new "coin" $(X, Y)$ (called
+  e-modulus) is $\sqrt{X^2 + Y^2}$. The sum of two coins $(X_1, Y_1)$,
+  $(X_2, Y_2)$ is defined as $(X_1 + X_2, Y_1 + Y_2)$.
+
+  Given a number of coins, and a target value $S$, find the minimum number
+  of coins necessary to make a total value of $S$.

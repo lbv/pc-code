@@ -1,0 +1,16 @@
+title: Bankrupt Baker
+keywords:
+  - data structures
+  - sorting
+annotations:
+  - assumptions
+judges:
+  uva: 11308
+setter: Sean McIntyre
+contests:
+  - Calgary U Collegiate Programming Contest 2007
+summary: >
+  A baker has a binder with a list of ingredients and their costs, and a
+  list of recipes. All recipes include the required ingredients and the
+  amount of each ingredient required. Given the budget of the baker, report
+  those recipes that he can prepare, sorted by their cost.

@@ -1,0 +1,8 @@
+title: Fibonacci Freeze
+keywords:
+  - dynamic programming
+  - big integer
+judges:
+  uva: 495
+summary: >
+  Compute numbers from the Fibonacci sequence up to Fib(5000).

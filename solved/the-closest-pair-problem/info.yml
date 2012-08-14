@@ -1,5 +1,7 @@
 title: The Closest Pair Problem
-keywords: geometry, plane sweep
+keywords:
+  - geometry
+  - sweep line
 judges:
   uva: 10245
-  sdibt: 1119
+setter: Shahriar Manzoor

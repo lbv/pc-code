@@ -1,6 +1,6 @@
 title: Olympic Swimming
 keywords:
-  - sweep-line
+  - sweep line
   - hashing
 annotations:
   - large input
@@ -14,9 +14,9 @@ contests:
 summary: >
   A swimming pool of integer length $L$ is divided in a number $K$ of lanes.
   Each lane can contain a number of hurdles, which are obstacles places in
-  the middle of two discrete points in the lane. A race can be setup inside
-  the swimming pool, from point $A$ to point $B4, if in the range $(A, B)$
-  there is the same amount of hurdles in all lanes.
+  the middle of two consecutive discrete points in the lane. A race can be
+  setup inside the swimming pool, from point $A$ to point $B4, if in the
+  range $(A, B)$ there is the same amount of hurdles in all lanes.
 
   Given the description of a pool, with its lanes and hurdles, find the
   longest race that could be setup in a given swimming pool.

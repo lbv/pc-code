@@ -1,0 +1,22 @@
+title: Hoax or What
+keywords:
+  - data structures
+annotations:
+  - large input
+judges:
+  uva: 11136
+setter: T. Walen
+thanks: Piotr Rudnicki
+contests:
+  - Alberta Collegiate Programming Contest 2006 - Online Version
+summary: >
+  A store has a promotion that works like this: a bag with bills from the
+  customers is kept during $n$ days. Every day new bills can be added to the
+  bag, and at the end of the day the bills with the highest and lowest
+  values are taken out of the bag, and their difference is given as a prize.
+  Calculate the total of all the prizes given during the $n$ day period.
+comments: >
+  Don't pay much attention to the big warning at the end of the problem
+  statement. Make sure you use fast I/O methods, and try to optimise the use
+  of your data structures, and you can comfortably use STL's set or
+  multiset.

@@ -1,0 +1,15 @@
+title: Killing Aliens in Borg Maze
+keywords:
+  - breadth first search
+  - minimum spanning tree
+judges:
+  uva: 10307
+contests:
+  - The Joint Effort Contest (We and Rodrigo Malta)
+summary: >
+  There's a maze with a number of aliens in certain cells. You start at a
+  certain position, and from there you have to reach all aliens in the maze
+  with the minimum number of steps. However, you can also take advantage of
+  a special feature: on your starting cell, and on every cell where an alien
+  stands, you can replicate any number of times you want, and your
+  replicates can move through the maze independently.

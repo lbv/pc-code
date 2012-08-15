@@ -74,28 +74,30 @@ struct Graph {
     typedef list<Edge> EL;
     typedef vector<EL> ELV;
     ELV adj; int n;
-    void init(int N) { n=N; adj.clear(); adj.resize(n); }
+    Graph(int N) : n(N) { adj.resize(n); }
     void add(int u, int v, w_t w) { adj[u].push_back(Edge(v, w)); }
 
-    void prim_min(ELV &g, int src) {
+    int prim_mst(int src) {
         IIS q;
         IV dis(n, INF);
         BV flg(n);
         dis[src] = 0;
         q.insert(II(0, src));
+        int mst = 0;
         while (! q.empty()) {
             int d = q.begin()->first;
             int v = q.begin()->second;
             q.erase(q.begin());
             if (flg[v]) continue;
             flg[v] = true;
-            cFor (EL, e, g[v])
+            mst += d;
+            cFor (EL, e, adj[v])
                 if (!flg[e->v] && e->w < dis[e->v]) {
-                    if (dis[e->v] != INF) q.erase(II(dis[e->v], e->v));
                     dis[e->v] = e->w;
                     q.insert(II(dis[e->v], e->v));
                 }
         }
+        return mst;
     }
     void dijkstra(int src, IV &dis) {
         IIS q;
@@ -206,7 +208,7 @@ struct Graph {
         for (int i=0; i < ndag; ++i)
             for (int j=0, lim=sccs[i].size(); j < lim; ++j)
                 vcomp[sccs[i][j]] = i;
-        dag.init(ndag);
+        dag = Graph(ndag);
         for (int u=0; u < n; u++)
             cFor (EL, e, adj[u])
                 if (vcomp[u] != vcomp[e->v])
@@ -367,7 +369,7 @@ struct Graph {
 struct TwoSat {
     Graph g;
     int n;
-    TwoSat(int N) : n(N) { g.init(2*N); }
+    TwoSat(int N) : n(N) { g = Graph(2*N); }
     void add_cons(int a, bool ta, int b, bool tb) {
         int p = val(a, ta), q = val(b, tb);
         g.add(neg(p), q); g.add(neg(q), p);

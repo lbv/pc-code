@@ -27,7 +27,7 @@ typedef set<II> IIS;
 //
 // I/O
 //
-#define BUF 65536
+#define BUF 524288
 struct Reader {
     char buf[BUF]; char b; int bi, bz;
     Reader() { bi=bz=0; read(); }

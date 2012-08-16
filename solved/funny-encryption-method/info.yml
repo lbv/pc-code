@@ -1,0 +1,9 @@
+title: Funny Encryption Method
+keywords:
+  - bitmask calculations
+judges:
+  uva: 10019
+summary: >
+  Given an integer number $M$, find the number of 1's in its binary
+  representation, and find the number of 1's in the binary representation of
+  $M_{16}$ (M as a base-16 number).

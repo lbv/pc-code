@@ -23,7 +23,7 @@
 using namespace std;
 
 int main() {
-	freopen("e.in", "w", stdout);
+	//freopen("e.in", "w", stdout);
 
     srand(time(NULL));
 	int cases = 45;

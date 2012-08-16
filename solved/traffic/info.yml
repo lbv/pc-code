@@ -9,5 +9,12 @@ judges:
 setter: Mustaq Ahmed
 contests:
   - February 2003 Monthly Contest
+summary: >
+  The traffic map of a city is represented by a graph, where each vertex has
+  a "busyness" value associated to it. Whenever someone goes from a vertex
+  $i$ to a vertex $j$, the city gets the amount $(B_j - B_i)^3$ (where $B_i$
+  is the busyness value). Find the minimum value that the city can obtain
+  when someone travels between an arbitrary pair of nodes.
 comments: >
-  Bad input in UVa's judge.
+  The input in UVa's judge has strange bytes at the end, so make sure your
+  reading routine is robust and can handle that.

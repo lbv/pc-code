@@ -1,5 +1,11 @@
 title: Area of a Parallelogram
-keywords: beginner, geometry, cross product
+keywords:
+  - beginner
+  - geometry
+  - cross product
 judges:
   lightoj: 1305
 setter: Jane Alam Jan
+summary: >
+  Given three vertices of a parallelogram, find the coordinates of the
+  fourth vertex, and the area of the polygon.

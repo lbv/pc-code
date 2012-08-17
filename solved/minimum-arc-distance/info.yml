@@ -2,10 +2,14 @@ title: Minimum Arc Distance
 keywords:
   - beginner
   - geometry
+annotations:
+  - special judge
 judges:
   lightoj: 1433
 setter: Arif Siddiquee
 thanks: Jane Alam Jan
+contests:
+  - A Contest Dedicated to Setu
 summary: >
   Given the coordinates of the center of a circle, and two points from its
-  circumference, determine the length of the shortest arc between the two
+  circumference, determine the length of the shortest arc between the two.

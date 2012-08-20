@@ -10,3 +10,6 @@ setter: Jane Alam Jan
 thanks: Md. Abirul Islam
 contest:
   - IIUPC 2009
+summary: >
+  In a weighted directed graph, find all possible vertices from which you
+  can reach a negative cycle.

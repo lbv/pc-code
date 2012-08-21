@@ -1,10 +1,14 @@
 title: Worst Case Trie
-keywords: counting
+keywords:
+  - counting
 judges:
   lightoj: 1322
 setter: Jane Alam Jan
+summary: >
+  Find the maximum number of nodes required in a Trie (prefix tree) to store
+  strings formed by $K$ different symbols (each symbol used at most once).
 comments: >
-  The recurrence relation is: f(n+1)=(n+1)*(f(n) + 1). Since the answer has
-  to be presented modulo 10^4, notice that every 10000 numbers the answer is
-  zero again. Actually, every 500 numbers it's zero again, so that reduces the
-  run time even more.
+  The recurrence relation is: $f(n+1)=(n+1) \times (f(n) + 1)$. Since the
+  answer has to be presented modulo $10^4$, notice that every 10000 numbers
+  the answer is zero again. Actually, every 500 numbers it's zero again, so
+  that reduces the run time even more.

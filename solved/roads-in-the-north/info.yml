@@ -1,0 +1,23 @@
+title: Roads in the North
+keywords:
+  - depth first search
+annotations:
+  - assumptions
+  - irregular input
+judges:
+  uva: 10308
+contests:
+  - The Joint Effort Contest (We and Rodrigo Malta)
+summary: >
+  In a weighted tree, find the pair of nodes that are the most distant.
+comments: >
+  Not only is the input provided in a very awkard way, you have to consider
+  that there can be cases with zero cities ---you have to print zero as the
+  answer in that case.
+
+  One algorithm that works to find the graph diameter is starting a DFS from
+  an arbitrary node $v$ to find a node $w$ that is as distant as possible
+  from $v$. The pair $(v, w)$ is not guaranteed to provide the diameter, but
+  if you start a second DFS from $w$, then the new pair you form *is*
+  guaranteed to provide the longest distance between any pair of nodes; a
+  formal proof for this is not very difficult.

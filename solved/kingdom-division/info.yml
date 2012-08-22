@@ -2,7 +2,10 @@ title: Kingdom Division
 keywords:
   - geometry
 judges:
-  lightoj: 1385
+  lightoj:
+    id: 1385
+    annotations:
+      - special judge
   uva: 11164
 setter: Tanvir Mahmud
 thanks: Jane Alam Jan

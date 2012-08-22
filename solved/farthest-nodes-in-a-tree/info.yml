@@ -1,4 +1,12 @@
 title: Farthest Nodes in a Tree
-keywords: graph diameter, breadth first search, depth first search
+keywords:
+  - depth first search
+annotations:
+  - large input
 judges:
   lightoj: 1094
+setter: Jane Alam Jan
+summary: >
+  Find the graph diameter of a tree.
+comments: >
+  See also problem "Roads in the North" (UVa 10308).

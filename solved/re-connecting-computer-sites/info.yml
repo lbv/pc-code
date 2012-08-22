@@ -1,0 +1,10 @@
+title: Re-connecting Computer Sites
+keywords:
+  - minimum spanning tree
+judges:
+  uva: 908
+setter: Joao Marques
+summary: >
+  You are given a connected graph, and a MST for that graph. Then you are
+  given a number $K$ of additional edges (added after the given MST was
+  computed). Determine the cost of a new MST for the extended graph.

@@ -315,13 +315,12 @@ struct Graph {
     };
     typedef vector<Edge> EV;
     EV edges;
-    void init(size_t m=16) { edges.clear(); edges.reserve(m); }
     void add(int u, int v, int w) { edges.push_back(Edge(u, v, w)); }
 
     // Minimum Spanning Tree
-    void kruskalMST(int n, int &ans) {
+    void kruskal_mst(int n, int &ans) {
         sort(edges.begin(), edges.end());
-        Set uf; uf.init(n);
+        Set uf(n);
         int nedges = 0;
         ans = 0;
         EV mst;

@@ -12,8 +12,11 @@ public class gen {
         int T=110;
         System.out.println(T);
         for (int i = 0; i < T; i++) {
-            int n = rnd.nextInt(1000) + 1;
-            int m = rnd.nextInt(2001);
+            //int n = rnd.nextInt(1000) + 1;
+            //int m = rnd.nextInt(2001);
+            
+            int n = rnd.nextInt(10) + 1;
+            int m = rnd.nextInt(21);
 
             if (n == 1) m = 0;
 

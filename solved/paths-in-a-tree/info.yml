@@ -9,3 +9,11 @@ setter: Jane Alam Jan
 thanks: Derek Kisman
 contests:
   - 2011 ACM-ICPC Asia Phuket Regional
+summary: >
+  Given a tree with directed edges (which can point upward or downward),
+  find the minimum number of paths that cover the complete graph, taking
+  into account that:
+  * Paths can only have edges that go in the opposite direction than the
+    edges of the original graph
+  * Paths can visit any vertex or edge more than once
+  * Multiple paths can have edges and vertices in common.

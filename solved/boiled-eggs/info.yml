@@ -8,3 +8,11 @@ setter: Jane Alam Jan
 thanks: Sohel Hafiz
 contests:
   - A National Bangladeshi Contest
+summary: >
+  You want to cook a number $n$ of eggs, and for that you only have a
+  microwave and a bowl. You can put at most $P$ eggs in the bowl, and the
+  total weight of the eggs can't be more than Q gms.
+
+  Given the values of $n, P, Q$, and the wighet of all the $n$ eggs, find
+  the maximum number of eggs that you can cook using the microwave only one
+  time.

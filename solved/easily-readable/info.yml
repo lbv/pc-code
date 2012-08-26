@@ -1,7 +1,18 @@
 title: Easily Readable
-keywords: trie tree
+keywords:
+  - trie tree
+annotations:
+  - large input
 judges:
   lightoj: 1114
   poj:
     title: Rdeaalbe
     id: 2493
+summary: >
+  Two words can be considered "similar" if they have the same set of
+  characters and they start and end with the same letters (the letters
+  between them can be rearranged freely).
+
+  Given a dictionary of words and a series of sentences, find out for each
+  sentence, how many different sentences can be formed using words from the
+  dictionary that are similar to the words in the original sentence.

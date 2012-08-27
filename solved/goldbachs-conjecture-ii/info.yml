@@ -1,0 +1,9 @@
+title: Goldbach's Conjecture (II)
+keywords:
+  - primes
+  - sieve
+judges:
+  uva: 686
+summary: >
+  Given an integer $n$ (less than $2^{15}$), find the number of different
+  pairs of primes $p_1$ and $p_2$ such that $p_1 + p_2 = n$.

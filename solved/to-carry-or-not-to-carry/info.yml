@@ -1,0 +1,12 @@
+title: To Carry or Not to Carry
+keywords:
+  - beginner
+  - bitmask calculations
+judges:
+  uva: 10469
+setter: Monirul Hasan
+contests:
+  - Return of the Aztecs
+summary: >
+  Perform an "addition" between two unsigned 32-bit integers, ignoring the
+  carry for each bit.

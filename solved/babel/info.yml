@@ -1,0 +1,19 @@
+title: Babel
+keywords:
+  - dijkstra
+  - single source shortest path
+judges:
+  uva: 11492
+summary: >
+  A group of words and languages are associated, such that a language can
+  have many words, but each word can only be associated with exactly two
+  languages.
+
+  You receive a "starting" language and an "ending" language. Find the
+  length of the shortest sequence of words that go from the starting to the
+  ending language.
+
+  Two words can be adjacent in a sequence if they have one language in
+  common, and you can't use two words that start with the same letter
+  consecutively. The length of the sequence is the sum of lengths of all the
+  words used.

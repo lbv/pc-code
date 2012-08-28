@@ -1,11 +1,21 @@
-title: Fibsieve's Fantabulous Birthday
+title: Ant on a Chessboard
 keywords:
   - beginner
   - math
 judges:
-  lightoj: 1008
-setter: Muntasir Muzahid Chowdhury
-thanks: Jane Alam Jan
+  uva: 10161
+  lightoj:
+    id: 1008
+    title: Fibsieve's Fantabulous Birthday
+    setter: Muntasir Muzahid Chowdhury
+    thanks: Jane Alam Jan
+contests:
+  - Randy Game - Programming Contest 2001A
+summary: >
+  A square grid is visited cell by cell in a pattern that starts at the
+  bottom-left cell, and moves up, right, down, right, up, left, up, ...
+
+  For an arbitrary $n$, determine what is the nth cell visited.
 comments: >
   An important thing to notice is that numbers seem to propragate from the
   origin (row 1 column 1) in the form of "rings", and every ring ends in a

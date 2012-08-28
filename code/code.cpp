@@ -401,7 +401,7 @@ namespace Num
         for (int i=3; i <= MAX; i+=2) if (!IsComp(i)) primes.push_back(i);
     }
     bool is_prime(int n) {
-        if (n < 2 || n % 2 == 0) return false;
+        if (n < 2 || (n > 2 && n % 2 == 0)) return false;
         return ! IsComp(n);
     }
     // Finds prime numbers between a and b, using basic primes up to sqrt(b)

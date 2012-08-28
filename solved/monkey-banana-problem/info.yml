@@ -1,4 +1,12 @@
 title: Monkey Banana Problem
-keywords: dynamic programming
+keywords:
+  - dynamic programming
+annotations:
+  - large input
 judges:
   lightoj: 1004
+summary: >
+  A number of bananas are placed in a diamond-shaped array. A monkey starts
+  moving from the top cell to the bottom cell, and at each step it can only
+  move to an adjacent cell to the south. Determine the maximum number of
+  bananas that the monkey can get.

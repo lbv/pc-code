@@ -1,5 +1,11 @@
 title: Karate Competition
-keywords: greedy
+keywords:
+  - greedy
 judges:
   lightoj: 1198
 setter: Jane Alam Jan
+summary: >
+  A battle between two teams with $N$ members each is about to happen. You
+  know the "level" of each member of both teams, and the battles occur by
+  matching pairs from both teams. Determine the maximum score possible after
+  the matches.

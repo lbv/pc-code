@@ -1,5 +1,10 @@
 title: Integer Divisibility
-keywords: math
+keywords:
+  - math
 judges:
   lightoj: 1078
 setter: Jane Alam Jan
+summary: >
+  You receive two numbers: $n$ which is not divisible by 2 nor 5, and $d$ (a
+  single digit). Find the lowest number that is formed by the digit $d$ and
+  is a multiple of $n$.

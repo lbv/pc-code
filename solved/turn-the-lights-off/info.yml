@@ -1,0 +1,21 @@
+title: Turn the Lights Off
+keywords:
+  - brute force
+judges:
+  uva: 10309
+setter: Stefan Pochmann
+summary: >
+  A $10 \times 10$ grid of lights is setup. Every time you switch a light in
+  any cell, the state of that cell and all its neighbours (horizontally and
+  vertically) is switched. Given an arbitrary initial state of the grgid,
+  Find the minimum number of "moves" required to turn all the lights off.
+comments: >
+  This is a larger version of a game called "Lights Out". In that game, a
+  known strategy that can be applied here is as follows: switch a random
+  subset of lights from the top row, and then "chase the lights" to the
+  bottom row. What this means is, starting from the second row and going
+  doen, press a light only if the light to the north is on. Eventually
+  you'll find a configuration that turns all the lights off and that is the
+  answer. (It just so happens that a grid of size 10 guarantees that there
+  exists a unique solution for every configuration, but this is not true in
+  general for other sizes).

@@ -1,0 +1,13 @@
+title: Ones
+keywords:
+  - math
+judges:
+  uva: 10127
+setter: Piotr Rudnicki
+contests:
+  - Universities of Waterloo and Alberta Spring Contest June 2001
+similar:
+  - lightoj-1078
+summary: >
+  Find out the number of digits in the smallest number multiple of $n$ (not
+  divisible by 2 or 5) that is formed by a sequence of 1's.

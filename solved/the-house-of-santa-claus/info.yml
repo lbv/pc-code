@@ -1,0 +1,15 @@
+title: The House of Santa Claus
+keywords:
+  - depth first search
+annotations:
+  - no input
+judges:
+  uva: 291
+summary: >
+  There is a classic riddle known as "The House of Santa Claus" which
+  consists in drawing a little house formed by 8 straight lines without
+  lifting the pencil and without drawing over the same line more than once.
+  Find all the possible ways to do it starting on the bottom left corner.
+comments: >
+  Just ignore the bogus output. Why would anyone think it was a good idea to
+  include that confusing data in the problem statement is a mistery.

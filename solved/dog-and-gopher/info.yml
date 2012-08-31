@@ -1,0 +1,13 @@
+title: Dog and Gopher
+keywords:
+  - beginner
+  - math
+  - kinematics
+judges:
+  uva: 10310
+setter: Gordon V. Cormack
+summary: >
+  A dog and a gopher are in a large field. There are a number of holes that
+  the gopher can go into to escape the dog, and the dog moves with twice the
+  speed of the gopher. Find a hole where the gopher can escape into, if
+  possible.

@@ -1,0 +1,17 @@
+title: The Monocycle
+keywords:
+  - breadth first search
+judges:
+  uva: 10047
+setter: Rezaul Alam Chowdhury
+contests:
+  - University of Valladolid End Of Millenium Contest
+summary: >
+  A monocyle is built such that its circular wheel is divided in five
+  different sections, each with a different color. Someone is riding the
+  monocycle over a rectangular grid, where moving to an adjacent square
+  makes the wheel move exactly one fifth of a circumference, so the color
+  that makes contact with the ground changes. Moving one square, or rotating
+  90 degrees take exactly one second. Find the minimum time to go from a
+  starting point to a destination inside the grid, with the constraint that
+  on both points the color making contact with the floor has to be the same.

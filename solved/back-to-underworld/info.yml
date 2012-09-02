@@ -1,4 +1,13 @@
 title: Back to Underworld
-keywords: depth first search, breadth first search, bipartite graph
+keywords:
+  - depth first search
+  - bipartite graph
+annotations:
+  - large input
 judges:
   lightoj: 1009
+setter: Jane Alam Jan
+summary: >
+  Two teams of warriors are at war. You get a list of pairs of warriors
+  (identified by integers) from opposing teams. Find the maximum number of
+  members that any of the teams can have.

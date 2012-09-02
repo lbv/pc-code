@@ -1,5 +1,12 @@
 title: Vito's Family
-keywords: math, median
+keywords:
+  - math
+  - median
 judges:
   uva: 10041
-setter: Miguel Revilla
+setter: Pablo Puente
+summary: >
+  A group of houses lie on the same avenue, identified by their street
+  number. A number of people live there, and it's possible that more than
+  one person lives in the same street. Find one street that minimises the
+  distance to all other people on the avenue.

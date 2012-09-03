@@ -1,0 +1,10 @@
+title: Coin Change (I)
+keywords:
+  - dynamic programming
+judges:
+  lightoj: 1231
+setter: Jane Alam Jan
+summary: >
+  Find the number of ways to make $K$ money using $n$ types of coins, where
+  you also have the constraint that for each type of coin $A_i$ ($1 \leq i
+  \leq n$) you can use it a maximum number of $C_i$ times.

@@ -1,0 +1,14 @@
+title: Parity
+keywords:
+  - math
+  - beginner
+judges:
+  uva: 10931
+setter: Sérgio Queiroz de Medeiros
+similar:
+  - lightoj-1182
+contests:
+  - UFRN-2005 Contest 2
+summary: >
+  Determine the number of "on" bits in the binary representation of an
+  arbitrary positive integer.

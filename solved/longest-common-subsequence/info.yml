@@ -1,0 +1,10 @@
+title: Longest Common Subsequence
+keywords:
+  - dynamic programming
+judges:
+  uva: 10405
+setter: Piotr Rudnicki
+contests:
+  - November 2002 Monthly Contest
+summary: >
+  Find the length of the LCS between two strings.

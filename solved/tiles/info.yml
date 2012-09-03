@@ -1,5 +1,10 @@
 title: Tiles
-keywords: matrix exponentiation
+keywords:
+  - matrix exponentiation
 judges:
   lightoj: 1244
 setter: Jane Alam Jan
+summary: >
+  Find out the number of ways in which a $2 \times N$ board can be colored,
+  using 6 types of patterns, each with a different color: 2 from an "l" tile
+  (two squares) and 4 from an "L" tile (3 squares).

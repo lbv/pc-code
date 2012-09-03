@@ -1,4 +1,10 @@
 title: Parity
-keywords: beginner, math
+keywords:
+  - beginner
+  - math
 judges:
   lightoj: 1182
+setter: Jane Alam Jan
+summary: >
+  Given an integer $n$, find if its binary representation has an odd or even
+  number of bits set.

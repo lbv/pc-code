@@ -44,7 +44,7 @@ set <int> L;
 set <dual> S;
 
 int main() {
-	freopen("b.in","w",stdout);
+	//freopen("b.in","w",stdout);
 
 	cases = 10;
 	printf("%d\n", cases);

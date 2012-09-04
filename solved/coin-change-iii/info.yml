@@ -1,0 +1,10 @@
+title: Coin Change (III)
+keywords:
+  - dynamic programming
+judges:
+  lightoj: 1233
+setter: Jane Alam Jan
+summary: >
+  Given a number of coins of different value, and the number of times that
+  each coin can be used, determine the number of different integer amounts
+  of money can be made with the coins (inside a given range).

@@ -1,0 +1,20 @@
+title: Aladdin and the Magical Sticks
+keyword:
+  - probability
+  - expected value
+  - dynamic programming
+annotations:
+  - special judge
+judges:
+  lightoj: 1342
+setter: Jane Alam Jan
+summary: >
+  There is a number of objects that have to be picked, one by one, until all
+  of them have been picked (once you pick one object, you return it to the
+  pool of objects and have to pick again). However, the objects are of two
+  kinds, one that you can recognise easily so objects of this type are never
+  picked more than once, and the other is standard, so objects of this type
+  could be picked more than once.
+
+  Every object has a certain weight. Calculate the expected value of the
+  total weight of the objects picked until all the objects have been picked.

@@ -1,0 +1,16 @@
+title: My Dear Neighbours
+keywords:
+  - beginner
+  - data structures
+judges:
+  uva: 10928
+setter: Sérgio Queiroz de Medeiros
+contests:
+  - UFRN-2005 Contest 2
+summary: >
+  A list of houses and their neighbours will be presented to you. Find out
+  the places with the least amount of neighbours and print the list sorted.
+comments: >
+  The core of the problem is reading the input correctly. Other than that,
+  the problem statement doesn't even make much sense (X being neighbour of Y
+  doesn't imply Y being neighbour of X?).

@@ -1,0 +1,23 @@
+title: Harmonic Number
+keywords:
+  - math
+  - memoization
+  - number theory
+annotations:
+  - special judge
+judges:
+  lightoj: 1234
+setter: Jane Alam Jan
+summary: >
+  Given $n$, calculate $H_n$ (the nth term of the harmonic series).
+comments: >
+  There are at least two methods to solve this. The first one simply
+  involves using memoization, but as it's not possible to reserve memory for
+  $10^8$ *double* variables, you need to store just a certain fraction of
+  those numbers, and then compute the answers from the closest memo'ized
+  value you have.
+
+  The other approach involves using calculations from number theory. You can
+  look up an interesting approximation for $H_n$ from Wikipedia, involving
+  the natural logarithm of $n$, Euler's constant ($\gamma$) and Bernoulli's
+  numbers.

@@ -1,4 +1,12 @@
 title: One Way Roads
-keywords: depth first search
+keywords:
+  - depth first search
 judges:
   lightoj: 1049
+setter: Jane Alam Jan
+summary: >
+  A number $n$ of cities are connected by $n$ roads, formerly
+  bi-directional. However, the roads became one-way roads, and now the
+  cities may or may not be connected. Redirecting each road has a certain
+  cost; find the minimum cost to redirect some roads until all $n$ cities
+  are connected.

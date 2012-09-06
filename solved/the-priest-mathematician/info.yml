@@ -1,0 +1,13 @@
+title: The Priest Mathematician
+keywords:
+  - recursion
+  - big integer
+judges:
+  uva: 10254
+setter: Miguel Revilla
+contests:
+  - World Finals Warmup Occidental Contest
+summary: >
+  Think of the classic "Towers of Hanoi" problem, but this time you have 4
+  rods or needles instead of 3. Find out the minimum number of moves to
+  transfer $n$ disks from one rod to another.

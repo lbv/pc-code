@@ -1,0 +1,22 @@
+title: Self-describing Sequence
+keywords:
+  - recursion
+  - memoization
+judges:
+  uva: 10049
+setter: Rezaul Alam Chowdhury
+summary: >
+  Golomb's sequence is the only nondecreasing sequence such that for each
+  positive integer $k$, $f(k)$ describes the number of times that $k$ shows
+  up in the sequence.
+
+  Given the value of $k$, find the value $f(k)$.
+comments: >
+  A straightforward approach simply takes advantage of the fact that the
+  sequence "describes" itself, in the sense that its terms describe the
+  places where the value of the sequence changes. Using this observation and
+  a little memoization, it's possible to pre-calculate all required values
+  and use binary search to find the answers.
+
+  Another approach would be applying a recursive formula that produces the
+  terms of the sequence, but deducing this formula is not trivial.

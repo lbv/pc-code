@@ -1,0 +1,20 @@
+title: Coin Change (IV)
+keywords:
+  - bisection
+  - binary search
+  - hashing
+judges:
+  lightoj: 1235
+setter: Jane Alam Jan
+summary: >
+  Given $n$ (up to 18) coins with distinct values, find if it's possible to
+  make $K$ money. $K$ is large ($1 \leq K \leq 10^9$). Every coin can be
+  used a maximum of 2 times.
+comments: >
+  There are many ways to arrive to the answer, but given the tight time
+  limit, the core of the problem is partitioning the set of coins to reduce
+  the number of computations. One possible way to do it is splitting the set
+  in two halfs. From each half, calculate all the combinations that are
+  possible using each coin 0, 1 and 2 times. Then, for each value from one
+  half, try to locate its complement in the other half through binary search
+  or hashing.

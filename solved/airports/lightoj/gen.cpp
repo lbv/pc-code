@@ -39,8 +39,9 @@ void genCase( int n, int m, int A ) {
 }
 
 int main() {
-	freopen("j.in", "w", stdout);
+	//freopen("j.in", "w", stdout);
 
+	srand(time(NULL));
 	int cases = 11;
 
 	printf("%d\n", cases + 4);

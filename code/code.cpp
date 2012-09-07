@@ -45,11 +45,18 @@ struct Reader {
         *s = 0; char p = b; read();
         if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
 };
+struct LineReader {
+    char buf[BUF]; char b; int bi, bz;
+    bool read_line() {
+        bi = 0; bool r; if (gets(buf)) r = (bz = strlen(buf)) > 0;
+        else r = false, bz = 0; read(); return r; }
+    void read() { b = bi < bz ? buf[bi++] : 0; }
+}
 
 // Union-Find disjoint set
 struct Set {
     IV s;
-    Set(int n) { for (int i=0; i <= n; ++i) s.push_back(i); }
+    Set(int n) { for (int i=0; i < n; ++i) s.push_back(i); }
     int find(int i) { if (s[i] == i) return i; return s[i]=find(s[i]); }
     void merge(int i, int j) { s[find(i)] = find(j); }
 };

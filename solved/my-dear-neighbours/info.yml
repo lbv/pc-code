@@ -2,6 +2,8 @@ title: My Dear Neighbours
 keywords:
   - beginner
   - data structures
+annotations:
+  - irregular input
 judges:
   uva: 10928
 setter: Sérgio Queiroz de Medeiros

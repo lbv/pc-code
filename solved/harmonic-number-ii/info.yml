@@ -1,0 +1,15 @@
+title: Harmonic Number (II)
+keywords:
+  - math
+judges:
+  lightoj: 1245
+setter: Jane Alam Jan
+summary: >
+  Given $n$ (upper bound $2^{31}$), calculate the sum $n/1 + n/2 + \dots +
+  n/n$, using integer division.
+comments: >
+  This problem has little to do with harmonic numbers, and more with integer
+  division and its implication in a series like the one given.
+
+  Think about the value $n/(n/i)$ for each $i$ (using integer division
+  only), and how that can help you calculate the answer quickly.

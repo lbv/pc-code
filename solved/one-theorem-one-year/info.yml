@@ -1,0 +1,20 @@
+title: One Theorem, One Year
+keywords:
+  - number theory
+  - dynamic programming
+judges:
+  lightoj: 1298
+setter: Samir Ahmed
+thanks: Jane Alam Jan
+summary: >
+  Given two values $K, P$, calculate the sum of $\Phi(X)$ for all distinct
+  $X$, where $\Phi$ is Euler's Totient function and $X$ is a product of $K$
+  numbers chosen from the first $P$ primes.
+comments: >
+  The core of the problem consists of calculating the sums of all terms
+  $p_1^{e_1} \cdot p_2^{e_2} \cdot \dots \cdot p_P^{e_P}$ such that $K=e_1 +
+  e_2 + \dots + e_P$. There is an elegant D.P. solution for this with
+  complexity $O(K^2)$.
+
+  (Side note: I wonder where the title of this problem comes from... what
+  theorem? what year?)

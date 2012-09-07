@@ -1,7 +1,20 @@
-title: Air Ports
-keywords: minimum spanning tree
+title: Airports
+keywords:
+  - minimum spanning tree
+annotations:
+  - large input
 judges:
-  lightoj: 1059
-  uva:
-    id: 11733
-    title: Airports
+  uva: 11733
+  lightoj:
+    id: 1059
+    title: Air Ports
+setter: Muntasir Azam Khan
+thanks: Sohel Hafiz
+contests:
+  - A Bangladeshi Contest
+summary: >
+  A number of cities need to have access to an airport. A city has acces to
+  an airport if there's an airport on that city, or if there is a road from
+  that city to another that has an airport. You know the cost of building
+  airports and building roads between cities. Find the minimum cost to make
+  all the cities have access to some airport.

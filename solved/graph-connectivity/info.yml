@@ -1,0 +1,9 @@
+title: Graph Connectivity
+keywords:
+  - union-find
+annotations:
+  - irregular input
+judges:
+  uva: 459
+summary: >
+  Given a graph $G$, find the number of maximal connected sub-graphs in $G$.

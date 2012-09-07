@@ -1,0 +1,19 @@
+title: Stacks of Flapjacks
+keywords:
+  - beginner
+  - data structures
+annotations:
+  - special judge
+  - irregular input
+judges:
+  uva: 120
+summary: >
+  A stack of flapjacks, each with a different size, is given. You have to
+  report any sequence of steps that sorts the stack, leaving the largest
+  pancake on the bottom of the stack. The only possible move is to choose a
+  space between the pancakes, and flip all the pancakes on top of that
+  point.
+comments: >
+  Think about how it can be solved by solving its sub-problems: how to move
+  the largest pancake to the bottom, then how to move the second largest
+  pancake to the second position, etc.

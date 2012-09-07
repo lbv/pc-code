@@ -1,0 +1,14 @@
+title: H(n)
+keywords:
+  - math
+judges:
+  uva: 11526
+similar:
+  - lightoj-1245
+setter: Md. Arifuzzaman Arif
+thanks: Shahriar Manzoor
+contests:
+  - ACM ICPC::Regional Warmup 2
+summary: >
+  Given $n$, find the summation $n/1 + n/2 + \dots + n/n$, using integer
+  division.

@@ -1,0 +1,10 @@
+title: Coin Change
+keywords:
+  - dynamic programming
+judges:
+  uva: 674
+similar:
+  - lightoj-1232
+summary: >
+  There are 5 types of coins. Find the number of ways to make a certain
+  amount of money using the coins.

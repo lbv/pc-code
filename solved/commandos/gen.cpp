@@ -28,7 +28,8 @@ int cases, save[50000][2];
 int cap[101][101];
 
 int main() {
-	freopen("e.in", "w", stdout);
+	//freopen("e.in", "w", stdout);
+	srand(time(NULL));
 
 	cases = 45;
 	printf("%d\n", cases);

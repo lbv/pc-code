@@ -1,0 +1,14 @@
+title: Find the Ways!
+keywords:
+  - math
+  - memoization
+annotations:
+  - assumptions
+judges:
+  uva: 10219
+setter: Ahmed Shamsul Arefin
+summary: >
+  Find the number of digits in $\binom{n}{k}$.
+comments: >
+  It seems like $n$ and $k$ are in the range of a standard 4-byte `int`, and
+  they are not so large to make it impossible to memoize the logarithms.

@@ -1,0 +1,10 @@
+title: Dice (II)
+keywords:
+  - dynamic programming
+judges:
+  lightoj: 1193
+setter: Jane Alam Jan
+summary: >
+  There are $N$ dice, each with $K$ sides. There are a number of arragements
+  of the dice that add up to $S$. Find the sum of the products of the
+  numbers from all those arrangements.

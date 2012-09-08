@@ -1,0 +1,13 @@
+title: Dice (III)
+keywords:
+  - probability
+  - expected value
+judges:
+  lightoj: 1248
+setter: Jane Alam Jan
+summary: >
+  For a $n$-sided die, find the expected number of tosses until you have
+  seen all of its faces.
+comments: >
+  Also known as the Coupon Collector's Problem. It has an elegant solution
+  involving harmonic numbers.

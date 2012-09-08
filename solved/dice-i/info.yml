@@ -1,0 +1,12 @@
+title: Dice (I)
+keywords:
+  - dynamic programming
+judges:
+  lightoj: 1145
+setter: Jane Alam Jan
+summary: >
+  You have $N$ dice, each with $K$ faces. In how many ways can you arrange
+  the dice to make a total sum of exactly $S$?
+comments: >
+  Think about storing prefix sums, to avoid iterating $K$ times for each
+  element.

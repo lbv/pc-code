@@ -1,0 +1,15 @@
+title: Playing With Wheels
+keywords:
+  - breadth first search
+judges:
+  uva: 10067
+setter: Rezaul Alam Chowdhury
+thanks: Shahriar Manzoor
+similar:
+  - lightoj-1039
+summary: >
+  Four wheels with the digits 0..9 are placed side by side, so they form a
+  four-digit number. By pressing buttons, you can move any wheel to one side
+  or the other. Find the minimum number of presses to make the wheels show a
+  certain number, considering that there are some "forbidden" configurations
+  which the wheels should not show.

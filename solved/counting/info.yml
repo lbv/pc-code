@@ -1,0 +1,16 @@
+title: Counting
+keywords:
+  - counting
+  - dynamic programming
+  - big integer
+judges:
+  uva: 10198
+contests:
+  - Universidade do Brasil (UFRJ) Internal Contest 2001
+summary: >
+  You have four symbols: 1, 2, 3 and 4, all representing their corresponding
+  values expect for 4 which has a value of 1 (so there are two symbols for
+  one).
+
+  Given an integer $n$, find the number of different ways you can write a
+  sequence of symbols that add up to $n$.

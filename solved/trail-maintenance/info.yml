@@ -1,4 +1,9 @@
 title: Trail Maintenance
-keywords: minimum spanning tree, kruskal
+keywords:
+  - minimum spanning tree
+  - kruskal
 judges:
   lightoj: 1123
+summary: >
+  A graph is constructed by adding edges one by one. Report the length of a
+  minimum spanning tree at each step.

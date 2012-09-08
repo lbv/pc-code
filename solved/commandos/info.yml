@@ -1,5 +1,18 @@
 title: Commandos
-keywords: floyd warshall, shortest path, breadth first search
+keywords:
+  - floyd-warshall
+  - breadth first search
 judges:
   lightoj: 1174
   uva: 11463
+setter: Shamim Hafiz
+thanks: Md. Arifuzzaman Arif
+contests:
+  - A Malaysian Contest
+summary: >
+  There is a group of cities that must be visited by a group of commandos;
+  there is an unlimited number of commandos and they all take one unit of
+  time to move from city to city. They start at a certain city (the base),
+  and they all have to meet up at a destination in the end. Find the minimum
+  time required for the commandos to visit all the cities and meet up in the
+  allocated city afterwards.

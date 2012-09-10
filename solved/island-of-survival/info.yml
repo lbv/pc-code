@@ -1,0 +1,15 @@
+title: Island of Survival
+keywords:
+  - probability
+  - dynamic programming
+annotations:
+  - special judge
+judges:
+  lightoj: 1265
+summary: >
+  You are left on an island with a number of tigers and deer. Each day two
+  creatures from the island (including you) selected at random are faced
+  with each other. A tiger kills any opponent (including other tigers), and
+  if you face a deer, you con choose to either kill it or not. Determine the
+  probability that at some point in the future you will be completely safe
+  (no tigers are left on the island).

@@ -1,0 +1,21 @@
+title: Bridge
+keywords:
+  - greedy
+  - data structures
+  - sorting
+judges:
+  uva: 10037
+setter: Gordon V. Cormack
+summary: >
+  A number $n$ of people have to cross a bridge at night, using only one
+  flashlight. A maximum of two people can cross the bridge at any time, and
+  each person moves at a specified speed.  Devise a sequence of moves so
+  they all cross the bridge in the minimum time possible.
+comments: >
+  Notice that, until you have two or less people waiting to cross the
+  bridge, you have to send two people over, and one has to come back
+  ---consider all that as one move. Now, it's not necessary to consider all
+  possible pairs to find the best option. Just check the two fastest, the two
+  slowest, and the fastest and slowest, and see which of those three pairs
+  provide the best overall option. The one that returns can always be the
+  fastest from the other side.

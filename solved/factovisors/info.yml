@@ -1,0 +1,10 @@
+title: Factovisors
+keywords:
+  - number theory
+judges:
+  uva: 10139
+setter: Gordon V. Cormack
+contests:
+  - Summer keep-fit 1
+summary: >
+  Given two integers $n$ and $m$, find if $m$ divides $n!$ or not.

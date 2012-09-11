@@ -1,4 +1,10 @@
 title: Road Construction
-keywords: minimum spanning tree
+keywords:
+  - minimum spanning tree
 judges:
   lightoj: 1041
+summary: >
+  A group of cities are connected through bi-directional roads. However,
+  some of the roads are damaged. Knowing the cost of fixing any road, find
+  the minimum cost of fixing roads so that there is a path between any pair
+  of cities.

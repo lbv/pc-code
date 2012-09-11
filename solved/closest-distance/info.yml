@@ -1,0 +1,13 @@
+title: Closest Distance
+keywords:
+  - ternary search
+  - geometry
+annotations:
+  - special judge
+judges:
+  lightoj: 1146
+setter: Jane Alam Jan
+summary: >
+  Two particles move equal distances (although not necessarily from the same
+  origin or destinations) with the same, constant, speed. Find the minimum
+  distance between them during their travel.

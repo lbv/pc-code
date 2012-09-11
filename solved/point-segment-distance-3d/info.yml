@@ -1,0 +1,10 @@
+title: Point Segment Distance (3D)
+keywords:
+  - ternary search
+  - geometry
+annotations:
+  - special judge
+setter: Jane Alam Jan
+summary: >
+  Given a segment of a line in 3D, described by their end-points, and a
+  third point, find the minimum distance between the point and the segment.

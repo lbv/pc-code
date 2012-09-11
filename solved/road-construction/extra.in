@@ -1,4 +1,4 @@
-2
+3
 
 3
 A B 3
@@ -9,3 +9,10 @@ A A 5
 Moscow Kiev 1
 Minsk Kiev 0
 Minsk Warsaw 0
+
+5
+A E 5
+D B 11
+E B 3
+D C 7
+F D 0

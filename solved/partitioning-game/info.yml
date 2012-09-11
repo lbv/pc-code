@@ -1,0 +1,14 @@
+title: Partitioning Game
+keywords:
+  - game theory
+  - sprague-grundy theorem
+judges:
+  lightoj: 1199
+setter: Jane Alam Jan
+summary: >
+  A game is played between two players, where there are initially $n$ piles,
+  each with a number of blocks. Each move consiste of splitting one pile
+  into two, uneven piles. The loser is the person who can't split any pile.
+
+  Given the initial piles and the name of the player who moves first,
+  determine the winner.

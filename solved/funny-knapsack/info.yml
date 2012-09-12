@@ -1,0 +1,11 @@
+title: Funny Knapsack
+keywords:
+  - bisection
+  - binary search
+judges:
+  lightoj: 1127
+setter: Jane Alam Jan
+summary: >
+  You have $n$ objects (30 maximum), each with a possibly large weight
+  ($10^9$), and a knapsack with a large capacity. Find out the number of
+  combinations of objects that fit in the knapsack.

@@ -1,0 +1,27 @@
+title: Gathering Food
+keywords:
+  - breadth first search
+judges:
+  uva: 11487
+  lightoj:
+    id: 1066
+    summary: >
+      A maze is given with letters from the english alphabet on some cells,
+      always starting with A, and increasing in order. You start on cell
+      'A', and have to visit all other letters in order, without stepping on
+      cells that would result in the wrong order of visitations. Determine
+      the minimum number of steps to do this.
+setter: Sohel Hafiz
+thanks: Md. Arifuzzaman Arif
+contests:
+  - ACM ICPC::Regional Warmup 1 (Easy version)
+summary: >
+  A maze is given with letters from the english alphabet on some cells,
+  always starting with A, and increasing in order. You start on cell 'A',
+  and have to visit all other letters in order, without stepping on cells
+  that would result in the wrong order of visitations. Determine the minimum
+  number of steps to do this, as well as the number of different shortest
+  paths that accomplish the task.
+comments: >
+  Notice that in LightOJ there is a simplified version of the original
+  problem.

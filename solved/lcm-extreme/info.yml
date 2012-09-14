@@ -9,3 +9,7 @@ contests:
   - Regionals 2011, Asia-Kanpur
 setter: Jane Alam Jan
 thanks: Derek Kisman, Tasnim Imran Sunny
+links:
+  - url: http://apps.topcoder.com/forums/?module=Thread&threadID=729936&start=0&mc=2
+    description: Summary of one valid approach to solve this problem in
+                 TopCoder's forums.

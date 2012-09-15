@@ -1,6 +1,16 @@
 title: Patch Quilt
-keywords: depth first search, pruning
+keywords:
+  - depth first search
+  - pruning
 judges:
   lightoj: 1434
 setter: Leonardo Boshell
 thanks: Jane Alam Jan
+summary: >
+  A certain number of names are hidden inside a rectangle of letters. To
+  find a name, you can start at any position, and move to any adjacent
+  position for the next letter (including diagonals and even not moving). If
+  a name is found, it's guaranteed that there will only be one way to find
+  it. Given a rectangle of letters, and a list of names, determine the
+  location of each name if it's found, or report that it's not found
+  otherwise.

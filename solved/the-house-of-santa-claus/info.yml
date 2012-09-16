@@ -11,5 +11,5 @@ summary: >
   lifting the pencil and without drawing over the same line more than once.
   Find all the possible ways to do it starting on the bottom left corner.
 comments: >
-  Just ignore the bogus output. Why would anyone think it was a good idea to
-  include that confusing data in the problem statement is a mistery.
+  Just ignore the bogus output given. Why would anyone think it was a good
+  idea to include that confusing data in the problem statement is a mystery.

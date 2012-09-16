@@ -1,0 +1,10 @@
+title: Quirksome Squares
+keywords:
+  - beginner
+  - ad-hoc
+judges:
+  uva: 256
+summary: >
+  Find all numbers of 2, 4, 6, or 8 digits, such that when divided into two
+  numbers $a$ and $b$ ($a$ with the first half of the digits, and $b$ with
+  th rest), $(a+b)^2$ equals the original number.

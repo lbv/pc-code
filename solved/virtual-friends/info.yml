@@ -1,0 +1,13 @@
+title: Virtual Friends
+keywords:
+  - union-find
+judges:
+  uva: 11503
+setter: Ondřej Lhoták
+contests:
+  - Waterloo ACM Programming Contest Fall 1
+summary: >
+  You receive a list of pairs of names. Each pair represents that a
+  connection between two people has been made. Every time a connection is
+  created, report the number of people in the extended network of the
+  relevant people.

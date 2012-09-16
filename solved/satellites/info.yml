@@ -1,0 +1,13 @@
+title: Satellites
+keywords:
+  - beginner
+  - geometry
+judges:
+  uva: 10221
+setter: Ahmed Shamsul Arefin
+summary: >
+  Given the radius of a circle, and the angle between two points in its
+  circumference, determine the length of the arc and the chord between them.
+comments: >
+  The arc distance have to be the minimum possible value between the two
+  points.

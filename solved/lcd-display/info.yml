@@ -1,0 +1,9 @@
+title: LCD Display
+keywords:
+  - beginner
+  - ad-hoc
+judges:
+  uva: 706
+summary: >
+  Print a number using vertical and horizontal bars, as is commonly done in
+  a calculator display. The size of the numbers is variable.

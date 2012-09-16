@@ -1,0 +1,10 @@
+title: Network Connections
+keywords:
+  - union-find
+judges:
+  uva: 793
+summary: >
+  You have to process two types of commands related to a network of $n$
+  nodes. One type of command is connecting two nodes inside the network, the
+  other is a query asking if two nodes are connected or not (directly or
+  indirectly).

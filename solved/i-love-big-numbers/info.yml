@@ -1,0 +1,7 @@
+title: I Love Big Numbers!
+keywords:
+  - big integers
+setter: Ahmed Shamsul Arefin
+summary: >
+  Given an integer $n$ (maximum 1000), determine the sum of the digits of
+  $n!$.

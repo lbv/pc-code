@@ -1,0 +1,15 @@
+title: How many nodes?
+keywords:
+  - catalan numbers
+  - precalculation
+judges:
+  uva: 10223
+setter: Ahmed Shamsul Arefin
+summary: >
+  Given a number $n$, representing a number of different binary trees, find
+  out how many nodes it's necessary to build $n$ distinct binary trees.
+comments: >
+  This is the inverse of the problem "Hoe many trees?" (UVa ID 10303).
+  Notice that the answer is expected to be the highest number of nodes to
+  produce a maximum of $n$ trees, so this means the answer for $n=1$ is 1
+  and not zero.

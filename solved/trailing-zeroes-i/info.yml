@@ -1,5 +1,9 @@
 title: Trailing Zeroes (I)
-keywords: number theory
+keywords:
+  - number theory
 judges:
   lightoj: 1028
 setter: Jane Alam Jan
+summary: >
+  Given a possibly large integer $N$ (maximum $10^{12}$), find out the
+  number of bases in which that number has at least one trailing zero.

@@ -1,0 +1,12 @@
+title: (2/3/4)-D Sqr/Rects/Cubes/Boxes?
+keywords:
+  - counting
+judges:
+  uva: 10177
+setter: Shahriar Manzoor
+contests:
+  - 2001 Regionals Warmup Contest
+summary: >
+  Given a magnitude $N$, count the number of perfect squares, cubes and
+  hypercubes in shapes of size $N^2, N^3, N^4$, as well as rectangles, boxes
+  and hyperboxes (not perfect subdivisions) in those shapes.

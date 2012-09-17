@@ -1,0 +1,26 @@
+title: Decode the Mad Man
+keywords:
+  - beginner
+  - ad-hoc
+annotations:
+  - assumptions
+judges:
+  uva: 10222
+similar:
+  - uva-10082
+setter: Ahmed Shamsul Arefin
+summary: >
+  Decode a string, by replacing each character by the character two
+  positions to its left in a standard US keyboard.
+comments: >
+  This problem was created with a complete disregard for the fact that there
+  are many types of keyboards. Consider this as the entries in the keyboard:
+
+  ~~~~
+  qwertyuiop[]
+  asdfghjkl;'
+  zxcvbnm,.
+  ~~~~
+
+  In addition, note how the input can have uppercase or lowercase letters.
+  The output must always use lowercase letters.

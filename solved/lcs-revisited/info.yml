@@ -1,0 +1,19 @@
+title: LCS Revisited
+keywords:
+  - dynamic programming
+  - longest common subsequence
+judges:
+  lightoj: 1157
+setter: Jane Alam Jan
+summary: >
+  Find out the number of distinct LCS between two strings.
+comments: >
+  Think of dividing the problem into subproblems considering each letter of
+  the alphabet and the next letter of a LCS at any arbitrary position. In
+  other words, from indices $(i, j)$ inside the strings $s$ and $t$
+  respectively, find positions (m, n) with $m > i$ and $n > j$ such that
+  $s(m)=t(n)$ and $\text{lcs}(m, n) = \text{lcs}(i, j) + 1$ and add the
+  partial solution from $(m, n)$ to $(i, j)$.
+links:
+  - url: http://www.codechef.com/wiki/tutorial-lcs-problem-revisited
+    description: Analysis of the problem.

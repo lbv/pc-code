@@ -1,0 +1,16 @@
+title: Investigating Div-Sum Property
+keywords:
+  - dynamic programming
+judges:
+  uva: 11361
+  lightoj:
+    id: 1068
+    title: Investigation
+setter: Sohel Hafiz
+thanks: Ivan Krasilnikov
+contests:
+  - Next Generation Contest - IV
+summary: >
+  Given the integers $A, B, K$, find out how many integers between $A$ and
+  $B$ have the property that they are divisible by $K$, and the sum of their
+  digits is also divisible by $K$.

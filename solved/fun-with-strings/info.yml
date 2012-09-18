@@ -11,3 +11,12 @@ setter: Md. Towhidul Islam Talukder
 thanks: Jane Alam Jan
 contests:
   - Next Generation Contest 6
+summary: >
+  Consider strings formed from the alphabet { a, b }. A sequence of strings
+  can be originated from any initial string, where the next string in the
+  sequence is obtained by replacing all occurrences of 'a' with 'b', and all
+  'b' with 'ab'.
+
+  Now you are given 5 integers $N, X, M, Y, K$ that indicate that the $N$th
+  term of the sequence is a string of length $X$, while the $M$th term has
+  length $Y$. Determine the length of the $K$th term, if possible.

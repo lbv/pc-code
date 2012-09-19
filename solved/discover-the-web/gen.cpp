@@ -41,7 +41,7 @@ void randomUrl( char *a ) {
 }
 
 int main() {
-	freopen("d.in", "w", stdout);
+	//freopen("d.in", "w", stdout);
 
 	double cl = clock();
 

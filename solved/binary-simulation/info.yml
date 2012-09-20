@@ -1,0 +1,12 @@
+title: Binary Simulation
+keywords:
+  - binary indexed tree
+annotations:
+  - large input
+judges:
+  lightoj: 1080
+setter: Jane Alam Jan
+summary: >
+  Given a sequence of bits, you have to perform two types of operations over
+  the sequence: flip a range of bits, or query the state of a particular
+  bit.

@@ -1,0 +1,12 @@
+title: Points in Rectangle
+keywords:
+  - binary indexed tree
+annotations:
+  - large input
+judges:
+  lightoj: 1266
+setter: Jane Alam Jan
+summary: >
+  You receive a sequence of operations of two types: one is add a point to
+  the cartesian plane, and another one is query how many points lie inside a
+  given rectangle. Answer the queries.

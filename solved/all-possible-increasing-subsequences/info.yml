@@ -1,0 +1,12 @@
+title: All Possible Increasing Subsequences
+keywords:
+  - sorting
+  - binary indexed tree
+annotations:
+  - large input
+judges:
+  lightoj: 1085
+setter: Jane Alam Jan
+summary: >
+  You receive a large sequence of numbers. Count the total number of
+  strictly increasing subsequences in that sequence.

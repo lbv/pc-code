@@ -1,0 +1,12 @@
+title: Curious Robin Hood
+keywords:
+  - binary indexed tree
+annotations:
+  - large input
+judges:
+  lightoj: 1112
+setter: Jane Alam Jan
+summary: >
+  Given a large array of integers, you have to perform three types of
+  operations over it: empty a given position (set it to zero), add a value
+  to a position, find the total sum between two indices.

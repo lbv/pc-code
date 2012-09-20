@@ -1,0 +1,13 @@
+title: Array Queries
+keywords:
+  - range minimum query
+annotations:
+  - large input
+  - classic
+judges:
+  lightoj: 1082
+setter: Jane Alam Jan
+summary: >
+  Given a static array of integers and a number of queries of the form $i,
+  j$, answer the minimum value found in the array between the indices $i$
+  and $j$.

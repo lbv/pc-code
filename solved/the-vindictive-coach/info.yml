@@ -1,0 +1,24 @@
+title: The Vindictive Coach
+keywords:
+  - counting
+  - dynamic programming
+judges:
+  uva: 702
+  lightoj: 1173
+setter: Miguel Revilla
+summary: >
+  You have a list of the first $n$ positive integers (maximum 22 or 50,
+  depending on the judge), and an integer $m$ in the range $[1:n]$ which
+  indicates the starting point. You have to produce a sequence of numbers
+  that alternate between smaller, bigger, smaller, bigger, and so on. If $m$
+  is the lowest number (1), then the second number second number has to be
+  the closest as possible to it, while still maintaining the zig-zag in the
+  sequence.
+
+  Count the number of ways in which such a sequence can be chosen.
+comments: >
+  Notice that the wording of the problem statement is a little ambiguous
+  ("Even in this case.."). The numbers can be chosen arbitrarily as long as
+  they alternate between smaller and bigger. The only special case is if
+  $m=1$, and in that case the second number has to be 3 (if $N>2$), and then
+  2, and then it continues normally.

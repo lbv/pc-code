@@ -1,4 +1,6 @@
 // Macros
+#define Back(b)    ((b) & -(b))
+#define PopBack(b) (b &= ~Back(b))
 #define Neg(v)  memset((v), -1, sizeof(v))
 #define Zero(v) memset((v), 0, sizeof(v))
 #define For(t,v,c)   for(t::iterator v=c.begin(); v != c.end(); ++v)
@@ -885,6 +887,17 @@ struct HM {
 };
 
 //
+// Binary Indexed Tree
+//
+struct Bit {
+    IV f; int n;
+    Bit(int N) : n(N) { f = IV(N + 1); }
+    void add(int i, int v) { while (i <= n) { f[i] += v; i += Back(i); } }
+    int query(int i) {
+        int r = 0; while (i) { r += f[i]; i -= Back(i); } return r; }
+};
+
+//
 // Time - Leap years
 //
 // A[i] has the accumulated number of days from months previous to i
@@ -993,8 +1006,6 @@ u32 next_popcount(u32 n)
 }
 // Returns first integer with exactly n bits set
 u32 init_popcount(int n) { return (1 << n) - 1; }
-#define Back(b)    ((b) & -(b))
-#define PopBack(b) (b &= ~Back(b))
 // values of (1 << x) for x<32 are unique modulo 37
 static const int m37pos[] = {
     32,  0,  1, 26,  2, 23, 27,  0,  3,

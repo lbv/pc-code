@@ -18,6 +18,10 @@ u64 rand_u64()
 void test_case()
 {
     u64 n = rand_u64() % MOD + 1;
+
+    if (rand() % 50 == 0)
+        n = rand() % 1000 + 1;
+
     printf("%llu\n", n);
 }
 

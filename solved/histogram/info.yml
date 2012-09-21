@@ -1,0 +1,20 @@
+title: Histogram
+keywords:
+  - range minimum query
+  - divide-and-conquer
+annotations:
+  - large input
+judges:
+  lightoj: 1083
+summary: >
+  You receive the description of a histogram; a series of heights of
+  rectangles that are placed next to each other with a common base line, all
+  of width 1. Determine the largest area of a rectangle that is completely
+  inside the outline of the histogram.
+comments: >
+  Think of a divide-and-conquer strategy. Let's say that you want to find
+  the largest area in a region where the minimum height is $m$ and its
+  position is $x$. Then there are in general three possibilities for finding
+  the largest area in that region: $m$ times the width, or the largest for
+  the region to the left of $x$, or the largest for the region to the right
+  of $x$.

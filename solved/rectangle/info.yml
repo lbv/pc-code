@@ -1,0 +1,17 @@
+title: Rectangle
+keywords:
+  - range minimum query
+  - divide-and-conquer
+judges:
+  uva: 12462
+similar:
+  - lightoj-1083
+setter: Andrés Mejía-Posada
+contests:
+  - Colombian Collegiate Programming League 201
+summary: >
+  You are given the description of a histogram; a series of heights and
+  colors for rectangles of width 1 that are placed next to each other, over
+  a common base line. You have to determine the maximum area of a rectangle
+  that lies completely inside the histogram and covers a positive area of
+  all colors in the histogram.

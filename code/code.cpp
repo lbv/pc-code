@@ -898,6 +898,60 @@ struct Bit {
 };
 
 //
+// Segment Tree
+//
+struct SegTree {
+    IV A, M; int n;
+    SegTree(int N) : n(N) {
+        A.resize(n); int h = 1 + ceil(log2(n)); M.resize(1 << h); }
+    void init() { tree_init(1, 0, n - 1); }
+    int query_val(int i, int j) { return A[tree_query(1, 0, n - 1, i, j)]; }
+    int query_idx(int i, int j) { return tree_query(1, 0, n - 1, i, j); }
+    void tree_init(int x, int a, int b) {
+        if (a == b) { M[x] = a; return; }
+        int l = 2*x, r = 2*x + 1, m = (a+b)/2;
+        tree_init(l, a, m);
+        tree_init(r, m + 1, b);
+        M[x] = A[M[l]] <= A[M[r]] ? M[l] : M[r];
+    }
+    int tree_query(int x, int a, int b, int i, int j) {
+        if (j < a || i > b) return -1;
+        if (a >= i && b <= j) return M[x];
+        int l = 2*x, r = 2*x + 1, m = (a+b)/2;
+        int q1 = tree_query(l, a, m, i, j);
+        int q2 = tree_query(r, m + 1, b, i, j);
+        if (q1 < 0) return q2;
+        if (q2 < 0) return q1;
+        return A[q1] <= A[q2] ? q1 : q2;
+    }
+};
+
+//
+// Sparse Table
+//
+struct SpTable {
+    IV A; IIV M; int n;
+    SpTable(int N) : n(N) {
+        A.resize(n); int l = 1 + ceil(log2(n));
+        M = IIV(n, IV(l));
+    }
+    void init() {
+        for (int i = 0; i < n; ++i) M[i][0] = i;
+        for (int j = 1, p = 2, q = 1; p <= n; ++j, p <<= 1, q <<= 1)
+            for (int i = 0; i + p - 1 < n; ++i) {
+                int a = M[i][j - 1], b = M[i + q][j - 1];
+                M[i][j] = A[a] <= A[b] ? a : b;
+            }
+    }
+    int query_val(int i, int j) { return A[query_idx(i, j)]; }
+    int query_idx(int i, int j) {
+        int k = log2(j - i + 1);
+        int a = M[i][k], b = M[j + 1 - (1<<k)][k];
+        return A[a] <= A[b] ? a : b;
+    }
+};
+
+//
 // Time - Leap years
 //
 // A[i] has the accumulated number of days from months previous to i

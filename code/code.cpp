@@ -1,6 +1,6 @@
 // Macros
-#define Back(b)    ((b) & -(b))
-#define PopBack(b) (b &= ~Back(b))
+#define GetFS(b) ((b) & -(b))
+#define ClrFS(b) (b &= ~GetFS(b))
 #define Neg(v)  memset((v), -1, sizeof(v))
 #define Zero(v) memset((v), 0, sizeof(v))
 #define For(t,v,c)   for(t::iterator v=c.begin(); v != c.end(); ++v)
@@ -891,32 +891,31 @@ struct HM {
 //
 struct Bit {
     IV f; int n;
-    Bit(int N) : n(N) { f = IV(N + 1); }
-    void add(int i, int v) { while (i <= n) { f[i] += v; i += Back(i); } }
+    Bit(int N) : n(N) { f = IV(n + 1); }
+    void add(int i, int v) { while (i <= n) { f[i] += v; i += GetFS(i); } }
     int query(int i) {
-        int r = 0; while (i) { r += f[i]; i -= Back(i); } return r; }
+        int r = 0; while (i) { r += f[i]; i -= GetFS(i); } return r; }
 };
 
 //
 // Segment Tree
 //
 struct SegTree {
-    IV A, M; int n;
+    IV A, T; int n;
     SegTree(int N) : n(N) {
-        A.resize(n); int h = 1 + ceil(log2(n)); M.resize(1 << h); }
+        A.resize(n); int h = 1 + ceil(log2(n)); T.resize(1 << h); }
     void init() { tree_init(1, 0, n - 1); }
-    int query_val(int i, int j) { return A[tree_query(1, 0, n - 1, i, j)]; }
-    int query_idx(int i, int j) { return tree_query(1, 0, n - 1, i, j); }
+    int query(int i, int j) { return tree_query(1, 0, n - 1, i, j); }
     void tree_init(int x, int a, int b) {
-        if (a == b) { M[x] = a; return; }
+        if (a == b) { T[x] = a; return; }
         int l = 2*x, r = 2*x + 1, m = (a+b)/2;
         tree_init(l, a, m);
         tree_init(r, m + 1, b);
-        M[x] = A[M[l]] <= A[M[r]] ? M[l] : M[r];
+        T[x] = A[T[l]] <= A[T[r]] ? T[l] : T[r];
     }
     int tree_query(int x, int a, int b, int i, int j) {
         if (j < a || i > b) return -1;
-        if (a >= i && b <= j) return M[x];
+        if (a >= i && b <= j) return T[x];
         int l = 2*x, r = 2*x + 1, m = (a+b)/2;
         int q1 = tree_query(l, a, m, i, j);
         int q2 = tree_query(r, m + 1, b, i, j);

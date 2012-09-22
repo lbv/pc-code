@@ -1,0 +1,12 @@
+title: Frequent Values
+keywords:
+  - segment tree
+judges:
+  uva: 11235
+contests:
+  - Ulm Local Contest
+summary: >
+  You receive a large array of integers in non-decreasing order, and a
+  series of queries. For each query, that contains two indices $i$ and $j$,
+  answer with the number of occurrences of the most frequent value in that
+  range.

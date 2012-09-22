@@ -1,0 +1,20 @@
+title: Diablo
+keywords:
+  - segment tree
+annotations:
+  - large input
+judges:
+  lightoj: 1087
+setter: Jane Alam Jan
+summary: >
+  You have a large list of integers and you have to perform two operations
+  over the list: append an integer to the list, or get the ith element from
+  the list.
+comments: >
+  To solve it with a segment tree, think of an array of size $n+q$, and
+  in the tree store the size (number of nodes) of each subtree. This means
+  that, initially, every leaf in the tree that corresponds to index $i$ of
+  the array would have a value of 1 if $i < n$ or 0 otherwise. Then
+  implement *query* and *update* operations such that every query turns the
+  value of the leaf to zero, and all its ancestors are updated accordingly,
+  and in an update, the leaf turns into 1, and the ancestors are updated.

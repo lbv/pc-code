@@ -1,0 +1,15 @@
+title: Stacking Boxes
+keywords:
+  - sorting
+  - depth first search
+annotations:
+  - special judge
+judges:
+  uva: 103
+summary: >
+  A tuple of $n$ integers is said to be "nested" inside another if there
+  exists a permutation of the $n$ values in one of the tuples such that
+  every integer is smaller than the same position from the other tuple.
+  Given $k$ tuples, determine the largest number of tuples that can be
+  nested in chain, and print the numbers of one possible order of the
+  nesting.

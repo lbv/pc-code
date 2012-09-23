@@ -1,0 +1,35 @@
+title: Census
+keywords:
+  - segment tree
+annotations:
+  - assumptions
+judges:
+  uva: 11297
+setter: Rodrigo Burgos Domínguez
+contests:
+  - The Relaxation Contest
+summary: >
+  Given a 2D grid of integers, you have to perform two types of actions:
+  change the value in a given cell of the grid, or query the maximum and
+  minimum values of a rectangle inside the grid.
+comments: >
+  This problem has one of the most confusing and lacking descriptions you
+  could find. It's a shame, because the problem behind it is really
+  interesting, but it's butchered by one of the sloppiest jobs made by a
+  problem setter.
+
+  These are some things that have been revealed in the forums by the
+  community:
+
+  * The grid is not of size $N \times N$ but $N \times M$. The first line of
+    the input has the values of $N$ and $M$.
+  * When in doubt, believe what the sample implicitly states, not the
+    description. For example, the queries do start with a character 'q' or
+    'c'.
+  * All integers seem to fit in a 32bit signed integer.
+  * Apparently it's possible that the queries provide indices that go
+    outside the bounderies of the grid. Make sure you handle this correctly.
+  * The "change" in population is simply setting the cell to a new value,
+    not adding or subtracting from it.
+  * The indices are in the following ranges:
+    $1 \leq x \leq N$, $1 \leq y \leq M$.

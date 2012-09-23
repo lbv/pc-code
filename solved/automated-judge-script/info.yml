@@ -1,0 +1,15 @@
+title: Automated Judge Script
+keywords:
+  - beginner
+  - strings
+judges:
+  uva: 10188
+summary: >
+  You receive two sets of lines of text that have to be compared, and you
+  have to answer with one of three messages:
+
+  * *Accepted* if the two sets of text are equal
+  * *Presentation Error* if the sets are not equal, but the numeric
+    characters in both sets are the same (they could be separated by other
+    characters, but they have to be in the same order).
+  * *Wrong Answer* otherwise.

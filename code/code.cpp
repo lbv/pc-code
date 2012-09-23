@@ -908,17 +908,17 @@ struct SegTree {
     int query(int i, int j) { return tree_query(1, 0, n - 1, i, j); }
     void tree_init(int x, int a, int b) {
         if (a == b) { T[x] = a; return; }
-        int l = 2*x, r = 2*x + 1, m = (a+b)/2;
-        tree_init(l, a, m);
-        tree_init(r, m + 1, b);
-        T[x] = A[T[l]] <= A[T[r]] ? T[l] : T[r];
+        int lt = 2*x, rt = lt + 1, md = (a+b)/2;
+        tree_init(lt, a, md);
+        tree_init(rt, md + 1, b);
+        T[x] = A[T[lt]] <= A[T[rt]] ? T[lt] : T[rt];
     }
     int tree_query(int x, int a, int b, int i, int j) {
         if (j < a || i > b) return -1;
         if (a >= i && b <= j) return T[x];
-        int l = 2*x, r = 2*x + 1, m = (a+b)/2;
-        int q1 = tree_query(l, a, m, i, j);
-        int q2 = tree_query(r, m + 1, b, i, j);
+        int lt = 2*x, rt = lt + 1, md = (a+b)/2;
+        int q1 = tree_query(lt, a, md, i, j);
+        int q2 = tree_query(rt, md + 1, b, i, j);
         if (q1 < 0) return q2;
         if (q2 < 0) return q1;
         return A[q1] <= A[q2] ? q1 : q2;

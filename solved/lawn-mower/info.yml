@@ -1,0 +1,12 @@
+title: Lawn Mower
+keywords:
+  - sorting
+judges:
+  uva: 12269
+summary: >
+  A rectangular field is to be covered by a number of "passes" of a lawn
+  mower that moves from side to side, either from left to right or bottom to
+  top. The mower has a width $w$ such that, when it goes through a
+  coordinate $x$ or $y$, the segment $x - w/2, x + w/2$ or $y - w/2, y +
+  w/2$ is covered. You receive a description of the passes from the mower.
+  Determine if the complete field was covered in both orientations.

@@ -1,0 +1,17 @@
+title: Tiles (II)
+keywords:
+  - dynamic programming
+  - bitmask calculations
+judges:
+  lightoj: 1270
+setter: Jane Alam Jan
+summary: >
+  Consider a rectangular board of size $M \times N$ where the minimum
+  between $M$ and $N$ is at most 8. There are also 6 types of tiles: two
+  tiles with 2 blocks each (each block of size $1 \times 1$) and in the
+  shape of vertical and horizontal bars, and four tiles with 3 blocks each,
+  representing the four rotations of an L-shaped tile.
+
+  In addition, the board may contain a number of "broken" cells; positions
+  where nothing can be place on top of them. Find the number of ways in
+  which you can fill the board using the tiles.

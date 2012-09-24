@@ -1,0 +1,13 @@
+title: Tiles (III)
+keywords:
+  - dynamic programming
+  - bitmask calculations
+judges:
+  lightoj: 1310
+setter: Jane Alam Jan
+summary: >
+  Consider a board of size $M \times N$ (the maximum value for $M$ is 8) and
+  two types of "blocks". One of size $2 \times 3$ and the other $3 \times
+  2$. In addition, the board may have some "broken" cells which are cells
+  where nothing can be placed on top of them. Determine the maximum number
+  of blocks that can be placed inside the board.

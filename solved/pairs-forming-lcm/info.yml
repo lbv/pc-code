@@ -1,0 +1,10 @@
+title: Pairs Forming LCM
+keywords:
+  - counting
+  - number theory
+judges:
+  lightoj: 1236
+setter: Jane Alam Jan
+summary: >
+  Given a large integer $n$ (maximum of $10^{14}), find the number of
+  distinct pairs of integers whose LCM is $n$.

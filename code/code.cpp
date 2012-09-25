@@ -751,7 +751,7 @@ struct Point {
     p_t x, y;
     Point() { x=y=0; }
     Point(p_t X, p_t Y) : x(X), y(Y) {}
-    p_t distance(Point p) {
+    p_t distance(const Point &p) {
         p_t dx = p.x - x, dy = p.y - y; return sqrt(dx*dx + dy*dy);
     }
     bool operator<(const Point &p) const {
@@ -764,9 +764,10 @@ struct Point {
 };
 struct Vector {
     double x, y;
-    Vector(double X, p_t Y) : x(X), y(Y) {}
+    Vector(double X, double Y) : x(X), y(Y) {}
     Vector(const Point &p) : x(p.x), y(p.y) {}
     double norm() { return sqrt(x*x + y*y); }
+    double cross(const Vector &v) const { return x * v.y  - y * v.x; }
     double angle(const Vector &p) const {
         return circle_angle(atan2(p.y, p.x) - atan2(y, x));
     }
@@ -793,7 +794,8 @@ struct Circle {
     }
 };
 
-p_t cross(const Point &o, const Point &a, const Point &b) {
+p_t cross(const Point &o, const Point &a, const Point &b)
+{
     return (a.x-o.x)*(b.y-o.y) - (a.y-o.y)*(b.x-o.x);
 }
 void convex_hull(PV &p, PV &h) {

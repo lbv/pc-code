@@ -45,7 +45,7 @@ int getRandom( int cases ) {
 }
 
 int main() {
-	freopen("e.in", "w", stdout);
+	//freopen("e.in", "w", stdout);
 
 	double cl = clock();
 

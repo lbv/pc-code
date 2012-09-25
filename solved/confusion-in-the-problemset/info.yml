@@ -1,0 +1,12 @@
+title: Confusion in the Problemset
+keywords:
+  - greedy
+judges:
+  lightoj: 1374
+setter: Md. Mahbubul Hasan
+thanks: Md. Towhidul Islam Talukder, Jane Alam Jan
+summary: >
+  You receive a set of integers in the range $[0 : 10^6]$. Determine if this
+  set is a valid one. A set is valid if there is a permutation of its
+  numbers such that every integer represents correctly either the amount of
+  numbers before it or after it in the permutation.

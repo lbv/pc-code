@@ -1,5 +1,14 @@
 #include <cstdio>
 #include <cstdlib>
+#include <vector>
+using namespace std;
+
+#define MAXT 300
+#define MOD 1000000007
+
+typedef long long i64;
+
+typedef vector<i64> IV;
 
 void test_case()
 {
@@ -13,12 +22,37 @@ void test_case()
     X = rand() % 100 + 1;
     Y = rand() % 100 + 1;
     K = rand() % 100 + 1;
+
+    if (rand() % 5 == 0) {
+        IV f, g;
+        f.push_back(rand() % 10);
+        g.push_back(rand() % 10);
+
+        while (true) {
+            i64 fp = g.back();
+            i64 gp = g.back() + f.back();
+
+            if (gp > MOD || fp + gp > MOD) break;
+            f.push_back(fp);
+            g.push_back(gp);
+        }
+
+        int n = f.size();
+        do {
+            N = rand() % n + 1;
+            M = rand() % n + 1;
+        } while (N == M);
+        X = f[N - 1] + g[N - 1];
+        Y = f[M - 1] + g[M - 1];
+        K = rand() % n + 1;
+    }
+
     printf("%d %d %d %d %d\n", N, X, M, Y, K);
 }
 
 int main()
 {
-    int T = 300;
+    int T = MAXT;
     printf("%d\n", T);
 
     for (int i = 1; i <= 3; ++i)

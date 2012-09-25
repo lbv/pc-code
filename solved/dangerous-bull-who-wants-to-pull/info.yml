@@ -1,0 +1,16 @@
+title: Dangerous Bull! Who Wants to Pull?
+keywords:
+  - geometry
+  - single source shortest path
+annotations:
+  - special judge
+judges:
+  lightoj: 1208
+setter: Jane Alam Jan
+summary: >
+  You are given a list of pairs of points in a 2D grid. A pair of points
+  means that you may connect those locations with a line.  You are also
+  given the coordinates of one special point, where a bull is resting.
+  Determine the minimum perimeter of a convex polygon (using the given
+  points) that encloses the location of the bull. No pair of points given is
+  collinear with the bull, and the result has to be multiplied by two.

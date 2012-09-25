@@ -1,0 +1,14 @@
+title: History Grading
+keywords:
+  - dynamic programming
+  - longest common subsequence
+judges:
+  uva: 111
+summary: >
+  You receive a list of size $n$ with some permutation of the first $n$
+  positive integers. This list represents the order of $n$ events. Then you
+  receive a number of additional lists of size $n$ with other permutations
+  of the same $n$ integers. The numbers in these lists also represent an
+  ordering of the same events. Compare the first list with each additional
+  list given, and find the length of the longest subsequence of events in
+  the correct relative order between the two lists.

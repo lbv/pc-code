@@ -18,30 +18,26 @@ typedef set<II> IIS;
 //
 // I/O
 //
-#define BUF 524288
 struct Reader {
-    char buf[BUF]; char b; int bi, bz;
-    Reader() { bi=bz=0; read(); }
-    void read() {
-        if (bi==bz) { bi=0; bz = fread(buf, 1, BUF, stdin); }
-        b = bz ? buf[bi++] : 0; }
+    char b; Reader() { read(); }
+    void read() { int r = fgetc_unlocked(stdin); b = r == EOF ? 0 : r; }
     void skip() { while (b > 0 && b <= 32) read(); }
     u32 next_u32() {
         u32 v = 0; for (skip(); b > 32; read()) v = v*10 + b-48; return v; }
-    void skip_line() {
-        for (; b != 10 && b != 13 && b != 0; read());
-        char p = b; read();
-        if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
     int next_int() {
         int v = 0; bool s = false;
         skip(); if (b == '-') { s = true; read(); }
         for (; b > 32; read()) v = v*10 + b-48; return s ? -v : v; }
+    char next_char() { skip(); char c = b; read(); return c; }
     bool has_next() { skip(); return b > 0; }
+    void skip_line() {
+        for (; b != 10 && b != 13 && b != 0; read());
+        char p = b; read();
+        if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
     void next(char *s) { for (skip(); b > 32; read()) *s++ = b; *s = 0; }
     void next_line(char *s) {
         for (; b != 10 && b != 13 && b != 0; read()) *s++ = b; *s = 0;
         while (b == 10 || b == 13) read(); }
-    char next_char() { skip(); char c = b; read(); return c; }
     void next_real_line(char *s, int &l) {
         for (l = 0; b != 10 && b != 13 && b != 0; read()) *s++ = b, ++l;
         *s = 0; char p = b; read();

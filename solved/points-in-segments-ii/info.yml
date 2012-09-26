@@ -1,0 +1,12 @@
+title: Points in Segments (II)
+keywords:
+  - sorting
+annotations:
+  - large input
+judges:
+  lightoj: 1089
+setter: Jane Alam Jan
+summary: >
+  You receive the description of a list of segments (with integers as
+  boundaries), and a list of coordinates of points (one-dimensional).
+  Determine the number of segments that contain each point.

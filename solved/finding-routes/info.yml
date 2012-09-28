@@ -1,0 +1,11 @@
+title: Finding Routes
+keywords:
+  - graph
+  - topological sorting
+annotations:
+  - assumptions
+judges:
+  lightoj: 1075
+summary: >
+  A series of pairs of strings are given to you, describing consecutive
+  steps in a route. Print the complete route, in the correct order.

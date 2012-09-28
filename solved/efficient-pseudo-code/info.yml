@@ -1,5 +1,10 @@
 title: Efficient Pseudo Code
-keywords: modular arithmetic, number theory
+keywords:
+  - modular arithmetic
+  - number theory
 judges:
   lightoj: 1054
 setter: Jane Alam Jan
+summary: >
+  Given two non-negative integers $n$ and $m$ in the range of a 32-bit
+  signed integer, calculate the sum of all divisors of $n^m$.

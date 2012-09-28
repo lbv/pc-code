@@ -1,0 +1,19 @@
+title: Say Goodbye to Tic-Tac-Toe
+keywords:
+  - sprague-grundy
+  - game theory
+judges:
+  uva: 11534
+  lightoj:
+    id: 1401
+    title: No More Tic-Tac-Toe
+setter: Md. Arifuzzaman Arif
+thanks: Manzurur Rahman Khan
+summary: >
+  A new game originally based on Tic-Tac-Toe is created. It is played in a
+  grid of size $1 \times N$. Two players take turns to place one of two
+  symbols in one unocuppied cell of the grid. The two symbols are 'X' and
+  'O'. However, the same symbol can't be placed in two adjacent squares. The
+  winner is the player who places the last symbol. Given an arbitrary
+  configuration of the game, determine if the player who goes first wins or
+  not, when both players play optimally.

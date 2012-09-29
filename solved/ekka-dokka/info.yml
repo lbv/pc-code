@@ -1,7 +1,14 @@
 title: Ekka Dokka
-keywords: beginner, math
+keywords:
+  - beginner
+  - math
 judges:
   lightoj: 1116
 setter: Muhammad Rifayat Samee
+thanks: Jane Alam Jan
+summary: >
+  Given the value of $W$, a possibly large integer, find two numbers $N$ and
+  $M$ such that $N$ is odd, $M$ is even, and $N \cdot M = W$, and $M$ is as
+  small as possible.
 comments: >
-  If there is a solution, M has to be a power of 2.
+  Notice that if there is a solution, $M$ has to be a power of 2.

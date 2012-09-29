@@ -1,0 +1,19 @@
+title: Jogging Trails
+keywords:
+  - graph
+  - eulerian cycle
+  - floyd-warshall
+  - dynamic programming
+  - bitmask calculations
+judges:
+  uva: 10296
+  lightoj: 1086
+setter: Gordon V. Cormack
+contests:
+  - University of Waterloo Local and Internet Contest, June 2002
+summary: >
+  You receive the description of a weighted, undirected and connected graph.
+  Find out the shortest path that begins and ends on the same vertex, and
+  visits all edges at least once.
+comments: >
+  Also known as "The Chinese Postman problem".

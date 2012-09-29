@@ -60,8 +60,20 @@ struct Set {
 };
 
 //
-// Graphs
+// Graphs - Basic structures
 //
+
+// Adjacency lists
+struct Graph {
+    struct Edge { int v; Edge(int V) : v(V) {} };
+    typedef list<Edge> EL;
+    typedef vector<EL> ELV;
+    ELV adj; int n;
+    Graph(int N) : n(N) { adj.resize(n); }
+    void add(int u, int v) { adj[u].push_back(Edge(v)); }
+};
+
+// Weighted adjacency lists
 typedef int w_t;
 struct Graph {
     struct Edge { int v; w_t w; Edge(int V, w_t W) : v(V), w(W) {} };
@@ -70,7 +82,24 @@ struct Graph {
     ELV adj; int n;
     Graph(int N) : n(N) { adj.resize(n); }
     void add(int u, int v, w_t w) { adj[u].push_back(Edge(v, w)); }
+};
 
+// List of edges
+struct Graph {
+    struct Edge {
+        int u, v, w;
+        Edge(int U, int V, int W) : u(U), v(V), w(W) {}
+        bool operator<(const Edge &e) const { return w < e.w; }
+    };
+    typedef vector<Edge> EV;
+    EV edges;
+    void add(int u, int v, int w) { edges.push_back(Edge(u, v, w)); }
+};
+
+//
+// Graphs - Algorithms
+//
+struct Graph {
     int prim_mst(int src) {
         IIS q;
         IV dis(n, INF);
@@ -300,16 +329,6 @@ struct Graph {
             if (a.idx[i] == 0) a.dfs(i, i);
         bridges = a.bridges;
     }
-};
-struct Graph {
-    struct Edge {
-        int u, v, w;
-        Edge(int U, int V, int W) : u(U), v(V), w(W) {}
-        bool operator<(const Edge &e) const { return w < e.w; }
-    };
-    typedef vector<Edge> EV;
-    EV edges;
-    void add(int u, int v, int w) { edges.push_back(Edge(u, v, w)); }
 
     // Minimum Spanning Tree
     void kruskal_mst(int n, int &ans) {
@@ -341,9 +360,7 @@ struct Graph {
                 return true;
         return false;
     }
-};
 
-struct Graph {
     // Shortest paths
     void floyd(int **g, int N)
     {
@@ -354,7 +371,7 @@ struct Graph {
                     if (t < g[i][j]) g[i][j] = t;
                 }
     }
-};
+}
 
 //
 // 2-SAT

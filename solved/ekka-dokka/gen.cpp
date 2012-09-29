@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-	freopen("g.in", "w", stdout);
+	//freopen("g.in", "w", stdout);
 	int cases = 9990;
 
 	printf("%d\n", cases + 1);

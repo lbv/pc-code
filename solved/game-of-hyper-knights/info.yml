@@ -1,0 +1,17 @@
+title: Game of Hyper Knights
+keywords:
+  - game theory
+  - sprague-grundy
+judges:
+  lightoj: 1315
+setter: Jane Alam Jan
+summary: >
+  Consider an infinite chess board, where the upper left corner is (0, 0)
+  and the cell to its right is (0, 1). A Hyper Knight is a piece that moves
+  around that board, and has 6 ways to move: (1, -2), (-1, -2), (-2, -1),
+  (-2, 1), (-1, -3) and (-3, -1).
+
+  A game consists of an arbitrary number of hyper knights placed on a board
+  (more than one piece can be in a given cell). Two players take turns to
+  move one piece. The winner is the last person who can make a valid move.
+  Given a configuration of the board, determine the winner.

@@ -1,0 +1,13 @@
+title: Real Life Traffic
+keywords:
+  - graph
+  - bridges
+  - depth first search
+annotations:
+  - large input
+judges:
+  lightoj: 1291
+setter: Jane Alam Jan
+summary: >
+  Given a connected graph, find the minimum number of edges that would have
+  to be added to it to leave no bridges in the graph.

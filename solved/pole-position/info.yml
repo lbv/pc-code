@@ -1,0 +1,11 @@
+title: Pole Position
+keywords:
+  - beginner
+  - data structures
+judges:
+  uva: 12150
+summary: >
+  You receive a list with the order of the cars in a racing competition. For
+  every car, you also receive a number that represents the number of
+  positions it has gained or lost relative to its starting place. Print the
+  right order in which the race started, or report if the list is incorrect.

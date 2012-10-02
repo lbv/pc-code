@@ -1,0 +1,9 @@
+title: Divisors
+keywords:
+  - number theory
+  - number of divisors
+judges:
+  uva: 294
+summary: >
+  Given a range of integers, find the number within that range with the
+  largest number of divisors.

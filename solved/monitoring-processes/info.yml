@@ -1,0 +1,15 @@
+title: Monitoring Processes
+keywords:
+  - sorting
+  - greedy
+annotations:
+  - large input
+judges:
+  lightoj: 1301
+setter: Jane Alam Jan
+summary: >
+  You get a list of segments with integer boundaries representing the
+  periods of time in which a number of processes run. A wrapper is to be
+  placed around each process, and wrappers con only be used for one process
+  at a time. Once its process ends, the wrapper is released and it can be
+  reused. Find the minimum number of wrappers required for all processes.

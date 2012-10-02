@@ -1,0 +1,18 @@
+title: Yet Another Number Sequence
+keywords:
+  - matrix exponentiation
+judges:
+  uva: 10689
+  lightoj:
+    id: 1065
+    title: Number Sequence
+setter: Sadrul Habib Chowdhury
+thanks: Derek Kisman
+similar:
+  - uva-10870
+contests:
+  - UVa July 2004 Monthly Contest
+summary: >
+  Consider the sequence defined by: $f(0)=a$, $f(1)=b$ and
+  $f(n)=f(n-1)+f(n-2)$ for $n>1$. Given the values of $a, b, n, m$,
+  calculate $f(n) % 10^m$.

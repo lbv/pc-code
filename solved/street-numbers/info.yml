@@ -1,0 +1,13 @@
+title: Street Numbers
+keywords:
+  - beginner
+  - math
+  - precalculation
+annotations:
+  - no input
+judges:
+  uva: 138
+summary: >
+  Find the first 10 pairs of positive integers $n, m$ such that the
+  summations of $1 + 2 + \dots + (n-1)$ and $(n+1) + (n+2) + \dots + m$ are
+  equal.

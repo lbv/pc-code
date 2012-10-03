@@ -16,3 +16,11 @@ summary: >
   according to the expression $w_i - k$.  Find the maximum amount of money
   the postman can win (or minimum he would lose), and print one valid route
   to accomplish this.
+comments: >
+  After some analysis, it should be clear that the order in which the
+  villages are visited is irrelevant. You can calculate the profit
+  before you even read the edges, and then just build the Eulerian cycle
+  with the given graph (it's guaranteed to exist).
+
+  Notice that it's possible that more than one edge connect two given nodes,
+  and there could be edges from one node to itself.

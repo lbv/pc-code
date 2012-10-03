@@ -1,0 +1,15 @@
+title: Very Lucky Numbers
+keywords:
+  - binary search
+  - precalculation
+judges:
+  lightoj: 1276
+summary: >
+  A number is considered lucky if its digits are only 4 or 7. A number is
+  very lucky if it's either a lucky number, or it's the product of any
+  positive number of lucky numbers. Given a possibly large range, find the
+  number of very lucky numbers in that range.
+comments: >
+  The hardest part is pre-calculating all very lucky numbers up to
+  $10^{12}$; do it in a way that is not too slow, and not too memory-hungry.
+  Then just use binary search to find the answers.

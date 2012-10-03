@@ -1,0 +1,18 @@
+title: Village Postman
+keywords:
+  - eulerian cycle
+  - greedy
+annotations:
+  - special judge
+judges:
+  lightoj: 1250
+summary: >
+  A number of villages are connected by roads. A postman has to visit every
+  village, going through every road at least once, and finishing his trip on
+  his starting village. Every time he travels through a road, he has to pay
+  one unit of money. There is also a certain value $w_i$ associated to every
+  village, that denotes that whenever node $i$ is visited for the first time
+  as the $k$th distinct village visited, the postman receives or pays money
+  according to the expression $w_i - k$.  Find the maximum amount of money
+  the postman can win (or minimum he would lose), and print one valid route
+  to accomplish this.

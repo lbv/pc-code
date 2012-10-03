@@ -1,0 +1,17 @@
+title: New Traffic System
+keywords:
+  - graph
+  - dijkstra
+annotations:
+  - large input
+judges:
+  lightoj: 1281
+setter: Jane Alam Jan
+thanks: Syed Irfan Nabil
+summary: >
+  A group of cities are connected via one-way roads. You receive the
+  description of two graphs over these cities: one of the current roads and
+  their distances, and one of *planned* roads with their distances. You also
+  receive a cap on the number of proposed roads you can build (maximum 10).
+  Find the shortest path between two given cities, using proposed roads if
+  necessary, as long as you don't use more than the limit.

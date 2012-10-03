@@ -1,7 +1,7 @@
 title: Village Postman
 keywords:
+  - graph
   - eulerian cycle
-  - greedy
 annotations:
   - special judge
 judges:

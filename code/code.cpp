@@ -1,12 +1,12 @@
 // Macros
 #define GetFS(b) ((b) & -(b))
 #define ClrFS(b) (b &= ~GetFS(b))
+
 #define Neg(v)  memset((v), -1, sizeof(v))
 #define Zero(v) memset((v), 0, sizeof(v))
-#define For(t,v,c)   for(t::iterator v=c.begin(); v != c.end(); ++v)
-#define cFor(t,v,c)  for(t::const_iterator v=c.begin(); v != c.end(); ++v)
-#define crFor(t,v,c) \
-    for(t::const_reverse_iterator v=c.rbegin(); v != c.rend(); ++v)
+
+#define For(t,i,c) for(t::iterator i=(c).begin(); i != (c).end(); ++i)
+#define RFor(t,v,c) for(t::reverse_iterator i=(c).rbegin(); i!=(c).rend(); ++i)
 
 // Typedefs
 typedef unsigned int u32;
@@ -328,6 +328,37 @@ struct Graph {
         for (int i = 0; i < n; ++i)
             if (a.idx[i] == 0) a.dfs(i, i);
         bridges = a.bridges;
+    }
+    // Eulerian Trail
+    struct Euler {
+        ELV adj; IV t;
+        Euler(ELV Adj) : adj(Adj) {}
+        void build(int u) {
+            while(! adj[u].empty()) {
+                int v = adj[u].front().v;
+                adj[u].erase(adj[u].begin());
+                build(v);
+            }
+            t.push_back(u);
+        }
+    };
+    bool eulerian_trail(IV &trail) {
+        Euler e(adj);
+        int odd = 0, s = 0;
+        /*
+        for (int v = 0; v < n; v++) {
+            int diff = abs(in[v] - out[v]);
+            if (diff > 1) return false;
+            if (diff == 1) {
+                if (++odd > 2) return false;
+                if (out[v] > in[v]) start = v;
+            }
+        }
+        */
+        e.build(s);
+        reverse(e.t.begin(), e.t.end());
+        trail = e.t;
+        return true;
     }
 
     // Minimum Spanning Tree

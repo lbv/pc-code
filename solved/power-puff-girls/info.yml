@@ -1,4 +1,11 @@
 title: Power Puff Girls
-keywords: breadth first search
+keywords:
+  - breadth first search
 judges:
   lightoj: 1238
+setter: Jane Alam Jan
+thanks: Sohel Hafiz
+summary: >
+  Three girls move inside a rectangular maze with obstacles, and they move
+  one cell per unit of time. One of the cells is the destination of all
+  three girls. Find the minimum time for the three of them to get home.

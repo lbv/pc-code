@@ -9,3 +9,12 @@ judges:
 setter: Rajesh S. R.
 contests:
   - CarteBlanche '08 - Computer Society
+summary: >
+  You receive a list of $n$ integers representing amounts of milk from $n$
+  vessels and a value $m$ denoting a number of containers that you have to
+  fill with the milk. Find the minimum capacity that the containers would
+  have to be, so that all milk is poured from the vessels to the containers,
+  leaving the vessels empty, and doing the pouring in order: the first
+  vessel(s) have to be poured into the first container, then the second
+  container has to be taken care of, etc. The milk from one vessel can only
+  be poured into one container.

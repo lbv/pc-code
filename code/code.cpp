@@ -114,7 +114,7 @@ struct Graph {
             if (flg[v]) continue;
             flg[v] = true;
             mst += d;
-            cFor (EL, e, adj[v])
+            For (EL, e, adj[v])
                 if (!flg[e->v] && e->w < dis[e->v]) {
                     dis[e->v] = e->w;
                     q.insert(II(dis[e->v], e->v));
@@ -126,17 +126,16 @@ struct Graph {
         IIS q;
         dis = IV(n, INF);
         BV flg(n);
-        dis[src] = 0;
         q.insert(II(0, src));
+        dis[src] = 0;
         while (! q.empty()) {
             int v = q.begin()->second;
             q.erase(q.begin());
             if (flg[v]) continue;
             flg[v] = true;
-            cFor (EL, e, adj[v]) {
+            For (EL, e, adj[v]) {
                 int d = dis[v] + e->w;
                 if (!flg[e->v] && d < dis[e->v]) {
-                    if (dis[e->v] != INF) q.erase(II(dis[e->v], e->v));
                     dis[e->v] = d;
                     q.insert(II(dis[e->v], e->v));
                 }
@@ -150,7 +149,7 @@ struct Graph {
         while (! q.empty()) {
             int v = q.front(); q.pop();
             order.push_back(v);
-            cFor (EL, e, adj[v])
+            For (EL, e, adj[v])
                 if (--in[e->v] == 0) q.push(e->v);
         }
     }

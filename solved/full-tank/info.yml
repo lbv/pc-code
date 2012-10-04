@@ -1,0 +1,15 @@
+title: Full Tank?
+keywords:
+  - graph
+  - dijkstra
+judges:
+  uva: 11367
+  lightoj:
+    id: 1254
+    title: Prison Break
+    thanks: Muhammad Rifayat Samee
+summary: >
+  A weighted graph is given, representing a number of locations and roads
+  with their distances. A car has to travel from one arbitrary node to
+  another, but it starts with an empty tank of gas. You also know the cost
+  of fuel at each city. Find the cheapest way to accomplish the trip.

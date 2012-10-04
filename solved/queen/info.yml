@@ -1,0 +1,10 @@
+title: Queen
+keywords:
+  - beginner
+  - chess
+judges:
+  uva: 11494
+summary: >
+  Given the location of a Queen inside a standards chess board and a
+  destination, determine the minimum number of moves required for the Queen
+  to reach the destination.

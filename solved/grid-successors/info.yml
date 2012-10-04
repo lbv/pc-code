@@ -1,0 +1,20 @@
+title: Grid Successors
+keywords:
+  - ad-hoc
+  - memoization
+judges:
+  uva: 11581
+setter: Babak Behsaz, Zachary Friggstad
+contests:
+  - Another high quality contest
+summary: >
+  This problem has a convoluted mathematical description, but it can be
+  thought of as the following equivalent problem: A matrix of zeroes and
+  ones and size $3 \times 3$ is given. A transformation over a matrix turns
+  every cell into the sum (modulo 2) of all its neighbours. Find the number
+  of transformations required to turn the original matrix into a matrix
+  entirely made up of zeroes.
+comments: >
+  Notice that the number of possible matrices is relatively small (2^9) so
+  you can precalculate all answers. All configurations converge into a
+  matrix of zeroes.

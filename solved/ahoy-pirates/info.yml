@@ -1,0 +1,17 @@
+title: Ahoy, Pirates!
+keywords:
+  - segment tree
+judges:
+  uva: 11402
+setter: Istiaque Ahmed
+thanks: Mohammad Mahmudur Rahman
+contests:
+  - Hasty Contest
+summary: >
+  You receive a possibly large array of boolean values (maximum $10^3 \cdot
+  2^{10}$). You have to implement four types of operations over the array:
+
+  * Set a range of values (set to 1).
+  * Clear a range of values (set to 0).
+  * Flip a range of values.
+  * Query how many values are set to 1 in a range.

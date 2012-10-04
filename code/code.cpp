@@ -24,17 +24,17 @@ struct Reader {
     void skip() { while (b > 0 && b <= 32) read(); }
     u32 next_u32() {
         u32 v = 0; for (skip(); b > 32; read()) v = v*10 + b-48; return v; }
+    void next(char *s) { for (skip(); b > 32; read()) *s++ = b; *s = 0; }
+    char next_char() { skip(); char c = b; read(); return c; }
     int next_int() {
         int v = 0; bool s = false;
         skip(); if (b == '-') { s = true; read(); }
         for (; b > 32; read()) v = v*10 + b-48; return s ? -v : v; }
-    char next_char() { skip(); char c = b; read(); return c; }
     bool has_next() { skip(); return b > 0; }
     void skip_line() {
         for (; b != 10 && b != 13 && b != 0; read());
         char p = b; read();
         if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
-    void next(char *s) { for (skip(); b > 32; read()) *s++ = b; *s = 0; }
     void next_line(char *s) {
         for (; b != 10 && b != 13 && b != 0; read()) *s++ = b; *s = 0;
         while (b == 10 || b == 13) read(); }
@@ -945,12 +945,16 @@ struct Bit {
 //
 // Segment Tree
 //
+#define MAXN 1024000
+#define MAXH 21  // 1 + ceil(log2(MAXN))
 struct SegTree {
-    IV A, T; int n;
-    SegTree(int N) : n(N) {
-        A.resize(n); int h = 1 + ceil(log2(n)); T.resize(1 << h); }
-    void init() { tree_init(1, 0, n - 1); }
-    int query(int i, int j) { return tree_query(1, 0, n - 1, i, j); }
+    IV A, T;
+    int n;
+    SegTree(int N=0) : n(N) {
+        A.resize(MAXN);
+        T.resize(1 << MAXH);
+    }
+    void init() { tree_init(1, 0, n-1); }
     void tree_init(int x, int a, int b) {
         if (a == b) { T[x] = a; return; }
         int lt = 2*x, rt = lt + 1, md = (a+b)/2;
@@ -958,12 +962,13 @@ struct SegTree {
         tree_init(rt, md + 1, b);
         T[x] = A[T[lt]] <= A[T[rt]] ? T[lt] : T[rt];
     }
-    int tree_query(int x, int a, int b, int i, int j) {
+    int query(int i, int j) { return tree_query(i, j, 1, 0, n-1); }
+    int tree_query(int i, int j, int x, int a, int b) {
         if (j < a || i > b) return -1;
         if (a >= i && b <= j) return T[x];
         int lt = 2*x, rt = lt + 1, md = (a+b)/2;
-        int q1 = tree_query(lt, a, md, i, j);
-        int q2 = tree_query(rt, md + 1, b, i, j);
+        int q1 = tree_query(i, j, lt, a, md);
+        int q2 = tree_query(i, j, rt, md + 1, b);
         if (q1 < 0) return q2;
         if (q2 < 0) return q1;
         return A[q1] <= A[q2] ? q1 : q2;

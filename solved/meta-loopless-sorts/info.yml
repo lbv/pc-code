@@ -1,0 +1,10 @@
+title: Meta-Loopless Sorts
+keywords:
+  - recursion
+annotations:
+  - special judge
+judges:
+  uva: 110
+summary: >
+  Given an integer $n$, print a Pascal program that sorts $n$ integers using
+  only if/else statements, according to a set of rules.

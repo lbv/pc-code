@@ -1,0 +1,15 @@
+title: Image Coding
+keywords:
+  - beginner
+  - data structures
+judges:
+  uva: 11588
+setter: Mohammad Mahmudur Rahman
+thanks: Md. Arifuzzaman Arif
+contests:
+  - World Finals 2009 Warmup 1
+summary: >
+  You receive a rectangular grid of characters and two factors $M$ and $N$.
+  Find the character(s) with the most occurrences inside the grid, and
+  multiply the number of occurrences of those characters by $M$, and the
+  rest of characters by $N$. Report the result.

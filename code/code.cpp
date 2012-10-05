@@ -123,21 +123,21 @@ struct Graph {
         return mst;
     }
     void dijkstra(int src, IV &dis) {
-        IIS q;
+        set<II> q;
         dis = IV(n, INF);
         BV flg(n);
         q.insert(II(0, src));
         dis[src] = 0;
         while (! q.empty()) {
-            int v = q.begin()->second;
-            q.erase(q.begin());
+            II p = *(q.begin()); q.erase(q.begin());
+            int d = p.first, v = p.second;
             if (flg[v]) continue;
             flg[v] = true;
             For (EL, e, adj[v]) {
-                int d = dis[v] + e->w;
-                if (!flg[e->v] && d < dis[e->v]) {
-                    dis[e->v] = d;
-                    q.insert(II(dis[e->v], e->v));
+                int d2 = d + e->w;
+                if (d2 < dis[e->v]) {
+                    dis[e->v] = d2;
+                    q.insert(II(d2, e->v));
                 }
             }
         }

@@ -5,6 +5,7 @@ judges:
   lightoj: 1091
 setter: Jane Alam Jan
 thanks: Samir Ahmed
+similar: uva-110
 summary: >
   Generate C-like code that sorts a group of integers (maximum 7) using only
   `if` and `else` statements. Follow the template shown in the examples.

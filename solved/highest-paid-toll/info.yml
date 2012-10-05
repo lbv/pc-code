@@ -1,0 +1,20 @@
+title: Highest Paid Toll
+keywords:
+  - graph
+  - dijkstra
+annotations:
+  - large input
+judges:
+  uva: 12047
+  lightoj:
+    id: 1379
+    title: Toll Management
+setter: Md. Shiplu Hawlader
+thanks: Jane Alam Jan
+contests:
+  - Next generation Contest 6
+summary: >
+  You receive a large weighted graph of nodes and one-way roads, a source
+  node, a destination node, and a cost "limit". Find the largest cost of a
+  single edge that belongs to any path between the source and destination
+  paths, where the cost of the entire path doesn't exceed the given limit.

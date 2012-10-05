@@ -1,0 +1,17 @@
+title: Broken Keyboard (a.k.a. Beiju Text)
+keywords:
+  - beginner
+  - data structures
+judges:
+  uva: 11988
+setter: Rujia Liu
+thanks: Yiming Li
+contests:
+  - Rujia Liu's Present 3: A datastructure contest celebrating the 100th
+    anniversary of Tsinghua University
+summary: >
+  You receive a string of text that represents the input processed
+  internally by a text editor. Two special characters denote the pressing of
+  the "Home" and "End" keys, which move the cursor to the beginning and the
+  end of the current line, respectively. Print the output that would produce
+  the text editor after processing the input.

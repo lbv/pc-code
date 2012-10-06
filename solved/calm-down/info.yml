@@ -1,4 +1,12 @@
 title: Calm Down
-keywords: geometry
+keywords:
+  - geometry
+annotations:
+  - special judge
 judges:
   lightoj: 1072
+summary: >
+  Given a real number $R$, and an integer $n$, determine the radius for $n$
+  circles to be placed on the inside of a circle with radius $R$, tangent to
+  the circumference of the larger circle. The $n$ circles have to be as
+  large as possible, so there aren't any gaps between them.

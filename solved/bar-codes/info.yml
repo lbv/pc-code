@@ -1,0 +1,17 @@
+title: Bar Codes
+keywords:
+  - dynamic programming
+  - counting
+judges:
+  uva: 10721
+  lightoj: 1191
+setter: Md. Kamruzzaman
+contests:
+  - Intl. Islamic Univ Chittagong
+summary: >
+  A bar code is considered to be a sequence of "bars", each bar with a given
+  width, of one of two colors (black or white) starting always with a bar of
+  color black. Given the total length of a bar code ($n$), the total number
+  of bars in the code ($k$) and the maximum width of any bar in that code
+  ($m$), determine the number of valid bar codes that fit to the parameters
+  $n, k, m$.

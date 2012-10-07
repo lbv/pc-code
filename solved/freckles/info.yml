@@ -1,0 +1,14 @@
+title: Freckles
+keywords:
+  - graph
+  - geometry
+  - minimum spanning tree
+judges:
+  uva: 10034
+setter: Gordon V. Cormack
+contests:
+  - SWERC '2000 Warm-Up
+summary: >
+  Given a series of points in a 2D plane, find the minimum length of a group
+  of segments of lines that connect all points such that there is path
+  between any pair of points.

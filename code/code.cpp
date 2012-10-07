@@ -87,13 +87,13 @@ struct Graph {
 // List of edges
 struct Graph {
     struct Edge {
-        int u, v, w;
-        Edge(int U, int V, int W) : u(U), v(V), w(W) {}
+        int u, v; w_t w;
+        Edge(int U, int V, w_t W) : u(U), v(V), w(W) {}
         bool operator<(const Edge &e) const { return w < e.w; }
     };
     typedef vector<Edge> EV;
     EV edges;
-    void add(int u, int v, int w) { edges.push_back(Edge(u, v, w)); }
+    void add(int u, int v, w_t w) { edges.push_back(Edge(u, v, w)); }
 };
 
 //
@@ -305,7 +305,7 @@ struct Graph {
         void dfs(int u, int v) {
             int children = 0;
             low[v] = idx[v] = cnt++;
-            cFor(EL, e, g.adj[v]) {
+            For (EL, e, g.adj[v]) {
                 if (idx[e->v] == 0) {
                     ++children;
                     dfs(v, e->v);
@@ -367,7 +367,7 @@ struct Graph {
         int nedges = 0;
         ans = 0;
         EV mst;
-        cFor (EV, e, edges) {
+        For (EV, e, edges) {
             if (uf.find(e->u) == uf.find(e->v)) continue;
             mst.push_back(*e);
             uf.merge(e->u, e->v);
@@ -382,10 +382,10 @@ struct Graph {
     bool bellman_ford_neg_cycle(int n) {
         IV dis(n);
         for (int i = 0; i < n-1; i++)
-            cFor (EV, e, edges)
+            For (EV, e, edges)
                 if(dis[e->u] + e->w < dis[e->v])
                     dis[e->v] = dis[e->u] + e->w;
-        cFor (EV, e, edges)
+        For (EV, e, edges)
             if (dis[e->u] + e->w < dis[e->v])
                 return true;
         return false;

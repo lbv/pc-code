@@ -25,11 +25,11 @@ using namespace std;
 int cases;
 
 int main() {
-	freopen("ee.in", "w", stdout);
+	//freopen("ee.in", "w", stdout);
+    srand(time(NULL));
 
 	cases = 100;
 	printf("%d\n", cases);
-	srand(time(NULL));
 	while( cases-- ) {
 		int n = rand() % 5 + 2;
 		int m = rand() % 20;

@@ -1,0 +1,12 @@
+title: Lunch in Grid City
+keywords:
+  - sorting
+  - median
+judges:
+  uva: 855
+setter: Fernando Silva
+similar: uva-10041
+summary: >
+  Given a list of lattice points in a 2D grid, find the point P that
+  minimizes the distance from all points to P, and where the coordinates of
+  P are as low as possible.

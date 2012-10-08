@@ -1,0 +1,24 @@
+title: Cards
+keywords:
+  - probability
+  - expected value
+  - dynamic programming
+  - cards
+annotations:
+  - special judge
+judges:
+  icpc-la: 5811
+  lightoj:
+    id: 1364
+    title: Expected Cards
+setter: Sohel Hafiz
+thanks: Md. Mahbubul Hasan, Jane Alam Jan
+contests:
+  - The 2011 ACM Asia Programming Contest Dhaka Site
+summary: >
+  You have a pack of 54 cards (the 52 standard cards and two jokers). Given
+  four integers $C, D, H, S$, find the expected number of cards you have to
+  draw until you have at least $C$ clubs, $D$ diamonds, $H$ hearts and $S$
+  spades. The jokers can be used for any suit, but the selection has to be
+  made before drawing the next card, trying to minimize the number of cards
+  to draw.

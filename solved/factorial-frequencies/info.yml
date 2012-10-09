@@ -1,0 +1,10 @@
+title: Factorial Frequencies
+keywords:
+  - big integer
+annotations:
+  - special judge
+judges:
+  uva: 324
+summary: >
+  Given an integer $n$ (366 maximum), find out the number of occurrences of
+  each decimal digit in the number $n!$.

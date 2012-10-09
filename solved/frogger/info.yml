@@ -1,0 +1,15 @@
+title: Frogger
+keywords:
+  - graph
+  - floyd warshall
+  - minimax
+  - geometry
+judges:
+  uva: 534
+similar: uva-10048
+summary: >
+  You get a series of $n$ points in a 2D plane. These points form a graph,
+  in which you can assume there is an edge between all pairs of points.  The
+  first point from the input is the origin, and the second point is the
+  destination. You have to find the minimax value from the edges that belong
+  to a path from the origin to the destination.

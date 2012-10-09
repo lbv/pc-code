@@ -1,5 +1,12 @@
 title: Finding LCM
-keywords: number theory, least common multiple
+keywords:
+  - number theory
+  - least common multiple
 judges:
   lightoj: 1215
 setter: Muhammad Rifayat Samee
+summary: >
+  Consider fours integers $a, b, c, L$ that hold the following relation:
+  $\text{LCM}(a, b, c)=L$. You receive the values of $a, b, L$. Find the
+  minimum possible $c$ that makes the relation hold, or determine if there
+  is no such number.

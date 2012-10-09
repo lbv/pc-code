@@ -1,0 +1,12 @@
+title: Frosh Week
+keywords:
+  - sorting
+  - inversion number
+judges:
+  uva: 11858
+similar: uva-10810
+contests:
+  - Waterloo Local 2010, Fall 2
+summary: >
+  Given a list of $n$ ($10^6$ maximum) distinct integers, find the minimum
+  number of swaps between adjacent elements to sort the list.

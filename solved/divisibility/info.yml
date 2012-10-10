@@ -1,0 +1,15 @@
+title: Divisibility
+keywords:
+  - modular arithmetic
+judges:
+  uva: 10036
+contests:
+  - SWERC '2000 Warm-Up
+summary: >
+  A sequence of integers $n_1, n_2, \dots, n_k$ is called *divisible* by $K$
+  if there is a valid combination of signs +/- that you can put between the
+  numbers of the sequence, such that the resulting expression is a number
+  divisible by $K$.
+
+  Given a sequence of $N$ numbers and a number $K$ (100 maximum), find if
+  the sequence is divisible by $K$.

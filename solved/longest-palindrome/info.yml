@@ -1,0 +1,13 @@
+title: Longest Palindrome
+keywords:
+  - dynamic programming
+  - strings
+  - palindromes
+judges:
+  uva: 11151
+setter: Raymond Chun
+contests:
+  - Contest of Newbies 2006
+summary: >
+  Given an arbitrary string (maximum length 1000) find the length of the
+  longest palindromic subsequence in it.

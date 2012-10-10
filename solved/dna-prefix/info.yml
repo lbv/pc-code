@@ -1,5 +1,12 @@
 title: DNA Prefix
-keywords: trie tree
+keywords:
+  - trie tree
+annotations:
+  - large input
 judges:
   lightoj: 1224
 setter: Jane Alam Jan
+summary: >
+  Given a set of $n$ strings, find a subset $S$ of strings such that the
+  length of the longest common prefix of all strings in $S$ multiplied by
+  the number of elements in $S$ is maximum.

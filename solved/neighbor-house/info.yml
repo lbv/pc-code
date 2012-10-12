@@ -3,3 +3,8 @@ keywords:
   - dynamic programming
 judges:
   lightoj: 1047
+summary: >
+  A number of houses will be painted in one of three colors. You receive the
+  list of costs of painting each house with each color. However, no two
+  adjacent houses can be painted with the same color. Determine the minimum
+  cost to paint all the houses.

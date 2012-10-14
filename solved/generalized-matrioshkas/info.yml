@@ -1,0 +1,20 @@
+title: Generalized Matrioshkas
+keywords:
+  - data structures
+  - stack
+annotations:
+  - underspecified
+  - boolean output
+  - irregular input
+judges:
+  uva: 11111
+contests:
+  - XX Colombian National Programming Contest
+summary: >
+  You receive a sequence of integer numbers. Inside this sequence, a
+  subsequence of consecutive elements $s_i, s_{i+1}, s_{i+2}, \dots, s_{j}$,
+  where $s_i$ is a negative number, and $|s_i| = |s_j|$, represent a toy of
+  size $s_j$ with nested toys described by $s_{i+1}, \dots, s_{j-1}$. The
+  sum of sizes of all toys one level below a toy with size $K$ must be
+  strictly less than $K$. Determine if the given sequence describe a valid
+  arrangement of nested toys.

@@ -22,6 +22,7 @@ struct Reader {
     char b; Reader() { read(); }
     void read() { int r = fgetc_unlocked(stdin); b = r == EOF ? 0 : r; }
     void skip() { while (b > 0 && b <= 32) read(); }
+
     u32 next_u32() {
         u32 v = 0; for (skip(); b > 32; read()) v = v*10 + b-48; return v; }
     void next(char *s) { for (skip(); b > 32; read()) *s++ = b; *s = 0; }
@@ -44,11 +45,12 @@ struct Reader {
         if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
 };
 struct LineReader {
-    char buf[BUF]; char b; int bi, bz;
-    bool read_line() {
-        bi = 0; bool r; if (gets(buf)) r = (bz = strlen(buf)) > 0;
-        else r = false, bz = 0; read(); return r; }
-    void read() { b = bi < bz ? buf[bi++] : 0; }
+    char b; LineReader() { read(); }
+    void read() { int r = fgetc_unlocked(stdin); b = r == EOF ? 0 : r; }
+    void skip() { while (b > 0 && b <= 32 && b != 10) read(); }
+    void skip_line() { skip(); if (b == 10) { read(); skip(); } }
+    bool has_next() { skip(); return b > 0 && b != 10; }
+    bool eof() { skip(); return b == 0; }
 }
 
 // Union-Find disjoint set

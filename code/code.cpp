@@ -937,8 +937,8 @@ struct HM {
 // Binary Indexed Tree
 //
 struct Bit {
-    IV f; int n;
-    Bit(int N) : n(N) { f = IV(n + 1); }
+    int f[MAXBIT + 1]; int n;
+    void init(int N) { n=N; Zero(f); }
     void add(int i, int v) { while (i <= n) { f[i] += v; i += GetFS(i); } }
     int query(int i) {
         int r = 0; while (i) { r += f[i]; i -= GetFS(i); } return r; }

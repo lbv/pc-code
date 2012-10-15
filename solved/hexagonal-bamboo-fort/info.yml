@@ -1,0 +1,16 @@
+title: Hexagonal Bamboo Fort
+keywords:
+  - bisection
+  - binary indexed tree
+judges:
+  lightoj: 1372
+setter: Tasnim Imran Sunny
+thanks:
+  - F.A. Rezaur Rahman Chowdhury
+  - Pratyai Mazumder
+  - Md. Nazmul Hasan
+  - Jane Alam Jan
+summary: >
+  You receive a list of distinct integers. Find out how many groups of 6 of
+  those integers can be interpreted as the lengths of the sides of an
+  hexagon (not necessarily regular) with positive area.

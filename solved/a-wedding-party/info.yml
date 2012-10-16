@@ -1,0 +1,16 @@
+title: A Wedding Party
+keywords:
+  - graph
+  - dijkstra
+  - bitmask calculations
+judges:
+  lightoj: 1316
+setter: Muhammad Rifayat Samee
+thanks: Jane Alam Jan
+summary: >
+  Consider a weighted, directed graph with $N$ nodes and edges. A set of $S$
+  nodes (15 maximum) are shops. Find the shortest path from node 0 to node
+  $N-1$, visiting the maximum possible number of shops.
+comments: >
+  Think about perhaps creating a simplified graph (with a maximum of S + 2
+  nodes) before calculating the final answer.

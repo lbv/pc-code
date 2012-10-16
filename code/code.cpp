@@ -127,14 +127,14 @@ struct Graph {
     void dijkstra(int src, IV &dis) {
         set<II> q;
         dis = IV(n, INF);
-        BV flg(n);
+        BV vis(n);
         q.insert(II(0, src));
         dis[src] = 0;
         while (! q.empty()) {
             II p = *(q.begin()); q.erase(q.begin());
             int d = p.first, v = p.second;
-            if (flg[v]) continue;
-            flg[v] = true;
+            if (vis[v]) continue;
+            vis[v] = true;
             For (EL, e, adj[v]) {
                 int d2 = d + e->w;
                 if (d2 < dis[e->v]) {

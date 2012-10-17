@@ -1,0 +1,12 @@
+title: Fast Queries
+keywords:
+  - binary indexed tree
+  - sorting
+annotations:
+  - large input
+judges:
+  lightoj: 1188
+setter: Jane Alam Jan
+summary: >
+  Given a large array of integers, implement a query operation that answers
+  how many distinct numbers are in an arbitrary range $(i, j)$.

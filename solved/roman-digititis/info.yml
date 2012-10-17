@@ -1,0 +1,10 @@
+title: Roman Digititis
+keywords:
+  - beginner
+  - ad-hoc
+judges:
+  uva: 344
+summary: >
+  Given a positive integer $n$ (maximum 100), determine the number of
+  occurrences of 'i', 'v', 'x', 'l' and 'c' in the representation of the
+  first $n$ Roman numerals.

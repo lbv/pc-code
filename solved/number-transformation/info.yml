@@ -1,0 +1,18 @@
+title: Number Transformation
+keywords:
+  - sieve
+  - breadth first search
+judges:
+  lightoj: 1141
+  uva: 11730
+setter: Mohammad Mahmudur Rahman
+thanks: Md. Arifuzzaman Arif
+contests:
+  - Alkhawarizmi Programming Contest 2009
+summary: >
+  Given an integer $A$, you can transform it into a different integer $B$,
+  by adding $x$ to $A$, where $x$ is a prime factor of $A$ (different than 1
+  and $A$).
+
+  Given two integers $s$, and $t$, find the minimum number of steps to
+  transform $s$ into $t$.

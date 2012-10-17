@@ -1,0 +1,16 @@
+title: The Lonesome Cargo Distributor
+keywords:
+  - queue
+  - stack
+  - simulation
+judges:
+  uva: 10172
+setter: Rezaul Alam Chowdhury
+contests:
+  - 2001 Regionals Warmup Contest
+summary: >
+  There's a ring of $N$ stations. Each station has a queue of packages to
+  deliver (into another station). You have to handle the each station in
+  sequence, until all packages are correctly delivered, according to a set
+  of rules described in the problem statement. Determine the time required
+  to complete the task.

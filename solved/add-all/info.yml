@@ -1,0 +1,15 @@
+title: Add All
+keywords:
+  - greedy
+  - priority queue
+judges:
+  uva: 10954
+setter: Md. Kamruzzaman
+contests:
+  - ACM-ICPC Regional Contest Warmup
+summary: >
+  You receive a list of $N$ integers. You need to calculate the summation of
+  this list of numbers, but every time you add two numbers $a$ and $b$, it
+  has a cost $a+b$. The total cost of adding the list of numbers is the sum
+  of costs of all intermediate additions required to complete the task.
+  Determine the minimum possible cost to add the numbers.

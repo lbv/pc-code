@@ -952,11 +952,12 @@ struct Bit {
 struct SegTree {
     IV A, T;
     int n;
-    SegTree(int N=0) : n(N) {
+    SegTree() {
         A.resize(MAXN);
         T.resize(1 << MAXH);
     }
-    void init() { tree_init(1, 0, n-1); }
+
+    void init(int N) { n = N; tree_init(1, 0, n-1); }
     void tree_init(int x, int a, int b) {
         if (a == b) { T[x] = a; return; }
         int lt = 2*x, rt = lt + 1, md = (a+b)/2;
@@ -964,6 +965,35 @@ struct SegTree {
         tree_init(rt, md + 1, b);
         T[x] = A[T[lt]] <= A[T[rt]] ? T[lt] : T[rt];
     }
+
+    void propagate(int x, int a, int b) {
+        if (U[x] == 0) return;
+        T[x] += U[x] * (b - a + 1);
+        if (a != b) {
+            int lt = 2*x, rt = lt + 1;
+            U[lt] += U[x];
+            U[rt] += U[x];
+        }
+        U[x] = 0;
+    }
+
+    void update(int i, int j, i64 v) { tree_update(i, j, v, 1, 0, n-1); }
+    void tree_update(int i, int j, i64 v, int x, int a, int b) {
+        propagate(x, a, b);
+        if (j < a || i > b) return;
+        if (a == b) { T[x] += v; return; }
+        int lt = 2*x, rt = lt + 1, md = (a+b)/2;
+        if (a >= i && b <= j) {
+            T[x] += v * (b - a + 1);
+            U[lt] += v;
+            U[rt] += v;
+            return;
+        }
+        tree_update(i, j, v, lt, a, md);
+        tree_update(i, j, v, rt, md + 1, b);
+        T[x] = T[rt] + T[lt];
+    }
+
     int query(int i, int j) { return tree_query(i, j, 1, 0, n-1); }
     int tree_query(int i, int j, int x, int a, int b) {
         if (j < a || i > b) return -1;

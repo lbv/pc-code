@@ -1,0 +1,14 @@
+title: All Integer Average
+keywords:
+  - math
+  - greatest common divisor
+annotations:
+  - output formatting
+judges:
+  uva: 12060
+setter: Shahriar Manzoor
+thanks: Monirul Hasan
+summary: >
+  Calculate the average of a group of numbers. Print the exact result,
+  printing it as a mixed number or a fraction if necessary. Print the output
+  according to the specifications given in the problem statement.

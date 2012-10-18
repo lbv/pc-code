@@ -1,0 +1,21 @@
+title: Equidivisions
+keywords:
+  - depth first search
+annotations:
+  - irregular input
+  - boolean output
+judges:
+  uva: 11110
+contests:
+  - XX Colombian National Programming Contest
+summary: >
+  A square matrix of size $n^2$ is said to be parititioned correctly if
+  it has $n$ partitions, where each partition is a group of $n$ contiguos
+  cells (two cells are contiguous if they share a side).
+  Given the description of the partitions in a square matrix, determine if
+  it's a valid partitioning.
+comments: >
+  There is a lot of little details that are left unmentioned in the problem
+  statement. Things like, will every line contain $2n$ numbers? Will the
+  indices be valid? Will a certain coordinate appear at most once? Don't
+  make assumptions and code defensively.

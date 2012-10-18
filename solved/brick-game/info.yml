@@ -1,0 +1,14 @@
+title: Brick Game
+keywords:
+  - median
+  - beginner
+judges:
+  uva: 11875
+setter: Md. Arifuzzaman Arif
+thanks:
+  - Jane Alam Jan
+  - Shamim Hafiz
+contests:
+  - Anupam Bhattacharjee Memorial Contest
+summary: >
+  You receive an odd number of integers. Determine the median of the list.

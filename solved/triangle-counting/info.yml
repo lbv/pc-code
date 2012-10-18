@@ -1,0 +1,13 @@
+title: Triangle Counting
+keywords:
+  - counting
+annotations:
+  - precalculation
+judges:
+  uva: 11401
+setter: Mohammad Mahmudur Rahman
+contests:
+  - Hasty Contest
+summary: >
+  Given an integer $n$, determine the number of triangles with positive area
+  that can be formed with segments of line of lengths $1, 2, 3, \dots, n$.

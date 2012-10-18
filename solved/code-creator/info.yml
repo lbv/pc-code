@@ -1,0 +1,17 @@
+title: Code Creator
+keywords:
+  - beginner
+  - strings
+judges:
+  uva: 11483
+setter: Shamim Hafiz
+thanks: Sohel Hafiz
+summary: >
+  You receive $N$ lines of text. Write a C program that generates as output
+  the given lines of text, following the format given in the problem
+  statement.
+comments: >
+  Note that is a couple of strange things in the sample input: the use of
+  non-standard "quotes" characters, and the presence of empty lines, which
+  are not accounted for in the specification of the input. Process only
+  regular ASCII quotes, and completely omit empty lines.

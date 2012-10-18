@@ -1,0 +1,11 @@
+title: Joana and the Odd Numbers
+keywords:
+  - math
+judges:
+  uva: 913
+setter: Fernando Silva
+summary: >
+  Consider a sequence of consecutive odd numbers, split into lines such that
+  the first line has one number, the second line has 3 numbers, the second
+  line 5 numbers, and so on. Given $N$, the amount of numbers in a certain
+  line, determine the sum of the last three numbers in that line.

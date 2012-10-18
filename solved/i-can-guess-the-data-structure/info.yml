@@ -1,0 +1,18 @@
+title: I Can Guess the Data Structure!
+keywords:
+  - beginner
+  - stack
+  - queue
+  - priority queue
+  - simulation
+judges:
+  uva: 11995
+setter: Rujia Liu
+thanks: Yiming Li
+contests:
+  - Rujia Liu's Present 3: A datastructure contest celebrating the 100th
+    anniversary of Tsinghua University
+summary: >
+  Given a list of operations performed over an unkown data structure (and
+  the results of those operations), determine if it's a stack, a queue, a
+  priority queue, or if it's neither, or ambiguous.

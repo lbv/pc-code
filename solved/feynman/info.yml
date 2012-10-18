@@ -1,0 +1,10 @@
+title: Feynman
+keywords:
+  - counting
+judges:
+  uva: 12149
+contests:
+  - ACM ICPC :: South American Regional 2008
+summary: >
+  Given an integer $N$, determine the number of squares that can be counted
+  from a $N \times N$ grid.

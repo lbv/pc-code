@@ -1,0 +1,11 @@
+title: Argus
+keywords:
+  - priority queue
+judges:
+  uva: 1203
+summary: >
+  A number of periodic queries are setup to be run simultaneously. Each
+  query has a number that identifies it, and a period. Given the list of
+  queries, and an integer $K$, print the IDs of the first $K$ queries that
+  are executed. If two queries are to run at the same point in time, they
+  are run in ascending order according to their IDs.

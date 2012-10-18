@@ -51,7 +51,7 @@ struct LineReader {
     void skip_line() { skip(); if (b == 10) { read(); skip(); } }
     bool has_next() { skip(); return b > 0 && b != 10; }
     bool eof() { skip(); return b == 0; }
-}
+};
 
 // Union-Find disjoint set
 struct Set {

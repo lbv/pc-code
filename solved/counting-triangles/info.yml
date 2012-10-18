@@ -1,5 +1,12 @@
 title: Counting Triangles
-keywords: math, geometry, binary search
+keywords:
+  - math
+  - geometry
+  - binary search
 judges:
   lightoj: 1307
 setter: Jane Alam Jan
+summary: >
+  You receive $N$ integers which represent the lengths of sticks. Find the
+  number of valid triangles (with positive area) that can be formed with the
+  sticks.

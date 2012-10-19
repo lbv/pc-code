@@ -1,0 +1,11 @@
+title: Conformity
+keywords:
+  - hashing
+judges:
+  uva: 11286
+setter: Gordon V. Cormack
+contests:
+  - Waterloo Fall Contest 1
+summary: >
+  You receive a list of $n$ sets of numbers, each set composed of 5
+  integers. Find the total number of sets that occur the most.

@@ -914,23 +914,34 @@ struct Trie {
 // Hash Map
 //
 #define HASHB 4096
+const size_t KeySz = sizeof(int) * 5;
 struct HM {
-    typedef IV Datum; typedef vector<Datum> DV; DV b[HASHB];
-    u32 fnv_hash(const Datum &k, int len) const {
-        uch *p = reinterpret_cast<uch*>(const_cast<int*>(&k[0]));
+    struct Key {
+        int n[5];
+        Key(int *N) { memcpy(n, N, KeySz); sort(n, n + 5); }
+        bool operator==(const Key &x) const {
+            return memcmp(n, x.n, KeySz) == 0; }
+    };
+    struct KV {
+        Key k; int v;
+        KV(Key &K, int V) : k(K), v(V) {}
+    };
+    typedef vector<KV> KVV; KVV b[HASHB];
+    u32 fnv_hash(const Key &k, int len) const {
+        uch *p = reinterpret_cast<uch*>(const_cast<int*>(k.n));
         u32 h = 2166136261U;
         for (int i = 0; i < len; ++i) h = (h * 16777619U ) ^ p[i];
         return h;
     }
-    bool add(const Datum &k, u64 &id) {
-        int i = fnv_hash(k, k.size() * sizeof(int)) % HASHB;
+    bool add(const Key &k, u64 &id) {
+        int i = fnv_hash(k, KeySz) % HASHB;
         for (int j = 0, J = b[i].size(); j < J; ++j)
-            if (b[i][j] == k) { id = i; id <<= 32; id |= j; return false; }
-        b[i].push_back(k);
+            if (b[i][j].k == k) { id = i; id <<= 32; id |= j; return false; }
+        b[i].push_back(KV(k, 1));
         id = i; id <<= 32; id |= (b[i].size() - 1);
         return true;
     }
-    Datum get(u64 id) const { return b[id>>32][id&0xFFFFFFFF]; }
+    KV get(u64 id) const { return b[id>>32][id&0xFFFFFFFF]; }
 };
 
 //

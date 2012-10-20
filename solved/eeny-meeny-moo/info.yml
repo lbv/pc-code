@@ -1,0 +1,12 @@
+title: Eeny Meeny Moo
+keywords:
+  - josephus
+judges:
+  uva: 440
+similar: uva-151
+summary: >
+  From a "circular" arrangement of the first $n$ positive integers, they are
+  selected one by one, starting with 1, and moving $m$ positions to the
+  right (wrapping aroung) at each step. Given no less than 3 elements
+  initially, determine the minimum $m$ such that 2 is the last number
+  chosen.

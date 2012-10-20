@@ -1,0 +1,25 @@
+title: Graph Construction
+keywords:
+  - combinatorics
+annotations:
+  - underspecified
+  - boolean output
+judges:
+  uva: 10720
+setter: Md. Bahlul Haider
+thanks:
+  - Mohammed Shamsul Alam
+  - Tanveer Ahsan
+contests:
+  - Intl. Islamic Univ Chittagong
+summary: >
+  You receive $n$ integers. Determine if it's possible to form an undirected
+  graph with no more than one edge between two nodes, such that the $n$
+  integers represent the degree of each node.
+comments: >
+  There are mathematical tools to help with this problem, such as the
+  Erdös-Gallai theorem.  It would seem that either the test data is weak, or
+  the specification of the input is wrong, because it has been reported that
+  algorithms with complexities of at least $O(n^2)$ get AC. Be careful
+  because there is no guarantee that the integers representing the degrees
+  are positive.

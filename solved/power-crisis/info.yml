@@ -3,3 +3,8 @@ keywords:
   - josephus
 judges:
   uva: 151
+summary: >
+  The Josephus mechanism of choosing $n$ elements in curcular arrangement
+  one by one, moving $m$ positions at each step is applied to a group of
+  elements no less than 13. Determine the minimum $m$ such that 13 is the
+  last number chosen.

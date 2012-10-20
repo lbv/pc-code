@@ -1,0 +1,15 @@
+title: Ballot Evaluation
+keywords:
+  - hashing
+annotations:
+  - boolean output
+judges:
+  uva: 11629
+contests:
+  - ULM Local Contest
+summary: >
+  You receive a group of (string, number) pairs, and then a number of
+  logical comparisons of the form $s_1 + s_2 + \dots + s_k \text{op} x$
+  where $s_i$ is a string and need to be replaced by its corresponding
+  value, *op* is a logical comparison operator and $x$ is a number. Evaluate
+  each comparison operation and report its result.

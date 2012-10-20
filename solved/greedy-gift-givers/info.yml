@@ -1,0 +1,16 @@
+title: Greedy Gift Givers
+keywords:
+  - beginner
+  - ad-hoc
+judges:
+  uva: 119
+summary: >
+  A group of people give gifts to each other. Each person has a certain
+  amount of money, and decides to split it evenly to buy gifts for a list of
+  friends. At the end of the transactions, each person is left with a net
+  amount of money received or spent (could be a positive or negative value).
+  Given the description of the groups of people, their initial money and
+  their friends, determine the net values for everyone in the end.
+comments: >
+  There is apparently a small inconsistency in the problem statement.  Any
+  money not given is kept and is **not** part of a person's "net worth".

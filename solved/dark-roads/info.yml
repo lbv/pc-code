@@ -1,0 +1,13 @@
+title: Dark Roads
+keywords:
+  - minimum spanning tree
+annotations:
+  - large input
+judges:
+  uva: 11631
+contests:
+  - ULM Local Contest
+summary: >
+  Given a weighted, undirected graph, determine the difference between the
+  sum of all costs of the graph, and the sum of all costs in a minimum
+  spanning tree.

@@ -1,0 +1,13 @@
+title: Horrible Queries
+keywords:
+  - segment tree
+annotations:
+  - large input
+  - classic
+judges:
+  lightoj: 1164
+setter: Iqram Mahmud
+summary: >
+  Given an array of integers of size $n$, initially all set to zero,
+  implement two types of commands: add a value $v$ to a range of positions
+  $i, j$ and query the sum of all positions in a rage.

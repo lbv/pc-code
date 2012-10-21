@@ -2,6 +2,11 @@ title: Critical Links
 keywords:
   - graph theory
   - bridges
+annotations:
+  - large input
 judges:
   uva: 796
   lightoj: 1026
+summary: >
+  Given an undirected graph, print all the edges that are bridges, sorted by
+  their lowest, and then the highest endpoint.

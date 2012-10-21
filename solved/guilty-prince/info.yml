@@ -6,3 +6,6 @@ judges:
   lightoj: 1012
 setter: AKM Mubashwir Alam
 thanks: Jane Alam Jan
+summary: >
+  Given a maze with obstacles and one cell where someone starts, find out
+  the number of cells that the person can reach.

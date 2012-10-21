@@ -1,14 +1,21 @@
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+using namespace std;
+
 
 #define MAXT 10
 #define MAXN 1000
 #define MAXE 100000
 
-//#define MAXN 30
-//#define MAXE 100
+
+/*
+#define MAXT 20
+#define MAXN 500
+#define MAXE 100000
+*/
 
 #define Zero(v) memset(v, 0, sizeof(v))
 
@@ -22,7 +29,14 @@ void test_case()
     printf("\n%d\n", n);
     if (n == 0) return;
 
-    int e = rand() % MAXE;
+    int MaxEdges = n;
+
+    if (rand() % 3 == 0)
+        MaxEdges = min(n + n/10, MAXE);
+    if (rand() % 4 == 0)
+        MaxEdges = min(n*(n-1)/2, MAXE);
+
+    int e = rand() % MaxEdges;
     while (e--) {
         if (n == 1) break;
 

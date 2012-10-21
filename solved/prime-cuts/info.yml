@@ -1,0 +1,18 @@
+title: Prime Cuts
+keywords:
+  - prime numbers
+judges:
+  uva: 406
+summary: >
+  Given two integers $N, C$, calculate the list of prime numbers up to $N$
+  (consider 1 as a prime for this problem), and then take $2C$ or $2C - 1$
+  numbers from the center of the list, and print them.
+comments: >
+  In case you're confused with the problem statement:
+
+  * Consider 1 as a prime number.
+  * Taking a certain amount (either $2C$ or $2C - 1$) of numbers from the
+    *center* of the list means that the center of the sub-list you take
+    coincides with the center of the original list. For example, taking 5
+    numbers from the list $1, 2, 3, 5, 7, 11, 13, 17, 19$ means taking $3,
+    5, 7, 11, 13$.

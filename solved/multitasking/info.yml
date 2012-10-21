@@ -1,0 +1,14 @@
+title: Multitasking
+keywords:
+  - greedy
+  - data structures
+annotations:
+  - boolean output
+judges:
+  uva: 11926
+summary: >
+  A schedule is formed by one-time and recurrent tasks. A one-time task has
+  a beginning and ending time; a repetitive task has, in addition, a period
+  of time to start over again. Given a schedule formed by both types of
+  tasks, determine if there is any conflict in the tasks; that is, if there
+  is any pair of tasks that intersect.

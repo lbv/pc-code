@@ -1,0 +1,18 @@
+title: Waking Up Brain
+keywords:
+  - graph
+judges:
+  uva: 10507
+contests:
+  - I Local Contest in Murcia 2003
+summary: >
+  A graph of 26 nodes (represented by the letters $A, B, C, \dots$) has some
+  "sleeping" nodes with connections between them. Three of those sleeping
+  nodes are awakened all at once. Now, every sleeping node that is directly
+  connected to at least three awake nodes becomes awake in one year.
+  Determine the number of years required for all sleeping nodes to awake, or
+  if it will never happen.
+comments: >
+  Note that there's no guarantee that all of the sleeping nodes are
+  connected between them. There could be more sleeping nodes that are
+  accounted for in the rest of the input, so don't make assumptions.

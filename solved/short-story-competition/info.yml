@@ -1,0 +1,13 @@
+title: Short Story Competition
+keywords:
+  - beginner
+  - greedy
+judges:
+  uva: 12482
+contests:
+  - Maratona de Programação da SBC – ACM ICPC – 2012
+summary: >
+  You receive a list of words to be placed in a number of pages. You also
+  receive the number of maximum characters per line, and maximum lines per
+  page. Determine the minimum number of pages that the test will occupy.
+  Words can't be split up at the end of a line.

@@ -1,0 +1,25 @@
+title: Ackermann Functions
+keywords:
+  - simulation
+  - beginner
+annotations:
+  - underspecified
+judges:
+  uva: 371
+summary: >
+  Consider the recursive definition of a function $A(n)$ such that
+  $A(n+1)=A(n) \div 2$ if $A(n)$ is even and $A(n+1)=3A(n)+1$ if $A(n)$ is
+  odd; this function produces a sequence of numbers that converge into one.
+  Given two integers that denote the bounderies of a sequence of consecutive
+  positive integers, determine the number $n$ in that sequence for which
+  $A(n)$ produces the longest sequence.
+comments: >
+  This problem bears some resemblance to other problems like *The 3n+1
+  problem* (UVa 100) and *The Collatz Sequence* (UVa 694), but read the
+  problem statement carefully and think about how to handle all the details
+  that are not explicitly mentioned. For example, the input of each test
+  case is formed by two integers, but it's not guaranteed that they come in
+  order.
+
+  Note that, like in the other similar problems, any kind of memoization is
+  unnecessary and it will probably just make things more complicated.

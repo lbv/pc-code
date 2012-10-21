@@ -1,0 +1,10 @@
+title: Matrix Transpose
+keywords:
+  - list
+judges:
+  uva: 10895
+contests:
+  - UVa August 2005 Bonus Contest
+summary: >
+  You receive a description of a sparse matrix of integers. Print the
+  transpose of the matrix, using in the same format.

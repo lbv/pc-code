@@ -1,0 +1,16 @@
+title: Easy Problem From Rujia Liu?
+keywords:
+  - hashing
+annotations:
+  - large input
+judges:
+  uva: 11991
+setter: Rujia Liu
+thanks: Yiming Li
+contests:
+  - Rujia Liu's Present 3: A datastructure contest celebrating the 100th
+    anniversary of Tsinghua University
+summary: >
+  You receive an array of positive integers and a number of queries, each
+  query of the form $k, v$, which asks for the position of the kth
+  occurrence of number $v$ in the array. Answer all queries.

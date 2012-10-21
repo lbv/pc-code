@@ -1,5 +1,10 @@
 title: Digit Count
-keywords: dynamic programming
+keywords:
+  - dynamic programming
 judges:
   lightoj: 1122
 setter: Jane Alam Jan
+summary: >
+  Given a set of decimal digits, and an integer $n$ (maximum 10), find out
+  how many integers with $n$-digits from the given set exist, such that the
+  difference between any adjacent digits is at most 2.

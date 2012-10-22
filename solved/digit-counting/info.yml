@@ -1,0 +1,16 @@
+title: Digit Counting
+keywords:
+  - beginner
+  - data structures
+  - counting
+  - dynamic programming
+judges:
+  uva: 1225
+summary: >
+  Given a number $N$, find the number of occurrences of each decimal digit
+  in the sequence of integers $1, 2, \dots, N$.
+comments: >
+  Given the low limit for $N$, this problem can be solved by simple
+  simulation. A more efficient solution, based on dynamic programming is
+  also possible; see *Digits Count* (UVa 12241) for a similar problem with
+  larger limits.

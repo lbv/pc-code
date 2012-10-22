@@ -1,0 +1,20 @@
+title: Argentina
+keywords:
+  - beginner
+  - sorting
+judges:
+  uva: 11804
+setter: Sohel Hafiz
+thanks:
+  - Jane Alam Jan
+  - Shamim Hafiz
+contests:
+  - A Contest from BUBT, Bangladesh
+summary: >
+  Given a list of 10 players, with their names and offensize/defensive
+  stats, print a formation of 2 lines of 5 players (the attackers and
+  defenders), such that the offensive score of the attacking line is
+  maximized; if there's not a unique solution, then maximize the defending
+  score of the rest of the players; if the tie remains then choose the
+  offensive line from the list of attackers that comes lexicographically
+  earliest.

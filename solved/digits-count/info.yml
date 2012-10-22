@@ -1,0 +1,15 @@
+title: Digits Count
+keywords:
+  - counting
+  - dynamic programming
+judges:
+  uva: 12241
+contests:
+  - Latin America - South America - 2010/2011
+summary: >
+  For a given range of integers $[A, B]$ determine the number of occurrences
+  of each decimal digit in the numbers of the range.
+comments: >
+  For a much simpler version of this problem, see *Digit Counting* (UVa
+  1225). For a similar problem that only asks for the number of occurrences
+  of the zero digit, see *How Many Zeroes?* (LightOJ 1140).

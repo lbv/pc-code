@@ -1,4 +1,9 @@
 title: How Many Zeroes?
-keywords: counting, dynamic programming
+keywords:
+  - counting
+  - dynamic programming
 judges:
   lightoj: 1140
+summary: >
+  Find the number of occurrences of the digit zero in a given interval of
+  integers.

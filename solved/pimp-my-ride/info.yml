@@ -1,0 +1,12 @@
+title: Pimp My Ride
+keywords:
+  - dynamic programming
+  - bitmasks
+judges:
+  lightoj: 1119
+summary: >
+  Given $n$ tasks to complete (maximum 14), you receive a matrix $n \times
+  n$ of integers, such that each position $(i, i)$ represents the cost of
+  completing task $i$ and each position $(i, j)$ for $i \neq j$ represent
+  the extra cost of completing task $i$ after having completed task $j$.
+  Determine the minimum cost for completing all tasks.

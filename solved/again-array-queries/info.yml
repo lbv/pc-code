@@ -1,0 +1,12 @@
+title: Again Array Queries
+keywords:
+  - sorting
+annotations:
+  - large input
+judges:
+  lightoj: 1100
+summary: >
+  You receive a large array of $n$ integers (each integer in the range
+  $[0:1000]$) and a number of queries of the form $(i, j)$ with $0 \leq i <
+  j < n$. Answer each query with the minimum difference between any pair of
+  distinct positions inside the array in the range $[i:j]$.

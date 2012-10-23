@@ -1,0 +1,12 @@
+title: Ghajini
+keywords:
+  - segment tree
+annotations:
+  - large input
+judges:
+  lightoj: 1093
+setter: Jane Alam Jan
+summary: >
+  Given a large array of integers and an integer $d$, find the maximum
+  difference between any pair of values inside a range of $d$ consecutive
+  numbers inside the array.

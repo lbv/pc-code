@@ -1,5 +1,8 @@
 title: Intelligent Factorial Factorization
-keywords: number theory
+keywords:
+  - number theory
 judges:
   lightoj: 1035
 setter: Jane Alam Jan
+summary: >
+  Given an integer $N$, find the prime factorization of $N!$.

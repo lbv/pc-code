@@ -1,4 +1,8 @@
 title: Life, the Universe, and Everything
-keywords: beginner
+keywords:
+  - beginner
 judges:
   spoj: TEST
+summary: >
+  Simply read and print back integers from standard input until you read the
+  number 42.

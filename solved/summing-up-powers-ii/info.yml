@@ -1,0 +1,10 @@
+title: Summing Up Powers (II)
+keywords:
+  - matrix exponentiation
+judges:
+  lightoj: 1142
+setter: Jane Alam Jan
+summary: >
+  Given a matrix $A$ of integers, with size $n \times n$, and an integer
+  $k$, calculate the result of $A + A^2 + A^3 + \dots A^k$, where each
+  element in the resulting matrix is calculated modulo 10.

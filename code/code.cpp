@@ -19,12 +19,12 @@ typedef set<II> IIS;
 // I/O
 //
 struct Reader {
-    char b; Reader() { read(); }
-    void read() { int r = fgetc_unlocked(stdin); b = r == EOF ? 0 : r; }
-    void skip() { while (b > 0 && b <= 32) read(); }
+    int b; Reader() { read(); }
+    void read() { b = getchar_unlocked(); }
+    void skip() { while (b >= 0 && b <= 32) read(); }
 
     u32 next_u32() {
-        u32 v = 0; for (skip(); b > 32; read()) v = v*10 + b-48; return v; }
+        u32 v = 0; for (skip(); b > 32; read()) v = 10*v+b-48; return v; }
     void next(char *s) { for (skip(); b > 32; read()) *s++ = b; *s = 0; }
     char next_char() { skip(); char c = b; read(); return c; }
     int next_int() {
@@ -46,8 +46,8 @@ struct Reader {
 };
 struct LineReader {
     char b; LineReader() { read(); }
-    void read() { int r = fgetc_unlocked(stdin); b = r == EOF ? 0 : r; }
-    void skip() { while (b > 0 && b <= 32 && b != 10) read(); }
+    void read() { b = getchar_unlocked(); }
+    void skip() { while (b >= 0 && b <= 32 && b != 10) read(); }
     void skip_line() { skip(); if (b == 10) { read(); skip(); } }
     bool has_next() { skip(); return b > 0 && b != 10; }
     bool eof() { skip(); return b == 0; }

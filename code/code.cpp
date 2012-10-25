@@ -740,49 +740,48 @@ struct Fraction {
 //
 // Matrix Exponentiation
 //
-typedef u32 t_m;
-#define MAXR (MAXK + 2)
-#define MAXC (MAXK + 2)
+typedef int m_t;
+const int MRows = MAXN;
+const int MCols = MAXN;
 struct Matrix {
     int r, c;
-    t_m m[MAXR][MAXC];
+    m_t m[MRows][MCols];
     void init(int R, int C) { Zero(m); r=R; c=C; }
+    void iden() {
+        for (int i = 0; i < r; ++i)
+            for (int j = 0; j < c; ++j)
+                m[i][j] = i == j ? 1 : 0;
+    }
     void print() {
         for (int i = 0; i < r; ++i) {
-            for (int j = 0; j < c; ++j)
-                printf("%4d  ", m[i][j]);
+            for (int j = 0; j < c; ++j) printf("%4d  ", m[i][j]);
             printf("\n");
         }
     }
-};
 
-void matrix_mul(const Matrix &a, const Matrix &b, Matrix &c)
-{
-    c.r = a.r, c.c = b.c;
-    t_m x;
-    for (int i = 0; i < c.r; ++i)
-        for (int j = 0; j < c.c; ++j) {
-            x = 0;
-            for (int k = 0; k < a.c; ++k)
-                x += a.m[i][k] * b.m[k][j];
-            c.m[i][j] = x;
-        }
-}
-
-void matrix_exp(const Matrix &m, u64 e, Matrix &r)
-{
-    if (e == 1) { r = m; return; }
-
-    Matrix x;
-    if (e % 2 == 0) {
-        matrix_exp(m, e / 2, x);
-        matrix_mul(x, x, r);
-        return;
+    void mul(const Matrix &y, Matrix &z) const {
+        z.r = r, z.c = y.c; m_t v;
+        for (int i = 0; i < z.r; ++i)
+            for (int j = 0; j < z.c; ++j) {
+                v = 0;
+                for (int k = 0; k < c; ++k)
+                    v += m[i][k] * y.m[k][j];
+                z.m[i][j] = v % 10;
+            }
     }
 
-    matrix_exp(m, e-1, x);
-    matrix_mul(x, m, r);
-}
+    void exp(int e, Matrix &z) {
+        z.init(r, c); z.iden();
+        Matrix x, b = *this;
+        while (true) {
+            if (e & 1) { z.mul(b, x); z = x; }
+            e >>= 1;
+            if (e == 0) break;
+            b.mul(b, x);
+            b = x;
+        }
+    }
+};
 
 //
 // Geometry

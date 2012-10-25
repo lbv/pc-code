@@ -3,17 +3,17 @@
 #include <ctime>
 
 
-/*
+#if 1
 #define MAXT 10
 #define MAXN 50000
 #define MAXLEN 50
-*/
+#endif
 
-
+#if 0
 #define MAXT 25
 #define MAXN 10
 #define MAXLEN 3
-
+#endif
 
 
 const char dna[] = "ACGT";

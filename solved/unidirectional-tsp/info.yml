@@ -1,0 +1,11 @@
+title: Unidirectional TSP
+keywords:
+  - dynamic programming
+judges:
+  uva: 116
+summary: >
+  Given a grid of numbers, find the path from the first to the last column
+  with minimum cost, traveling only to the right to an adjacent cell
+  (horizontal or in diagonal). The first row is considered adjacent to the
+  bottom row (i.e. it "wraps around"). Print the minimum cost and the
+  lexicographically lowest path the corresponds to it.

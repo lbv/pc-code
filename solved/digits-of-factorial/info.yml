@@ -6,5 +6,5 @@ judges:
   lightoj: 1045
 setter: Jane Alam Jan
 summary: >
-  Given two integers: $n$ and $base$, find out the number of digits of $n$
+  Given two integers: $n$ and $base$, find out the number of digits of $n!$
   when represented in base $base$.

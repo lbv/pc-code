@@ -1,0 +1,19 @@
+title: Fi-binary Number
+keywords:
+  - recursion
+  - binary search
+judges:
+  uva: 11089
+  lightoj: 1105
+setter: Abdullah-al-Mahmud
+contests:
+  - 5th IIUC Inter-University Programming Contest, 2006
+summary: >
+  A Fi Binary Number is a binary number that doesn't contain two consecutive
+  ones. The first such numbers are $1, 10, 100, 101, 1000, 1010, \dots$.
+  Given an integer $n$ (maximum $10^9$), find the $n$th Fi Binary number.
+comments: >
+  Observe how many Fi Binary numbers of each length there are (how many
+  numbers of length 1, of length 2, and so on). Can you notice anything
+  interesting? Think about why they are called *Fi* Binary numbers. This
+  relation is helpful to find the answer.

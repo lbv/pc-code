@@ -6,3 +6,10 @@ judges:
   lightoj: 1037
 setter: Muhammad Rifayat Samee
 thanks: Jane Alam Jan
+summary: >
+  A number of targets have to be shot. You start with a weapon that does a
+  damage of one to all targets. You receive the health level of all targets,
+  and a matrix that represent how much damage can be made to each target
+  with the weapons you can take from them (only after you have completely
+  finished a target). Determine the minimum number of shots required to
+  finish all targets.

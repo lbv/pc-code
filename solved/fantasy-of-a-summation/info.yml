@@ -9,3 +9,6 @@ setter: Jane Alam Jan
 thanks: Anna Fariha
 contests:
   - IIUPC 2009
+summary: >
+  Given a fragment of C code that involves nested loops and summations,
+  replicate the functionality of the code, but efficiently.

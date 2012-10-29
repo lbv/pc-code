@@ -11,3 +11,11 @@ setter: Samee Zahur
 thanks: Jane Alam Jan
 contests:
   - World Finals 2010 Warmup II
+summary: >
+  A set of lights are setup such that by turning on a certain light, a chain
+  reaction can be produced because some lights are turned on automatically
+  if they sense other nearby lights have been flipped on. Given a directed
+  graph that describes the relations between the lights (an edge represents
+  that when one light is turned on, the other is turned on automatically),
+  find out the minimum number of lights that have to be turned on, so the
+  entire set of lights end up on.

@@ -8,15 +8,17 @@
 using namespace std;
 
 
-
-/*
+#if 0
 #define MAXT 30
 #define MAXN 10000
 #define MAXM 20000
-*/
-#define MAXT 100
-#define MAXN 10
-#define MAXM 35
+#endif
+
+#if 1
+#define MAXT 25
+#define MAXN 6
+#define MAXM 1000
+#endif
 
 
 #define Zero(v) memset((v), 0, sizeof(v))
@@ -30,8 +32,8 @@ typedef set<II>     IIS;
 void test_case()
 {
     int n = rand() % (MAXN - 2) + 3;
-    int MaxEdges = n*(n-1)/2;
-    int m = rand() % MaxEdges;
+    int MaxEdges = min(n*(n-1)/2, MAXM);
+    int m = rand() % (MaxEdges + 1);
 
     if (m < n - 1) m = n - 1;
 

@@ -2,7 +2,18 @@
 #include <cstdlib>
 #include <ctime>
 
+
+#if 0
+#define MAXT 5
 #define MAXN 50000
+#endif
+
+#if 1
+#define MAXT 50
+#define MAXN 18
+#endif
+
+
 void test_case()
 {
     int n = rand() % (MAXN - 1) + 2;
@@ -20,7 +31,7 @@ int main()
 {
     srand(time(NULL));
 
-    int T = 5;
+    int T = MAXT;
     printf("%d\n", T);
 
     while (T--)

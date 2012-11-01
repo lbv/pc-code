@@ -1,0 +1,11 @@
+title: Farthest Node in a Tree (II)
+keywords:
+  - depth first search
+annotations:
+  - large input
+judges:
+  lightoj: 1257
+setter: Jane Alam Jan
+summary: >
+  You are given the description of an undirected, weighted tree. For each
+  node, determine the distance to the farthest node in the tree.

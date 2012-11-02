@@ -1,5 +1,13 @@
 title: Array Simulation
-keywords: beginner, simulation
+keywords:
+  - beginner
+  - simulation
 judges:
   lightoj: 1133
 setter: Jane Alam Jan
+summary: >
+  You receive a small array of integers and a list of commands to perform on
+  that array: add a value to all elements of the array, multiply all values
+  by a value, divide them, reverse the array, or swap two elements from the
+  array. Print the resulting state of the array after executing all
+  commands.

@@ -1,94 +1,68 @@
-/*
-	Author       :	Jan
-	Problem Name :
-	Algorithm    :
-	Complexity   :
-*/
-
-#include <vector>
-#include <list>
-#include <map>
-#include <set>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <iostream>
 #include <cstdio>
-#include <cmath>
 #include <cstdlib>
-#include <cctype>
-#include <string>
-#include <sstream>
-
+#include <cstring>
+#include <ctime>
+#include <set>
 using namespace std;
 
-#define NN 20001
 
-#define MM 100002
-
-int cases, caseno, n, team[NN], A[NN], B[NN];
-
-struct dual {
-	int x, y;
-	bool operator < ( const dual &b ) const {
-		if( x != b.x ) return x < b.x;
-		return y < b.y;
-	}
-}E[MM];
-
-int total, black;
+#define Zero(v) memset((v), 0, sizeof(v))
 
 
-set <int> L;
+#if 1
+#define MAXT 10
+#define MAXN 100000
+#define MAXV 20000
+#endif
 
-set <dual> S;
+#if 0
+#define MAXT 25
+#define MAXN 100
+#define MAXV 90
+#endif
 
-int main() {
-	//freopen("b.in","w",stdout);
 
-	cases = 10;
-	printf("%d\n", cases);
-	srand(time(NULL));
-	while( cases-- ) {
-		int i, M;
-		n = rand() % 100 + 1;
+typedef pair<int, int> II;
+typedef set<II> IIS;
 
-//		if( cases % 4 == 0 ) n = rand() % 100 + 1;
 
-//		if( cases == 30 ) n = 100000;
+int team[MAXV];
 
-		printf("%d\n", n);
 
-		M = min( 20000, (rand() % 30 + 2) * n + 1 );
+void test_case()
+{
+    int n = rand() % MAXN + 1;
+    printf("%d\n", n);
 
-		for( i = 0; i < M; i++ ) {
-			if(  (rand() + 17 * rand() ) % 2 == 0 ) team[i] = 0;
-			else team[i] = 1;
-		}
+    IIS fights;
+    Zero(team);
 
-		int k = 0, l = 0;
-		for( i = 0; i < M; i++ ) {
-			if( !team[i] ) {
-				A[k++] = i;
-			}
-			else B[l++] = i;
-		}
-		S.clear();
-		while( n -- ) {
-			dual a;
+    while (n--) {
+        int u, v;
+        do {
+            u = rand() % MAXV;
+            v = rand() % MAXV;
 
-			while(1) {
-				a.x = A[rand() % k];
-				a.y = B[rand() % l];
+            if (team[u] == 0)
+                team[u] = rand() % 2 + 1;
+            if (team[v] == 0)
+                team[v] = rand() % 2 + 1;
 
-				if( S.find(a) == S.end() ) {
-					printf("%d %d\n", a.x + 1, a.y + 1);
-					S.insert(a);
-					break;
-				}
-			}
-		}
-	}
-	return 0;
+        } while (team[u] == team[v] || fights.find(II(u, v)) != fights.end());
+
+        fights.insert(II(u, v));
+        printf("%d %d\n", u + 1, v + 1);
+    }
 }
 
+int main()
+{
+    srand(time(NULL));
+
+    int T = MAXT;
+    printf("%d\n", T);
+
+    while (T--) test_case();
+
+    return 0;
+}

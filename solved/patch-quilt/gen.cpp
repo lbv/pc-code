@@ -6,11 +6,23 @@
 #include <vector>
 using namespace std;
 
+
+#if 1
 #define MAXT 200
 #define MAXR 30
 #define MAXC 30
 #define MAXN 20
 #define MAX_NAME 15
+#endif
+
+#if 0
+#define MAXT 30
+#define MAXR 8
+#define MAXC 8
+#define MAXN 5
+#define MAX_NAME 12
+#endif
+
 
 #define Zero(v) memset(v, 0, sizeof(v))
 

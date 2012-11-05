@@ -1,5 +1,10 @@
 title: Palindromic Numbers (II)
-keywords: beginner
+keywords:
+  - beginner
+annotations:
+  - boolean output
 judges:
   lightoj: 1225
 setter: Jane Alam Jan
+summary: >
+  Given an integer number, determine if it's a palindromic number or not.

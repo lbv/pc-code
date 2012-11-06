@@ -2,6 +2,8 @@ title: Athletics Track
 keywords:
   - binary search
   - geometry
+annotations:
+  - special judge
 judges:
   uva: 11646
   lightoj:
@@ -11,3 +13,8 @@ setter: Sabbir Yousuf Sanny
 thanks: Manzurur Rahman Khan
 contests:
   - Once Again! A Bangladeshi Contest
+summary: >
+  An athletics track has a perimeter of exactly 400 meters, and its shape is
+  rectangular, with two arcs on opposite sides. You receive the width to
+  length ratio of the track, you have to determine the exact length and
+  width of the track.

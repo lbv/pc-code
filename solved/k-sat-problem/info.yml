@@ -1,5 +1,15 @@
 title: K-SAT Problem
-keywords: adhoc, data structures
+keywords:
+  - ad-hoc
+  - data structures
+  - beginner
+annotations:
+  - boolean output
 judges:
   lightoj: 1261
 setter: Jane Alam Jan
+summary: >
+  A K-satisfiability problem is described by the $K$ wishes of $n$ people
+  over $m$ items. You also receive the list of objects that describe a
+  certain configuration. Determine if the given setup satisfies all $n$
+  people or not.

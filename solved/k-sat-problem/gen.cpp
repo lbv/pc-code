@@ -3,23 +3,40 @@
 #include <stdlib.h>
 #include <ctime>
 
+
+#if 0
+#define MAXT 100
+#define MAXN 30
+#define MAXM 30
+#define MAXK 30
+#endif
+
+#if 1
+#define MAXT 25
+#define MAXN 5
+#define MAXM 10
+#define MAXK 8
+#endif
+
+
 int cases, caseno;
 int n, m, k, a[50][50], p;
 bool sol[50];
 
 int main() {
-	freopen("d.in", "w", stdout);
-
-	int cases = 10;
-
+	//freopen("d.in", "w", stdout);
     srand(time(NULL));
+
+	int cases = MAXT;
+
 	printf("%d\n", cases);
 	while( cases-- ) {
-		int n = rand() % 5 + 1;
-		int k = rand() % 30 + 1;
-		int m = rand() % 3 + 1;
+		int n = rand() % MAXN + 1;
+		int k = rand() % MAXK + 1;
+		int m = rand() % MAXM + 1;
 
-		//if( cases == 5 || cases == 10 || cases == 15 ) n = k = m = 30;
+		if( cases == 5 || cases == 10 || cases == 15 )
+			n = MAXN, k = MAXK, m = MAXM;
 
 		printf("%d %d %d\n", n, m, k);
 

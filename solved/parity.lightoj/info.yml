@@ -2,6 +2,8 @@ title: Parity
 keywords:
   - beginner
   - math
+annotations:
+  - boolean output
 judges:
   lightoj: 1182
 setter: Jane Alam Jan

@@ -1,0 +1,16 @@
+title: Story of Tomisu Ghost
+keywords:
+  - number theory
+  - factorials
+judges:
+  uva: 11977
+  lightoj: 1340
+setter: Shahriar Manzoor
+thanks:
+  - Jane Alam Jan
+  - Md. Towhidul Islam Talukder
+contests:
+  - A Contest dedicated to Renat Mullakhanov (rem)
+summary: >
+  Given two integers $n, t$, determine the largest base $b$ such that $n!$
+  has at least $t$ zeroes in base $b$.

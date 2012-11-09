@@ -7,7 +7,7 @@
 using namespace std;
 
 
-#if 1
+#if 0
 #define MAXT 200
 #define MAXR 30
 #define MAXC 30
@@ -15,12 +15,12 @@ using namespace std;
 #define MAX_NAME 15
 #endif
 
-#if 0
-#define MAXT 30
+#if 1
+#define MAXT 25
 #define MAXR 8
 #define MAXC 8
 #define MAXN 5
-#define MAX_NAME 12
+#define MAX_NAME 10
 #endif
 
 

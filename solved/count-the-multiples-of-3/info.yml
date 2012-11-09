@@ -1,0 +1,12 @@
+title: Count the Multiples of 3
+keywords:
+  - segment tree
+annotations:
+  - large input
+judges:
+  lightoj: 1135
+summary: >
+  You receive a large array of integers (initially filled with zeroes) and
+  have to perform two types of operations over it: increase by one a range
+  of positions, and report the number of multiples of 3 inside a given
+  range.

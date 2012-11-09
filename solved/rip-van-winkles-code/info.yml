@@ -1,0 +1,21 @@
+title: Rip Van Winkle's Code
+keywords:
+  - segment treee
+annotations:
+  - large input
+judges:
+  uva: 12436
+  lightoj: 1411
+setter: Anindya Das
+thanks:
+  - Tanaeem Md. Moosa
+  - Jane Alam Jan
+contests:
+  - World Finals Warmup I
+summary: >
+  You start with an array of 250 thousand integers, all initially set to
+  zero. You have to implement four types of operations: add the sequence of
+  integers $1, 2, \dots$ from left to right to a given range of positions,
+  add the sequence $1, 2, \dots$ from right to left to a range, set all
+  positions in a range to a certain value, and finally query the sum of a
+  given range.

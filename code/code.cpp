@@ -1007,6 +1007,7 @@ struct SegTree {
     int query(int i, int j) { return tree_query(i, j, 1, 0, n-1); }
     int tree_query(int i, int j, int x, int a, int b) {
         if (j < a || i > b) return -1;
+        propagate(x, a, b);
         if (a >= i && b <= j) return T[x];
         int lt = 2*x, rt = lt + 1, md = (a+b)/2;
         int q1 = tree_query(i, j, lt, a, md);

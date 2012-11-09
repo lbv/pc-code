@@ -1,0 +1,9 @@
+title: nTh Term
+keywords:
+  - matrix exponentiation
+judges:
+  lightoj: 1096
+setter: Jane Alam Jan
+summary: >
+  Calculate the nth term of the function: $f(n) = a \cdot f(n-1) + b \cdot
+  f(n-3) + c$ where $n, a, b, c$ are known constants.

@@ -1,0 +1,12 @@
+title: Computing Fast Average
+keywords:
+  - segment tree
+annotations:
+  - large input
+judges:
+  lightoj: 1183
+setter: Jane Alam Jan
+summary: >
+  Given a large array of integers (initially all zeroes), you have to
+  perform two types of operations over it: set a range of positions to an
+  arbitrary value, and query the average of the integers in a given range.

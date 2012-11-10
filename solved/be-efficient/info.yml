@@ -1,0 +1,22 @@
+title: Be Efficient
+keywords:
+  - data structures
+  - modular arithmetic
+judges:
+  uva: 11155
+  lightoj:
+    id: 1134
+    annotations:
+      - large input
+    thanks: Jane Alam Jan
+    summary: >
+      You receive a list of $N$ integers and an integer $M$. Determine the
+      number of sublists of integers that are divisible by $M$.
+setter: Mohiul Alam Prince
+thanks: Sohel Hafiz
+contests:
+  - Next Generation Contest III
+summary: >
+  You receive the description of a sequence of integer numbers, described by
+  5 constants: $A, B, C, M, N$. Determine the number of sublists of numbers
+  in that sequence that are divisible by $M$.

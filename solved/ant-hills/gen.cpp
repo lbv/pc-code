@@ -22,10 +22,17 @@
 
 using namespace std;
 
-#if 1
+
+#if 0
 #define MAXN 10000
 #define MINN 5000
 #endif
+
+#if 1
+#define MAXN 15
+#define MINN 5
+#endif
+
 
 const int TopN = MAXN - MINN;
 
@@ -41,12 +48,13 @@ set < pair <int, int> > S;
 int main() {
 	// freopen("d.in", "w", stdout);
 
+    srand(time(NULL));
 	int cases = 20;
 	printf("%d\n", cases);
 	while( cases-- ) {
 		puts("");
 
-		int n = rand() % 20 + 1;
+		int n = rand() % MAXN + 1;
 
 		if( cases < 5 ) n = rand() % TopN + MINN;
 

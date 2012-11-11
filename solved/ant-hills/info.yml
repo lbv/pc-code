@@ -1,4 +1,10 @@
 title: Ant Hills
-keywords: biconnected component, articulation
+keywords:
+  - biconnected component
+  - articulation
 judges:
   lightoj: 1063
+setter: Jane Alam Jan
+summary: >
+  Given a connected, undirected graph, determine the number of articulation
+  points in in.

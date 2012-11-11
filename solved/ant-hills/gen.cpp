@@ -22,6 +22,13 @@
 
 using namespace std;
 
+#if 1
+#define MAXN 10000
+#define MINN 5000
+#endif
+
+const int TopN = MAXN - MINN;
+
 int cases, pr[10005];
 
 int findPr( int u ) {
@@ -32,7 +39,7 @@ int findPr( int u ) {
 set < pair <int, int> > S;
 
 int main() {
-	freopen("d.in", "w", stdout);
+	// freopen("d.in", "w", stdout);
 
 	int cases = 20;
 	printf("%d\n", cases);
@@ -41,9 +48,9 @@ int main() {
 
 		int n = rand() % 20 + 1;
 
-		if( cases < 5 ) n = rand() % 5000 + 5000;
+		if( cases < 5 ) n = rand() % TopN + MINN;
 
-		if( cases == 2 ) n = 10000;
+		if( cases == 2 ) n = MAXN;
 
 
 		S.clear();

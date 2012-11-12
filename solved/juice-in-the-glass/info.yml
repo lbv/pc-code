@@ -1,5 +1,14 @@
 title: Juice in the Glass
-keywords: math, geometry, calculus
+keywords:
+  - math
+  - geometry
+  - calculus
+annotations:
+  - special judge
 judges:
   lightoj: 1216
 setter: AKM Mubashwir Alam
+thanks: Jane Alam Jan
+summary: >
+  You receive the measurements of a glass in the shape of a cone section
+  with some juice in it. Calculate the volume of juice in the glass.

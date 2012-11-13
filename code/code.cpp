@@ -459,17 +459,17 @@ namespace Num
         return ! IsComp(n);
     }
     // Finds prime numbers between a and b, using basic primes up to sqrt(b)
+    // pre cond: a > 2 (handle that separately)
     void prime_seg_sieve(i64 a, i64 b, IV &seg_primes) {
         BV pmap(b - a + 1, true);
         i64 sqr_b = sqrt(b);
-        cFor (IV, pp, primes) {
+        For (IV, pp, primes) {
             int p = *pp;
             if (p > sqr_b) break;
             for (i64 j = (a+p-1)/p, v=(j==1?p+p:j*p); v <= b; v += p)
                 pmap[v-a] = false;
         }
         seg_primes.clear();
-        if (a == 1) pmap[0] = false;
         for (int i = a%2 ? 0 : 1, I = b - a + 1; i < I; i += 2)
             if (pmap[i])
                 seg_primes.push_back(a + i);
@@ -490,7 +490,7 @@ namespace Num
         ds.clear();
         ds.push_back(1);
         int sn = sqrt(n);
-        cFor(IV, pp, primes) {
+        For (IV, pp, primes) {
             int p = *pp;
             if (p > sn) break;
             if (n % p != 0) continue;
@@ -504,7 +504,7 @@ namespace Num
         }
         if (n > 1) {
             IV aux(ds.begin(), ds.end());
-            cFor(IV, v, ds) aux.push_back(*v * n);
+            For (IV, v, ds) aux.push_back(*v * n);
             ds = aux;
         }
     }
@@ -698,7 +698,7 @@ struct Bigint {
         char buf[BIDIG+1]; string str;
         if (sgn) str.push_back('-');
         bool flg = true;
-        crFor (IV, i, d) {
+        RFor (IV, i, d) {
             if (flg) { sprintf(buf, "%d", *i); flg=false; }
             else sprintf(buf, BIFMT, *i);
             str.append(buf);
@@ -1138,6 +1138,30 @@ void merge_sort(IVi lo, IVi hi)
     if (hi <= lo + 1) return;
     IVi mid = lo + ((hi - lo) / 2);
     merge_sort(lo, mid); merge_sort(mid, hi); merge(lo, hi, mid);
+}
+
+//
+// Classic DP routines
+//
+
+// Calculates LIS, returns the length of the LIS and store lengths for each
+// element of seq in ls
+int lis(IV &seq, IV &ls)
+{
+    IV I(n + 1);
+    ls = IV(n);
+    int len = 0;
+    for (int i = 0; i < n; ++i) {
+        int lo = 1, hi = len;
+        while (lo <= hi) {
+            int m = (lo + hi) / 2;
+            if (I[m] < seq[i]) lo = m + 1;
+            else hi = m - 1;
+        }
+        I[lo] = seq[i], ls[i] = lo;
+        if (len < lo) len = lo;
+    }
+    return len;
 }
 
 //

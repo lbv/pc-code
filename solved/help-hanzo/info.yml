@@ -1,0 +1,10 @@
+title: Help Hanzo
+keywords:
+  - number theory
+  - segmented sieve
+judges:
+  lightoj: 1197
+setter: Jane Alam Jan
+summary: >
+  Given two integers $a, b$, determine the number of primes in the range
+  $[a:b]$.

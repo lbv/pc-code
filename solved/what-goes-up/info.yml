@@ -1,0 +1,13 @@
+title: What Goes Up
+keywords:
+  - longest increasing subsequence
+annotations:
+  - classic
+  - underspecified
+  - large input
+judges:
+  uva: 481
+summary: >
+  Given a list of integers, determine the length of the longest increasing
+  subsequence, and print the LIS. If there's more than one answer, print the
+  subsequence that occurs last.

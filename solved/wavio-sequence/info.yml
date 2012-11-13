@@ -1,0 +1,17 @@
+title: Wavio Sequence
+keywords:
+  - longest increasing subsequence
+annotations:
+  - large input
+judges:
+  uva: 10534
+  lightoj: 1421
+contests:
+  - The Diamond Wedding Contest: Elite Panel's 1st Contest
+setter: Md. Kamruzzaman
+summary: >
+  A "Wavio" sequence is a sequence of integers of odd length, where the
+  first half of the numbers (including the middle number) is strictly
+  increasing and the second half is strictly decreasing. Given a list of
+  numbers, determine the length of the longest subsequence that forms a
+  valid Wavio.

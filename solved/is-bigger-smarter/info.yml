@@ -1,0 +1,15 @@
+title: Is Bigger Smarter?
+keywords:
+  - dynamic programming
+  - sorting
+annotations:
+  - special judge
+judges:
+  uva: 10131
+setter: Charlie Rackoff
+contests:
+  - The 'silver wedding' contest
+summary: >
+  Given a list of pairs of integers, find a sequence of these tuples such
+  that the first element increases while the second element decreases for
+  each successive element, and the sequence is as long as possible.

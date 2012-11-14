@@ -1,0 +1,8 @@
+title: Dollars
+keywords:
+  - coin change
+judges:
+  uva: 147
+summary: >
+  Given a group of available values of currency and an amount of money,
+  determine the amount of ways in which that change can be made.

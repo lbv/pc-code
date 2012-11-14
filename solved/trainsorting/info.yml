@@ -1,0 +1,17 @@
+title: Trainsorting
+keywords:
+  - longest increasing subsequence
+judges:
+  uva: 11456
+setter: Ondřej Lhoták
+contests:
+  - Waterloo Local Spring 2008
+summary: >
+  You receive a list of integers, and from it you have to form an strictly
+  increasing sequence. However, to do this, you can only select numbers from
+  it (in order) and push them into either end of the sequence (front or
+  back). It is possible to skip some numbers. Determine the maximum possible
+  length of the resulting sequence.
+comments: >
+  Think about the implications of reversing the list of numbers, and then
+  determining the length of the LIS and LDS that end on each position.

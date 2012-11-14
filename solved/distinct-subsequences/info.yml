@@ -1,0 +1,13 @@
+title: Distinct Subsequences
+keywords:
+  - dynamic programming
+  - big integer
+judges:
+  uva: 10069
+setter: Rezaul Alam Chowdhury
+thanks: Shahriar Manzoor
+contests:
+  - BUET/UVA Occidental (WF Warmup) Contest 1
+summary: >
+  Given a possibly large string X, and a shorter string Z (maximum length
+  100), find the number of times that Z occurs as a subsequence of X.

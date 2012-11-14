@@ -4,59 +4,11 @@ LightOJ, SPOJ, etc.
 All of this is released into the public domain; feel free to do whatever you
 want with this.
 
-If you are a beginner in algorithms and problem solving, here are my
-recommendations:
-
-- Read as much as you can about the theory behind the problems. On the net
-  there is plenty of information about most topics (like dynamic
-  programming, graph theory, etc.). Of course, there are also many good
-  books. Here are some that I can recommend:
-
-  - [Programming Challenges](http://www.programming-challenges.com/) by
-    Skiena, Revilla.
-  - [The Algorithm Design Manual](http://www.algorist.com/) (a.k.a. _the red
-    book_) by Skiena.
-  - [Algorithm Design](http://bit.ly/KLhHt5) (a.k.a. _the black book_) by
-    Kleinberg, Tardos.
-
-  The following two are also very popular, although I haven't read them:
-
-  - [Competitive Programming](https://sites.google.com/site/stevenhalim/) by
-    the Halim brothers.
-  - [Introduction to
-    Algorithms](http://en.wikipedia.org/wiki/Introduction_to_Algorithms)
-    (a.k.a. CLR)  by Cormen, Leiserson, Rivest.
-
-- If you can't recognise the type of problems you come across with, there
-  are many useful resources that can help you. LightOJ has its archive
-  categorised and has dedicated forums for each of the problems, so you can
-  learn from others.
-
-  The following websites also have useful information about problems from
-  the UVa archives:
-
-  - [Igor's UVa tools](http://shygypsy.com/acm/)
-  - [UVa toolkit](http://uvatoolkit.com/problemssolve.php)
-
-  Finally, I also try to keep my solutions to the problems organised, and
-  include as much useful information on them as possible. See the `info.yml`
-  files in each problem's directory.
-
-- Use the forum systems from the online judges! You can find many useful
-  information from pevious discussions, and you can also ask your own
-  questions, which is an excellent way to quickly speed up your progress if
-  you're just starting.
-
-- An excellent tool to know which problems to solve next is Felix Halim's
-  [uHunt](http://uhunt.felix-halim.net/) for the UVa OJ. If you
-  haven't used it yet, give it a try!
-
-- Try to solve the problems yourself as much as possible. The point of all
-  of this is to learn, so you can apply your knowledge when the right time
-  comes, be it in a competition, or when solving a real-life problem. Only
-  use the code of other programmers as a last resort.
-
-- I keep a small blog where I discuss a few problems I find interesting. You can
-  read it [here](http://lbv-pc.blogspot.com/).
+In case you're interested, I maintain a blog about algorithm problems, which
+you can read here: [On Algorithm Problems](http://lbv-pc.blogspot.com/). In
+particular, if you're a beginner, you may find it useful to read [this
+page](http://lbv-pc.blogspot.com/p/about.html) where I have posted my advice
+for people who are starting their journey in the world of algorithm problems
+and competitive programming.
 
 Have fun!

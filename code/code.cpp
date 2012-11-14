@@ -1164,6 +1164,20 @@ int lis(IV &seq, IV &ls)
     return len;
 }
 
+// Coin change
+//   W:  answer
+//   C:  coin values
+//   n:  number of coins
+//   k:  maximum amount of money
+//   pre-cond: W is cleared
+void cc(int *W, const int *C, int n, int k)
+{
+    W[0] = 1;
+    for (int i = n - 1; i >= 0; --i)
+        for (int a = 0, b = C[i]; b <= k; ++a, ++b)
+            W[b] = (W[b] + W[a]) % MOD;
+}
+
 //
 // Misc functions
 //

@@ -1,5 +1,11 @@
 title: Double Ended Queue
-keywords: beginner, data structure
+keywords:
+  - beginner
+  - data structures
+  - simulation
 judges:
   lightoj: 1212
 setter: Jane Alam Jan
+summary: >
+  Simulate the operation of a data structure that warks as a queue where you
+  can push/pop from both sides.

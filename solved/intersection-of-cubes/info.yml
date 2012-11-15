@@ -1,4 +1,10 @@
 title: Intersection of Cubes
-keywords: beginner, geometry
+keywords:
+  - beginner
+  - geometry
 judges:
   lightoj: 1211
+setter: Jane Alam Jan
+summary: >
+  Given the description of $n$ cubes with their sides parallel to the axes,
+  determine the volume of their intersection.

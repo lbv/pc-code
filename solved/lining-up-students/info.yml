@@ -1,0 +1,15 @@
+title: Lining Up Students
+keywords:
+  - greedy
+annotations:
+  - large input
+judges:
+  lightoj: 1187
+setter: Jane Alam Jan
+summary: >
+  Each person in a group of $n$ people is identified by a number,
+  representing their relative height (1 is the shortest person, $n$ is the
+  tallest person). They form a line, and you receive a sequence of $n$
+  numbers, where the $i$th number ($1 \leq i \leq n$) represents the amount
+  of people taller than the $i$th person and to his/her left. Determine the
+  identifier of the person first in line.

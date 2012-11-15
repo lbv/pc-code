@@ -1,0 +1,18 @@
+title: Murcia's Skyline
+keywords:
+  - dynamic programming
+annotations:
+  - underspecified
+judges:
+  uva: 11790
+contests:
+  - VIII Programming Olympiads in Murcia
+summary: >
+  A sequence of two-integer tuples is given. These tuples represent the
+  height and width of a series of buildings. The length of a subsequence is
+  defined as the sum of widths of a subsequence of buildings such that their
+  heights are strictly increasing or decreasing. Determine the maximum
+  lengths of increasing and decreasing subsequences.
+comments: >
+  Because the specification is very lacking, it's hard to know at first
+  which type of strategy to use. An $O(n^2)$ algorithm is good enough.

@@ -25,20 +25,32 @@
 
 using namespace std;
 
+
+#if 0
+#define MAXT 90
+#define MAXN 100
+#endif
+
+#if 1
+#define MAXT 25
+#define MAXN 10
+#endif
+
+
 int cases, caseno, n;
 
 int main() {
-	freopen("d.in", "w", stdout);
+//	freopen("d.in", "w", stdout);
 
-    srand(12123133);
+	srand(time(NULL));
 	double cl = clock();
-	int cases = 90;
+	int cases = MAXT;
 	printf("%d\n", cases + 1);
 	while( cases-- ) {
-		n = rand() % 100 + 1;
+		n = rand() % MAXN + 1;
 
-		if( cases % 5 == 0 ) n = 100 - rand() % 5;
-		if( cases == 3 ) n = 100;
+		//if( cases % 5 == 0 ) n = 100 - rand() % 5;
+		//if( cases == 3 ) n = 100;
 
 		printf("%d\n", n);
 		int x1, y1, x2, y2, z1, z2;
@@ -92,8 +104,8 @@ int main() {
 			printf("%d %d %d\n", xx, yy, zz);
 		}
 	}
-	puts("100");
-	for( int i = 0; i < 100; i++ ) {
+	printf("%d\n", MAXN);
+	for( int i = 0; i < MAXN; i++ ) {
 		int x1, y1, x2, y2, z1, z2;
 
 		while(1) {

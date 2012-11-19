@@ -1,0 +1,11 @@
+title: Posters for Election
+keywords:
+  - segment tree
+annotations:
+  - large input
+judges:
+  lightoj: 1207
+summary: >
+  A series of intervals represent the widths and locations of posters over a
+  wall. These psters are put on the wall in order. Determine the number of
+  posters that are visible, at least partially, in the end.

@@ -1,0 +1,19 @@
+title: Interpreter
+keywords:
+  - beginner
+  - simulation
+judges:
+  uva: 10033
+setter: Gordon V. Cormack
+contests:
+  - University of Valladolid Qualification for SWERC '2000 Local Contest
+summary: >
+  Simulate the operation of a simple machine with limited RAM and
+  instruction set. Given the sequence of commands fed to the machine, report
+  the total number of operations executed.
+comments: >
+  This problem is quite simple, but it may not make much sense unless you
+  have learned a little bit about machine architecture, which is usually
+  taught in basic computer science classes. If you haven't done so already,
+  take your time to get familiar with those topics before solving this
+  problem.

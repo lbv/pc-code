@@ -1,0 +1,22 @@
+title: Lucky Number
+keywords:
+  - binary search tree
+judges:
+  uva:
+  lightoj:
+    id: 1097
+    summary: >
+      A series of "lucky numbers" is defined by starting with all odd
+      integers. Then remove all terms on positions that are multiples of the
+      second term, then remove all positions that are multiples of the third
+      term, and so on. Given an integer $n$, report the $n$th lucky number.
+setter: Mohammed Shamsul Alam
+thanks: Tanveer Hasan Saaem
+contests:
+  - IIUC Programming Contest
+summary: >
+  A series of "lucky numbers" is defined by starting with all odd integers.
+  Then remove all terms on positions that are multiples of the second term,
+  then remove all positions that are multiples of the third term, and so on.
+  Given an integer $n$, determine if $n$ is the sum of two lucky numbers and
+  report those numbers.

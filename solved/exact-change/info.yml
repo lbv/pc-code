@@ -1,0 +1,17 @@
+title: Exact Change
+keywords:
+  - coin change
+judges:
+  uva: 11517
+setter: Ondřej Lhoták
+contests:
+  - Waterloo ACM Programming Contest Fall 2
+summary: >
+  Given a series of values of coins and bills, and an amount of money you
+  have to make, find the minimum number of coins you need to use to make at
+  least the amount of money required. It may be impossible to match the
+  amount exactly, but it's guaranteed that you can make an amount greater or
+  equal. You have to minimise that value, though.
+comments: >
+  Notice that you receive the list of coins/bills you have, and you can only
+  use each coin once.

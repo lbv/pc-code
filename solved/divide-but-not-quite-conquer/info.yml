@@ -1,0 +1,15 @@
+title: Divide, But Not Quite Conquer
+keywords:
+  - math
+judges:
+  uva: 10190
+contests:
+  - Universidade do Brasil (UFRJ) Internal Contest Warmup 2001
+summary: >
+  You receive two integers $n, m$. Determine if it's possible to form a
+  sequence of integers $s_1, s_2, \dots, s_k$ such that $s_1=n$, $s_k=1$ and
+  $s_{i+1} = s_i \div m$ and $s_{i+1} > s_i$ for all $1 \leq i < k$. If it
+  is, print the resulting sequence.
+comments: >
+  Something that is not explictly stated and is important here is that $k$
+  must be at least 2, otherwise the sequence would not be valid.

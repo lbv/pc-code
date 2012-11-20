@@ -1,0 +1,12 @@
+title: Pi
+keywords:
+  - beginner
+  - math
+  - greatest common divisor
+judges:
+  uva: 412
+summary: >
+  Use a given method to calculate an approximation of $\pi$, based on a
+  random set of integers.
+comments: >
+  Do not add any *epsilon* values to the answer.

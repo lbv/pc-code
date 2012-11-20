@@ -1,0 +1,18 @@
+title: Halloween Costumes
+keywords:
+  - dynamic programming
+judges:
+  uva: 12283
+  lightoj: 1422
+setter: Manzurur Rahman Khan
+thanks: Md. Arifuzzaman Arif
+summary: >
+  Someone wants to attend a series of parties wearing costumes. He may wear
+  several costumes at the same time, one on top of another. When he arrives
+  at another party, he may need to change into another costume, and for that
+  he may put a new costume on top, or remove the most recent costume, to
+  show something else underneath.
+
+  Given the number of parties to attend, and the order of the costumes he
+  has to wear, determine the minimum number of times that he has to put on a
+  costume.

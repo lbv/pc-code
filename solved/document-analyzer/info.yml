@@ -1,0 +1,23 @@
+title: Document Analyzer
+keywords:
+  - hashing
+  - data structures
+annotations:
+  - large input
+judges:
+  uva: 11860
+  lightoj: 1293
+setter: Jane Alam Jan
+thanks: Abdullah-al-Mahmud
+contests:
+  - Regional Warmup Contest 2010
+summary: >
+  You receive a large block of text. A word is a sequence of lowercase
+  alphabetical letters. Assign a sequential integer number to each word in
+  the text, and then identify two indices $p, q$ such that all the words
+  from the text are included in the range from word $p$ to word $q$, and the
+  range is as small as possible.
+comments: >
+  Be careful with the problem in the UVa judge. It seems that the judge's
+  data does not follow the specification. Try assuming a little larger
+  limits (160-character lines and $10^5 + 10$ words worked).

@@ -1,0 +1,17 @@
+title: Mutant Flatworld Explorers
+keywords:
+  - simulation
+  - grid
+judges:
+  uva: 118
+summary: >
+  A series of robots are placed in a rectangular field, where they can move
+  according to the four basic orientations (north, east, west, south). For
+  this, they can receive three types of commands: move left, move right, or
+  move forward once cell. In addition, a robot may go outside the field, in
+  which case it gets lost, but it leaves a scent, so no other robot after it
+  can get out of the field from the same cell.
+
+  Given the descriptions of the field, the initial configurations of the
+  robots and their instructions, determine the last position and orientation
+  of every robot.

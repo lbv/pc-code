@@ -1,0 +1,18 @@
+title: DNA Sequence
+keywords:
+  - dynamic programming
+  - bitwise calculations
+  - strings
+judges:
+  lightoj: 1073
+summary: >
+  Given a list of strings formed from the alphabet { 'A', 'C', 'G', 'T' },
+  find the lexicographically lowest, shortest string that contains all given
+  strings as substrings.
+comments: >
+  This is an instance of a classic problem known as the "Shortest Common
+  Substring". It can be solved by relating it to the Traveling Salesman
+  Problem. For more details on this approach, read section 18.9 of *The
+  Algorithm Design Manual* by Skiena. Notice, however, that the strategy
+  described there assumes that no string is a substring of another string
+  initially, so it's important to handle such situations properly.

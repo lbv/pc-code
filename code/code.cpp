@@ -33,14 +33,14 @@ struct Reader {
         for (; b > 32; read()) v = v*10 + b-48; return s ? -v : v; }
     bool has_next() { skip(); return b > 0; }
     void skip_line() {
-        for (; b != 10 && b != 13 && b != 0; read());
+        for (; b != 10 && b != 13 && b >= 0; read());
         char p = b; read();
         if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
     void next_line(char *s) {
-        for (; b != 10 && b != 13 && b != 0; read()) *s++ = b; *s = 0;
+        for (; b != 10 && b != 13 && b >= 0; read()) *s++ = b; *s = 0;
         while (b == 10 || b == 13) read(); }
     void next_real_line(char *s, int &l) {
-        for (l = 0; b != 10 && b != 13 && b != 0; read()) *s++ = b, ++l;
+        for (l = 0; b != 10 && b != 13 && b >= 0; read()) *s++ = b, ++l;
         *s = 0; char p = b; read();
         if ((p == 10 && b == 13) || (p == 13 && b == 10)) read(); }
 };
@@ -923,13 +923,13 @@ struct HM {
     };
     struct KV {
         Key k; int v;
-        KV(Key &K, int V) : k(K), v(V) {}
+        KV(const Key &K, int V) : k(K), v(V) {}
     };
     typedef vector<KV> KVV; KVV b[HASHB];
     u32 fnv_hash(const Key &k, int len) const {
         uch *p = reinterpret_cast<uch*>(const_cast<int*>(k.n));
         u32 h = 2166136261U;
-        for (int i = 0; i < len; ++i) h = (h * 16777619U ) ^ p[i];
+        for (int i = 0; i < len; ++i) h = (h * 16777619U) ^ p[i];
         return h;
     }
     bool add(const Key &k, u64 &id) {

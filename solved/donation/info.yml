@@ -1,4 +1,10 @@
 title: Donation
-keywords: minimum spanning tree
+keywords:
+  - minimum spanning tree
 judges:
   lightoj: 1040
+summary: >
+  A series of cables of different lengths are used to keep connected a
+  number of nodes. However, some of the cables may be redundant. Report the
+  maximum amount of cable that can be removed from the graph while still
+  leaving it connected, or if the graph is not connected, say so.

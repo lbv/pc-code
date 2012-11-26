@@ -12,9 +12,9 @@
 
 #if 1
 #define MAXT 25
-#define MAXN 100
-#define MAXM 5
-#define MAXI 10
+#define MAXN 2000000000
+#define MAXM 6
+#define MAXI 1000000000
 #endif
 
 

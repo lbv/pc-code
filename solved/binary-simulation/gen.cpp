@@ -21,14 +21,18 @@
 
 using namespace std;
 
-/*
+
+#if 1
 #define MAXN 100000
 #define MINN 50000
-#define MINQ 50000
-*/
+#define MAXQ 50000
+#endif
+
+#if 0
 #define MAXN 20
 #define MINN 10
 #define MAXQ 10
+#endif
 
 
 int main() {

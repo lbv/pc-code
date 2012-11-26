@@ -2,18 +2,20 @@
 #include <cstdlib>
 #include <ctime>
 
-/*
+
+#if 1
 #define MAXT 200
 #define MAXN 1000
 #define MAXK 300
 #define MAXM 10000
-*/
+#endif
 
-#define MAXT 20
-#define MAXN 15
-#define MAXK 12
+#if 0
+#define MAXT 500
+#define MAXN 100
+#define MAXK 80
 #define MAXM 100
-
+#endif
 
 
 void test_case()

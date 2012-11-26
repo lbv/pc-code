@@ -4,6 +4,30 @@
 
 using namespace std;
 
+
+#if 0
+#define MAXT 500
+#define FIXED_CASES 1
+#define MINY1 2000
+#define MAXY1 3300
+#define MINY2 1000000000
+#define MAXY2 2000000000
+#endif
+
+#if 1
+#define MAXT 25
+#define FIXED_CASES 0
+#define MINY1 2000
+#define MAXY1 2200
+#define MINY2 2250
+#define MAXY2 3100
+#endif
+
+
+const int DiffY1 = MAXY1 - MINY1 + 1;
+const int DiffY2 = MAXY2 - MINY2 + 1;
+
+
 char months[12][20] = {
 	"January",
 	"February",
@@ -51,8 +75,10 @@ int get_rand_day(int y, int m) {
 }
 
 int main (void) {
-	int T = 500;
+	int T = MAXT;
+	srand(time(NULL));
 	printf("%d\n", T);
+#if FIXED_CASES
 	printf("February 29, 1800000000\n");
 	printf("February 29, 1800000000\n");
 	T--;
@@ -114,10 +140,11 @@ int main (void) {
 	printf("March 1, 2104\n");
 	printf("December 11, 2108\n");
 	T--;
+#endif
 
 	while (T--) {
-		int y1 = rand() % 1300 + 2000;
-		int y2 = rand() % 10000 + 2000000000 - 10000 + 1;
+		int y1 = rand() % DiffY1 + MINY1;
+		int y2 = rand() % DiffY2 + MINY2;
 
 		int m1 = rand() % 12;
 		int m2 = rand() % 12;

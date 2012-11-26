@@ -1,5 +1,11 @@
 title: Necklace
-keywords: modular arithmetic, burnside lemma, group theory
+keywords:
+  - modular arithmetic
+  - burnside lemma
+  - group theory
 judges:
   lightoj: 1419
 setter: Md. Mahbubul Hasan
+summary: >
+  In how many different ways can you create a circular necklace with $n$
+  beads, using one of $K$ colors for each bead?

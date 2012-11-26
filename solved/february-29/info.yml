@@ -10,3 +10,6 @@ setter: Md. Arifuzzaman Arif
 thanks: Jane Alam Jan
 contests:
   - World Finals Warmup 2012
+summary: >
+  Given a starting date and an ending date, determine the number of leap
+  days in between them.

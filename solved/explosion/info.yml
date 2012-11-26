@@ -2,6 +2,8 @@ title: Explosion
 keywords:
   - 2-sat
   - backtracking
+annotations:
+  - special judge
 judges:
   lightoj: 1407
   uva: 11861

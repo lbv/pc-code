@@ -1,0 +1,14 @@
+title: Is This Integration?
+keywords:
+  - geometry
+judges:
+  uva: 10209
+setter: Shahriar Manzoor
+contests:
+  - The Math & Number Theory Lovers' Contest
+summary: >
+  Consider a square where each side has length $a$. Now, from each corner of
+  the square, draw an arc of radius $a$ that lies inside the square. This
+  produces a figure where three types of areas are recognisable inside the
+  square. Given the value of $a$, calculate the total area covered by each
+  of the three types of areas.

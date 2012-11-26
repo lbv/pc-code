@@ -1,0 +1,12 @@
+title: Shoemaker's Problem
+keywords:
+  - sorting
+judges:
+  uva: 10026
+setter: Alex Gevak
+summary: >
+  A shoemaker receives a number of jobs to complete. Each job has an amount
+  of time it takes to complete (in days), and a monetary penalty, applied
+  for each day of delay before starting the corresponding job. Print the
+  lexicographically lowest sequence of jobs where the total penalty is
+  minimised.

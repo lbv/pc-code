@@ -9,3 +9,7 @@ setter: Jane Alam Jan
 thanks: Derek Kisman
 contests:
   - Regional Warmup Contest 2010
+summary: >
+  A series of 2-SAT conditions are given, and a few (maximum 5) 3-SAT
+  conditions. Determine a set of variables that satisfy all conditions, if
+  possible.

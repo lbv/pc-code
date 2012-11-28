@@ -789,6 +789,11 @@ struct Matrix {
 double circle_angle(double a) { return a >= 0 ? a : Pi2 + a; }
 bool eps_less(double a, double b) { return b - a > EPS; }
 bool eps_equal(double a, double b) { return fabs(a - b) < EPS; }
+double heron(double a, double b, double c)
+{
+    double s = (a + b + c) / 2.0;
+    return sqrt(s * (s - a) * (s - b) * (s - c));
+}
 
 typedef double p_t;
 struct Point {

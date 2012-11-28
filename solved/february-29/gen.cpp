@@ -15,12 +15,12 @@ using namespace std;
 #endif
 
 #if 1
-#define MAXT 25
+#define MAXT 1000
 #define FIXED_CASES 0
 #define MINY1 2000
-#define MAXY1 2200
-#define MINY2 2250
-#define MAXY2 3100
+#define MAXY1 2004
+#define MINY2 2004
+#define MAXY2 2005
 #endif
 
 
@@ -151,6 +151,11 @@ int main (void) {
 
 		int d1 = get_rand_day(y1, m1);
 		int d2 = get_rand_day(y2, m2);
+
+		if (is_leap_year(y1) && rand() % 5 == 0)
+			m1 = 1, d1 = 29;
+		if (is_leap_year(y2) && rand() % 5 == 0)
+			m2 = 1, d2 = 29;
 		
 		printf("%s %d, %d\n", months[m1], d1, y1);
 		printf("%s %d, %d\n", months[m2], d2, y2);

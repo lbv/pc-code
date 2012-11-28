@@ -1,0 +1,16 @@
+title: Trapezium Drawing
+keywords:
+  - geometry
+annotations:
+  - special judge
+judges:
+  uva: 12404
+  lightoj: 1388
+setter: Md Towhidul Islam Talukder
+thanks: Shahriar Rouf Nafi
+contests:
+  - An easy Bangladeshi Contest
+summary: >
+  Given the lengths of three sides of a trapezium, and the coordinates of
+  the two vertices that form the fourth side (given in counter-clockwise
+  order), determine the coordinates of the remaining two points.

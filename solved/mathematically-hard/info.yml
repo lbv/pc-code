@@ -1,4 +1,10 @@
 title: Mathematically Hard
-keywords: number theory
+keywords:
+  - number theory
 judges:
   lightoj: 1007
+setter: Jane Alam Jan
+summary: >
+  The "score" of a number $x$ is defined as $\phi^2(x)$ where $\phi(x)$ is
+  the number of integers that are coprime with $x$. Given two integers $a,
+  b$ find the summation of scores of all numbers from $a$ to $b$.

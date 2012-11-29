@@ -1,5 +1,10 @@
 title: Large Division
-keywords: math, beginner
+keywords:
+  - math
+  - beginner
 judges:
   lightoj: 1214
 setter: Jane Alam Jan
+summary: >
+  Given a possibly very big integer $a$, and a 32-bit integer $b$, determine
+  if $a$ is divisible by $b$.

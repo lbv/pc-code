@@ -2,25 +2,33 @@
 #include <cstdlib>
 #include <ctime>
 
-//#define MAXT 10000
-#define MAXN 1000000000000LL
 
-#define MAXT 100
+#if 0
+#define MAXT 10000
+#define MAXN 1000000000000ULL
+#endif
+
+#if 1
+#define MAXT 5000
+#define MAXN 1000000000000ULL
+#endif
+
 
 typedef unsigned long long u64;
 
-u64 rand_u64(u64 m)
+u64 rand_u64()
 {
-    int n = rand() % 9 + 2;
-    u64 r = 1;
-    while (n--)
-        r *= rand();
-    return r % m;
+    u64 r = rand();
+    r <<= 32;
+    r |= rand();
+    return r;
 }
 
 void test_case()
 {
-    printf("%llu\n", rand_u64(MAXN));
+    u64 N = rand_u64() % MAXN + 1;
+    if (rand() % 25 == 0) N = rand() % 1000 + 1;
+    printf("%llu\n", N);
 }
 
 int main()

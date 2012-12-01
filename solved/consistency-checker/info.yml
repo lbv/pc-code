@@ -1,5 +1,12 @@
 title: Consistency Checker
-keywords: trie tree
+keywords:
+  - trie tree
+annotations:
+  - boolean output
 judges:
   lightoj: 1129
 setter: S. M. Ijaz-ul-Amin Chowdhury
+thanks: Jane Alam Jan
+summary: >
+  Given a large set of integers, determine if any number happens to be a
+  prefix of another number or not.

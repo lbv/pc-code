@@ -2,17 +2,19 @@
 #include <cstdlib>
 #include <ctime>
 
-/*
+#if 0
 #define MAXT 50
 #define MAXN 100000
 #define MAXQ 50000
 #define MAXNUM 100000
-*/
+#endif
 
+#if 1
 #define MAXT 500
-#define MAXN 20
-#define MAXQ 25
-#define MAXNUM 200
+#define MAXN 30
+#define MAXQ 35
+#define MAXNUM 1000
+#endif
 
 
 

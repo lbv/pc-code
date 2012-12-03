@@ -1,0 +1,13 @@
+title: LCM Pair Sum
+keywords:
+  - number theory
+  - least common multiple
+  - modular arithmetic
+judges:
+  uva: 12546
+contests:
+  - SWERC 2012 Online
+summary: >
+  Given a number $n$, whose prime factorization is of the form $P_1^{a_1}
+  P_2^{a_2} \ldots P_C^{a_C}$, calculate the total summation of all the
+  numbers from distinct pairs $a, b$ such that $\text{LCM}(a, b)=n$.

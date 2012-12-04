@@ -9,3 +9,8 @@ setter: Shahriar Manzoor
 thanks: Mohammad Sajjad Hossain
 contests:
   - ACM ICPC World Finals Warmup 2
+summary: >
+  The function $\text{SOD}(n)$ is defined as the sum of all proper divisors
+  of $n$ (this excludes $1$ and $n$). The function $\text{CSOD}(n)$ is the
+  cumulative value of $SOD(i)$ for all $1 \leq i \leq n$. Given the value of
+  $n$ (possibly large), calculate the value of $\text{CSOD}(n)$.

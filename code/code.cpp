@@ -158,37 +158,36 @@ struct Graph {
 
     // Kosaraju's algorithm
     struct Kos {
-        IVV sccs; IV scc; IK vs; BV vis; ELV radj;
-        Kos(int n) { vis = BV(n); radj.resize(n); }
+        Graph &g; IVV sccs; IV scc; IK vs; BV vis; ELV radj;
+        Kos(Graph &G) : g(G) { vis = BV(g.n); radj.resize(g.n); }
+        void dfs(int v) {
+            vis[v] = true;
+            For (EL, ep, g.adj[v]) {
+                Edge e = *ep;
+                int u = e.v; e.v = v;
+                radj[u].push_back(e);
+                if (! vis[u]) dfs(u);
+            }
+            vs.push(v);
+        }
+        void dfs2(int v) {
+            vis[v] = true;
+            scc.push_back(v);
+            For (EL, e, radj[v]) if (! vis[e->v]) dfs2(e->v);
+        }
     };
     void kosaraju_scc(IVV &sccs) {
-        Kos k(n);
-        for (int v=0; v<n; ++v) if (! k.vis[v]) kosaraju_dfs(v, k);
+        Kos k(*this);
+        for (int v=0; v<n; ++v) if (! k.vis[v]) k.dfs(v);
         k.vis = BV(n);
         while (! k.vs.empty()) {
             int v = k.vs.top(); k.vs.pop();
             if (k.vis[v]) continue;
             k.scc = IV();
-            kosaraju_dfs2(v, k);
+            k.dfs2(v);
             k.sccs.push_back(k.scc);
         }
         sccs = k.sccs;
-    }
-    void kosaraju_dfs(int v, Kos &k) {
-        k.vis[v] = true;
-        cFor (EL, ep, adj[v]) {
-            Edge e = *ep;
-            int u = e.v; e.v = v;
-            k.radj[u].push_back(e);
-            if (! k.vis[u]) kosaraju_dfs(u, k);
-        }
-        k.vs.push(v);
-    }
-    void kosaraju_dfs2(int v, Kos &k) {
-        k.vis[v] = true;
-        k.scc.push_back(v);
-        cFor (EL, e, k.radj[v])
-            if (! k.vis[e->v]) kosaraju_dfs2(e->v, k);
     }
     // Tarjan
     struct Tarjan {

@@ -1,7 +1,17 @@
 title: Scarecrow
-keywords: greedy
+keywords:
+  - greedy
 judges:
-  lightoj: 1389
   uva: 12405
+  lightoj: 1389
 setter: Sohel Hafiz
 thanks: Jane Alam Jan
+contests:
+  - An easy Bangladeshi Contest
+summary: >
+  A crop field is described as a $1 \times N$ matrix of characters, where
+  each cell represents either a fertile or an infertile piece of the field.
+  Scarecrows can be placed on any position, and they protect the cell they
+  are on, and their immediate neighbours. Given an arbitrary field,
+  determine the minimum number of scarecrows necessary to protect all
+  fertile pieces of the field.

@@ -1,0 +1,17 @@
+title: Dominos
+keywords:
+  - graph theory
+  - topological sort
+  - strongly connected components
+judges:
+  uva: 11504
+similar:
+  - uva-11770
+contests:
+  - Waterloo ACM Programming Contest Fall 1
+setter: Ondřej Lhoták
+summary: >
+  A series of dominos are setup such that knocking down some dominos make
+  others go down as well. Given a directed graph that describes these
+  connections of dominos, determine the minimum number of dominos that
+  require to be knocked down manually, in order to knock down all of them.

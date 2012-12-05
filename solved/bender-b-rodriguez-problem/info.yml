@@ -1,0 +1,11 @@
+title: Bender B. Rodríguez Problem
+keywords:
+  - ad-hoc
+judges:
+  uva: 11507
+summary: >
+  A long wire of length $L$ is placed along the $X$ axis in a 3-D system of
+  coordinates. At every point $(i, 0, 0)$ with $i$ integer going from $L -
+  1$ to $1$, it may be bended $\pi/2$ in any direction parallel to the axes
+  $Y$ or $Z$.  Given the series of bendings, determine the direction in
+  which the tip of the wire is pointing to in the end.

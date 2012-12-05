@@ -1,0 +1,19 @@
+title: Looking for a Subset
+keywords:
+  - longest increasing subsequence
+annotations:
+  - large input
+judges:
+  uva: 11031
+  lightoj:
+    id: 1277
+    title: Looking for a Subsequence
+setter: Jane Alam Jan
+thanks: Sohel Hafiz
+contests:
+  - The Next Generation - Contest II
+summary: >
+  Given a sequence of signed integers, and an integer $m$, find an
+  increasing subsequence of length $m$. If there's more than one, print the
+  one where the first element of the subsequence has the lowest index
+  possible, then the second element has the lowest index, and so on.

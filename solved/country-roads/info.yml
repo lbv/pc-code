@@ -1,5 +1,11 @@
 title: Country Roads
-keywords: dijkstra, single source shortest path
+keywords:
+  - dijkstra
+annotations:
+  - large input
 judges:
   lightoj: 1002
 setter: Jane Alam Jan
+summary: >
+  Given an undirected, weighted graph, and a certain node $t$ in that graph,
+  find the shortest path from every vertex to node $t$.

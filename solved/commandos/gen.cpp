@@ -11,7 +11,7 @@
 
 #if 1
 #define MAXT 20
-#define MAXN 8
+#define MAXN 4
 #endif
 
 

@@ -1,4 +1,12 @@
 title: Higher Math
-keywords: beginner, math
+keywords:
+  - beginner
+  - math
+annotations:
+  - boolean output
 judges:
   lightoj: 1053
+summary: >
+  Given three positive integers that represent the lengths of the sides of a
+  triangle, determine if it is a right triangle (i.e. one of its angles is
+  $\pi/2$).

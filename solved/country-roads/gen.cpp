@@ -1,64 +1,44 @@
-/*
-	Author       :	Jan
-	Problem Name :	Country Roads
-	Algorithm    :	Input Generator
-	Complexity   :
-*/
-
-#include <vector>
-#include <list>
-#include <map>
-#include <set>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <iostream>
 #include <cstdio>
-#include <cmath>
 #include <cstdlib>
-#include <cctype>
-#include <string>
+#include <ctime>
 
-using namespace std;
 
-#define max(a,b) ((a) > (b) ? (a) : (b))
+#define MAXT 20
+#define MAXN 500
+#define MAXM 16000
+#define MAXW 20000
 
-#define CLR(a) memset(a,0,sizeof(a))
 
-#define MAX 501
+void test_case(bool crit = false)
+{
+    int n = rand() % (MAXN - 1) + 2;
+    int m = rand() % (MAXM + 1);
+    if (crit) n = MAXN, m = MAXM;
+    printf("\n%d %d\n", n, m);
+
+    while (m--) {
+        int u, v, w;
+        do {
+            u = rand() % n;
+            v = rand() % n;
+        } while (u == v);
+        w = rand() % MAXW + 1;
+
+        printf("%d %d %d\n", u, v, w);
+    }
+    int t = rand() % n;
+    printf("%d\n", t);
+}
 
 int main()
 {
-	freopen("c.in","w",stdout);
+    srand(time(NULL));
 
-	int cases=20,m,n,u,v,k;
+    int T = MAXT;
+    printf("%d\n", T);
 
-	printf("%d\n", cases);
-	while(cases--)
-	{
-		n = 500 - rand() % 5;
-		while(1)
-		{
-			m=16000 - rand() % 10;
-			if(m>=n*n) continue;
-			break;
-		}
+    test_case(true); --T;
+    while (T--) test_case();
 
-		printf("\n%d %d\n",n,m);
-		while(m--)
-		{
-			while(1)
-			{
-				u=rand()%n;
-				v=rand()%n;
-				if(u!=v) break;
-			}
-			k=rand() % 20000 + 1;
-
-			printf("%d %d %d\n",u,v,k);
-		}
-		printf("%d\n",rand()%n);
-	}
-	return 0;
+    return 0;
 }
-

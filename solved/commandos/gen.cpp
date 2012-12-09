@@ -1,77 +1,73 @@
-/*
-	Author       :	Jan
-	Problem Name :
-	Algorithm    :
-	Complexity   :
-*/
-
-#include <set>
-#include <map>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <queue>
-#include <stack>
-#include <cctype>
 #include <cstdio>
-#include <string>
-#include <vector>
-#include <cassert>
 #include <cstdlib>
-#include <sstream>
-#include <iostream>
-#include <algorithm>
+#include <cstring>
+#include <ctime>
 
-using namespace std;
 
-int cases, save[50000][2];
-int cap[101][101];
+#if 0
+#define MAXT 50
+#define MAXN 100
+#endif
 
-int main() {
-	//freopen("e.in", "w", stdout);
-	srand(time(NULL));
+#if 1
+#define MAXT 20
+#define MAXN 8
+#endif
 
-	cases = 45;
-	printf("%d\n", cases);
-	while( cases-- ) {
-		int n = rand() % 100 + 1;
 
-		if( rand() % 4 ) n = rand() % 30 + 1;
+#define Zero(v) memset((v), 0, sizeof(v))
 
-		if( cases == 20 ) n = 100;
 
-		bool road[102][102] = {0};
+bool g[MAXN][MAXN];
 
-		for( int i = 1; i < n; i++ ) {
-			int k = rand() % i;
-			road[i][k] = road[k][i] = true;
-		}
+void test_case(bool crit = false)
+{
+    int N = rand() % (MAXN - 1) + 2;
+    if (crit) N = MAXN;
+    printf("%d\n", N);
 
-		int m = rand() % 100;
-		if( cases % 3 == 0 ) m = 0;
-		while( m-- ) {
-			int u = rand() % n;
-			int v = rand() % n;
-			if( u == v || road[u][v] ) continue;
+    int MaxR = N * (N - 1) / 2;
+    int R;
+    do {
+        R = rand() % (MaxR + 1);
+    } while (R < N - 1);
+    printf("%d\n", R);
 
-			road[u][v] = road[v][u] = true;
-		}
+    Zero(g);
 
-		m = 0;
-		for( int i = 0; i < n; i++ ) for( int j = i + 1; j < n; j++ ) if( road[i][j] ) m++;
+    for (int i = 1; i < N; ++i) {
+        int u = rand() % i;
+        int v = i;
+        g[u][v] = g[v][u] = true;
+        printf("%d %d\n", u, v);
+        --R;
+    }
 
-		printf("%d\n", n);
-		printf("%d\n", m);
-		for( int i = 0; i < n; i++ ) for( int j = i + 1; j < n; j++ ) if( road[i][j] ) {
-			if( rand() % 2 ) printf("%d %d\n", i, j);
-			else printf("%d %d\n", j, i);
-		}
+    while (R--) {
+        int u, v;
+        do {
+            u = rand() % N;
+            v = rand() % N;
+        } while (u == v || g[u][v]);
 
-		int s = rand() % n;
-		int d = rand() % n;
+        g[u][v] = g[v][u] = true;
+        printf("%d %d\n", u, v);
+    }
 
-		printf("%d %d\n", s, d);
-	}
-	return 0;
+    int s = rand() % N;
+    int d = rand() % N;
+    printf("%d %d\n", s, d);
 }
 
+int main()
+{
+    srand(time(NULL));
+
+    int T = MAXT;
+    printf("%d\n", T);
+
+    test_case(true); --T;
+    while (T--) test_case();
+
+    return 0;
+}

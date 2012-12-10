@@ -1,4 +1,14 @@
 title: False Ordering
-keywords: number theory
+keywords:
+  - sorting
+  - number theory
 judges:
   lightoj: 1109
+setter: Jane Alam Jan
+summary: >
+  Let $F(x)$ be the number of divisors of $x$. An arbitrary order is defined
+  for a list of integers, such that for any pair $x, y$, $x$ comes before
+  $y$ if: $F(x) is less than $F(y)$, or if $F(x)$ is equal to $F(y)$ and $x>y$.
+
+  Order the list of the first $N$ positive integers, and then answer to a
+  series of queries that ask for the $n$th term in the sorted list.

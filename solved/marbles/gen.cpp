@@ -2,15 +2,21 @@
 #include <cstdlib>
 #include <ctime>
 
-//#define MAXT 10000
+#if 0
+#define MAXT 10000
 #define MAXM 500
+#endif
 
-#define MAXT 1000
+#if 1
+#define MAXT 20
+#define MAXM 500
+#endif
+
 
 void test_case()
 {
-    int R = rand() % MAXM;
-    int B = rand() % MAXM;
+    int R = rand() % (MAXM + 1);
+    int B = rand() % (MAXM + 1);
 
     if ((R + B) % 2 == 0) {
         if (rand() % 2 == 0)

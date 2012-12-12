@@ -2,15 +2,17 @@
 #include <cstdlib>
 #include <ctime>
 
-/*
+#if 0
 #define MAXT 5
 #define MAXN 100000
 #define MAXQ 50000
-*/
+#endif
 
+#if 1
 #define MAXT 10
 #define MAXN 5
 #define MAXQ 10
+#endif
 
 
 void test_case(bool crit = false)

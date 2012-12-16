@@ -8,4 +8,5 @@ judges:
 setter: Jane Alam Jan
 summary: >
   Given an undirected, weighted graph, and a certain node $t$ in that graph,
-  find the shortest path from every vertex to node $t$.
+  find the minimum cost to go from every vertex to node $t$. The cost of a
+  path is defined as the value of the largest edge in it.

@@ -3,10 +3,19 @@
 #include <ctime>
 
 
+#if 0
 #define MAXT 20
 #define MAXN 500
 #define MAXM 16000
 #define MAXW 20000
+#endif
+
+#if 1
+#define MAXT 20
+#define MAXN 6
+#define MAXM 10
+#define MAXW 100
+#endif
 
 
 void test_case(bool crit = false)

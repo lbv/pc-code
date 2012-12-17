@@ -8,6 +8,11 @@
 #define MAXN 100000
 #endif
 
+#if 0
+#define MAXT 20
+#define MAXN 2000
+#endif
+
 
 void test_case(bool crit = false)
 {

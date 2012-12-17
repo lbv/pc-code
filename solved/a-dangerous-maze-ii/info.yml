@@ -9,3 +9,13 @@ setter: Jane Alam Jan
 thanks: Md. Mahbubul Hasan
 contests:
   - An easy Bangladeshi Contest
+summary: >
+  You are inside a maze, in front of a series of doors. By choosing a door,
+  you follow a path, taking a certain amount of time, and at its end you
+  find yourself either out of the maze, or back at the beginning. If the
+  probability for choosing any given path is the same for all doors, then
+  what is the expected amount of time to get out if the maze?
+
+  You also remember the last $K$ decisions you made, and if you have
+  previously chosen a door that takes you back to the beginning, you won’t
+  select it again, as long as it remains one of your last $K$ decisions.

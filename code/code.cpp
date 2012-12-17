@@ -632,9 +632,11 @@ struct Bigint {
         d = res; clean();
         return *this;
     }
-    Bigint &operator-=(const Bigint &b) {
-        if (sgn != b.sgn) { (*this) += b.neg(); return *this; }
-        if (*this < b) { Bigint x = b; x -= *this; return *this = x.neg(); }
+    Bigint &operator-=(const Bigint &_b) {
+        if (sgn != _b.sgn) { (*this) += _b.neg(); return *this; }
+        bool sbk = sgn; sgn = false; Bigint b = _b.sgn ? _b.neg() : _b;
+        if (*this < b) {
+            b -= *this; *this = sbk ? b : b.neg(); return *this; }
         int s1 = len(), s2 = b.len(), s3 = s1;
         IV res(s3); int c = 0;
         for (int i = 0; i < s3; ++i) {
@@ -642,7 +644,7 @@ struct Bigint {
             if (sum < 0) { sum += BIBAS; c = 1; } else c = 0;
             res[i] = sum;
         }
-        d = res; clean();
+        d = res; sgn = sbk; clean();
         return *this;
     }
     Bigint &short_div(int b) {

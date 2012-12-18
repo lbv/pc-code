@@ -1,0 +1,9 @@
+title: MODEX
+keywords:
+  - modular arithmetic
+judges:
+  uva: 1230
+similar: uva-374
+summary: >
+  Given the values of three integers $x, y, n$, calculate $x^y \mathrm{mod}
+  n$.

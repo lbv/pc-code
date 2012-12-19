@@ -1,0 +1,11 @@
+title: Substring Frequency
+keywords:
+  - knuth-morris-pratt
+annotations:
+  - large input
+judges:
+  lightoj: 1255
+setter: Jane Alam Jan
+summary: >
+  Given two non-empty, possibly large strings $A, B$, find the number of
+  times that $B$ occurs as a substring of $A$.

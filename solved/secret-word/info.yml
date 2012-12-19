@@ -1,0 +1,14 @@
+title: Secret Word
+keywords:
+  - knuth-morris-pratt
+annotations:
+  - large input
+judges:
+  uva: 12467
+setter: Andrés Mejía-Posada
+contests:
+  - Colombian Collegiate Programming League 2012
+summary: >
+  You are given a (possibly large) string $S$. A secret word is largest
+  possible substring of $S$ such that $S$ starts with the secret word
+  reversed. Find the secret word.

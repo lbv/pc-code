@@ -1,0 +1,14 @@
+title: If We Were a Child
+keywords:
+  - big integer
+annotations:
+  - underspecified
+judges:
+  uva: 10494
+setter: S. M. Ashraful Kadir
+contests:
+  - May 2003 Monthly Contest
+summary: >
+  Given two integers, the first one possibly very large, and the second one
+  in the range of a signed 32-bit integer, calculate the integer division or
+  modulo operation between them.

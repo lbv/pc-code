@@ -1,0 +1,13 @@
+title: Making Huge Palindromes
+keywords:
+  - knuth-morris-pratt
+  - palindromes
+annotations:
+  - large input
+judges:
+  lightoj: 1258
+setter: Jane Alam Jan
+summary: >
+  Given a (possibly large) string, find the length of the shortest possible
+  palindrome that can be formed, just by adding letters to the right of the
+  word.

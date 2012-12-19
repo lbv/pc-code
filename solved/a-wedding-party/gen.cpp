@@ -6,19 +6,23 @@
 using namespace std;
 
 
+#if 0
 #define MAXT 50
-
-/*
 #define MAXS 15
 #define MAXN 500
 #define MAXM 10000
 #define MAXW 100
-*/
+#define EXTRASPACES 0
+#endif
 
-#define MAXS 3
-#define MAXN 5
-#define MAXM 8
+#if 1
+#define MAXT 15
+#define MAXS 6
+#define MAXN 10
+#define MAXM 12
 #define MAXW 100
+#define EXTRASPACES 1
+#endif
 
 
 #define Zero(v) memset((v), 0, sizeof(v))
@@ -38,6 +42,9 @@ void test_case()
     int TopS = min(N, MAXS);
     int S = rand() % (TopS + 1);
 
+#if EXTRASPACES
+    puts("\n\n");
+#endif
     printf("%d %d %d\n", N, M, S);
 
     Zero(shops);

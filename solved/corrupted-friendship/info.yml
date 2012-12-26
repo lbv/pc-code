@@ -1,0 +1,25 @@
+title: Corrupted Friendship
+keywords:
+  - depth first search
+annotations:
+  - large input
+judges:
+  uva: 11981
+  lightoj: 1357
+setter: Shahriar Rouf Nafi
+thanks: Jane Alam Jan
+contests:
+  - A Contest dedicated to Renat Mullakhanov (rem)
+summary: >
+  A number of invitations are distributed among $N$ people as follows:
+  person number 1 hands all invitations to one of his friends, each person
+  in turn receives a number of invitations, keeps one for himself, and then
+  delivers them all to one of his friends, until somebody can't deliver any
+  more invitations. If that person still has invitations, he hands them back
+  to the person he received them from. When someone receives a number of
+  invitations back from someone, he then looks for another friend with no
+  invitations and continues the process.
+
+  In the end, every one of the $N$ people receives one invitation. Determine
+  the number of times that someone received invitations, and the number of
+  pairs of people who are definitely not friends.

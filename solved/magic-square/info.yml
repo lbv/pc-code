@@ -1,0 +1,10 @@
+title: Magic Square
+keywords:
+  - data structures
+judges:
+  uva: 1266
+contests:
+  - Latin America - Mexico and Central America - 2005/2006
+summary: >
+  Given an odd integer $N$, produce a magic square of size $N \times N$,
+  following an algorithm hinted at in the problem statement.

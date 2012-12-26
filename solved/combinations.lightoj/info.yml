@@ -6,4 +6,4 @@ judges:
   lightoj: 1067
 setter: Jane Alam Jan
 summary: >
-  Calculate nCk, where n can be up to 10^6.
+  Calculate $\binom{n}{k}$, where $n$ can be up to $10^6$.

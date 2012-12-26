@@ -3,16 +3,16 @@
 #include <ctime>
 
 
-#if 1
+#if 0
 #define MAXT 35
 #define MAXN 15
 #define MAXLEN 100
 #endif
 
-#if 0
-#define MAXT 25
-#define MAXN 5
-#define MAXLEN 6
+#if 1
+#define MAXT 20
+#define MAXN 8
+#define MAXLEN 15
 #endif
 
 

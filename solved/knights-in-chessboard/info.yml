@@ -1,4 +1,12 @@
 title: Knights in Chessboard
-keywords: ad-hoc, puzzle
+keywords:
+  - ad-hoc
+  - chess
 judges:
   lightoj: 1010
+setter: Jane Alam Jan
+similar:
+  - uva-696
+summary: >
+  Given the size of a chess board, determine the maximum number of knights
+  that can be places in it, without any two of them attacking each other.

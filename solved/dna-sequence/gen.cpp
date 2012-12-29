@@ -11,8 +11,8 @@
 
 #if 1
 #define MAXT 20
-#define MAXN 8
-#define MAXLEN 15
+#define MAXN 5
+#define MAXLEN 6
 #endif
 
 

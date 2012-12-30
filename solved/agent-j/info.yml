@@ -1,5 +1,12 @@
 title: Agent J
-keywords: geometry
+keywords:
+  - geometry
+annotations:
+  - special judge
 judges:
   lightoj: 1331
 setter: Jane Alam Jan
+summary: >
+  Three circles touch between them pair-wise. Given the radii of the three
+  circles, determine the area of the region delimited by the three points
+  where they touch.

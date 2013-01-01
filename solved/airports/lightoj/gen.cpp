@@ -1,62 +1,60 @@
-/*
-	Author       :	Jan
-	Problem Name :	Athletics Track
-	Algorithm    :	Math Geometry Bisection
-	Complexity   :
-*/
-
-#include <vector>
-#include <list>
-#include <map>
-#include <set>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <iostream>
 #include <cstdio>
-#include <cmath>
 #include <cstdlib>
-#include <cctype>
-#include <string>
-#include <sstream>
+#include <ctime>
 
-using namespace std;
 
-int caseno, cases;
+#if 0
+#define MAXT 15
+#define MAXN 10000
+#define MAXM 100000
+#define MAXA 10000
+#define MAXC 10000
+#define EXTA_LINES 0
+#endif
 
-void genCase( int n, int m, int A ) {
-	printf("%d %d %d\n", n, m, A);
-	while( m-- ) {
-		int u, v;
+#if 1
+#define MAXT 20
+#define MAXN 10
+#define MAXM 5
+#define MAXA 100
+#define MAXC 50
+#define EXTRA_LINES 1
+#endif
 
-		while(1) {
-			u = rand() % n + 1;
-			v = rand() % n + 1;
-			if( u != v ) break;
-		}
-		printf("%d %d %d\n", u, v, rand() % 10000 + 1);
-	}
+
+void test_case(bool crit = false)
+{
+    int N = crit ? MAXN : rand() % (MAXN - 1) + 2;
+    int M = crit ? MAXM : rand() % MAXM + 1;
+    int A = rand() % MAXA + 1;
+
+#if EXTRA_LINES
+    putchar('\n');
+#endif
+
+    printf("%d %d %d\n", N, M, A);
+
+    while (M--) {
+        int X, Y, C;
+        do {
+            X = rand() % N + 1;
+            Y = rand() % N + 1;
+        } while (X == Y);
+        C = rand() % MAXC + 1;
+
+        printf("%d %d %d\n", X, Y, C);
+    }
 }
 
-int main() {
-	//freopen("j.in", "w", stdout);
+int main()
+{
+    srand(time(NULL));
 
-	srand(time(NULL));
-	int cases = 11;
+    int T = MAXT;
+    printf("%d\n", T);
 
-	printf("%d\n", cases + 4);
-	while( cases-- ) {
-		int n = rand() % 1000 + 1;
-		int m = rand() % 10001;
-		int A = rand() % 10000 + 1;
+    test_case(true); --T;
+    while (T--) test_case();
 
-		if( n == 1 ) m = 0;
-		genCase( n, m, A );
-	}
-	genCase( 1, 0, 1000 );
-	genCase( 10000, 100000, 100 );
-	genCase( 10000, 100000, 100 );
-	genCase( 10000, 0, 100 );
-	return 0;
+    return 0;
 }
-

@@ -16,10 +16,10 @@ using namespace std;
 #endif
 
 #if 1
-#define MAXT 15
-#define MAXS 6
-#define MAXN 10
-#define MAXM 12
+#define MAXT 20
+#define MAXS 5
+#define MAXN 5
+#define MAXM 8
 #define MAXW 100
 #define EXTRASPACES 1
 #endif

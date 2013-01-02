@@ -3,14 +3,14 @@
 #include <ctime>
 
 
-#if 0
+#if 1
 #define MAXT 10000
 #define MAXN 1000000000000ULL
 #endif
 
-#if 1
+#if 0
 #define MAXT 5000
-#define MAXN 1000000000000ULL
+#define MAXN 1000000ULL
 #endif
 
 
@@ -35,6 +35,11 @@ int main()
 {
     int T = MAXT;
     printf("%d\n", T);
+
+    for (u64 i = 1; i <= 10; ++i) {
+        printf("%llu\n%llu\n", i, MAXN + 1 - i);
+        T -= 2;
+    }
 
     while (T--)
         test_case();

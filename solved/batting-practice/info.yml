@@ -1,0 +1,25 @@
+title: Batting Practice
+keywords:
+  - expected value
+judges:
+  uva: 12038
+  lightoj:
+    id: 1408
+    annotations:
+      - special judge
+setter: Md. Towhidul Islam Talukder
+thanks: Md. Arifuzzaman Arif
+summary: >
+  The probability of getting a "success" in an event is $p$. Given the value
+  of $p$ and two integers $k_1, k_2$, determine the expected number of
+  events that have to occur until either $k_1$ consecutive failures occur,
+  or $k_2$ consecutive successes occur.
+comments: >
+  Note that, although the answer is guaranteed to be a number of the form
+  $x/y$ where $x$ and $y$ fit in a 64-bit signed integer, nothing is said
+  about the intermediate calculations necessary to reach the answer. In
+  fact, the input specification is of little help, because they don't
+  accurately represent the order of magnitude of the integers that could be
+  involved in the process. Using 128-bit integers seems to work.
+
+  In LightOJ's server, use variables of type "long double".

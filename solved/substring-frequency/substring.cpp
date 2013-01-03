@@ -37,7 +37,7 @@ struct KMP {
                 if (i == lw - 1) {
                     ++cnt;
                     m += i - T[i];
-                    i = T[i];
+                    i = T[i] >= 0 ? T[i] : 0;
                 }
                 else
                     ++i;

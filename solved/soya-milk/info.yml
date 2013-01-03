@@ -1,0 +1,13 @@
+title: Soya Milk
+keywords:
+    - geometry
+judges:
+    uva: 11909
+setter: Mak Yan Kei
+summary: >
+    A carton of milk has the shape of a box. When tilted a certain angle
+    (smaller than 90 degrees), milk pours over from the top, such that the
+    level of the milk is always formed by the horizontal line that
+    intersects the corner that is letting the milk out. Given the dimensions
+    of the carton, and the angle of inclination, determine the volume of
+    milk left inside the box of milk.

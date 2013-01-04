@@ -6,9 +6,17 @@
 using namespace std;
 
 
-#define MAXT 500
+#if 0
+#define MAXT 50
 #define MAXM 50
 #define MAXW 1000
+#endif
+
+#if 1
+#define MAXT 10
+#define MAXM 20
+#define MAXW 500
+#endif
 
 
 vector<string> cities;

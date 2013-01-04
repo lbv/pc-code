@@ -1,4 +1,4 @@
-3
+7
 
 3
 A B 3
@@ -16,3 +16,39 @@ D B 11
 E B 3
 D C 7
 F D 0
+
+4
+af ac 0
+ac aa 82
+af ah 65
+ah ac 0
+
+6
+aj ag 0
+aa ag 96
+ai af 77
+aj aa 0
+ab ag 0
+ab ag 40
+
+8
+ad ag 35
+aj ad 307
+ab af 471
+ad af 0
+ad ao 394
+ai ab 129
+al ai 450
+ao af 17
+
+10
+ap ag 414
+ac af 374
+ab at 46
+ak ah 498
+ai ac 364
+ai ac 0
+as ap 0
+ao ac 196
+ab as 0
+ap ai 426

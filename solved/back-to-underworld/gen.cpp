@@ -9,16 +9,16 @@ using namespace std;
 #define Zero(v) memset((v), 0, sizeof(v))
 
 
-#if 1
+#if 0
 #define MAXT 10
 #define MAXN 100000
 #define MAXV 20000
 #endif
 
-#if 0
-#define MAXT 25
-#define MAXN 100
-#define MAXV 90
+#if 1
+#define MAXT 20
+#define MAXN 15
+#define MAXV 12
 #endif
 
 
@@ -48,7 +48,9 @@ void test_case()
             if (team[v] == 0)
                 team[v] = rand() % 2 + 1;
 
-        } while (team[u] == team[v] || fights.find(II(u, v)) != fights.end());
+        } while (team[u] == team[v] ||
+                 fights.find(II(u, v)) != fights.end() ||
+                 fights.find(II(v, u)) != fights.end());
 
         fights.insert(II(u, v));
         printf("%d %d\n", u + 1, v + 1);

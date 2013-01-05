@@ -16,11 +16,11 @@ using namespace std;
 
 #if 1
 #define MAXT 1000
-#define FIXED_CASES 0
+#define FIXED_CASES 1
 #define MINY1 2000
 #define MAXY1 2004
-#define MINY2 2004
-#define MAXY2 2005
+#define MINY2 2005
+#define MAXY2 20010
 #endif
 
 

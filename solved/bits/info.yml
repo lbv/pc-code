@@ -12,6 +12,10 @@ setter: Mohiul Alam Prince
 thanks: Sabbir Yousuf Sanny
 contests:
   - Yet another Bangladeshi Contest
+summary: >
+  Given an integer $N$, find out the summation of the total number of times
+  in which two 1's are adjacent in the binary representation of all natural
+  numbers up to $N$.
 comments: >
   UVa's version of this problem requires using big integers for the answer.
   LightOJ's version is saner. There also exists dynamic programming methods

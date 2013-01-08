@@ -5,3 +5,7 @@ keywords:
 judges:
   lightoj: 1011
 setter: Jane Alam Jan
+summary: >
+  A square matrix of $N \times N$ integers represent the priority index of
+  matching $N$ men with $N$ women. Find the maximum sum of values for
+  matching all men and all women.

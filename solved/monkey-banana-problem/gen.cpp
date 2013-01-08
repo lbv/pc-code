@@ -11,7 +11,7 @@ const int MAXI = (1 << 15) - 1;
 
 #if 1
 #define MAXT 20
-#define MAXN 9
+#define MAXN 6
 const int MAXI = 100;
 #endif
 

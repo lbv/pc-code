@@ -3,17 +3,17 @@
 #include <ctime>
 
 
-#if 1
+#if 0
 #define MAXT 100
 #define MAXN 16
 #define MAXV 10000
 #define EXTRA_SPACES 0
 #endif
 
-#if 0
+#if 1
 #define MAXT 20
 #define MAXN 8
-#define MAXV 100
+#define MAXV 30
 #define EXTRA_SPACES 1
 #endif
 

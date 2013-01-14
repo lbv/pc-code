@@ -1,0 +1,27 @@
+title: 15-Puzzle Problem
+keywords:
+  - IDA*
+judges:
+  uva:
+    id: 10181
+    annotations:
+      - special judge
+  lightoj:
+    title: 15 Puzzle
+    id: 1121
+setter:
+  - Rezaul Alam Chowdhury
+  - Shahriar Manzoor
+thanks: Munirul Abedin
+summary: >
+  The 15-Puzzle is a game constructed with 15 sliding tiles, numbered from 1
+  to 15, arranged in a $4 \times 4$ frame. Since there are 16 squares and
+  only 15 tiles, there is always an empty square, where one of the adjacent
+  tiles can be slided into. The object of the game is to arrange the tiles
+  so they are in order according to their numbers, and the last tile (the
+  one in the bottom left) is the empty square.
+
+  Given an arbitrary configuration of the puzzle, determine the shortest,
+  lexicographically lowest sequence of moves necessary to solve it, or
+  report if it's impossible (a puzzle is considered impossible if it can't
+  be solved with at most 35 moves).

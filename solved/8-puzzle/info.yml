@@ -1,0 +1,11 @@
+title: 8-Puzzle
+keywords:
+    - IDA*
+judges:
+    lightoj: 1139
+setter: Jane Alam Jan
+summary: >
+    The 8-puzzle is a smaller version of the classic 15-Puzzle, played in a
+    board of size $3 \times 3$. Given a valid, arbitrary configuration of
+    the board, find the minimum number of moves to solve it, or report if
+    it's impossible.

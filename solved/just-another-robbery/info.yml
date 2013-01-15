@@ -1,5 +1,14 @@
 title: Just Another Robbery
-keywords: dynamic programming, probability, expected value
+keywords:
+  - dynamic programming
+  - expected value
 judges:
   lightoj: 1079
 setter: Jane Alam Jan
+summary: >
+  A series of bank robberies is being planned. There are $N$ banks, each
+  with a certain amount of money, and with an associated probability of
+  getting caught if it's robbed. Assuming that the probabilities are all
+  independent, and a given probability $P$, find out the maximum amount of
+  money that can be robbed, without exceeding a total probability of getting
+  caught of $P$.

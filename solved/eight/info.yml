@@ -1,0 +1,13 @@
+title: Eight
+keywords:
+    - IDA*
+annotations:
+    - special judge
+judges:
+    uva: 652
+similar:
+    - lightoj-1139
+summary: >
+    The 8 puzzle is a smaller version of the classic 15-puzzle; it's played
+    in a board of size $3 \times 3$. Given an arbitrary configuration of the
+    game, report a series of moves to solve it, or if it's unsolvable.

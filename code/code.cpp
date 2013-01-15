@@ -1268,6 +1268,41 @@ struct Bst {
 };
 
 //
+// IDA*
+//
+template <typename NT, typename DT>
+bool ida_dls(NT &node, int depth, int g, int &nxt, stack<DT> &st)
+{
+    if (g == depth) return node.is_solution();
+
+    NT child;
+    int dist;
+    DT delta;
+    for (node.reset(); node.next(child, dist, delta);) {
+        int f = g + dist + child.h();
+        if (f > depth && f < nxt) nxt = f;
+        if (f <= depth  && ida_dls(child, depth, g + 1, nxt, st)) {
+            st.push(delta);
+            return true;
+        }
+    }
+    return false;
+}
+
+template <typename NT, typename DT>
+bool ida_star(NT &root, int limit, stack<DT> &st)
+{
+
+    for (int depth = root.h(); depth <= limit;) {
+        int next_depth = INF;
+        if (ida_dls(root, depth, 0, next_depth, st)) return true;
+        if (next_depth == INF) return false;
+        depth = next_depth;
+    }
+    return false;
+}
+
+//
 // Time - Leap years
 //
 // A[i] has the accumulated number of days from months previous to i

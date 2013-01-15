@@ -1,0 +1,13 @@
+title: Do Your Own Homework
+keywords:
+    - beginner
+    - data structures
+judges:
+    uva: 11917
+setter: Sohel Hafiz
+thanks: Shamim Hafiz
+summary: >
+    A series of pairs $(S, N)$ are given, where $S$ is a string and $N$ an
+    integer. Then you receive two values $D$ and $X$. Find if there exists a
+    tuple $(X, Y)$, where $Y \le D$ or $Y \le D + 5$, or if $Y > D + 5$ or a
+    tuple for $X$ simply wasn't found.

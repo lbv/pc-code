@@ -951,13 +951,13 @@ double heron(double a, double b, double c)
     return sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
-typedef double p_t;
+template <typename T>
 struct Point {
-    p_t x, y;
+    T x, y;
     Point() { x=y=0; }
-    Point(p_t X, p_t Y) : x(X), y(Y) {}
-    p_t distance(const Point &p) {
-        p_t dx = p.x - x, dy = p.y - y; return sqrt(dx*dx + dy*dy);
+    Point(T X, T Y) : x(X), y(Y) {}
+    T distance(const Point &p) {
+        T dx = p.x - x, dy = p.y - y; return sqrt(dx*dx + dy*dy);
     }
     bool operator<(const Point &p) const {
         return x < p.x || (x == p.x && y < p.y);

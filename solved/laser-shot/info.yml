@@ -1,0 +1,9 @@
+title: Laser Shot
+keywords:
+    - computational geometry
+judges:
+    lightoj: 1292
+setter: Jane Alam Jan
+summary: >
+    Given the coordinates of a series of 2D points, find the maximum number
+    of points that can be covered with just one line.

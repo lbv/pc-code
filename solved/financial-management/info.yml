@@ -1,0 +1,14 @@
+title: Financial Management
+keywords:
+    - math
+    - beginner
+annotations:
+    - underspecified
+    - output formatting
+contests:
+    - México Occidental and Pacific 2010 hosted by ITESO
+judges:
+    uva: 11945
+summary: >
+    You receive twelve floating point numbers. Calculate the average of
+    these values, and print it, using a comma in the thousands place.

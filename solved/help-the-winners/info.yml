@@ -1,0 +1,19 @@
+title: Help the Winners
+keywords:
+    - counting
+    - dynamic programming
+    - bitmask calculations
+judges:
+    uva: 12030
+    lightoj: 1327
+setter:
+    - Jane Alam Jan
+    - Muntasir Azam Khan
+thanks: Sohel Hafiz
+summary: >
+    A group of $n$ dresses is to be matched with $n$ pairs of shoes. Each
+    single match between one dress and one pair of shoes produces one of
+    three possible results: 0 (no match), 1 (normal match) or 2 (super
+    match).  Find the number of total matchings among the two groups of
+    objects such that either all pairings are of type 1, or at least one of
+    the pairings is of type 2.

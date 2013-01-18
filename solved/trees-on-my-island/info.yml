@@ -1,0 +1,13 @@
+title: Trees On My island
+keywords:
+    - pick theorem
+annotations:
+    - large input
+judges:
+    uva: 10088
+    lightoj: 1418
+setter: Rezaul Alam Chowdhury
+summary: >
+    You receive a sequence of points with integer coordinates that define a
+    polygon. Find the maximum number of lattice points that are enclosed by
+    the polygon.

@@ -1,0 +1,17 @@
+title: DNA II
+keywords:
+    - beginner
+    - math
+    - strings
+judges:
+    uva: 11962
+setter:
+    - Aleksej Viktorchik
+    - Leonid Shishlo
+contests:
+    - Huge Easy Contest II
+summary: >
+    A string from the alphabet ${A, C, G, T}$ is given to you. Print the
+    length of the string, and its position (zero-indexed) in a list of all
+    unique strings from that alphabet, with the same length,
+    lexicographically sorted.

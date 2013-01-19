@@ -1,0 +1,14 @@
+title: Monkey Tradition
+keywords:
+    - chinese remainder theorem
+annotations:
+    - classic
+judges:
+    lightoj: 1319
+setter: Tanvir Hassan
+thanks: Jane Alam Jan
+summary: >
+    There is an integer $L$, such that when divided by $p_i$ leaves a
+    remainder $r_i$, for $1 \le i \le n$, where all $p_i$ are prime numbers.
+    Given the values of all $p_i$ and $r_i$, find the smallest integer $L$
+    that satisfies these conditions.

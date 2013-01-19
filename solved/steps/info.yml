@@ -1,0 +1,12 @@
+title: Steps
+keywords:
+    - math
+judges:
+    uva: 846
+setter: Piotr Rudnicki
+summary: >
+    Given two integers, find the minimum number of steps required to go from
+    the lowest to the highest. To move, every step has to be a non-negative
+    number that can have a difference of one in absolute value with respect
+    to the last step. The first and last steps always have to be of length
+    one.

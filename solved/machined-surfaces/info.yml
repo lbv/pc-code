@@ -1,0 +1,17 @@
+title: Machined Surfaces
+keywords:
+    - beginner
+    - ad-hoc
+judges:
+    uva: 414
+summary: >
+    You receive a series of lines composed by sequences of characters that
+    represent two surfaces (one on the left, one on the right). Each line is
+    composed by one or more 'X', representing one row from the left surface,
+    followed by zero or more spaces, followed by one or more 'X',
+    representing one row from the right surface. All lines have the same fixed
+    length.
+
+    Calculate the total number of "space" blocks that are left when you get
+    the left and right surfaces as close as possible, moving them
+    horizontally.

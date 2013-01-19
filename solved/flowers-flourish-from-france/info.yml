@@ -1,0 +1,12 @@
+title: Flowers Flourish from France
+keywords:
+    - beginner
+    - strings
+annotations:
+    - irregular input
+    - boolean output
+judges:
+    uva: 12243
+summary: >
+    Given a sentence composed of one or more words, determine if all the
+    words start with the same letter (case-insensitive).

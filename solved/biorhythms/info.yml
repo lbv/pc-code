@@ -1,0 +1,11 @@
+title: Biorhythms
+keywords:
+    - chinese remainder theorem
+judges:
+    uva: 756
+summary: >
+    Consider three periodic events that occur every 23, 28 and 33 days. You
+    are given three integers that denote a day of the year where each of
+    these events occurred, and a fourth integer denoting the current day of
+    the year. Determine how many days will have to pass until the three
+    events occur on the same day.

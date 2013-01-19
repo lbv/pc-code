@@ -1,24 +1,26 @@
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+using namespace std;
 
 
-#if 0
+#if 1
 #define MAXT  10000
 #define MINI -100000000
 #define MAXI  100000000
 #define MINA -1000
 #define MAXA  1000
-#define MAXR  6
+#define MAXR  10000
 #endif
 
-#if 1
+#if 0
 #define MAXT  100
-#define MINI -100000000
-#define MAXI  100000000
-#define MINA -1000
-#define MAXA  1000
-#define MAXR  6
+#define MINI -1000
+#define MAXI  1000
+#define MINA -100
+#define MAXA  100
+#define MAXR  33
 #endif
 
 
@@ -34,7 +36,7 @@ bool valid(i64 n)
     return n >= MINI && n <= MAXI;
 }
 
-void test_case()
+void gen1()
 {
     int A = rand() % ARange + MINA;
     int B = rand() % ARange + MINA;
@@ -57,6 +59,20 @@ void test_case()
     printf("%d %d %lld %lld %lld %lld %lld\n", A, B, C, x1, x2, y1, y2);
 }
 
+void gen2()
+{
+    int A = rand() % IRange + MINI;
+    int B = rand() % IRange + MINI;
+    int C = rand() % IRange + MINI;
+    int x1 = rand() % IRange + MINI;
+    int x2 = rand() % IRange + MINI;
+    int y1 = rand() % IRange + MINI;
+    int y2 = rand() % IRange + MINI;
+    if (x1 > x2) swap(x1, x2);
+    if (y1 > y2) swap(x1, x2);
+    printf("%d %d %d %d %d %d %d\n", A, B, C, x1, x2, y1, y2);
+}
+
 int main()
 {
     srand(time(NULL));
@@ -64,7 +80,10 @@ int main()
     int T = MAXT;
     printf("%d\n", T);
 
-    while (T--) test_case();
+    while (T--) {
+        if (rand() % 5 != 0) gen1();
+        else gen2();
+    }
 
     return 0;
 }

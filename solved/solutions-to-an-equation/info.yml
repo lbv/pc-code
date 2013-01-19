@@ -1,0 +1,17 @@
+title: Solutions to an Equation
+keywords:
+    - extended euclidean
+judges:
+    lightoj: 1306
+setter: Jane Alam Jan
+summary: >
+    Given seven integers $A, B, C, x_1, x_2, y_1, y_2$, determine the total
+    number of integer solutions $(x, y)$ for the equation $Ax + By + C = 0$,
+    such that $x_1 \le x \leq x_2$ and $y_1 \le y \le y_2$.
+comments: >
+    This problem is *very* tricky. Not only it requires deducing how to
+    apply Euclid's extended algorithm to solve the general problem, which is
+    challenging in itself, but it also requires extreme care with every
+    little detail in the calculations. Be careful with the data types, the
+    signs of every number at each intermediate step, special cases (where A
+    or B are zero, or both), etc.

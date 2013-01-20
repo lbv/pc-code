@@ -1,0 +1,18 @@
+title: Three Families
+keywords:
+    - beginner
+    - math
+judges:
+    uva: 12502
+setter: Rujia Liu
+thanks:
+    - Feng Chen
+    - Md. Mahbubul Hasan
+    - Youzhi Bao
+summary: >
+    Three families need to do a certain job, and they normally do the same
+    effort to complete it. One time, one of the three families don't
+    participate, so the other two families do the job by themselves,
+    spending $x$ and $y$ hours working. The third family pays $z$ dollars to
+    the other families for covering. How much money should go to the first
+    family (the one who worked $x$ hours)?

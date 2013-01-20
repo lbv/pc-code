@@ -1,0 +1,32 @@
+title: Jaguar King
+keywords:
+    - IDA*
+judges:
+    uva: 11163
+    lightoj: 1386
+setter: Jane Alam Jan
+thanks: Sohel Hafiz
+contests:
+    - Next Generation Contest - III
+summary: >
+    You receive a certain permutation of the first $N$ positive integers
+    (with $N$ a multiple of 4). Determine the minimum number of moves to
+    transform the sequence $1, 2, 3, \ldots, N$ into the given permutation.
+    Each move consists of swapping number 1 with any of the valid positions
+    to swap, according to the following rules. Let $i$ be the position of
+    the number 1 ($1 \leq i \leq N$).
+
+    If $i % 4$ (where % represents the modulo operation) is 1, then it can
+    be swapped with the number on position $i+1$, $i+3$, $i+4$ or $i-4$. If
+    $i % 4$ is 2 or 3, then it can be swapped with the number on $i+1$,
+    $i-1$, $i+4$ or $i-4$. Finally, if $i%4$ is 0, then it can be swapped
+    with the numbers on $i-3$, $i-1$, $i+4$ or $i-4$.
+comments: >
+    Notice that the version of this problem in LightOJ is more friendly, and
+    you may get AC in that judge more easily, using a simpler heuristic. In
+    UVa the constraints are harder to handle, so you may require to optimise
+    better your program, and prepare the heuristic function more carefully.
+
+    Think of pre-computing a reasonable estimate of steps to move a certain
+    number from position $i$ to position $j$ for all $(i, j)$. This could be
+    done with a simple BFS.

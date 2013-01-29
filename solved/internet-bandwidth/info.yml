@@ -1,0 +1,11 @@
+title: Internet Bandwidth
+keywords:
+    - max flow
+annotations:
+    - classic
+judges:
+    uva: 820
+    lightoj: 1153
+summary: >
+    Given an undirected, weighted graph, where two nodes act as *source* and
+    *sink*, determine the maximum flow possible from the source to the sink.

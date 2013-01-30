@@ -1,52 +1,51 @@
-/*
-	Author       :	Jan
-	Problem Name :
-	Algorithm    :
-	Complexity   :
-*/
-
-#include <vector>
-#include <list>
-#include <map>
-#include <set>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <iostream>
 #include <cstdio>
-#include <cmath>
 #include <cstdlib>
-#include <cctype>
-#include <string>
-#include <sstream>
+#include <ctime>
 
-using namespace std;
 
-int cases;
+#if 0
+#define MAXT 100
+#define MAXN 100
+#define MAXM 1000
+#define MAXW 1000
+#endif
 
-int main() {
-	//freopen("ee.in", "w", stdout);
-    srand(time(NULL));
+#if 1
+#define MAXT 20
+#define MAXN 8
+#define MAXM 16
+#define MAXW 100
+#endif
 
-	cases = 100;
-	printf("%d\n", cases);
-	while( cases-- ) {
-		int n = rand() % 5 + 2;
-		int m = rand() % 20;
 
-		printf("\n%d %d\n", n, m);
-		while( m-- ) {
-			int u, v, w;
+void test_case(bool crit = false)
+{
+    int N = crit ? MAXN : rand() % (MAXN - 1) + 2;
+    int M = crit ? MAXM : rand() % (MAXM + 1);
 
-			while(1) {
-				u = rand() % n + 1;
-				v = rand() % n + 1;
-				if( u != v ) break;
-			}
-			w = rand() % 1000 + 1;
-			printf("%d %d %d\n", u, v, w);
-		}
-	}
-	return 0;
+    printf("\n%d %d\n", N, M);
+
+    while (M--) {
+        int u, v;
+        do {
+            u = rand() % N + 1;
+            v = rand() % N + 1;
+        } while (u == v);
+
+        int w = rand() % MAXW + 1;
+        printf("%d %d %d\n", u, v, w);
+    }
 }
 
+int main()
+{
+    srand(time(NULL));
+
+    int T = MAXT;
+    printf("%d\n", T);
+
+    test_case(true); --T;
+    while (T--) test_case();
+
+    return 0;
+}

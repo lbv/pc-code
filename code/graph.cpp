@@ -6,47 +6,24 @@ struct Set {
     void merge(int i, int j) { s[find(i)] = find(j); }
 };
 
-//
-// Graphs - Basic structures
-//
-
-// Adjacency lists
-struct Graph {
-    struct Edge { int v; Edge(int V) : v(V) {} };
-    typedef list<Edge> EL;
-    typedef vector<EL> ELV;
-    ELV adj; int n;
-    Graph(int N) : n(N) { adj.resize(n); }
-    void add(int u, int v) { adj[u].push_back(Edge(v)); }
+struct Edge { int v; Edge(int V) : v(V) {} };
+struct Edge { int v; int w; Edge(int V, int W) : v(V), w(W) {} };
+template <typename T>
+struct Edge {
+    int u, v; T w;
+    Edge(int U, int V, T W) : u(U), v(V), w(W) {}
+    bool operator<(const Edge &e) const { return w < e.w; }
 };
 
-// Weighted adjacency lists
-typedef int w_t;
+template <typename ET>
 struct Graph {
-    struct Edge { int v; w_t w; Edge(int V, w_t W) : v(V), w(W) {} };
-    typedef list<Edge> EL;
-    typedef vector<EL> ELV;
-    ELV adj; int n;
-    Graph(int N) : n(N) { adj.resize(n); }
-    void add(int u, int v, w_t w) { adj[u].push_back(Edge(v, w)); }
-};
+    ET edges[MAX_EDGES];
+    int next[MAX_EDGES], adj[MAXN];
+    int n, m;
+    void init(int N) { n=N; m=0; Neg(adj); }
+    void add(int u, ET e) { next[m] = adj[u], edges[m] = e, adj[u] = m++; }
 
-// List of edges
-struct Graph {
-    struct Edge {
-        int u, v; w_t w;
-        Edge(int U, int V, w_t W) : u(U), v(V), w(W) {}
-        bool operator<(const Edge &e) const { return w < e.w; }
-    };
-    typedef vector<Edge> EV;
-    EV edges;
-    void add(int u, int v, w_t w) { edges.push_back(Edge(u, v, w)); }
-};
 
-//
-// Graphs - Algorithms
-//
-struct Graph {
     int prim_mst(int src) {
         IIS q;
         IV dis(n, INF);
@@ -346,6 +323,46 @@ struct Graph {
                     int t = g[i][k] + g[k][j];
                     if (t < g[i][j]) g[i][j] = t;
                 }
+    }
+
+    // Ford-Fulkerson
+    int dist[MAXN], q[MAXN];
+    bool find_aug_paths(int src, int snk) {
+        Neg(dist);
+        int qfront = -1, qback = 0;
+
+        q[++qfront] = src;
+        dist[src] = 0;
+
+        while (qback <= qfront) {
+            int u = q[qback++];
+            if (u == snk) return true;
+
+            for (int i = adj[u]; i >= 0; i = next[i]) {
+                Edge &e = edges[i];
+                if (dist[e.v] >= 0 || e.f >= e.c) continue;
+                q[++qfront] = e.v;
+                dist[e.v] = dist[u] + 1;
+            }
+        }
+        return false;
+    }
+    int dfs(int u, int snk, int f, int d) {
+        if (u == snk) return f;
+        int ans = 0;
+        for (int i = adj[u]; f > 0 && i >= 0; i = next[i]) {
+            Edge &e = edges[i];
+            if (e.f >= e.c || dist[e.v] != d + 1) continue;
+            int r = dfs(e.v, snk, min(f, e.c - e.f), d + 1);
+            if (r > 0) e.f += r, ans += r, f -= r;
+        }
+        return ans;
+    }
+    int mod_paths(int src, int snk) { return dfs(src, snk, INF, 0); }
+    int max_flow(int src, int snk) {
+        int total = 0;
+        while (find_aug_paths(src, snk)) total += mod_paths(src, snk);
+        return total;
     }
 }
 

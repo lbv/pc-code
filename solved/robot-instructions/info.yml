@@ -1,0 +1,16 @@
+title: Robot Instructions
+keywords:
+    - beginner
+    - simulation
+judges:
+    uva: 12503
+setter: Rujia Liu
+thanks:
+    - Feng Chen
+    - Md. Mahbubul Hasan
+summary: >
+    A robot moves in one dimension and is originally located at position
+    (0). You receive a number of instructions, which can be either move to
+    the left one step, move to the right one step, or do the same as some
+    previous command. Determine the final location of the robot after
+    executing all instructions.

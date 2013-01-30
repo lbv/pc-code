@@ -1,4 +1,12 @@
 title: Matrix Game
-keywords: nim
+keywords:
+    - nim
 judges:
-  lightoj: 1247
+    lightoj: 1247
+setter: Jane Alam Jan
+summary: >
+    A game is played ubetween 2 players sing a matrix of size $m \times n$,
+    where each cell has a number of stones. At each turn, one player picks
+    up at least one stone, and as many as he wants from any given row. The
+    loser is the player who can't pick up any more stones. Given the matrix,
+    determine the winner.

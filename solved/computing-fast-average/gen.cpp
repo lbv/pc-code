@@ -8,13 +8,15 @@
 #define MAXN 100000
 #define MAXQ 50000
 #define MAXV 10000
+#define NL   0
 #endif
 
 #if 1
-#define MAXT 6
-#define MAXN 50
-#define MAXQ 20
-#define MAXV 1000
+#define MAXT 20
+#define MAXN 64
+#define MAXQ 12
+#define MAXV 100
+#define NL   1
 #endif
 
 
@@ -22,6 +24,9 @@ void test_case()
 {
     int n = rand() % MAXN + 1;
     int q = rand() % MAXQ + 1;
+#if NL
+    puts("");
+#endif
     printf("%d %d\n", n, q);
 
     --q;

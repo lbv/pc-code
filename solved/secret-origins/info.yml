@@ -7,3 +7,7 @@ judges:
   lightoj: 1042
 setter: Muntasir Muzahid Chowdhury
 thanks: Jane Alam Jan
+summary: >
+    Given a certain integer number $N$, find the lowest number greater than
+    $N$ that has the same popcount (the same number of ones in its binary
+    representation).

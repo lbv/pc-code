@@ -1,10 +1,22 @@
 #include <cstdio>
 #include <cstdlib>
+#include <ctime>
 #include <vector>
 using namespace std;
 
+
+#if 0
 #define MAXT 300
-#define MOD 1000000007
+#define MOD  1000000007
+#define PRE  1
+#endif
+
+#if 1
+#define MAXT 100
+#define MOD  1000000007
+#define PRE  0
+#endif
+
 
 typedef long long i64;
 
@@ -52,9 +64,12 @@ void test_case()
 
 int main()
 {
+    srand(time(NULL));
+
     int T = MAXT;
     printf("%d\n", T);
 
+#if PRE
     for (int i = 1; i <= 3; ++i)
         for (int j = 1; j <= 3; ++j)
             for (int k = i + 1; k <= 3; ++k)
@@ -63,6 +78,7 @@ int main()
                         printf("%d %d %d %d %d\n", i, j, k, l, m);
                         --T;
                     }
+#endif
 
     while (T--) test_case();
 

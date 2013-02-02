@@ -1,0 +1,25 @@
+title: Prisoners, Boxes, and Pieces of Paper
+keywords:
+    - math
+    - counting
+judges:
+    uva: 11118
+setter:
+    Igor Naverniouk
+contests:
+    - ICPC Regional Contest 2006 Warmup
+summary: >
+    A number $n$ of prisoners (with $n$ being an even number) play a game,
+    where once a day $n$ boxes are placed, each with a piece of paper inside
+    with the name of one prisoner, and every name appears exactly once. Each
+    prisoner is given the opportunity to open $n/2$ boxes. The pieces of
+    paper are assigned randomly to the boxes, and the prisoners have the
+    opportunity to formulate a strategy before proceeding, but once they do,
+    they cannot communicate between them, or modify the boxes or pieces of
+    paper in any way. Assuming they formulate an optimal strategy, determine
+    the probability of every prisoner finding their name, and the expected
+    number of days they will have to play the game until that happens.
+comments:
+    For a good, short explanation of this problem, and its solution, search
+    for a paper called "Seven Puzzles You Think You Must Not Have Heard
+    Correctly" by Peter Winkler.

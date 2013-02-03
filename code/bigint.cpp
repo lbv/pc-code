@@ -103,18 +103,6 @@ struct Bigint {
         }
         d = res; clean(); return *this;
     }
-    Bigint pow(int e) {
-        if (e == 0) return Bigint(1);
-        if (e == 1) return *this;
-        if (e % 2 == 0) {
-            Bigint tmp = this->pow(e/2);
-            tmp *= tmp;
-            return tmp;
-        }
-        Bigint tmp = this->pow(e-1);
-        tmp *= *this;
-        return tmp;
-    }
     void print(bool nl = true) {
         if (sgn) putchar('-');
         bool flg = true;

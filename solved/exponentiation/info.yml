@@ -1,0 +1,15 @@
+title: Exponentiation
+keywords:
+    - big integer
+annotations:
+    - underspecified
+judges:
+    uva: 748
+summary: >
+    Given a real number $R$ with at most 6 characters in its decimal
+    representation, and an integer exponent $n$, find the exact value of
+    $R^n$.
+comments: >
+    The problem statement doesn't mention what to do if a result doesn't
+    have any significant digits after the decimal point (whether to include
+    the point or not), but it seems that there are no such cases.

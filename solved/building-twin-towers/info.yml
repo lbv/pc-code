@@ -1,5 +1,10 @@
 title: Building Twin Towers
-keywords: dynamic programming
+keywords:
+    - dynamic programming
 judges:
-  lightoj: 1126
+    lightoj: 1126
 setter: Jane Alam Jan
+summary: >
+    Given a list of integers representing heights of bricks, determine the
+    maximum height possible for two identical towers that are to be built
+    using those bricks.

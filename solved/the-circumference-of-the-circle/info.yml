@@ -1,0 +1,8 @@
+title: The Circumference of the Circle
+keywords:
+    - geometry
+judges:
+    uva: 438
+summary: >
+    Given the coordinates of three non-collinear points, determine the
+    circumference of the circle that intersects them.

@@ -4,3 +4,7 @@ keywords:
   - breadth first search
 judges:
   uva: 10004
+summary: >
+    Given an undirected, strongly connected graph, determine if it can be
+    colored using two colors, such that any two adjacent nodes will be of
+    different colors.

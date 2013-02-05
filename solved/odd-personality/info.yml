@@ -1,0 +1,15 @@
+title: Odd Personality
+keywords:
+    - graph theory
+    - bridge
+annotations:
+    - large input
+judges:
+    lightoj: 1300
+setter: Jane Alam Jan
+summary: >
+    Given an undirected graph, where there is at most one edge between any
+    pair of nodes, determine the number of nodes from which you can start an
+    odd tour. An odd tour is defined as a path that starts and ends on the
+    same node, visiting an odd number of edges, such that each edge can be
+    visited at most once.

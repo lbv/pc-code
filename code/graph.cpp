@@ -212,45 +212,39 @@ struct Graph {
                     ++m;
         return m;
     }
+
     // Articulations/bridges
-    struct Artic {
-        IV low, idx;
-        BV is_art;
-        IIV bridges;
-        int cnt;
-        Graph &g;
-        Artic(Graph &G) : g(G) {
-            low = IV(g.n);
-            idx = IV(g.n);
-            is_art = BV(g.n);
-            cnt = 1;
-        }
-        void dfs(int u, int v) {
-            int children = 0;
-            low[v] = idx[v] = cnt++;
-            For (EL, e, g.adj[v]) {
-                if (idx[e->v] == 0) {
-                    ++children;
-                    dfs(v, e->v);
-                    low[v] = min(low[v], low[e->v]);
-                    if (low[e->v] >= idx[v] && u != v)
-                        is_art[v] = true;
-                    if (low[e->v] == idx[e->v])
-                        bridges.push_back(II(v, e->v));
-                }
-                else if (e->v != u)
-                    low[v] = min(low[v], idx[e->v]);
+    int low[MAXN], idx[MAXN], cnt;
+    bool is_artic[MAXN];
+    bool is_bridge[MAX_EDGES];
+
+    void dfs(int u, int v) {
+        int children = 0;
+        low[v] = idx[v] = cnt++;
+        for (int i = adj[v]; i >= 0; i = next[i]) {
+            Edge &e = edges[i];
+            if (idx[e.v] == 0) {
+                ++children;
+                dfs(v, e.v);
+                low[v] = min(low[v], low[e.v]);
+                if (low[e.v] >= idx[v] && u != v)
+                    is_artic[v] = true;
+                if (low[e.v] == idx[e.v])
+                    is_bridge[i] = is_bridge[e.o] = true;
             }
-            if (u == v && children > 1)
-                is_art[v] = true;
+            else if (e.v != u)
+                low[v] = min(low[v], idx[e.v]);
         }
-    };
-    void articulations(IIV &bridges) {
-        Artic a(*this);
-        for (int i = 0; i < n; ++i)
-            if (a.idx[i] == 0) a.dfs(i, i);
-        bridges = a.bridges;
+        if (u == v && children > 1)
+            is_artic[v] = true;
     }
+    void articulations() {
+        Zero(idx); Zero(low);
+        Zero(is_artic); Zero(is_bridge);
+        cnt = 1;
+        for (int i = 0; i < n; ++i) if (idx[i] == 0) dfs(i, i);
+    }
+
     // Eulerian Trail
     struct Euler {
         ELV adj; IV t;

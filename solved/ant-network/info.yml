@@ -1,0 +1,17 @@
+title: Ant Network
+keywords:
+    - graph theory
+    - articulation
+    - counting
+annotations:
+    - large input
+judges:
+    lightoj: 1308
+summary: >
+    A connected, undirected graph represents an underground system of
+    junctions and tunnels made by ants. Some of these junctions will include
+    an escape shaft (maximum one per junction), so that ants can escape to
+    the surface in case of a disaster. Assuming that a disaster destroys at
+    most one junction, determine the minimum number of escape shafts
+    necessary, and the total number of ways in which those shafts can be
+    built.

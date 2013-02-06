@@ -1,0 +1,12 @@
+title: Escape
+keywords:
+    - breadth first search
+judges:
+    lightoj: 1185
+setter: Jane Alam Jan
+summary: >
+    There's an undirected graph that represents a number of places that you
+    can visit. Imagine that going from one place to another (provided
+    there's an edge between the two nodes) takes 1 unit of distance.
+    Determine the total number of places that you can reach from node 1,
+    after walking a positive, *even* number of units of distance.

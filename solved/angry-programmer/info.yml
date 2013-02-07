@@ -1,0 +1,12 @@
+title: Angry Programmer
+keywords:
+    - max flow
+judges:
+    uva: 11506
+    lightoj: 1177
+summary: >
+    You receive an undirected graph with $M$ nodes. You need to destroy
+    nodes or edges until $1$ and $M$ are disconnected (there isn't a path
+    between them). Each node and each edge has a "destruction cost".
+    Determine the minimum cost to break communication between those two
+    nodes.

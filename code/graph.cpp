@@ -6,13 +6,18 @@ struct Set {
     void merge(int i, int j) { s[find(i)] = find(j); }
 };
 
-struct Edge { int v; Edge(int V) : v(V) {} };
+struct Edge { int v; Edge() {} Edge(int V) : v(V) {} };
 struct Edge { int v; int w; Edge(int V, int W) : v(V), w(W) {} };
 template <typename T>
 struct Edge {
     int u, v; T w;
     Edge(int U, int V, T W) : u(U), v(V), w(W) {}
     bool operator<(const Edge &e) const { return w < e.w; }
+};
+struct Edge {
+    int v, c, f, o;
+    Edge() {}
+    Edge(int V, int C, int O) : v(V), c(C), f(0), o(O) {}
 };
 
 template <typename ET>
@@ -22,6 +27,10 @@ struct Graph {
     int n, m;
     void init(int N) { n=N; m=0; Neg(adj); }
     void add(int u, ET e) { next[m] = adj[u], edges[m] = e, adj[u] = m++; }
+    void bi_add(int u, int v, int c) {
+        add(u, Edge(v, c, m + 1));
+        add(v, Edge(u, 0, m - 1));
+    }
 
 
     int prim_mst(int src) {
@@ -320,18 +329,15 @@ struct Graph {
     }
 
     // Ford-Fulkerson
-    int dist[MAXN], q[MAXN];
-    bool find_aug_paths(int src, int snk) {
+    int dist[MAXN], q[MAXN], src, snk;
+    bool find_aug_paths() {
         Neg(dist);
         int qfront = -1, qback = 0;
-
         q[++qfront] = src;
         dist[src] = 0;
-
         while (qback <= qfront) {
             int u = q[qback++];
             if (u == snk) return true;
-
             for (int i = adj[u]; i >= 0; i = next[i]) {
                 Edge &e = edges[i];
                 if (dist[e.v] >= 0 || e.f >= e.c) continue;
@@ -341,21 +347,27 @@ struct Graph {
         }
         return false;
     }
-    int dfs(int u, int snk, int f, int d) {
+    int dfs(int u, int f, int d) {
         if (u == snk) return f;
         int ans = 0;
         for (int i = adj[u]; f > 0 && i >= 0; i = next[i]) {
             Edge &e = edges[i];
             if (e.f >= e.c || dist[e.v] != d + 1) continue;
-            int r = dfs(e.v, snk, min(f, e.c - e.f), d + 1);
-            if (r > 0) e.f += r, ans += r, f -= r;
+            int r = dfs(e.v, min(f, e.c - e.f), d + 1);
+            if (r > 0) e.f += r, edges[e.o].f -= r, ans += r, f -= r;
         }
         return ans;
     }
-    int mod_paths(int src, int snk) { return dfs(src, snk, INF, 0); }
-    int max_flow(int src, int snk) {
+    int mod_paths() {
+        int ans = 0;
+        for (int f = dfs(src, INF, 0); f > 0; f = dfs(src,INF, 0))
+            ans += f;
+        return ans;
+    }
+    int max_flow(int a, int b) {
+        src = a, snk = b;
         int total = 0;
-        while (find_aug_paths(src, snk)) total += mod_paths(src, snk);
+        while (find_aug_paths()) total += mod_paths();
         return total;
     }
 }

@@ -1,4 +1,12 @@
 title: Opposite Task
-keywords: beginner
+keywords:
+    - beginner
+annotations:
+    - special judge
 judges:
-  lightoj: 1001
+    lightoj: 1001
+setter: Jane Alam Jan
+summary: >
+    A simple problem to get familiar with the concept of a "special judge".
+    You receive an integer $n$ such that $0 \leq n \leq 20$.  Print two
+    integers that add up to $n$, but none of them must exceed 10.

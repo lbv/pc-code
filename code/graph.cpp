@@ -22,8 +22,8 @@ struct Edge {
 
 template <typename ET>
 struct Graph {
-    ET edges[MAX_EDGES];
-    int next[MAX_EDGES], adj[MAXN];
+    ET edges[MAX_E];
+    int next[MAX_E], adj[MAX_V];
     int n, m;
     void init(int N) { n=N; m=0; Neg(adj); }
     void add(int u, ET e) { next[m] = adj[u], edges[m] = e, adj[u] = m++; }
@@ -223,9 +223,9 @@ struct Graph {
     }
 
     // Articulations/bridges
-    int low[MAXN], idx[MAXN], cnt;
-    bool is_artic[MAXN];
-    bool is_bridge[MAX_EDGES];
+    int low[MAX_V], idx[MAX_V], cnt;
+    bool is_artic[MAX_V];
+    bool is_bridge[MAX_E];
 
     void dfs(int u, int v) {
         int children = 0;
@@ -329,7 +329,7 @@ struct Graph {
     }
 
     // Ford-Fulkerson
-    int dist[MAXN], q[MAXN], src, snk;
+    int dist[MAX_V], q[MAX_V], src, snk;
     bool find_aug_paths() {
         Neg(dist);
         int qfront = -1, qback = 0;
@@ -370,6 +370,7 @@ struct Graph {
         while (find_aug_paths()) total += mod_paths();
         return total;
     }
+    void clear_flows() { for (int i = 0; i < m; ++i) edges[i].f = 0; }
 }
 
 //

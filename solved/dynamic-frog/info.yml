@@ -1,0 +1,19 @@
+title: Dynamic Frog
+keywords:
+    - binary search
+judges:
+    uva: 11157
+    lightoj:
+        id: 1156
+        title: Jumping Frogs
+setter: Sohel Hafiz
+thanks: Jane Alam Jan
+contests:
+    - Next Generation Contest III
+summary: >
+    A frog wants to cross a river two times (go to the opposite bank and
+    back) by jumping on a series of rocks placed in a line. Some rocks are
+    big and the frog can jump freely on them any number of times he wants,
+    but other rocks are small and can only be used once, and then they
+    disappear. Determine the minimum distance possible for the largest jump
+    that the frog has to make to cross.

@@ -1,0 +1,19 @@
+title: March of the Penguins
+keywords:
+    - max flow
+    - geometry
+judges:
+    uva: 12125
+    lightoj:
+        title: Penguins
+        id: 1154
+contests:
+    - NWERC 2007
+summary: >
+    A number of ice floes hold a number of penguins. The penguins want to
+    gather in a single floe by jumping between the floes, but each floe
+    breaks and disappears after a certain number of penguins jump off of it
+    (arriving at a floe is okay). Given the location of all the floes, their
+    resistance (number of jumps reach floe resists), and the maximum jumping
+    distance for all penguins, determine the list of all ice floes where
+    they could gather.

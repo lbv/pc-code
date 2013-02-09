@@ -1,0 +1,30 @@
+title: Where to Run
+keywords:
+    - dynamic programming
+    - expected value
+annotations:
+    - special judge
+judges:
+    uva: 11872
+    lightoj: 1287
+setter: Jane Alam Jan
+thanks:
+    - Tazmina Sharmin
+    - Sohel Hafiz
+contests:
+    - Anupam Bhattacharjee Memorial Contest
+summary: >
+    Trying to escape from the police in a city with $n$ junctions and $m$
+    bi-directional roads between the junctions, you plan to remain fugitive
+    as much time as possible. To do it, you start on the first junction, and
+    at each junction you can choose move to any adjacent junction as long as
+    it is still possible to visit all remaining unvisited junctions from it,
+    or you can choose to stay 5 minutes in the current junction (if there's
+    at least one junction you can move to). You can choose any option with
+    equal probability (staying or moving to each valid neighbour).
+
+    You can't move anymore and are caught by the police when you no longer
+    have valid neighbours to run to (all visited junctions are immediately
+    occupied by police). Given the graph of the city, where the weights of
+    the edges represent the time required to travel along a path, determine
+    the expected amount of time for the police to catch you.

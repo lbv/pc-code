@@ -1,0 +1,12 @@
+title: Power Transmission
+keywords:
+    - max flow
+annotations:
+    - classic
+judges:
+    uva: 10330
+    lightoj: 1155
+setter: Md. Kamruzzaman
+summary: >
+    Given a directed graph, where each vertex and edge has an associated
+    capacity, find the maximum flow possible between a source and a sink.

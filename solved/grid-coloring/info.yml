@@ -1,0 +1,15 @@
+title: Grid Coloring
+keywords:
+    - counting
+    - sorting
+judges:
+    lightoj: 1333
+setter: Md. Arifuzzaman Arif
+thanks: Jane Alam Jan
+summary: >
+    Each cell in a grid of size $M \times N$ has to be painted with one of
+    $K$ colors. However, some cells can be "blocked", which means that they
+    can't be painted at all, and there's an additional restriction: any pair
+    of cells that are adjacent vertically have to be painted in different
+    colors. Determine the total number of ways in which the grid can be
+    painted.

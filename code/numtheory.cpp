@@ -3,15 +3,17 @@
 //
 #define IsComp(n)  (_c[n>>6]&(1<<((n>>1)&31)))
 #define SetComp(n) _c[n>>6]|=(1<<((n>>1)&31))
-const int MAX = 1000000;  // 10^6
-const int LMT =    1000;  // sqrt(MAX)
-int _c[(MAX>>6)+1];
-IV primes;
+const int MAXP   = 46341;  // sqrt(2^31)
+const int SQRP   =   216;  // sqrt(MAX)
+const int MAX_NP =  5435;  // 1.26 * MAXP/log(MAXP)
+int _c[(MAXP>>6)+1];
+int primes[MAX_NP];
+int nprimes;
 void prime_sieve() {
-    for (int i = 3; i <= LMT; i += 2)
-        if (!IsComp(i)) for (int j = i*i; j <= MAX; j+=i+i) SetComp(j);
-    primes.push_back(2);
-    for (int i=3; i <= MAX; i+=2) if (!IsComp(i)) primes.push_back(i);
+    for (int i = 3; i <= SQRP; i += 2)
+        if (!IsComp(i)) for (int j = i*i; j <= MAXP; j+=i+i) SetComp(j);
+    primes[nprimes++] = 2;
+    for (int i=3; i <= MAXP; i+=2) if (!IsComp(i)) primes[nprimes++] = i;
 }
 bool is_prime(int n) {
     if (n < 2 || (n > 2 && n % 2 == 0)) return false;

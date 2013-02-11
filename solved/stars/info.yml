@@ -1,0 +1,16 @@
+title: Stars
+keywords:
+    - coprimes
+judges:
+    uva: 12493
+summary: >
+    You place $N$ points on the circumference of a circle, dividing it into
+    $N$ arcs of equal length. Then, for any $k$ in $1 \leq k < N$ you draw
+    geometric figures by starting at any point, and drawing a straight line
+    from it to the $k$th next point in either direction, and continuing
+    until yu can't draw any new lines. One of these drawing is called
+    "complete" if it uses all the $N$ points as vertices in the polygon
+    generated.
+
+    Given the value of $N$, determine the total number of complete figures
+    that can be generated from it.

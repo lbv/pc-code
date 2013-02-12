@@ -1,8 +1,10 @@
 title: Anagram
 keywords:
-  - ad-hoc
   - strings
   - permutations
   - sorting
 judges:
   uva: 195
+summary: >
+    Given a set of letters, generate the list of all distinct permutations
+    of those letters, in *alphabetical* order.

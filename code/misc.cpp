@@ -44,13 +44,17 @@ struct Fraction {
 //
 // Matrix Exponentiation
 //
-typedef int m_t;
-const int MRows = MAXN;
-const int MCols = MAXN;
+template <typename T>
 struct Matrix {
     int r, c;
-    m_t m[MRows][MCols];
-    void init(int R, int C) { Zero(m); r=R; c=C; }
+    T m[MAX_ROWS][MAX_COLS];
+    T x[MAX_ROWS][MAX_COLS];
+    Matrix(int R, int C) : r(R), c(C) {}
+    void init(T *v) {
+        for (int i = 0, p = 0; i < r; ++i)
+            for (int j = 0; j < c; ++j)
+                m[i][j] = v[p++];
+    }
     void iden() {
         for (int i = 0; i < r; ++i)
             for (int j = 0; j < c; ++j)
@@ -58,32 +62,21 @@ struct Matrix {
     }
     void print() {
         for (int i = 0; i < r; ++i) {
-            for (int j = 0; j < c; ++j) printf("%4d  ", m[i][j]);
-            printf("\n");
+            for (int j = 0; j < c; ++j) cout << m[i][j] << " ";
+            puts("");
         }
     }
 
-    void mul(const Matrix &y, Matrix &z) const {
-        z.r = r, z.c = y.c; m_t v;
-        for (int i = 0; i < z.r; ++i)
-            for (int j = 0; j < z.c; ++j) {
-                v = 0;
+    Matrix &operator*=(const Matrix &y) {
+        Zero(x);
+        for (int i = 0; i < r; ++i)
+            for (int j = 0; j < c; ++j) {
+                T v = 0;
                 for (int k = 0; k < c; ++k)
                     v += m[i][k] * y.m[k][j];
-                z.m[i][j] = v % 10;
+                x[i][j] = v;
             }
-    }
-
-    void exp(int e, Matrix &z) {
-        z.init(r, c); z.iden();
-        Matrix x, b = *this;
-        while (true) {
-            if (e & 1) { z.mul(b, x); z = x; }
-            e >>= 1;
-            if (e == 0) break;
-            b.mul(b, x);
-            b = x;
-        }
+        memcpy(m, x, sizeof(m)); return *this;
     }
 };
 

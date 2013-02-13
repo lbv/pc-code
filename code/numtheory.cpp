@@ -93,6 +93,11 @@ TB sq_pow(TB b, TE e) {
     return res;
 }
 
+template<typename TB, typename TE>
+void sq_pow(TB b, TE e, TB &r) {
+    for (; e; e >>= 1, b *= b) if (e & 1) r *= b;
+}
+
 template<typename T>
 T gcd(T a, T b) { for (T c = a%b; c != 0; a=b,b=c,c=a%b); return b; }
 

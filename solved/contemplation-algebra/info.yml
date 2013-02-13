@@ -1,0 +1,21 @@
+title: Contemplation! Algebra
+keywords:
+    - matrix exponentiation
+judges:
+    uva: 10655
+    lightoj:
+        id: 1070
+        title: Algebraic Problem
+setter: Shahriar Manzoor
+thanks: Mohammad Sajjad Hossain
+contests:
+    - UVa Local and May Monthly Contest
+summary: >
+    Given the values of $a + b$ and $ab4 and $n$, calculate $a^n + b^n$.
+comments: >
+    LightOJ's version of the problem statement is much clearer, indicating
+    how the values of $a$ and $b$ don't have to be real numbers, and that
+    the answer has to be modulo $2^{64}$, so use unsigned 64-bit integers
+    there. UVa's version (the original problem statement from Manzoor) is...
+    well, a typical problem statement from Manzoor. Use *signed* 64-bit
+    integers there.

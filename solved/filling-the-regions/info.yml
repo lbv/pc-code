@@ -1,0 +1,14 @@
+title: Filling the Regions
+keywords:
+    - breadth first search
+judges:
+    lightoj: 1115
+setter: Jane Alam Jan
+summary: >
+    A grid of characters is presented. An uppercase letter is used to
+    represent a single region, and all the cells in the grid with the same
+    letter are part of the same region. Regions are continuous, meaning that
+    if it has more than one cell, then every cell has neighbour cells from
+    the same region. Fill all the regions completely with their respective
+    letters. Some regions can be inside of others, but they need to
+    disappear because the external regions have precedence.

@@ -1,0 +1,19 @@
+title: Truchet tiling
+keywords:
+    - geometry
+    - depth first search
+judges:
+    uva: 12375
+    lightoj:
+        id: 1368
+        annotations:
+            - special judge
+setter: Monirul Hasan
+thanks: Jane Alam Jan
+summary: >
+    A tiling system proposed by Sebastien Truchet consists of using
+    different tile patterns to fill a 2D plane. Two of these patterns are
+    used to fill a rectangle with integer lengths. Given the description of
+    the tiles used to fill the rectangle, and a group of lattice points,
+    determine the total area that would be filled by a "paint bucket" tool,
+    starting on those coordinates.

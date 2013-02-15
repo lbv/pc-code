@@ -1,0 +1,13 @@
+title: Pig-Latin
+keywords:
+    - beginner
+    - strings
+annotations:
+    - underspecified
+judges:
+    uva: 492
+summary: >
+    Take every word in a line of text, and transform it according to "Pig
+    Latin" rules. That is, if the word starts with a vowel, appen "ay" to
+    it, otherwise, move the first letter of the word to the end, and then
+    append "ay".

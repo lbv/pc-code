@@ -6,5 +6,6 @@ judges:
 setter: Sérgio Queiroz de Medeiros
 summary: >
     A B2 sequence is defined as a group of numbers $1 \leq b_1 < b_2 < b_3
-    \ldots$, such that all sums of pairwise elements are distinct. Given a
-    sequence (maximum length 100), determine if it's a B2 sequence or not.
+    \ldots$, such that all possible $b_i + b_j$ for $i \leq j$ are distinct.
+    Given a sequence (maximum length 100), determine if it's a B2 sequence
+    or not.

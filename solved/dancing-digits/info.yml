@@ -1,0 +1,23 @@
+title: Dancing Digits
+keywords:
+    - breadth first search
+    - trie
+judges:
+    uva: 11198
+    lightoj:
+        id: 1165
+        title: Digit Dancing
+setter: Rujia Liu
+contests:
+    - Present 1: A Tiny Contest of Brute Force
+summary: >
+    Consider a permutation of the first 8 positive integers. These integers
+    also receive a property of "gender", where a number left positive is
+    "male", but if turned into a negative number is "female". A permutation
+    can be transformed into another in one step by swapping two numbers,
+    such that a "dancing pair" is formed involving any of the swapped
+    numbers. A dancing pair is a pair of adjacent numbers of different
+    gender, such that their sum is a prime number (the sum doesn't take into
+    account the sign). Given an arbitrary permutation, determine the minimum
+    number of steps required to transform it into a sorted permutation
+    (again, ignoring the gender).

@@ -1,5 +1,10 @@
 title: Jolly Jumpers
 keywords:
-  - beginner
+    - beginner
 judges:
-  uva: 10038
+    uva: 10038
+summary: >
+    A sequence of integers is considered jolly if it has one element, or it
+    has length $n > 1$ and the absolute differences of all consecutive
+    elements take all values between 1 and $n-1$. Given a list of numbers,
+    determine if it's jolly or not.

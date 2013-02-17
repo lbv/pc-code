@@ -1,0 +1,15 @@
+title: Politeness
+keywords:
+  - number of divisors
+  - dynamic programming
+judges:
+  uva: 11867
+  lightoj: 1399
+setter: Md. Towhidul Islam Talukder
+thanks: Jane Alam Jan
+contests:
+  - Regional Warmup Contest 2010
+summary: >
+    The politeness of a number is the number of ways it can be expressed as
+    a sum of two or more consecutive integers.  Given a (possibly large)
+    integer $P$, find the lowest integer with a politeness value of $P$.

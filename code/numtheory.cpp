@@ -48,27 +48,27 @@ void prime_factorize(int n, IIV &f) {
     }
     if (n > 1) f.push_back(II(n, 1));
 }
-void divisors(int n, IV &ds)
+
+template <typename T>
+void divisors(T n, T *ds, int &s)
 {
-    ds.clear();
-    ds.push_back(1);
+    s = 0;
+    ds[s++] = 1;
     int sn = sqrt(n);
-    For (IV, pp, primes) {
-        int p = *pp;
+    for (int i = 0; i < nprimes; ++i) {
+        int &p = primes[i];
         if (p > sn) break;
         if (n % p != 0) continue;
-        IV aux(ds.begin(), ds.end());
-        int q = 1;
+        T q = 1; int t = s;
         while (n % p == 0) {
-            q *= p; n /= p;
-            For(IV, v, ds) aux.push_back(*v * q);
+            q *= p, n /= p;
+            for (int j = 0; j < t; ++j) ds[s++] = ds[j] * q;
         }
-        sn = sqrt(n); ds = aux;
+        sn = sqrt(n);
     }
     if (n > 1) {
-        IV aux(ds.begin(), ds.end());
-        For (IV, v, ds) aux.push_back(*v * n);
-        ds = aux;
+        int t = s;
+        for (int j = 0; j < t; ++j) ds[s++] = ds[j] * n;
     }
 }
 
@@ -81,9 +81,9 @@ void euler_phi(int a[], int N) {
         }
 }
 
-int mod_pow(int _b, i64 e, int m) {
-    i64 res = 1;
-    for (i64 b=_b; e; e >>= 1, b = b*b%m) if (e & 1) res = res*b%m;
+template <typename TB, typename TE>
+TB mod_pow(TB b, TE e, TB m) {
+    TB res = 1; for (; e; e >>= 1, b = b*b%m) if (e & 1) res = res*b%m;
     return res;
 }
 

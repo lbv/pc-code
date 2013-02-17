@@ -193,6 +193,20 @@ int select_kth(DVi lo, DVi hi, int k)
 }
 
 //
+// Basic binary search
+//
+template <typename T>
+int binsearch(const T *a, int lo, int hi, T v)
+{
+    while (lo <= hi) {
+        int mid = (lo + hi) / 2;
+        if (a[mid] < v) lo = mid + 1;
+        else            hi = mid - 1;
+    }
+    return a[lo] == v ? lo : -1;
+}
+
+//
 // Merge sort - useful for adapting it to sorting-related problems
 //
 void merge(IVi lo, IVi hi, IVi mid)

@@ -9,6 +9,8 @@ const unsigned int M = (1 << 30) - 1;
 void test_case()
 {
     int B = rand() % M + 1;
+    if (rand() % 15 == 0) B = rand() % 1000 + 1;
+
     int A = rand() % B + 1;
 
     printf("%d %d\n", A, B);

@@ -1,0 +1,11 @@
+title: {sum+=i++} to Reach N
+keywords:
+    - number of divisors
+judges:
+    uva: 10290
+setter: Shahriar Manzoor
+contests:
+    - Math Lovers' Contest
+summary: >
+    Given a possibly large integer, determine the total amount of ways in
+    which it can be expressed as the sum of 1 or more consecutive integers.

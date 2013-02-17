@@ -1,0 +1,16 @@
+title: Ants
+keywords:
+    - beginner
+judges:
+    uva: 10714
+setter: Piotr Rudnicki
+contests:
+    - University of Alberta/Waterloo Fall 1 Contest
+summary: >
+    A group of ants move with constant speed of one length unit per second
+    on a 1D stick of length $l$, but it's unknown in which direction they
+    are going initially. If two ants bump into each other, they both turn
+    around and continue moving; if they reach one of the ends of the stick,
+    they fall. Given the length of the stick and the location of all ants,
+    determine the minimum time possible required for all ants to fall from
+    the stick, and the maximum time possible.

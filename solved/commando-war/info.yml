@@ -1,0 +1,16 @@
+title: Commando War
+keywords:
+    - greedy
+    - sorting
+judges:
+    uva: 11729
+contests:
+    - Alkhawarizmi Programming Contest 2009
+setter: Mohammad Mahmudur Rahman
+thanks: Manzurur Rahman Khan
+summary: >
+    You send $N$ soldiers to the field with instructions. For every soldier,
+    you have to brief him, which takes $B_i$ units of time, and then the
+    commando goes and perform his job, taking $J_i$ units of time. Determine
+    the minimum amount of time required until all the commandos have
+    finished their jobs.

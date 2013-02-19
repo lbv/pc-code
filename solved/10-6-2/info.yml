@@ -1,0 +1,13 @@
+title: 10:6:2
+keywords:
+    - geometry
+    - beginner
+judges:
+    uva: 12578
+setter: Kaysar Abdullah
+summary: >
+    The flag of Bangladesh is formed by a rectangle with a 10:6
+    length--to--width ratio, filled by the color green, and then it has a
+    red circle with 5:1 length--to--radius ratio in the middle. Given the
+    length $L$ of the flag, determine the areas filled with color green and
+    red in the flag.

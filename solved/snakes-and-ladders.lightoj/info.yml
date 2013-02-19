@@ -1,0 +1,17 @@
+title: Snakes and Ladders
+keywords:
+    - expected value
+    - gaussian elimination
+annotations:
+    - special judge
+judges:
+    lightoj: 1151
+setter: Jane Alam Jan
+summary: >
+    The game of snakes and ladders is played on a board of 100 squares,
+    which may include "snake" and "ladders", which take you from one square
+    another; a snake takes you back to a previous square, and a ladder takes
+    you forward. At each turn you use a fair 6-sided die to determine the
+    numbre of posititons to move. Given the description of a board,
+    determine the expected number of times you have to throw a die to
+    complete the game.

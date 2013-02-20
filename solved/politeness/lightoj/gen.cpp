@@ -16,7 +16,19 @@ u64 rand_u64()
     return r;
 }
 
-void test_case()
+void gen1()
+{
+    int P = rand() % 1000;
+    printf("%d\n", P);
+}
+
+void gen2()
+{
+    int P = rand() % 1000000;
+    printf("%d\n", P);
+}
+
+void gen3()
 {
     u64 P = rand_u64() % (MAXP + 1);
     printf("%llu\n", P);
@@ -29,7 +41,12 @@ int main()
     int T = MAXT;
     printf("%d\n", T);
 
-    while (T--) test_case();
+    while (T--) {
+        int n = rand() % 10;
+        if (n < 3) gen1();
+        else if (n < 6) gen2();
+        else gen3();
+    }
 
     return 0;
 }

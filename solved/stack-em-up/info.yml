@@ -1,10 +1,16 @@
 title: Stack 'em Up
 keywords:
-  - cards
-  - simulation
-  - io
+    - cards
+    - simulation
+annotations:
+    - irregular input
 judges:
-  uva: 10205
+    uva: 10205
 setter: Gordon V. Cormack
 contests:
-  - University of Valladolid Final Local Contest
+    - University of Valladolid Final Local Contest
+summary: >
+    A permutation of the 52 first positive integers describe a particular
+    method of shuffling a group of cards. Knowing the description of $n$
+    shuffles, and then a sequence of the shuffles applied to a standard
+    sorted deck, print the result after the shuffles have been performed.

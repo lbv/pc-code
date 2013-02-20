@@ -1,0 +1,16 @@
+title: Love Calculator
+keywords:
+    - beginner
+    - strings
+judges:
+    uva: 10424
+setter: Niaz Morshed Chowdhury
+contests:
+    - The January 2003 Monthly Contest
+summary: >
+    Given two strings, a "love calculation" is performed by adding the
+    numeric value of all aphabetical letters in each string ('A' is 1, 'B'
+    is 2, etc.), and then reducing these numbers if they have more than one
+    digit, by adding up their digits until they become 1-digit numbers. Then
+    the ratio between the two numbers, expressed as a percentage, is the
+    result. Given two strings, calculate their love.

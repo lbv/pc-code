@@ -8,6 +8,7 @@
 using namespace std;
 
 
+#if 1
 #define MAXT   20
 #define MAXN   10000
 #define MAXM   10000
@@ -15,10 +16,23 @@ using namespace std;
 #define MAXDIC 100000
 #define MAXSEN 10000
 #define MAXALL 100000
+#endif
+
+#if 0
+#define MAXT   20
+#define MAXN   8
+#define MAXM   12
+#define MAXLEN 20
+#define MAXDIC 120
+#define MAXSEN 40
+#define MAXALL 300
+#endif
+
 
 
 char dict[MAXN][MAXLEN + 1];
-int lens[MAXN];
+char auxs[MAXLEN + 1];
+int  lens[MAXN];
 
 const char alpha[] =
 "abcdefghijklmnopqrstuvwxyz"
@@ -79,7 +93,7 @@ void test_case(bool crit = false)
         bool succ;
         do {
             succ = true;
-            if (rand() % 3 == 0)
+            if (rand() % 4 != 0)
                 succ = gen_word_from_others(dict[i], i);
             else
                 gen_word(dict[i], lens[i]);
@@ -102,6 +116,16 @@ void test_case(bool crit = false)
         left -= line;
 
         while (line > 0) {
+            if (n == 0 || rand() % 20 == 0) {
+                if (line == 1) { putchar(' '); --line; continue; }
+
+                int len = rand() % min(MAXLEN - 1, line - 1) + 1;
+                gen_word(auxs, len);
+                printf("%s ", auxs);
+                line -= len;
+                continue;
+            }
+
             int w = rand() % n;
             if (lens[w] + 1 <= line) {
                 printf("%s ", dict[w]);

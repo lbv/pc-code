@@ -41,44 +41,6 @@ struct Fraction {
     }
 };
 
-//
-// Matrix Exponentiation
-//
-template <typename T>
-struct Matrix {
-    int r, c;
-    T m[MAX_ROWS][MAX_COLS];
-    T x[MAX_ROWS][MAX_COLS];
-    Matrix(int R, int C) : r(R), c(C) {}
-    void init(T *v) {
-        for (int i = 0, p = 0; i < r; ++i)
-            for (int j = 0; j < c; ++j)
-                m[i][j] = v[p++];
-    }
-    void iden() {
-        for (int i = 0; i < r; ++i)
-            for (int j = 0; j < c; ++j)
-                m[i][j] = i == j ? 1 : 0;
-    }
-    void print() {
-        for (int i = 0; i < r; ++i) {
-            for (int j = 0; j < c; ++j) cout << m[i][j] << " ";
-            puts("");
-        }
-    }
-
-    Matrix &operator*=(const Matrix &y) {
-        Zero(x);
-        for (int i = 0; i < r; ++i)
-            for (int j = 0; j < c; ++j) {
-                T v = 0;
-                for (int k = 0; k < c; ++k)
-                    v += m[i][k] * y.m[k][j];
-                x[i][j] = v;
-            }
-        memcpy(m, x, sizeof(m)); return *this;
-    }
-};
 
 
 //

@@ -1,0 +1,9 @@
+title: Simple Base Conversion
+keywords:
+    - beginner
+    - base conversion
+judges:
+    uva: 10473
+summary: >
+    You receive an integer, either in decimal or hexadecimal notation.
+    Convert it into the other base.

@@ -4,6 +4,7 @@ keywords:
     - base conversion
 judges:
     uva: 10473
+setter: Shahriar Manzoor
 summary: >
     You receive an integer, either in decimal or hexadecimal notation.
     Convert it into the other base.

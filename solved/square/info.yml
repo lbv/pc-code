@@ -1,0 +1,19 @@
+title: Square
+keywords:
+    - gaussian elimination
+    - number theory
+    - finite fields
+judges:
+    uva: 11542
+    lightoj:
+        id: 1288
+        title: Subsets Forming Perfect Squares
+setter: Abdullah-al-Mahmud
+thanks: Manzurur Rahman Khan
+contests:
+    - BUET:: CSE Day Programming Contest 2008
+summary: >
+    Given a set of integers, fidn the total number of non-empty subsets such
+    that the product of all numbers in the subset is a perfect square.
+comments: >
+    Notice the different constraints for LightOJ and UVa's versions.

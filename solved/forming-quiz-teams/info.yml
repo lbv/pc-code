@@ -1,0 +1,11 @@
+title: Forming Quiz Teams
+keywords:
+    - dynamic programming
+    - bitmask calculations
+judges:
+    uva: 10911
+setter: Sohel Hafiz
+summary: >
+    Given an even number of points in 2D space, find a way to match them
+    pairwise, such that the sum of distances between all the pairs is
+    minimised.

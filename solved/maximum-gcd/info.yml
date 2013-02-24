@@ -1,0 +1,14 @@
+title: Maximum GCD
+keywords:
+    - greatest common divisor
+annotations:
+    - underspecified
+    - irregular input
+judges:
+    uva: 11827
+setter: Amarin Deemagarn
+contests:
+    - ACM-ICPC Thailand National Programming Contest 2010
+summary: >
+    Given a list of integers, find the largest GCD between all pairs of
+    elements in the list.

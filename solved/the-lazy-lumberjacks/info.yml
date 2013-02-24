@@ -1,0 +1,14 @@
+title: The Lazy Lumberjacks
+keywords:
+    - beginner
+    - geometry
+annotations:
+    - boolean output
+    - underspecified
+judges:
+    uva: 11936
+contests:
+    - Guadalajara 2010 hosted by ITESO
+summary: >
+    Given three integers, determine if they can be the sides of a valid
+    triangle.

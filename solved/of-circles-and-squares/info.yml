@@ -1,0 +1,13 @@
+title: Of Circles and Squares
+keywords:
+    - geometry
+judges:
+    uva: 10823
+setter: Monirul Hasan
+thanks: Shahriar Manzoor
+summary: >
+    A number of colored circles and rectangles are described. Then a list of
+    points is given. For each point, print its color, which could be: white
+    if it's not covered by any geometric shape, black if it falls right on
+    the border of any shape, or the average of the colors of all shapes that
+    cover that point, otherwise.

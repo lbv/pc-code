@@ -1,0 +1,13 @@
+title: Liar or Not Liar That is the...
+keywords:
+    - number theory
+judges:
+    uva: 10208
+setter: Shahriar Manzoor
+contests:
+    - Math & Number Theory Lovers' Contest
+summary: >
+    Given a number $N$ or $N!$ (with $N \leq 10^7$), determine if it can be
+    expressed as the sum of the squares of two integers. If it can't, and
+    the input is a factorial, print a list of the first 50 primes that you
+    need to divide $N!$ by to get them to be expressable as the wanted sum.

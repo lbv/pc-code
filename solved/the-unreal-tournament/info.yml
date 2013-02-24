@@ -1,0 +1,26 @@
+title: The Unreal Tournament
+keywords:
+    - probability
+    - big integers
+judges:
+    uva: 10207
+setter: Shahriar Manzoor
+contests:
+    - The Math & Number Theory Lovers' Contest
+summary: >
+    Two teams play a number of games until one of them wins a fixed amount
+    of games. There are no ties, and the probability of the first team
+    winning a single game is $p$. The problem statement describes a
+    recursive method for calculating the probability $P$ for the first team
+    winning the total match, given two parameters $i, j$ that represents the
+    amount of games that the two teams need to win the match.
+    Given the values of $p, i, j$, determine the value of $P$, and the total
+    number of times that the function has to be applied recursively.
+comments: >
+    You might think that the core of this problem is calculating $P$, but
+    that may not be the case. Perhaps the most interesting element in this
+    problem is calculating the number of recursive calls, taking into
+    account that the result can be a big integer, and there is a time and
+    memory limit.  Also, there is one set of input that is considered
+    invalid, and you need to print "-1.00000", and 0 as the number of calls
+    in that case.

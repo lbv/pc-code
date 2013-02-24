@@ -1,0 +1,15 @@
+title: Leap Year or Not Leap Year and...
+keywords:
+    - modular arithmetic
+annotations:
+    - underspecified
+judges:
+    uva: 10070
+setter: Shahriar Manzoor
+thanks: Rezaul Alam Chowdhury
+summary: >
+    A year is leap if it's divisible by 4, but not if it's divisible by 100,
+    unless it's divisible by 400, in which case it's leap. A year is also a
+    "Huluculu festival" year if it's divisible by 15, and a "Bulukulu
+    festival" if it's divisible by 55 *and* a leap year. Given a year (which
+    could be *very* large), determine all the properties it has.

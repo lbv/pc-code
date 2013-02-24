@@ -1,0 +1,14 @@
+title: Hours and Minutes
+keywords:
+    - clocks
+    - beginner
+annotations:
+    - boolean output
+judges:
+    uva: 12531
+summary: >
+    An analog clock with two hands (for hours and minutes) only moves them
+    by discrete steps, with 60 steps in the full circle. Given a number
+    between 0 and 180, representing a certain angle in degrees, report if
+    there is any moment of the day where the minimum angle between the two
+    hands of this day is exactly the amount given.

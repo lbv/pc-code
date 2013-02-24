@@ -1,4 +1,4 @@
-7
+8
 2 2
 pushLeft 1
 pushLeft 1
@@ -26,3 +26,9 @@ pushRight 2
 pushRight 3
 popLeft
 popLeft
+2 5
+pushRight 10
+pushLeft 20
+pushRight 30
+popLeft
+pushLeft 40

@@ -7,6 +7,7 @@ struct Matrix {
     T m[MAX_ROWS][MAX_COLS];
     Matrix(int R, int C) : r(R), c(C) {}
 
+    void clr() { Zero(m); }
     void init(T *v) {
         for (int i = 0, p = 0; i < r; ++i)
             for (int j = 0; j < c; ++j)
@@ -19,7 +20,7 @@ struct Matrix {
     }
     void print() {
         for (int i = 0; i < r; ++i) {
-            for (int j = 0; j < c; ++j) cout << m[i][j] << " ";
+            for (int j = 0; j < c; ++j) std::cout << m[i][j] << " ";
             puts("");
         }
     }
@@ -37,20 +38,21 @@ struct Matrix {
         memcpy(m, x, sizeof(m)); return *this;
     }
 
-    bool gaussian() {
-        for (int k = 0; k < r; ++k) {
-            int im = k; T v=Abs(m[k][k]);
-            for (int i = k + 1; i < r; ++i)
-                if (Abs(m[i][k]) > v) v = Abs(m[i][k]), im = i;
-            if (v == 0) return false;
-            swap(m[k], m[im]);
-            for (int i = k + 1; i < r; ++i) {
-                for (int j = k + 1; j < c; ++j)
-                    m[i][j] -= m[k][j] * (m[i][k] / m[k][k]);
-                m[i][k] = 0;
+    // returns number of free variables
+    int gaussian() {
+        int fv = 0, nr, p, q;
+        for (p=0, q=0; p < r && q < c; ++p, ++q) {
+            for (nr = p; nr < r; ++nr) if (m[nr][q] != 0) break;
+            if (nr == r) { ++fv; --p; continue; }
+            if (nr != p) swap(m[p], m[nr]);
+            for (int i = p + 1; i < r; ++i) {
+                T fac = m[i][q] / m[p][q];
+                for (int j = q + 1; j < c; ++j)
+                    m[i][j] -= m[p][j] * fac;
+                m[i][q] = 0;
             }
         }
-        return true;
+        return fv + c - q;
     }
 
     T memo[MAX_ROWS];

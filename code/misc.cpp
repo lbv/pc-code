@@ -6,6 +6,7 @@
 
 #define Neg(v)  memset((v), -1, sizeof(v))
 #define Zero(v) memset((v), 0, sizeof(v))
+#define SInf(v) memset((v), 0x7f, sizeof(v))
 
 #define For(t,i,c) for(t::iterator i=(c).begin(); i != (c).end(); ++i)
 #define RFor(t,v,c) for(t::reverse_iterator i=(c).rbegin(); i!=(c).rend(); ++i)
@@ -39,6 +40,16 @@ struct Fraction {
     Fraction operator%(int m) const {
         return Fraction(p % (m*q), q);
     }
+};
+
+struct Mod2 {
+    int v;
+    Mod2() {}
+    Mod2(int V) : v(V) {}
+    bool operator!=(const Mod2 &x) const { return v != x.v; }
+    Mod2 operator/(const Mod2 &x) const { return Mod2(v); }
+    Mod2 operator*(const Mod2 &x) const { return Mod2(v & x.v); }
+    Mod2 &operator-=(const Mod2 &x) { v ^= x.v; return *this; }
 };
 
 

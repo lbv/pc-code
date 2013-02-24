@@ -4,14 +4,14 @@
 #define BIBAS 1000
 #define BIDIG 3
 #define BIFMT "%03d"
-struct Bigint {
+struct BigInt {
     IV d; bool sgn;
-    Bigint(int n=0) {
+    BigInt(int n=0) {
         if (n < 0) sgn = true, n = -n; else sgn = false;
         if (n < BIBAS) d.push_back(n);
         else while (n != 0) { d.push_back(n % BIBAS); n /= BIBAS; }
     }
-    Bigint(const char *s) {
+    BigInt(const char *s) {
         if (*s == '-') sgn = true, s++; else sgn = false;
         for (int end = strlen(s), i = max(0, end-BIDIG); true;) {
             int n = 0; for (int j=i; j != end; j++) n = n*10 + s[j] - '0';
@@ -22,23 +22,23 @@ struct Bigint {
     size_t len() const { return d.size(); }
     bool is_zero() const { return len() == 1 && d[0] == 0; }
     void flip() { sgn = !sgn; }
-    Bigint neg() const { Bigint x = *this; x.flip(); return x; }
+    BigInt neg() const { BigInt x = *this; x.flip(); return x; }
     void clean() {
         IVi i; for (i=d.end()-1; *i == 0 && i != d.begin(); i--);
         d.erase(i+1, d.end());
         if (sgn && d.size() == 1 && d[0] == 0) sgn = false;
     }
-    bool operator==(const Bigint &b) const {
+    bool operator==(const BigInt &b) const {
         return sgn == b.sgn && d == b.d;
     }
-    bool operator<(const Bigint &b) const {
+    bool operator<(const BigInt &b) const {
         if (sgn != b.sgn) return sgn;
         if (len() != b.len()) return sgn ^ (len() < b.len());
         for (int i = len() - 1; i >= 0; --i)
             if (d[i] != b.d[i]) return sgn ^ (d[i] < b.d[i]);
         return false;
     }
-    Bigint &operator*=(const Bigint &b) {
+    BigInt &operator*=(const BigInt &b) {
         int s1 = len(), s2 = b.len(), s3 = s1+s2;
         IV res(s3); int c = 0;
         for (int k=0; k < s3; ++k) {
@@ -51,7 +51,7 @@ struct Bigint {
         d = res; sgn ^= b.sgn; clean();
         return *this;
     }
-    Bigint &operator+=(const Bigint &b) {
+    BigInt &operator+=(const BigInt &b) {
         if (sgn != b.sgn) { (*this) -= b.neg(); return *this; }
         int s1 = len(), s2 = b.len(), s3 = max(s1, s2) + 1;
         IV res(s3); int c = 0;
@@ -65,9 +65,9 @@ struct Bigint {
         d = res; clean();
         return *this;
     }
-    Bigint &operator-=(const Bigint &_b) {
+    BigInt &operator-=(const BigInt &_b) {
         if (sgn != _b.sgn) { (*this) += _b.neg(); return *this; }
-        bool sbk = sgn; sgn = false; Bigint b = _b.sgn ? _b.neg() : _b;
+        bool sbk = sgn; sgn = false; BigInt b = _b.sgn ? _b.neg() : _b;
         if (*this < b) {
             b -= *this; *this = sbk ? b : b.neg(); return *this; }
         int s1 = len(), s2 = b.len(), s3 = s1;
@@ -80,24 +80,24 @@ struct Bigint {
         d = res; sgn = sbk; clean();
         return *this;
     }
-    Bigint &short_div(int b) {
+    BigInt &short_div(int b) {
         for (int r = 0, i = len() - 1; i >= 0; --i)
             r = r*BIBAS + d[i], d[i] = r / b, r %= b;
         clean(); return *this;
     }
-    Bigint &operator/=(const Bigint &b) {
-        if (b.is_zero()) { int x=0; return *this=Bigint(x/x); }
+    BigInt &operator/=(const BigInt &b) {
+        if (b.is_zero()) { int x=0; return *this=BigInt(x/x); }
         sgn ^= b.sgn; size_t l = len(), n = b.len();
         if (n == 1) return short_div(b.d[0]);
         if (l < n || (l == n && d.back() < b.d.back()))
-            return *this = Bigint(0);
-        Bigint r(0); IV res(l);
+            return *this = BigInt(0);
+        BigInt r(0); IV res(l);
         for (int i = l - 1; i >= 0; --i) {
             r.d.insert(r.d.begin(), d[i]); r.clean();
             int x = r.len() >= n ? r.d[n-1] : 0;
             if (r.len() > n) x += BIBAS * r.d[n];
             int q = x / b.d[n-1];
-            Bigint g = b; g *= Bigint(q);
+            BigInt g = b; g *= BigInt(q);
             while (r < g) g -= b, --q;
             res[i] = q, r -= g;
         }
@@ -128,16 +128,16 @@ struct Bigint {
         for (int i=0, I=len(); i < I; i++) { res += d[i] * p; p *= BIBAS; }
         return sgn ? -res : res;
     }
-    Bigint operator+(const Bigint x) const {
-        Bigint ans = *this; ans += x; return ans; }
-    Bigint operator-(const Bigint x) const {
-        Bigint ans = *this; ans -= x; return ans; }
-    Bigint operator*(const Bigint x) const {
-        Bigint ans = *this; ans *= x; return ans; }
-    Bigint operator/(const Bigint x) const {
-        Bigint ans = *this; ans /= x; return ans; }
-    Bigint operator%(const Bigint x) const {
-        Bigint ans = *this; ans %= x; return ans; }
+    BigInt operator+(const BigInt x) const {
+        BigInt ans = *this; ans += x; return ans; }
+    BigInt operator-(const BigInt x) const {
+        BigInt ans = *this; ans -= x; return ans; }
+    BigInt operator*(const BigInt x) const {
+        BigInt ans = *this; ans *= x; return ans; }
+    BigInt operator/(const BigInt x) const {
+        BigInt ans = *this; ans /= x; return ans; }
+    BigInt operator%(const BigInt x) const {
+        BigInt ans = *this; ans %= x; return ans; }
 };
 
 //

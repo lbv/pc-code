@@ -1,0 +1,14 @@
+title: Ancestors
+keywords:
+    - depth first search
+judges:
+    uva: 12466
+setter: Andrés Mejía-Posada
+contests:
+    - Colombian Collegiate Programming League 2012
+summary: >
+    Consider a tree where each node has a signed numeric value. A
+    $K$-anti-ancestral subset of nodes is a subset of nodes from the tree,
+    with at least 1 and at most $K$ nodes, such that no node is ancestor of
+    another in the subset. Given the tree, and the value $K$, find the
+    maximum sum of nodes possible from all $K$-anti-ancestral subsets.

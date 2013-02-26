@@ -1,0 +1,18 @@
+title: Romeo and Juliet!
+keywords:
+    - geometry
+judges:
+    uva: 10210
+setter: Shahriar Manzoor
+contests:
+    - The Math & Number Theory Lovers' Contest
+summary: >
+    Two points $N, M$ are on opposite sides of a line segment $AB$. The
+    point $A$ also lies on the line $NM$. Given the coordinates of the
+    points $A, B$, and the angles $BNA$ and $BMA$, determine the maximum
+    length possible for the line $NM$.
+comments: >
+    Did you notice the discrepancy between what the problem statement
+    describes and the figure? The figure is actually wrong (not really
+    "partial" as the caption states). Trust the text when it says that
+    points $N, A, M$ lie on the same straight line.

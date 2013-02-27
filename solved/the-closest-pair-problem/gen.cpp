@@ -3,13 +3,27 @@
 #include <ctime>
 
 
+#if 0
 #define MAXT 10
 #define MAXN 10000
 #define MAXC 40000
+#define NL   0
+#endif
+
+#if 1
+#define MAXT 10
+#define MAXN 16
+#define MAXC 100
+#define NL   1
+#endif
 
 
 void test_case(bool crit = false)
 {
+#if NL
+    puts("");
+#endif
+
     int N = crit ? MAXN : rand() % (MAXN + 1);
     printf("%d\n", N);
 

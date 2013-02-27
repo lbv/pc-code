@@ -1,0 +1,22 @@
+title: Divisibility Testing! Wow!
+keywords:
+    - modular arithmetic
+judges:
+    uva: 10211
+setter: Shahriar Manzoor
+contests:
+    - The Math & Number Theory Lovers' Contest
+summary: >
+    Consider the three types of divisibility tests for integer numbers:
+
+    *   A number is divisible by $D$ in base $B$ if its rightmost $k$ digits
+        are divisible by $D$.
+    *   A number is divisible by $D$ in base $B$ if the sum of all its
+        digits is divisible bt $D$.
+    *   A number is divisible by $D$ in base $B$ if you add the first $k$
+        rightmost digits with the negative of the next $k$ digits, and then
+        plus the next $k$ digits, and so on, alternating the signs, and the
+        total sum is divisible by $D$.
+
+    Now, given a number $D$ and a base $B$, determine how many of these
+    rules can be applied, and their parameters.

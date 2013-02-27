@@ -1,0 +1,15 @@
+title: Playing Boggle
+keywords:
+    - depth first search
+judges:
+    uva: 11283
+setter: Sonny Chan
+contests:
+    - Calgary U Collegiate Programming Contest 2006
+summary: >
+    A grid of $4 \times 4$ letters is given and a dictionary of words. Your
+    task is to determine if the words are found inside the grid, given that
+    you can use a sequence of adjacent (horizontally, vertically or
+    diagonally) letters, but each letter in the grid can be used at most
+    once per word. If found, a word has a certain score, based on its
+    length. Find the total score for all the words in the dictionary.

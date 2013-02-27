@@ -13,12 +13,14 @@ using namespace std;
 #define MAXT 10
 #define MAXN 100000
 #define MAXV 20000
+#define NL   0
 #endif
 
 #if 1
 #define MAXT 20
 #define MAXN 15
 #define MAXV 12
+#define NL   1
 #endif
 
 
@@ -31,6 +33,10 @@ int team[MAXV];
 
 void test_case()
 {
+#if NL
+    puts("");
+#endif
+
     int n = rand() % MAXN + 1;
     printf("%d\n", n);
 

@@ -1,7 +1,12 @@
 title: The Closest Pair Problem
 keywords:
-  - geometry
-  - sweep line
+    - geometry
+    - sweep line
 judges:
-  uva: 10245
+    uva: 10245
 setter: Shahriar Manzoor
+contests:
+    - World Finals Warmup Oriental Contest
+summary: >
+    Given a set of points in 2D space (up to $10^4 points), you will have to
+    find the distance between the closest two points.

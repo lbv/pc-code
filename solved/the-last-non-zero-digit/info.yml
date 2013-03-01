@@ -1,0 +1,13 @@
+title: The Last Non-Zero Digit
+keywords:
+    - modular arithmetic
+    - factorials
+judges:
+    uva: 10212
+setter: Shahriar Manzoor
+contests:
+    - The Math & Number Theory Lovers' Contest
+summary: >
+    Given two numbers $N, M$, find the last non-zero digit of
+    ${^N\mathrm{P}_M}$ (that is, the number of permutations in a set of $N$
+    objects, taking $M$ at a time).

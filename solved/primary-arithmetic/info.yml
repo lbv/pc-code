@@ -1,9 +1,12 @@
 title: Primary Arithmetic
 keywords:
-  - beginner
-  - math
+    - beginner
+    - math
 judges:
-  uva: 10035
+    uva: 10035
 setter: Gordon V. Cormack
 contests:
-  - SWERC '2000 Warm-Up
+    - SWERC '2000 Warm-Up
+summary: >
+    Given two positive integers, count the total number of carry operations
+    used when adding the two numbers.

@@ -12,6 +12,7 @@ using namespace std;
 #define MAXT 10000
 #define MAXM 10000
 #define MAXA 100000
+#define NL   0
 #endif
 
 #if 1
@@ -20,6 +21,7 @@ using namespace std;
 #define MAXT 30
 #define MAXM 12
 #define MAXA 100
+#define NL   1
 #endif
 
 
@@ -32,6 +34,10 @@ int ts[MAXM];
 
 void test_case()
 {
+#if NL
+    puts("\n");
+#endif
+
     int n = rand() % MAXN + 1;
     int t = rand() % MAXT + 1;
     int m = rand() % MAXM + 1;

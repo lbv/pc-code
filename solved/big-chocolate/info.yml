@@ -1,0 +1,13 @@
+title: Big Chocolate
+keywords:
+    - beginner
+    - math
+judges:
+    uva: 10970
+setter: Babak Behsaz
+contests:
+    - Amirkabir University of Technology Local Contest - Round 2
+summary: >
+    Given a chocolate bar formed by $M \times N$ unit squares, determine the
+    minimum number of times you have to break it (using only the vertical
+    and horizontal lines) until you have split it into $M \times N$ squares.

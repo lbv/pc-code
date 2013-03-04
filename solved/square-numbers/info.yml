@@ -1,0 +1,11 @@
+title: Square numbers
+keywords:
+    - binary indexed tree
+judges:
+    uva: 11461
+setter: Shahriar Manzoor
+contests:
+    - A Malaysian Contest
+summary: >
+    Given two integers $a, b$, find the number of perfect squares integers
+    between $a$ and $b$.

@@ -12,7 +12,7 @@
 
 #if 1
 #define MAXT 20
-#define MAXN 4
+#define MAXN 8
 #define NL   1
 #endif
 
@@ -31,6 +31,7 @@ void test_case(bool crit = false)
 
     do {
         l = crit ? maxl : rand() % maxl + 1;
+        if (rand() % 20 == 0) l = n - 1;
     } while (l < n - 1);
 
 #if NL

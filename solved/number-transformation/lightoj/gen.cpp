@@ -3,13 +3,13 @@
 #include <ctime>
 
 
-#if 0
+#if 1
 #define MAXCASE 500
 #define MAXS 100
 #define MAXT 1000
 #endif
 
-#if 1
+#if 0
 #define MAXCASE 20
 #define MAXS 20
 #define MAXT 1000

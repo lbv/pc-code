@@ -1,4 +1,15 @@
 title: Equalizing Money
-keywords: depth first search, breadth first search, strongly connected components
+keywords:
+    - strongly connected components
+annotations:
+    - large input
+    - boolean output
 judges:
-  lightoj: 1263
+    lightoj: 1263
+setter: Jane Alam Jan
+summary: >
+    A group of people have certain amounts of money. A graph of relations
+    over these people represents the pairs of people who can directly
+    tranfer integer amounts of money between them. Determine if it's people
+    to distribute the money among them so that everyone ends up with an
+    equal amount.

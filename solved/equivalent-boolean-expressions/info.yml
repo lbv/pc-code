@@ -1,0 +1,14 @@
+title: Equivalent Boolean Expressions
+keywords:
+    - brute force
+    - parsing
+annotations:
+    - boolean output
+judges:
+    lightoj: 1324
+setter: Jane Alam Jan
+summary: >
+    You get two parsable strings that represent expressions over boolean
+    variables. Determine if the two expressions are equivalent. That is, if
+    they always evaluate to the same value over all possible combinations of
+    their inputs.

@@ -1,0 +1,9 @@
+title: Children's Math
+keywords:
+    - parsing
+judges:
+    lightoj: 1309
+setter: Jane Alam Jan
+summary: >
+    Given a parsable expression that represents a linear equation with one
+    unknown, determine the solution for the unknown.

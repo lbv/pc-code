@@ -1,4 +1,11 @@
 title: Points in Segments
-keywords: binary search
+keywords:
+    - binary search
+annotations:
+    - large input
 judges:
-  lightoj: 1088
+    lightoj: 1088
+setter: Jane Alam Jan
+summary: >
+    Given a set of 1D points, and a group of segments, determine the total
+    amount of points that lie inside each segment.

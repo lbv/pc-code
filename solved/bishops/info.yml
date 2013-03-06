@@ -1,4 +1,9 @@
 title: Bishops
-keywords: beginner
+keywords:
+    - beginner
+    - chess
 judges:
-  lightoj: 1202
+    lightoj: 1202
+summary: >
+    You are given the positions of two bishops. Determine the minimum number
+    of moves to take one bishop into the location of the other.

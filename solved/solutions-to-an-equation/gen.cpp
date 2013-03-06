@@ -69,7 +69,7 @@ void gen2()
     int y1 = rand() % IRange + MINI;
     int y2 = rand() % IRange + MINI;
     if (x1 > x2) swap(x1, x2);
-    if (y1 > y2) swap(x1, x2);
+    if (y1 > y2) swap(y1, y2);
     printf("%d %d %d %d %d %d %d\n", A, B, C, x1, x2, y1, y2);
 }
 

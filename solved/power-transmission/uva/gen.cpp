@@ -13,8 +13,8 @@
 
 #if 1
 #define MAXT 20
-#define MAXN 6
-#define MAXP 200
+#define MAXN 5
+#define MAXP 100
 #define NL   1
 #endif
 

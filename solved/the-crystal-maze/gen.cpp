@@ -1,93 +1,95 @@
-/*
-	Author       :	Jan
-	Problem Name :
-	Algorithm    :
-	Complexity   :
-*/
-
-#include <set>
-#include <map>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <cctype>
 #include <cstdio>
-#include <string>
-#include <vector>
-#include <cassert>
 #include <cstdlib>
-#include <cstring>
-#include <sstream>
-#include <iostream>
-#include <algorithm>
+#include <ctime>
 
-using namespace std;
 
-const int NN = 505;
+#if 0
+#define MAXT 10
+#define MAXM 500
+#define MAXN 500
+#define MAXQ 1000
+#define NL   0
+#endif
 
-int dx[] = {0, 0, 1, -1};
-int dy[] = {1, -1, 0, 0};
+#if 1
+#define MAXT 20
+#define MAXM 8
+#define MAXN 8
+#define MAXQ 8
+#define NL   1
+#endif
 
-char a[NN][NN];
-int cnt, m, n, q;
 
-void printWall( int x, int y ) {
-	if( !cnt ) return;
-	cnt--;
-	a[x][y] = '#';
-	int k = rand() % 4;
-	int u = x + dx[k];
-	int v = y + dy[k];
+char maze[MAXM][MAXN + 1];
+int  free_cells[MAXM * MAXN][2];
+int  nfree;
 
-	if( u >= 0 && u < m && v >= 0 && v < n ) printWall( u, v );
+
+void test_case(bool crit = false)
+{
+#if NL
+    puts("");
+#endif
+
+    int M = crit ? MAXM : rand() % (MAXM - 1) + 2;
+    int N = crit ? MAXN : rand() % (MAXN - 1) + 2;
+    int Q = crit ? MAXQ : rand() % MAXQ + 1;
+    printf("%d %d %d\n", M, N, Q);
+
+    for (int i = 0; i < M; ++i) {
+        maze[i][N] = 0;
+        for (int j = 0; j < N; ++j)
+            maze[i][j] = '.';
+    }
+
+    int walls, crystals;
+    int cells = M*N;
+
+    do {
+        walls    = rand() % cells;
+        crystals = rand() % cells;
+    } while (walls + crystals > cells * 2 / 3);
+
+    for (int i = 0; i < walls; ++i) {
+        int r, c;
+        do {
+            r = rand() % M;
+            c = rand() % N;
+        } while (maze[r][c] != '.');
+        maze[r][c] = '#';
+    }
+    for (int i = 0; i < crystals; ++i) {
+        int r, c;
+        do {
+            r = rand() % M;
+            c = rand() % N;
+        } while (maze[r][c] != '.');
+        maze[r][c] = 'C';
+    }
+    for (int i = 0; i < M; ++i)
+        puts(maze[i]);
+
+    nfree = 0;
+    for (int i = 0; i < M; ++i)
+        for (int j = 0; j < N; ++j)
+            if (maze[i][j] == '.')
+                free_cells[nfree][0] = i, free_cells[nfree++][1] = j;
+
+    while (Q--) {
+        int i = rand() % nfree;
+        printf("%d %d\n", free_cells[i][0] + 1, free_cells[i][1] + 1);
+    }
 }
 
-int main() {
-	// freopen("a.in", "w", stdout);
-
+int main()
+{
     srand(time(NULL));
-	double cl = clock();
 
-	int cases = 10;
-	printf("%d\n", cases);
-	while( cases-- ) {
-		m = 500, n = 500, q = 1000;
-//		m = 50, n = 50, q = 100;
+    int T = MAXT;
+    printf("%d\n", T);
 
-		printf("%d %d %d\n", m, n, q);
-		for( int i = 0; i < m; i++ ) {
-			for( int j = 0; j < n; j++ ) {
-				a[i][j] = '.';
-				if( rand() % 4 && cases >= 5 ) a[i][j] = 'C';
-				else if( rand() % 3 == 0 ) a[i][j] = 'C';
-			}
-			a[i][n] = 0;
-		}
-		if( cases != 2 ) {
-			for( int i = 0; i < 100; i++ ) {
-				cnt = rand() % 10000 + 1;
-				printWall( rand() % m, rand() % n );
-			}
-		}
-		for( int i = 0; i < m; i++ ) puts(a[i]);
-		while(q--) {
-			while(1) {
-				int x = rand() % m;
-				int y = rand() % n;
-				if( a[x][y] == '.' ) {
-					printf("%d %d\n", x + 1, y + 1);
-					break;
-				}
-			}
-		}
-	}
+    test_case(true); --T;
+    while (T--) test_case();
 
-	cl = clock() - cl;
-	fprintf(stderr, "Total Execution Time = %lf seconds\n", cl / CLOCKS_PER_SEC);
-
-	return 0;
+    return 0;
 }
-

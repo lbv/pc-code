@@ -1,57 +1,43 @@
-/*
-	Author       :	Jan
-	Problem Name :
-	Algorithm    :
-	Complexity   :
-*/
-
-#include <set>
-#include <map>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <cctype>
 #include <cstdio>
-#include <string>
-#include <vector>
-#include <cassert>
 #include <cstdlib>
-#include <cstring>
-#include <sstream>
-#include <iostream>
-#include <algorithm>
+#include <ctime>
 
-using namespace std;
 
-int main() {
-	// freopen("a.in", "w", stdout);
+#define MAXT 10000
+#define MAXL 100
+#define MAXD 4
 
-    srand(time(NULL));
 
-	double cl = clock();
+void gen_number()
+{
+    int dig = rand() % (MAXD + 1);
+    int p = 1;
+    for (int i = 0; i < dig; ++i) p *= 10;
+    int maxn = MAXL * p;
 
-	int cases = 9995;
-	printf("%d\n", cases);
-	while( cases-- ) {
-	    /*
-		double L = rand() % 20000000 + 1000;
-		double W = rand() % 20000000 + 1000;
-		*/
-		double L = rand() % 200000 + 1000;
-		double W = rand() % 200000 + 1000;
-
-		L /= 2000;
-		W /= 2000;
-
-		printf("%.2lf %.2lf\n", L, W);
-	}
-
-	cl = clock() - cl;
-	fprintf(stderr, "Total Execution Time = %lf seconds\n", cl / CLOCKS_PER_SEC);
-
-	return 0;
+    int n = rand() % (maxn - 1) + 1;
+    if (p == 1)
+        printf("%d", n);
+    else
+        printf("%d.%d", n / p, n % p);
 }
 
+void test_case()
+{
+    gen_number();
+    putchar(' ');
+    gen_number();
+    puts("");
+}
+
+int main()
+{
+    srand(time(NULL));
+
+    int T = MAXT;
+    printf("%d\n", T);
+
+    while (T--) test_case();
+
+    return 0;
+}

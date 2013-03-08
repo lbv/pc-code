@@ -14,7 +14,7 @@ using namespace std;
 #if 1
 #define MAXT 100
 #define MOD  1000000007
-#define PRE  0
+#define PRE  1
 #endif
 
 

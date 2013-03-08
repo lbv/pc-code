@@ -5,7 +5,7 @@
 using namespace std;
 
 
-#if 1
+#if 0
 #define MAXT  10000
 #define MINI -100000000
 #define MAXI  100000000
@@ -14,7 +14,7 @@ using namespace std;
 #define MAXR  10000
 #endif
 
-#if 0
+#if 1
 #define MAXT  100
 #define MINI -1000
 #define MAXI  1000

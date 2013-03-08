@@ -295,3 +295,67 @@ int josephus(int n, int k)
     if (n == 1) return 0;
     return (josephus(n-1, k) + k) % n;
 }
+
+
+
+enum TType {
+    NONE,
+    Tok1,
+    Tok2
+};
+
+struct Token {
+    int v;
+    TType t;
+    Token(TType T) : v(0), t(T) {}
+    Token(int V, TType T) : v(V), t(T) {}
+};
+typedef queue<Token> TQ;
+
+struct AST {
+    struct Node {
+        int lt, rt;
+        int c0, c1;  // coefficients: c1*x + c0
+        TType op;
+        Node(int C0, int C1) : lt(-1), rt(-1), c0(C0), c1(C1) {}
+        Node(TType O, int L, int R) : lt(L), rt(R), op(O) {}
+    };
+    vector<Node> nodes;
+
+    int add(int c0, int c1) {
+        int idx = nodes.size();
+        nodes.push_back(Node(c0, c1));
+        return idx;
+    }
+    int add(TType op, int lt, int rt) {
+        int idx = nodes.size();
+        nodes.push_back(Node(op, lt, rt));
+        return idx;
+    }
+};
+
+struct Parser {
+    TQ &in;
+    bool err;
+    Parser(TQ &In) : in(In) { err = false; }
+
+    TType in_peek() {
+        if (in.empty()) return NONE;
+        return in.front().t;
+    }
+    Token in_pop() {
+        if (in.empty()) return Token(NONE);
+        Token t = in.front();
+        in.pop();
+        return t;
+    }
+
+    void main_rule() {
+        if (in_peek() == CONJUNCTION) {
+            in_pop();
+            np();
+            vp();
+        }
+        if (in_peek() != NONE) err = true;
+    }
+};

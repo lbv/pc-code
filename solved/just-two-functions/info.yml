@@ -1,0 +1,13 @@
+title: Just Two Functions
+keywords:
+    - matrix exponentiation
+judges:
+    lightoj: 1131
+setter: Jane Alam Jan
+summary: >
+    Two functions $f, g$ are defined in a mutually recursive way as:
+    $f(n) = a_1 f(n-1) + b_1 f(n-2) + c_1 g(n-3)$ and
+    $g(n) = a_2 g(n-1) + b_2 g(n-2) + c_2 f(n-3)$. Given the values of the
+    coefficients and $f(i), g(i), 0 \leq i \leq 2$, and an integer $M$,
+    calculate the value of $f(n), g(n)$ modulo $M$, for various instances of
+    $n$.

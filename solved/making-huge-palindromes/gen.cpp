@@ -3,12 +3,12 @@
 #include <ctime>
 
 
-#if 1
+#if 0
 #define MAXT   10
 #define MAXLEN 1000000
 #endif
 
-#if 0
+#if 1
 #define MAXT   50
 #define MAXLEN 100
 #endif

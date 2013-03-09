@@ -11,14 +11,14 @@ using namespace std;
 #endif
 
 #if 1
-#define MAXT 20
-#define MAXN 10
+#define MAXT 25
+#define MAXN 12
 #endif
 
 
 void gen1(bool crit = false)
 {
-    int n = crit ? MAXN : rand() % (MAXN + 1);
+    int n = crit ? MAXN : rand() % MAXN + 1;
     printf("%d", n);
 
     int lo = -2 * n;
@@ -35,7 +35,7 @@ int seq[MAXN];
 
 void gen2(bool crit = false)
 {
-    int n = crit ? MAXN : rand() % (MAXN + 1);
+    int n = crit ? MAXN : rand() % MAXN + 1;
     printf("%d", n);
     if (n == 0) { puts(""); return; }
 

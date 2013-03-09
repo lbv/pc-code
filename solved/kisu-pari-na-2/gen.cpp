@@ -1,7 +1,7 @@
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
-#include <set>
 using namespace std;
 
 
@@ -15,20 +15,22 @@ using namespace std;
 
 #if 0
 #define MAXT 20
-#define MAXN 1000
-#define MAXK 1000
-#define MAXQ 900
+#define MAXN 15
+#define MAXK 15
+#define MAXQ 20
 #define NL   1
 #endif
 
+#define Zero(v) memset((v), 0, sizeof(v))
 
-typedef pair<int, int> II;
+
+int nodes[MAXN];
 
 
 void test_case(bool crit = false)
 {
     int N = crit ? MAXN : rand() % MAXN + 1;
-    int M = rand() % N;
+    int M = crit ? N - 1 : rand() % N;
 
 #if NL
     puts("");
@@ -36,16 +38,16 @@ void test_case(bool crit = false)
 
     printf("%d %d\n", N, M);
 
-    set<II> s;
-    while (M--) {
-        int u, v;
-        do {
-            u = rand() % N + 1;
-            v = rand() % N + 1;
-        } while (u == v || s.find(II(u, v)) != s.end());
+    int n = 0;
+    for (int i = 2; i <= N; ++i) nodes[n++] = i;
+    random_shuffle(nodes, nodes + n);
 
-        s.insert(II(u, v));
-        s.insert(II(v, u));
+    for (int i = 0; i < M; ++i) {
+        int u = nodes[i];
+        int v = rand() % (u - 1) + 1;
+
+        if (rand() % 2 == 0) swap(u, v);
+
         printf("%d %d\n", u, v);
     }
 

@@ -1,5 +1,9 @@
 title: Summing Up Powers
-keywords: matrix exponentiation, pascal numbers
+keywords:
+    - matrix exponentiation
+    - pascal numbers
 judges:
   lightoj: 1132
 setter: Jane Alam Jan
+summary: >
+    Given $N, K$, calculate $(1^K + 2^K + \ldots + N^K)\mathrm{mod} 2^32$.

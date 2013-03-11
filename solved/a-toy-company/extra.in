@@ -1,4 +1,4 @@
-2
+6
 
 aaa
 aaa
@@ -9,3 +9,25 @@ aaa
 ccc
 1
 cd bc cb
+
+aaa
+ccc
+1
+b b b
+
+aaa
+ccc
+3
+b c c
+c b c
+c c b
+
+aaa
+ccc
+1
+b abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz
+
+aaa
+ccc
+1
+bd abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz

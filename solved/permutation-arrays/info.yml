@@ -2,7 +2,7 @@ title: Permutation Arrays
 keywords:
   - data structures
 annotations:
-  - assumptions
+  - underspecified
   - irregular input
 judges:
   uva: 482

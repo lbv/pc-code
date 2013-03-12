@@ -12,7 +12,7 @@
 
 #if 20
 #define MAXT 20
-#define MAXN 7
+#define MAXN 20
 #define MAXM 100
 #define EXTRA_NL 1
 #endif

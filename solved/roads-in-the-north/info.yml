@@ -2,7 +2,7 @@ title: Roads in the North
 keywords:
   - depth first search
 annotations:
-  - assumptions
+  - underspecified
   - irregular input
 judges:
   uva: 10308

@@ -1,4 +1,16 @@
 title: A Refining Company
+keywords:
+    - dynamic programming
+annotations:
+    - large input
 judges:
-  LightOJ: 1036
-tags: dynamic programming
+    lightoj: 1036
+summary: >
+    You are given two matrices of integers, representing the amount of two
+    materials (uranium and radium) found in a rectangular area. You have to
+    collect those materials by placing either horizontal or vertical
+    conveyor belts. Horizontal belts move materials towards the west, and
+    vertical ones towards the north. However, all materials have to be
+    transported by moving them only in one direction (they can't be moved in
+    a path with turns). Determine the maximum amount of materials that can
+    be gathered by choosing the optimum system of belts.

@@ -1,5 +1,11 @@
 title: Love Calculator
-keywords: dynamic programming
+keywords:
+    - dynamic programming
 judges:
-  lightoj: 1013
+    lightoj: 1013
 setter: Jane Alam Jan
+summary: >
+    Given a pair of strings, determine two things: the length of the
+    shortest possible string that contains both strings as substrings, and
+    the total amount of unique shortest strings that have the previous
+    property.

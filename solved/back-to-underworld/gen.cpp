@@ -18,8 +18,8 @@ using namespace std;
 
 #if 1
 #define MAXT 20
-#define MAXN 15
-#define MAXV 12
+#define MAXN 18
+#define MAXV 20
 #define NL   1
 #endif
 

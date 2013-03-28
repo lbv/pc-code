@@ -18,7 +18,8 @@ template<typename T>
 struct Fraction {
     T p, q;
 
-    Fraction() { p = 0, q = 1; }
+    Fraction() : p(0), q(1) {}
+    Fraction(T P) : p(P), q(1) {}
     Fraction(T P, T Q) : p(P), q(Q) { simplify(); }
     void simplify() {
         T g = gcd(p, q);
@@ -40,6 +41,12 @@ struct Fraction {
     Fraction operator%(int m) const {
         return Fraction(p % (m*q), q);
     }
+    Fraction operator-() const { return Fraction(-p, q); }
+    bool operator<(const Fraction &f) const { return p*f.q < q*f.p; }
+    bool operator>(const Fraction &f) const { return p*f.q > q*f.p; }
+    bool operator<=(const Fraction &f) const { return p*f.q <= q*f.p; }
+    bool operator>=(const Fraction &f) const { return p*f.q >= q*f.p; }
+    bool operator==(const Fraction &f) const { return p == f.p && q == f.q; }
 };
 
 struct Mod2 {

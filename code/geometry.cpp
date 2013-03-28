@@ -25,7 +25,51 @@ struct Point {
     bool collinear(const Point &b, const Point &c) const {
         return (b.y - y) * (c.x - x) == (c.y - y) * (b.x - x);
     }
+    bool in_box(const Point &a, const Point &b) const {
+        T lox = min(a.x, b.x), hix = max(a.x, b.x);
+        T loy = min(a.y, b.y), hiy = max(a.y, b.y);
+        return x >= lox && x <= hix && y >= loy && y <= hiy;
+    }
 };
+
+template <typename T>
+struct Line {
+    T a, b, c;  // ax + by + c = 0
+    Line(T A, T B, T C) : a(A), b(B), c(C) {}
+    Line(const Point<T> &p1, const Point<T> &p2) {
+        if (p1.x == p2.x) { a = 1, b = 0, c = -p1.x; return; }
+        a = p1.y-p2.y; b = p2.x-p1.x; c = -a*p1.x - b*p1.y;
+    }
+    Line(const Point<T> &p, T m) { a = -m; b = 1; c = m*p.x - p.y; }
+
+    bool is_parallel(const Line &l) const { return a * l.b == b * l.a; }
+    bool is_vertical() const { return b == 0; }
+    bool is_horizontal() const { return a == 0; }
+    bool operator==(const Line &l) const {
+        return is_parallel(l) && a * l.c == c * l.a;
+    }
+    bool intersection(const Line<T> &l, Point<T> &p) const {
+        if (is_parallel(l)) return false;
+        const Line<T> &rl = is_vertical() ? l : *this;
+        p.x = (l.b*c - b*l.c) / (l.a*b - a*l.b);
+        p.y = -(rl.a * p.x + rl.c) / rl.b;
+        return true;
+    }
+};
+
+template <typename T>
+struct Segment {
+    Point<T> a, b;
+    Segment(Point<T> A, Point<T> B) : a(A), b(B) {}
+
+    bool intersection(const Segment<T> &s, Point<T> &p) const {
+        Line<T> l1(a, b);
+        Line<T> l2(s.a, s.b);
+        if (! l1.intersection(l2, p)) return false;
+        return p.in_box(a, b) && p.in_box(s.a, s.b);
+    }
+};
+
 struct Vector {
     double x, y;
     Vector(double X, double Y) : x(X), y(Y) {}

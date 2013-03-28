@@ -26,7 +26,7 @@ struct BigInt {
     void clean() {
         IVi i; for (i=d.end()-1; *i == 0 && i != d.begin(); i--);
         d.erase(i+1, d.end());
-        if (sgn && d.size() == 1 && d[0] == 0) sgn = false;
+        if (sgn && is_zero()) sgn = false;
     }
     bool operator==(const BigInt &b) const {
         return sgn == b.sgn && d == b.d;

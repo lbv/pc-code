@@ -1,0 +1,11 @@
+titles: Farmers' Tale
+keywords:
+    - computational geometry
+judges:
+    lightoj: 1320
+setter: Jane Alam Jan
+summary: >
+    Consider a rectangle, and a number of line segments that go between two
+    points on the perimeter of the rectangle. Determine the total number of
+    areas inside the rectangle, resulting after all those divisions created
+    by the lines.

@@ -12,10 +12,14 @@
 #define MAXQ 100
 
 
-void test_case()
+void test_case(bool crit = false)
 {
-    int n = rand() % (MAXN - 1) + 2;
-    int m = rand() % (MAXM + 1);
+#if NL
+    puts("");
+#endif
+
+    int n = crit ? MAXN : rand() % (MAXN - 1) + 2;
+    int m = crit ? MAXM : rand() % (MAXM + 1);
 
     printf("%d %d\n", n, m);
 
@@ -52,6 +56,7 @@ int main()
     int T = MAXT;
     printf("%d\n", T);
 
+    test_case(true); --T;
     while (T--) test_case();
 
     return 0;

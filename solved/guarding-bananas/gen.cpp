@@ -13,7 +13,7 @@
 #endif
 
 #if 1
-#define MAXT  13
+#define MAXT  20
 #define MAXN  20
 #define MAXX  1000000000
 #define MINX  -1000000000

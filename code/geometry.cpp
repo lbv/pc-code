@@ -18,10 +18,12 @@ struct Point {
     T distance(const Point &p) const {
         T dx = p.x - x, dy = p.y - y; return sqrt(dx*dx + dy*dy);
     }
+
     bool operator<(const Point &p) const {
-        return x < p.x || (x == p.x && y < p.y);
-    }
+        return x < p.x || (x == p.x && y < p.y); }
+    bool operator==(const Point &p) const { return x == p.x && y == p.y; }
     Point operator-(const Point &b) const { return Point(x - b.x, y - b.y); }
+
     bool collinear(const Point &b, const Point &c) const {
         return (b.y - y) * (c.x - x) == (c.y - y) * (b.x - x);
     }
@@ -29,6 +31,10 @@ struct Point {
         T lox = min(a.x, b.x), hix = max(a.x, b.x);
         T loy = min(a.y, b.y), hiy = max(a.y, b.y);
         return x >= lox && x <= hix && y >= loy && y <= hiy;
+    }
+    // cross product magnitude of axb, relative to this
+    T cross(const Point &a, const Point &b) const {
+        return (a.x-x)*(b.y-y) - (a.y-y)*(b.x-x);
     }
 };
 
@@ -144,22 +150,17 @@ T lattice_pts(Point<T> &a, Point<T> &b)
     if (a.x == b.x) return llabs(a.y - b.y) + 1;
     return gcd(llabs(a.y - b.y), llabs(a.x - b.x)) + 1;
 }
-p_t cross(const Point &o, const Point &a, const Point &b)
-{
-    return (a.x-o.x)*(b.y-o.y) - (a.y-o.y)*(b.x-o.x);
-}
-void convex_hull(PV &p, PV &h) {
-    // Post-cond: p.size() > 1 => h.front() == h.back()
-    int n = p.size(), k = 0;
-    h.resize(2*n);
-    sort(p.begin(), p.end());
+void convex_hull(Point<> *p, int n, Point<> *h, int &k) {
+    // Pre-cond:  sizeof(h) == 2*sizeof(p)
+    // Post-cond: n > 1 => h[0] == h[k-1]
+    k = 0;
+    sort(p, p + n);
     for (int i = 0; i < n; ++i) {
-        while (k >= 2 && cross(h[k-2], h[k-1], p[i]) <= 0) k--;
+        while (k >= 2 && h[k-2].cross(h[k-1], p[i]) <= 0) k--;
         h[k++] = p[i];
     }
     for (int i = n-2, t=k+1; i >= 0; --i) {
-        while (k >= t && cross(h[k-2], h[k-1], p[i]) <= 0) k--;
+        while (k >= t && h[k-2].cross(h[k-1], p[i]) <= 0) k--;
         h[k++] = p[i];
     }
-    h.resize(k);
 }

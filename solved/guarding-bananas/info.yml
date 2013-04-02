@@ -1,0 +1,13 @@
+title: Guarding Bananas
+keywords:
+    - convex hull
+annotations:
+    - special judge
+    - large input
+judges:
+    lightoj: 1203
+setter: Jane Alam Jan
+summary: >
+    Given a set of 2D points on a plane, find one point from which you can
+    project two lines, such that all other points lie in the region between
+    those two lines, and the angle is minimum. Report that angle.

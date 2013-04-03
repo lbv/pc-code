@@ -7,3 +7,7 @@ judges:
 setter: Gordon V. Cormack
 contests:
   - University of Valladolid Qualification for SWERC '2000 Local Contest
+summary: >
+  Given a set of integers, divide them into two groups, such that the number
+  of elements on each group doesn't differ by more than one, and the
+  difference between their sums is as small as possible.

@@ -11,7 +11,6 @@ using namespace std;
 #define MAXN 100000
 #define MAXQ 50000
 #define MAXI 100000000
-#define NL   0
 #endif
 
 #if 1

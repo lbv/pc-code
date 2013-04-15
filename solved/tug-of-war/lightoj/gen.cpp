@@ -11,8 +11,8 @@
 
 #if 1
 #define MAXT 20
-#define MAXN 50
-#define MAXW 10000
+#define MAXN 10
+#define MAXW 100
 #endif
 
 

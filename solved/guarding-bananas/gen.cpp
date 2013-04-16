@@ -15,10 +15,10 @@
 #if 1
 #define MAXT  20
 #define MAXN  20
-#define MAXX  1000000000
-#define MINX  -1000000000
-#define MAXX2 10000
-#define MINX2 -10000
+#define MAXX  1000
+#define MINX  -1000
+#define MAXX2 100
+#define MINX2 -100
 #define NL    1
 #endif
 

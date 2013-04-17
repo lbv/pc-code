@@ -1,4 +1,11 @@
 title: Wishing Snake
-keywords: strongly connected component, directed acyclic graph
+keywords:
+    - strongly connected component
+    - directed acyclic graph
 judges:
-  lightoj: 1168
+    lightoj: 1168
+setter: Jane Alam Jan
+thanks: Md. Mahbubul Hasan
+summary: >
+    You receive the description for a directed graph. Determine if it's
+    possible to visit all edges in one tour.

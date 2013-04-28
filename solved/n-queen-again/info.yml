@@ -1,0 +1,12 @@
+title: N Queen Again
+keywords:
+    - bitmask calculations
+    - pruning
+    - chess
+judges:
+    lightoj: 1061
+setter: Jane Alam Jan
+summary: >
+    Given a chess board with exactly 8 queens in arbitrary positions,
+    determine the minimum number of moves required to turn it into a board
+    that satisfies the 8-Queen problem.

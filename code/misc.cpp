@@ -178,12 +178,24 @@ int select_kth(DVi lo, DVi hi, int k)
 template <typename T>
 int binsearch(const T *a, int lo, int hi, T v)
 {
-    while (lo <= hi) {
+    while (lo < hi) {
         int mid = (lo + hi) / 2;
+        if (a[mid] == v) return mid;
         if (a[mid] < v) lo = mid + 1;
-        else            hi = mid - 1;
+        else            hi = mid;
     }
-    return a[lo] == v ? lo : -1;
+    return -1;
+}
+
+template <typename T>
+int binsearch_upper(const T *a, int lo, int hi, T v)
+{
+    while (lo < hi) {
+        int mid = (lo + hi) / 2;
+        if (a[mid] <= v) lo = mid + 1;
+        else             hi = mid;
+    }
+    return lo;
 }
 
 //

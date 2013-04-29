@@ -1,0 +1,12 @@
+title: Square Queries
+keywords:
+    - orthogonal range search
+annotations:
+    - large input
+judges:
+    lightoj: 1081
+setter: Jane Alam Jan
+summary: >
+    Consider a square matrix of integer numbers. You receive a series of
+    queries, each one describing a sub-square inside the larger matrix, and
+    you have to answer with the largest value found in the given area.

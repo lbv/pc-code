@@ -6,16 +6,17 @@
 using namespace std;
 
 
-#define MAXT 10
-#define MAXN 1000
+#if 0
+#define MAXT 15
+#define MAXN 10000
 #define MAXE 100000
+#endif
 
-
-/*
+#if 1
 #define MAXT 20
-#define MAXN 500
-#define MAXE 100000
-*/
+#define MAXN 8
+#define MAXE 30
+#endif
 
 #define Zero(v) memset(v, 0, sizeof(v))
 
@@ -36,7 +37,7 @@ void test_case()
     if (rand() % 4 == 0)
         MaxEdges = min(n*(n-1)/2, MAXE);
 
-    int e = rand() % MaxEdges;
+    int e = rand() % (MaxEdges + 1);
     while (e--) {
         if (n == 1) break;
 

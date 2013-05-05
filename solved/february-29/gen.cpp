@@ -5,7 +5,7 @@
 using namespace std;
 
 
-#if 0
+#if 1
 #define MAXT 500
 #define FIXED_CASES 1
 #define MINY1 2000
@@ -14,7 +14,7 @@ using namespace std;
 #define MAXY2 2000000000
 #endif
 
-#if 1
+#if 0
 #define MAXT 1000
 #define FIXED_CASES 1
 #define MINY1 2000
@@ -67,10 +67,10 @@ bool is_leap_year(int y) {
 
 int get_rand_day(int y, int m) {
 	int to_add = 0;
-	if (is_leap_year(y) && m == 1) {
+	if (is_leap_year(y) && m == 1)
 		to_add = 1;
-	}
-	int d = rand() % days[m] + 1;
+
+	int d = rand() % days[m] + 1 + to_add;
 	return d;
 }
 

@@ -1,0 +1,12 @@
+title: Winter
+keywords:
+    - dynamic programming
+annotations:
+    - large input
+judges:
+    lightoj: 1084
+summary: >
+    A number $N$ of 1-dimensional points are given, representing the
+    locations of $N$ men. Each man can move a maximum of $K$, and they want
+    to group together, each group having 3 or more people. What is the
+    minimum number of groups that can be formed?

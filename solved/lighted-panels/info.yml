@@ -1,0 +1,13 @@
+title: Lighted Panels
+keywords:
+    - dynamic programming
+    - recursion
+    - bitmask
+judges:
+    lightoj: 1092
+setter: Jane Alam Jan
+summary: >
+    A grid of $M \times N$ cells is given. Each cell in the grid can be
+    either on or off. When a cell is pressed, the cell and all its neighbours
+    (diagionally also) are toggled. Determine the minimum number of presses
+    required to turn on all cells.

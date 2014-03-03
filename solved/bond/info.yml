@@ -5,6 +5,7 @@ keywords:
 annotations:
     - large input
 judges:
+    uva: 11354
     lightoj:
         id: 1101
         title: A Secret Mission

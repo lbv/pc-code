@@ -1,0 +1,10 @@
+title: Division of Nlogonia
+keywords:
+    - beginner
+judges:
+    uva: 11498
+summary: >
+    A point in a 2D plane describes the location where four quadrants are
+    formed. A number of pairs of points are given, and it has to be
+    determined if each pair lies on an edge, or a quadrant, and which
+    quadrant.

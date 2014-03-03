@@ -4,9 +4,10 @@
 #define GetFS(b) ((b) & -(b))
 #define ClrFS(b) (b &= ~GetFS(b))
 
-#define Neg(v)  memset((v), -1, sizeof(v))
-#define Zero(v) memset((v), 0, sizeof(v))
-#define SInf(v) memset((v), 0x7f, sizeof(v))
+#define Memset(m,v) memset(m, v, sizeof(m))
+#define Clr(m) Memset(m,0)
+#define Inf(m) Memset(m,0x7f)
+#define Neg(m) Memset(m,-1)
 
 #define For(t,i,c) for(t::iterator i=(c).begin(); i != (c).end(); ++i)
 #define RFor(t,v,c) for(t::reverse_iterator i=(c).rbegin(); i!=(c).rend(); ++i)

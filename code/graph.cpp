@@ -1,37 +1,64 @@
 // Union-Find disjoint set
 struct Set {
-    IV s;
-    Set(int n) { for (int i=0; i < n; ++i) s.push_back(i); }
+    int s[MAXN];
+    Set() {}
+    void init(int n) { for (int i=0; i < n; ++i) s[i] = i; }
     int find(int i) { if (s[i] == i) return i; return s[i]=find(s[i]); }
     void merge(int i, int j) { s[find(i)] = find(j); }
 };
 
 struct Edge { int v; Edge() {} Edge(int V) : v(V) {} };
-struct Edge { int v; int w; Edge(int V, int W) : v(V), w(W) {} };
+
+template <typename T>
+struct Edge { int v; T w; Edge(int V, T W) : v(V), w(W) {} };
+
 template <typename T>
 struct Edge {
     int u, v; T w;
     Edge(int U, int V, T W) : u(U), v(V), w(W) {}
     bool operator<(const Edge &e) const { return w < e.w; }
 };
+
+// for max-flow models
 struct Edge {
     int v, c, f, o;
     Edge() {}
     Edge(int V, int C, int O) : v(V), c(C), f(0), o(O) {}
 };
 
-template <typename ET>
 struct Graph {
-    ET edges[MAX_E];
-    int next[MAX_E], adj[MAX_V];
-    int n, m;
-    void init(int N) { n=N; m=0; Neg(adj); }
-    void add(int u, ET e) { next[m] = adj[u], edges[m] = e, adj[u] = m++; }
-    void bi_add(int u, int v, int c) {
-        add(u, Edge(v, c, m + 1));
-        add(v, Edge(u, 0, m - 1));
-    }
+	Edge edges[MAX_EDGES];
+	int next[MAX_EDGES];
+	int adj[MAXN];
+	int n, m;
+	Graph() {}
+	void init(int N) { n=N; m=0; Neg(adj); }
 
+	void add(int u, const Edge &e) { next[m]=adj[u], adj[u]=m, edges[m++]=e; }
+	void add_dir(int u, int i) { next[i]=adj[u], adj[u]=i; }
+	void add_und(const Edge &e) { edges[m++] = e; }
+	// for max-flow
+	void bi_add(int u, int v, int c) {
+		add(u, Edge(v, c, m + 1));
+		add(v, Edge(u, 0, m - 1));
+	}
+
+	Set uf;
+	void kruskal_mst(int &ans) {
+		sort(edges, edges + m);
+		uf.init(n);
+		int nedges = 0;
+		ans = 0;
+		for (int i = 0, I = m; i < I; ++i) {
+			Edge &e = edges[i];
+			if (uf.find(e.u) == uf.find(e.v)) continue;
+			uf.merge(e.u, e.v);
+			ans += e.w;
+			if (++nedges == n - 1) break;
+		}
+	}
+
+    // ---------------
 
     int prim_mst(int src) {
         IIS q;
@@ -284,24 +311,6 @@ struct Graph {
         reverse(e.t.begin(), e.t.end());
         trail = e.t;
         return true;
-    }
-
-    // Minimum Spanning Tree
-    void kruskal_mst(int n, int &ans) {
-        sort(edges.begin(), edges.end());
-        Set uf(n);
-        int nedges = 0;
-        ans = 0;
-        EV mst;
-        For (EV, e, edges) {
-            if (uf.find(e->u) == uf.find(e->v)) continue;
-            mst.push_back(*e);
-            uf.merge(e->u, e->v);
-            ans += e->w;
-            if (++nedges == n - 1) break;
-        }
-        if (nedges < n - 1) ans = -1;
-        else edges = mst;
     }
 
     // Bellman-Ford

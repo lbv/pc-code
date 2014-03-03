@@ -194,28 +194,59 @@ struct R2Tree {
 };
 
 //
+// Lowest Common Ancestor
+//
+struct LCA {
+	int L[MAXN];        // L[i]: level of node i
+	int A[MAXN][LOGN];  // A[i][j]: 2^j'th ancestor of i
+	int n, h, lh;       // n, height, log(h)
+	LCA() {}
+
+	void init(int N, int H) { n=N, h=H; Neg(A); lh = log2(h); }
+	void process() {
+		// precond: A[i][0] is set for all i
+		for (int j = 1, p = 2; p < h; ++j, p <<= 1)
+			for (int i = 0; i < n; ++i)
+				if (A[i][j-1] != -1) {
+					A[i][j] = A[ A[i][j-1] ][j-1];
+					M[i][j] = max(M[i][j-1], M[ A[i][j-1] ][j-1]);
+				}
+	}
+	int query_orig(int a, int b) {
+		if (L[a] < L[b]) swap(a, b);
+
+		for (int i = lh, p = 1 << lh; i >= 0; --i, p >>= 1)
+			if (L[a] - p >= L[b]) a = A[a][i];
+		if (a == b) return a;
+
+		for (int i = lh; i >= 0; --i)
+			if (A[a][i] != -1 && A[a][i] != A[b][i])
+				a = A[a][i], b = A[b][i];
+		return A[a][0];
+	}
+};
+
+//
 // Sparse Table
 //
-struct SpTable {
-    IV A; IIV M; int n;
-    SpTable(int N) : n(N) {
-        A.resize(n); int l = 1 + ceil(log2(n));
-        M = IIV(n, IV(l));
-    }
-    void init() {
-        for (int i = 0; i < n; ++i) M[i][0] = i;
-        for (int j = 1, p = 2, q = 1; p <= n; ++j, p <<= 1, q <<= 1)
-            for (int i = 0; i + p - 1 < n; ++i) {
-                int a = M[i][j - 1], b = M[i + q][j - 1];
-                M[i][j] = A[a] <= A[b] ? a : b;
-            }
-    }
-    int query_val(int i, int j) { return A[query_idx(i, j)]; }
-    int query_idx(int i, int j) {
-        int k = log2(j - i + 1);
-        int a = M[i][k], b = M[j + 1 - (1<<k)][k];
-        return A[a] <= A[b] ? a : b;
-    }
+struct SparseTable {
+	SparseT A[MAX_SPARSE];
+	SparseT M[MAX_SPARSE][LOG_SPARSE];  // 1 + ceil(log2(MAX_SP))
+	SparseTable() {}
+	void init(int n) {
+		for (int i = 0; i < n; ++i) M[i][0] = i;
+		for (int j = 1, p = 2, q = 1; p <= n; ++j, p <<= 1, q <<= 1)
+			for (int i = 0; i + p - 1 < n; ++i) {
+				int a = M[i][j - 1], b = M[i + q][j - 1];
+				M[i][j] = A[a] <= A[b] ? a : b;
+			}
+	}
+	SparseT query_val(int i, int j) { return A[query_idx(i, j)]; }
+	int query_idx(int i, int j) {
+		int k = log2(j - i + 1);
+		int a = M[i][k], b = M[j + 1 - (1<<k)][k];
+		return A[a] <= A[b] ? a : b;
+	}
 };
 
 //

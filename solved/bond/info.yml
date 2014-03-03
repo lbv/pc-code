@@ -1,0 +1,23 @@
+title: Bond
+keywords:
+    - minimum spanning tree
+    - lowest common ancestor
+annotations:
+    - large input
+judges:
+    lightoj:
+        id: 1101
+        title: A Secret Mission
+        thanks:
+            - Syed Irfan Nabil
+            - Jane Alam Jan
+setter: Ivan Krasilnikov
+contests:
+    - NEXT Generation Contest 4
+summary: >
+    A connected, weighted, undirected graph with $N$ vertices and $M$ edges
+    ($N \le 50000$, $M \le 10^5$) is given. The "cost" of a path inside the
+    graph is defined as the weight of the heaviest edge along that path.
+    Afterwards a number of queries is given, where each query describes two
+    random vertices. For each query, answer with the lowest cost possible
+    for any path between the two vertices.

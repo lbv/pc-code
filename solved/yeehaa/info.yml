@@ -1,10 +1,14 @@
-title: Calm Down
+title: Yeehaa!
 keywords:
   - geometry
 annotations:
   - special judge
 judges:
-  lightoj: 1072
+  lightoj:
+    id: 1072
+    title: Calm Down
+contests:
+  - Berlin Programming Contest 2004
 summary: >
   Given a real number $R$, and an integer $n$, determine the radius for $n$
   circles to be placed on the inside of a circle with radius $R$, tangent to

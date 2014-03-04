@@ -1,0 +1,13 @@
+title: Castle Walls
+keywords:
+    - sweep line
+judges:
+    lightoj: 1103
+contests:
+    - Berlin Programming Contest 2004
+summary: >
+    Two sets of pairs of integers are given. Each pair represents two
+    positions on two separate, parallel lines such that they are linked by a
+    string. No strings touch each other among pairs of the same set, but it
+    may be possible that pairs from different sets do touch or intersect.
+    Determine the total number of distinct pairs that touch.

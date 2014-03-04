@@ -6,12 +6,12 @@
 using namespace std;
 
 
-#if 1
+#if 0
 #define MAXT 8
 #define MAXN 100000
 #endif
 
-#if 0
+#if 1
 #define MAXT 20
 #define MAXN 6
 #define NL 1

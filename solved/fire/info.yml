@@ -1,10 +1,17 @@
-title: Jane and the Frost Giants
+title: Fire!
 keywords:
   - breadth first search
 judges:
-  lightoj: 1175
-setter: Syed Irfan Nabil
-thanks: Jane Alam Jan
+  uva: 11624
+  lightoj:
+    id: 1175
+    title: Jane and the Frost Giants
+    thanks: Syed Irfan Nabil, Jane Alam Jan
+contests:
+  - Waterloo Local Spring 2009
+setter:
+  - Malcolm Sharpe
+  - Ondřej Lhoták
 summary: >
   Someone is in a rectangular maze, where some of the cells are on fire. On
   each time step, the fire spread to contiguous cells. Find the minimum time

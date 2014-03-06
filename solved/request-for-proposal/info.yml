@@ -1,0 +1,20 @@
+title: Request for Proposal
+keywords:
+    - beginner
+judges:
+    uva: 10141
+setter: Gordon V. Cormack
+contests:
+    - Waterloo ACM Programming Contest Oct 17, 1998
+summary: >
+    A request for proposal describes a number of requirements (presented as
+    strings). A proposal is a list of items to satisfy some or all
+    requirements, and has a price. Proposals are valued according to the
+    ratio of requirements met against the total number of requirements, and
+    then according to their prices. Given a RFP, and a list of proposals,
+    identify the best proposal.
+comments: >
+    Considering the input specifications, is it really necessary to even
+    store the requirements?
+
+    You may assume that all strings have at least one non-whitespace char.

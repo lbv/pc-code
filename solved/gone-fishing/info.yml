@@ -1,0 +1,15 @@
+title: Gone Fishing
+keywords:
+    - dynamic programming
+judges:
+    lightoj: 1106
+    poj: 1042
+    icpc-la: 5422
+contests:
+    - 1999 East Central Regional Contest
+summary: >
+    Someone is going to fish from a number of lakes. Fishing on each lake,
+    and going from one lake to the next takes time. You know the expected
+    amount of fish that can be gathered on each lake, although it decreases
+    with time fror each lake. A plan is to be generated to optimise the
+    number of fish that can be caught.

@@ -1,0 +1,13 @@
+title: Rectangle Union
+keywords:
+    - orthogonal range search
+    - segment tree
+    - interval tree
+annotations:
+    - large input
+judges:
+    lightoj: 1120
+setter: Jane Alam Jan
+summary: >
+    Given a set of rectangles with their axis parallel to the axes,
+    calculate the total area covered by their union.

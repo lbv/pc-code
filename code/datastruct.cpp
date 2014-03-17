@@ -206,10 +206,8 @@ struct LCA {
 		// precond: A[i][0] is set for all i
 		for (int j = 1, p = 2; p < h; ++j, p <<= 1)
 			for (int i = 0; i < n; ++i)
-				if (A[i][j-1] != -1) {
+				if (A[i][j-1] != -1)
 					A[i][j] = A[ A[i][j-1] ][j-1];
-					M[i][j] = max(M[i][j-1], M[ A[i][j-1] ][j-1]);
-				}
 	}
 	int query_orig(int a, int b) {
 		if (L[a] < L[b]) swap(a, b);

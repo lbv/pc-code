@@ -1,0 +1,25 @@
+title: Cricket Ranking
+judges:
+    uva:
+        id: 10458
+        keywords:
+            - inclusion-exclusion
+            - counting
+            - bigint
+        comments: >
+            Be careful with the input. The problem statement may suggest
+            that the pairs of integers specifying the ranges are given in
+            order (first the lower boundary, then the highest), but that is
+            not necessarily the case.
+    lightoj:
+        id: 1124
+        keywords:
+            - inclusion-exclusion
+            - counting
+            - modular arithmetic
+setter: Md. Kamruzzaman
+contests:
+    - The Real Programmers' Contest-2
+summary: >
+    Calculate the number of ways to make a sum $N$ with $K$ different
+    summands, such that each summand has a range restriction.

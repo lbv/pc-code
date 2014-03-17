@@ -1,0 +1,13 @@
+title: Greatest Parent
+keywords:
+    - lowest common ancestor
+annotations:
+    - large input
+judges:
+    lightoj: 1128
+setter: Jane Alam Jan
+summary: >
+    A tree is given, where each node has a numeric value, which is always
+    greater than its parent. A number of queries of the form $(k, v)$ are
+    given, which asks for the lowest ancestor of $k$ with a value of at
+    least $v$.

@@ -1,0 +1,11 @@
+title: Intersection Between Circle and Rectangle
+keywords:
+    - geometry
+annotations:
+    - special judge
+judges:
+    lightoj: 1130
+setter: Jane Alam Jan
+summary: >
+    Given the description of a circle and a rectangle, calculate the total
+    area of their intersection.

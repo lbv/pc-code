@@ -1,0 +1,10 @@
+title: Knight Moves
+keywords:
+    - chess
+    - graph
+    - floyd-warshall
+judges:
+    uva: 439
+summary: >
+    Given two positions in a chess board, find the minimum number of moves
+    to go from one to the other using a chess knight.

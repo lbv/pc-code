@@ -61,18 +61,36 @@ struct Mod2 {
 };
 
 
-
 //
 // IDA*
 //
-template <typename NT, typename DT>
-bool ida_dls(NT &node, int depth, int g, int &nxt, stack<DT> &st)
+struct Board {
+	// heuristics
+	int h() { return 0; }
+
+	bool is_solution() {
+		return false;
+	}
+
+	// computes the next child
+	bool next(Board &child, int &dist, int &delta) {
+		return false;
+	}
+
+	// resets the loop to visit children
+	void reset() { }
+};
+typedef Board NodeT;
+typedef int DeltaT;  // represents a state change, useful to track the path
+
+// Depth limited search
+bool ida_dls(NodeT &node, int depth, int g, int &nxt, stack<DeltaT> &st)
 {
 	if (g == depth) return node.is_solution();
 
-	NT child;
+	NodeT child;
 	int dist;
-	DT delta;
+	DeltaT delta;
 	for (node.reset(); node.next(child, dist, delta);) {
 		int f = g + dist + child.h();
 		if (f > depth && f < nxt) nxt = f;
@@ -84,10 +102,8 @@ bool ida_dls(NT &node, int depth, int g, int &nxt, stack<DT> &st)
 	return false;
 }
 
-template <typename NT, typename DT>
-bool ida_star(NT &root, int limit, stack<DT> &st)
+bool ida_star(NodeT &root, int limit, stack<DeltaT> &st)
 {
-
 	for (int depth = root.h(); depth <= limit;) {
 		int next_depth = INF;
 		if (ida_dls(root, depth, 0, next_depth, st)) return true;

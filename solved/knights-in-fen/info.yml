@@ -1,0 +1,13 @@
+title: Knights in FEN
+keywords:
+    - IDA*
+judges:
+    uva: 10422
+    lightoj: 1143
+setter: Piotr Rudnicki
+summary: >
+    24 chess knights are places on a board of size $5 \times 5$, 12 black
+    and 12 white. One cell remains empty, and any piece can move into it, as
+    long as it moves as a regular knight. Given an arbitrary configuration
+    of the board, find the minimum number of moves to transform it into one
+    target configuration.

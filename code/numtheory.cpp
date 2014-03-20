@@ -77,8 +77,7 @@ void euler_phi(int a[], int N) {
 	for (int i = 2; i <= N; i += 2) a[i] = i/2;
 	for (int i = 3; i <= N; i += 2)
 		if (a[i] == i) {
-			a[i]--; for (int j = i+i; j <= N; j += i) a[j] -= a[j]/i;
-		}
+			--a[i]; for (int j = i+i; j <= N; j += i) a[j] -= a[j]/i; }
 }
 
 template <typename TB, typename TE>

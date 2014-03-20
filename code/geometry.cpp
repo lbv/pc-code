@@ -71,6 +71,13 @@ struct _Line {
 		p.y = -(rl.a * p.x + rl.c) / rl.b;
 		return true;
 	}
+	Point closest_to(const Point &p) {
+		if (is_vertical()) return Point(-c, p.y);
+		if (is_horizontal()) return Point(p.x, -c);
+		Point ans;
+		intersection(_Line(p, 1/a), ans);
+		return ans;
+	}
 };
 typedef _Line<double> Line;
 
@@ -141,6 +148,14 @@ struct Circle {
 		double dist = sqrt(dx*dx + dy*dy);
 		return ! (eps_less(r + c.r, dist) ||
 				  eps_less(dist, fabs(r - c.r)));
+	}
+	void tangentPoints(const Point &p, Point &p1, Point &p2) {
+		T pox = x - p.x;
+		T poy = y - p.y;
+		T h2 = pox*pox + poy*poy;
+		T s = sqrt(h2 - r*r);
+		p1 = Point(p.x + s*(pox*s-poy*r)/h2, p.y + s*(poy*s+pox*r)/h2);
+		p2 = Point(p.x + s*(pox*s+poy*r)/h2, p.y + s*(poy*s-pox*r)/h2);
 	}
 };
 

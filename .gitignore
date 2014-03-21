@@ -1,5 +1,4 @@
 *.class
-/contests
 /wip
 /project-euler
 /solved/**/a

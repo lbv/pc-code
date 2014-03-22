@@ -1,0 +1,11 @@
+title: Ray Gun
+keywords:
+    - number theory
+    - inclusion-exclusion
+judges:
+    lightoj: 1144
+setter: Jane Alam Jan
+summary: >
+    Given two integers $m, n$ (with $m, n \leq 10^9$ and at least one of
+    them $\leq 10^6$), determine the total number of pairs $(p, q)$ with $1
+    \leq p \leq m$, $1 \leq q \leq n$ wuch that $p, q$ are coprimes.

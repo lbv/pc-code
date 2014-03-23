@@ -1,0 +1,15 @@
+title: Factors and Multiples
+keywords:
+    - math
+    - bipartite matching
+judges:
+    uva: 11159
+    lightoj: 1149
+setter: Sohel Hafiz
+thanks: Jane Alam Jan
+contests:
+    - Next Generation Contest 3
+summary: >
+    Two sets of integers $A, B$ are given. Find the minimum amount of
+    numbers that have to be removed from either set, so that no number from
+    $B$ is a multiple of a number in $A$.

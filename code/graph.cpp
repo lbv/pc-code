@@ -1,4 +1,6 @@
+//
 // Union-Find disjoint set
+//
 struct Set {
 	int s[MAXN];
 	Set() {}
@@ -10,39 +12,46 @@ struct Set {
 struct Edge { int v; Edge() {} Edge(int V) : v(V) {} };
 
 template <typename T>
-struct Edge { int v; T w; Edge(int V, T W) : v(V), w(W) {} };
+struct _Edge { int v; T w; _Edge(int V, T W) : v(V), w(W) {} };
 
 template <typename T>
-struct Edge {
+struct _Edge {
 	int u, v; T w;
-	Edge(int U, int V, T W) : u(U), v(V), w(W) {}
-	bool operator<(const Edge &e) const { return w < e.w; }
+	_Edge(int U, int V, T W) : u(U), v(V), w(W) {}
+	bool operator<(const _Edge &e) const { return w < e.w; }
 };
 
 // for max-flow models
-struct Edge {
-	int v, c, f, o;
-	Edge() {}
-	Edge(int V, int C, int O) : v(V), c(C), f(0), o(O) {}
+template <typename T>
+struct _Edge {
+	int v;
+	T c, f;
+	int o;
+	_Edge() {}
+	_Edge(int V, T C, int O) : v(V), c(C), f(0), o(O) {}
 };
 
 struct Graph {
 	Edge edges[MAX_EDGES];
 	int next[MAX_EDGES];
-	int adj[MAXN];
+	int adj[MAX_VERT];
 	int n, m;
 	Graph() {}
-	void init(int N) { n=N; m=0; Neg(adj); }
+	void init(int N) { n = N, m = 0; Neg(adj); }
 
 	void add(int u, const Edge &e) { next[m]=adj[u], adj[u]=m, edges[m++]=e; }
 	void add_dir(int u, int i) { next[i]=adj[u], adj[u]=i; }
 	void add_und(const Edge &e) { edges[m++] = e; }
 	// for max-flow
-	void bi_add(int u, int v, int c) {
+	void add_pair(int u, int v, int c) {
 		add(u, Edge(v, c, m + 1));
 		add(v, Edge(u, 0, m - 1));
 	}
 
+
+	//
+	// Kruskal
+	//
 	Set uf;
 	void kruskal_mst(int &ans) {
 		sort(edges, edges + m);
@@ -57,6 +66,53 @@ struct Graph {
 			if (++nedges == n - 1) break;
 		}
 	}
+
+
+	//
+	// Ford-Fulkerson
+	//
+	int dist[MAX_VERT], q[MAX_VERT], src, snk;
+	bool find_aug_paths() {
+		Neg(dist);
+		int qfront = -1, qback = 0;
+		q[++qfront] = src;
+		dist[src] = 0;
+		while (qback <= qfront) {
+			int u = q[qback++];
+			if (u == snk) return true;
+			for (int i = adj[u]; i >= 0; i = next[i]) {
+				Edge &e = edges[i];
+				if (dist[e.v] >= 0 || e.f >= e.c) continue;
+				q[++qfront] = e.v;
+				dist[e.v] = dist[u] + 1;
+			}
+		}
+		return false;
+	}
+	int dfs(int u, int f, int d) {
+		if (u == snk) return f;
+		int ans = 0;
+		for (int i = adj[u]; f > 0 && i >= 0; i = next[i]) {
+			Edge &e = edges[i];
+			if (e.f >= e.c || dist[e.v] != d + 1) continue;
+			int r = dfs(e.v, min(f, e.c - e.f), d + 1);
+			if (r > 0) e.f += r, edges[e.o].f -= r, ans += r, f -= r;
+		}
+		return ans;
+	}
+	int mod_paths() {
+		int ans = 0;
+		for (int f = dfs(src, INF, 0); f > 0; f = dfs(src,INF, 0))
+			ans += f;
+		return ans;
+	}
+	int max_flow(int a, int b) {
+		src = a, snk = b;
+		int total = 0;
+		while (find_aug_paths()) total += mod_paths();
+		return total;
+	}
+	void clear_flows() { for (int i = 0; i < m; ++i) edges[i].f = 0; }
 
 	// ---------------
 
@@ -195,8 +251,12 @@ struct Graph {
 				if (vcomp[u] != vcomp[e->v])
 					dag.add(vcomp[u], vcomp[e->v], 0);
 	}
-	// Hopcroft-Karp for bipartite matching. Receives the vertices in G1,
-	// and depends on vertex #0 being reserved as the NIL vertex
+
+	//
+	// Hopcroft-Karp for bipartite matching.
+	//
+	// Receives the vertices in G1, and depends on vertex #0 being reserved
+	// as the NIL vertex
 	struct HK {
 		IV pair_g1, pair_g2, dist;
 		Graph &g;
@@ -248,6 +308,7 @@ struct Graph {
 					++m;
 		return m;
 	}
+
 
 	// Articulations/bridges
 	int low[MAX_V], idx[MAX_V], cnt;
@@ -326,50 +387,189 @@ struct Graph {
 		return false;
 	}
 
+	/////////////////////////////////////////////
+	////////// Bi-Partite Graphs ////////////////
+	/////////////////////////////////////////////
+	int x, src, snk;
+	void init_bipart_basic(int X) {
+		x = X;
+		n = 2*x + 2, src = 0, snk = 2*x + 1, m = 0;
+		Neg(adj);
+	}
 
-	// Ford-Fulkerson
-	int dist[MAX_V], q[MAX_V], src, snk;
-	bool find_aug_paths() {
-		Neg(dist);
-		int qfront = -1, qback = 0;
-		q[++qfront] = src;
-		dist[src] = 0;
-		while (qback <= qfront) {
-			int u = q[qback++];
-			if (u == snk) return true;
-			for (int i = adj[u]; i >= 0; i = next[i]) {
-				Edge &e = edges[i];
-				if (dist[e.v] >= 0 || e.f >= e.c) continue;
-				q[++qfront] = e.v;
-				dist[e.v] = dist[u] + 1;
+	void add_bipart_basic(int v1, int v2, int w) {
+		int u = 1 + v1;
+		int v = x + 1 + v2;
+		add_pair(u, v, w);
+	}
+
+
+	//
+	// Min-cost matching. Total cost is the cost of the heaviest edge.
+	// Doesnt need to connect source and sink to X and Y.
+	//
+	int graphc[MAX_VERT][MAX_VERT];
+
+	void add_bipart(int v1, int v2, int w) {
+		int u = 1 + v1;
+		int v = x + 1 + v2;
+		add(u, Edge(v, w));
+		graphc[u][v] = w;
+	}
+
+	struct DNode {
+		int v, u, c;
+		DNode() {}
+		DNode(int V, int U, int C): v(V), u(U), c(C) {}
+		bool operator<(const DNode &n) const { return c > n.c; }
+	};
+	int match[MAX_VERT];
+	int from[MAX_VERT];
+	bool vis[MAX_VERT];
+
+	bool find_path(int src, int &cost) {
+		Clr(vis);
+		Neg(from);
+		priority_queue<DNode> pq;
+		pq.push(DNode(src, -1, 0));
+
+		while (! pq.empty()) {
+			DNode cur = pq.top(); pq.pop();
+			if (vis[cur.v]) continue;
+			vis[cur.v] = true;
+			from[cur.v] = cur.u;
+			if (cur.v <= x)
+				for (int i = adj[cur.v]; i >= 0; i = next[i]) {
+					Edge &e = edges[i];
+					if (match[cur.v] == e.v) continue;
+					pq.push(DNode(e.v, cur.v, max(cur.c, e.w)));
+				}
+			else {
+				if (match[cur.v] < 0) {
+					from[snk] = cur.v;
+					cost = max(cost, cur.c);
+					break;
+				}
+				int vp = match[cur.v];
+				int cp = max(cur.c, graphc[vp][cur.v]);
+				pq.push(DNode(vp, cur.v, cp));
 			}
 		}
-		return false;
-	}
-	int dfs(int u, int f, int d) {
-		if (u == snk) return f;
-		int ans = 0;
-		for (int i = adj[u]; f > 0 && i >= 0; i = next[i]) {
-			Edge &e = edges[i];
-			if (e.f >= e.c || dist[e.v] != d + 1) continue;
-			int r = dfs(e.v, min(f, e.c - e.f), d + 1);
-			if (r > 0) e.f += r, edges[e.o].f -= r, ans += r, f -= r;
+
+		int v = from[snk];
+		if (v < 0) return false;
+
+		while (from[v] >= 0) {
+			int u = from[v];
+			if (v > x) {
+				match[u] = v;
+				match[v] = u;
+			}
+			v = u;
 		}
-		return ans;
+		return true;
 	}
-	int mod_paths() {
-		int ans = 0;
-		for (int f = dfs(src, INF, 0); f > 0; f = dfs(src,INF, 0))
-			ans += f;
-		return ans;
+	bool mincost_match(int &cost) {
+		cost = 0;
+		Neg(match);
+
+		for (int src = 1; src <= x; ++src)
+			if (! find_path(src, cost)) return false;
+
+		return true;
 	}
-	int max_flow(int a, int b) {
-		src = a, snk = b;
-		int total = 0;
-		while (find_aug_paths()) total += mod_paths();
-		return total;
+
+	//
+	// Min-cost matching.
+	//
+	void init_bipart(int X) {
+		init_bipart_basic(X);
+		Clr(price);
+		InfRange(price + x + 1, x, int);
 	}
-	void clear_flows() { for (int i = 0; i < m; ++i) edges[i].f = 0; }
+	vod add_bipart(int v1, int v2, int w) {
+		add_bipart_basic(v1, v2, w);
+		price[v] = min(price[v], w);
+	}
+	void add_pair(int u, int v, int c) {
+		use_edge[m] = true;
+		add(u, Edge(u, v, c, m + 1));
+		use_edge[m] = false;
+		add(v, Edge(v, u, -c, m - 1));
+	}
+
+	int price[MAX_VERT];
+	int dist[MAX_VERT];
+	int from[MAX_VERT];
+	bool vis[MAX_VERT];
+	bool use_edge[MAX_EDGES];
+	struct DNode {
+		int v, d;
+		DNode() {}
+		DNode(int V, int D): v(V), d(D) {}
+		bool operator<(const DNode &n) const { return d > n.d; }
+	};
+
+	void dijkstra_paths() {
+		Inf(dist);
+		Neg(from);
+		Clr(vis);
+		priority_queue<DNode> pq;
+		pq.push(DNode(src, 0));
+		dist[src] = 0;
+
+		while (! pq.empty()) {
+			DNode cur = pq.top(); pq.pop();
+			if (vis[cur.v]) continue;
+			vis[cur.v] = true;
+			for (int i = adj[cur.v]; i >= 0; i = next[i]) {
+				if (! use_edge[i]) continue;
+				Edge &e = edges[i];
+
+				int distp = dist[cur.v] + price[cur.v] + e.w - price[e.v];
+				if (distp >= dist[e.v]) continue;
+
+				dist[e.v] = distp;
+				from[e.v] = i;
+				pq.push(DNode(e.v, distp));
+			}
+		}
+	}
+	void augment_spath() {
+		for (int i = from[snk]; i >= 0; ) {
+			Edge &e = edges[i];
+			use_edge[i] = false;
+			use_edge[e.o] = true;
+			i = from[e.u];
+		}
+	}
+	void reduce_prices() {
+		for (int i = 1, I = 2*x; i <= I; ++i) price[i] += dist[i];
+	}
+	void connect_src_snk() {
+		for (int i = 1; i <= x; ++i) add_pair(src, i, 0);
+		for (int i = x + 1, I = 2*x; i <= I; ++i) add_pair(i, snk, 0);
+	}
+	bool mincost_match(int &cost) {
+		connect_src_snk();
+
+		for (int i = 1; i <= x; ++i) {
+			dijkstra_paths();
+			if (from[snk] < 0) return false;
+			augment_spath();
+			reduce_prices();
+		}
+
+		cost = 0;
+		for (int i = x + 1, I = 2*x; i <= I; ++i)
+			for (int j = adj[i]; j >= 0; j = next[j]) {
+				if (! use_edge[j]) continue;
+				Edge &e = edges[j];
+				if (-e.w > cost) cost = -e.w;
+			}
+
+		return true;
+	}
 }
 
 // Shortest paths

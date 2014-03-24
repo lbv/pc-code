@@ -7,24 +7,16 @@ using namespace std;
 #define MAXN 100
 #define MAXM 100
 
-#define INF 1000000
+#define INF 0x3f3f3f3f
 
 const int MAX_VERT  = MAXN + MAXM + 2;
 const int MAX_EDGES = 2 * (MAXN * MAXM + MAXN + MAXM);
 
-#define Memset(m,v) memset(m, v, sizeof(m))
-#define Neg(m) Memset(m,-1)
+#define Clr(m) memset(m, 0, sizeof(m))
+#define Neg(m) memset(m, -1, sizeof(m))
 
 
-// for max-flow models
-template <typename T>
-struct _Edge {
-	int v, o;
-	T c, f;
-	_Edge() {}
-	_Edge(int V, T C, int O) : v(V), o(O), c(C), f(0) {}
-};
-typedef _Edge<int> Edge;
+struct Edge { int v; Edge() {} Edge(int V) : v(V) {} };
 
 struct Graph {
 	Edge edges[MAX_EDGES];
@@ -32,55 +24,70 @@ struct Graph {
 	int adj[MAX_VERT];
 	int n, m;
 	Graph() {}
-	void init(int N) { n=N; m=0; Neg(adj); }
 
 	void add(int u, const Edge &e) { next[m]=adj[u], adj[u]=m, edges[m++]=e; }
-	void bi_add(int u, int v, int c) {
-		add(u, Edge(v, c, m + 1));
-		add(v, Edge(u, 0, m - 1));
+
+	int x, src, snk;
+	void init_bipart_basic(int X) {
+		x = X;
+		n = 2*x + 2, src = 0, snk = 2*x + 1, m = 0;
+		Neg(adj);
 	}
 
-	// Ford-Fulkerson
-	int dist[MAX_VERT], q[MAX_VERT], src, snk;
-	bool find_aug_paths() {
-		Neg(dist);
-		int qfront = -1, qback = 0;
-		q[++qfront] = src;
-		dist[src] = 0;
-		while (qback <= qfront) {
-			int u = q[qback++];
-			if (u == snk) return true;
-			for (int i = adj[u]; i >= 0; i = next[i]) {
+	void add_bipart(int v1, int v2) {
+		int u = 1 + v1;
+		int v = x + 1 + v2;
+		add(u, Edge(v));
+	}
+
+	//
+	// Hopcroft-Karp for bipartite matching.
+	//
+	int match[MAX_VERT];
+	int dist[MAX_VERT];
+	int q[MAX_VERT];
+
+	bool bfs() {
+		int qf = 0, qb = 0;
+		for (int i = 1; i <= x; ++i)
+			if (match[i] == 0)
+				dist[i] = 0, q[qb++] = i;
+			else
+				dist[i] = INF;
+		dist[0] = INF;
+		while (qf < qb) {
+			int v = q[qf++];
+			for (int i = adj[v]; i >= 0; i = next[i]) {
 				Edge &e = edges[i];
-				if (dist[e.v] >= 0 || e.f >= e.c) continue;
-				q[++qfront] = e.v;
-				dist[e.v] = dist[u] + 1;
+				int p = match[e.v];
+				if (dist[p] != INF) continue;
+				dist[p] = dist[v] + 1;
+				q[qb++] = p;
 			}
 		}
+		return dist[0] != INF;
+	}
+	bool dfs(int u) {
+		if (u == 0) return true;
+		for (int i = adj[u]; i >= 0; i = next[i]) {
+			Edge &e = edges[i];
+			int p = match[e.v];
+			if (dist[p] == dist[u] + 1 && dfs(p)) {
+				match[e.v] = u;
+				match[u] = e.v;
+				return true;
+			}
+		}
+		dist[u] = INF;
 		return false;
 	}
-	int dfs(int u, int f, int d) {
-		if (u == snk) return f;
-		int ans = 0;
-		for (int i = adj[u]; f > 0 && i >= 0; i = next[i]) {
-			Edge &e = edges[i];
-			if (e.f >= e.c || dist[e.v] != d + 1) continue;
-			int r = dfs(e.v, min(f, e.c - e.f), d + 1);
-			if (r > 0) e.f += r, edges[e.o].f -= r, ans += r, f -= r;
-		}
-		return ans;
-	}
-	int mod_paths() {
-		int ans = 0;
-		for (int f = dfs(src, INF, 0); f > 0; f = dfs(src,INF, 0))
-			ans += f;
-		return ans;
-	}
-	int max_flow(int a, int b) {
-		src = a, snk = b;
-		int total = 0;
-		while (find_aug_paths()) total += mod_paths();
-		return total;
+	int max_matching() {
+		int m = 0;
+		Clr(match);
+		while (bfs())
+			for (int i = 1; i <= x; ++i)
+				if (match[i] == 0 && dfs(i)) ++m;
+		return m;
 	}
 };
 
@@ -93,22 +100,14 @@ int n, m;
 
 int solve()
 {
-	g.init(n + m + 2);
-	int src = n + m;
-	int snk = n + m + 1;
+	g.init_bipart_basic(max(n, m));
 
 	for (int i = 0; i < n; ++i)
-		g.bi_add(src, i, 1);
-	for (int i = 0; i < m; ++i)
-		g.bi_add(n + i, snk, 1);
-
-	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < m; ++j)
 			if ((A[i] == 0 && B[j] == 0) || (A[i] != 0 && B[j] % A[i] == 0))
-				g.bi_add(i, n + j, 1);
-	}
+				g.add_bipart(i, j);
 
-	return g.max_flow(src, snk);
+	return g.max_matching();
 }
 
 int main()

@@ -1,0 +1,15 @@
+title: Ghosts!
+keywords:
+    - bipartite matching
+    - min cost
+    - maze
+    - bfs
+judges:
+    lightoj: 1150
+setter: Jane Alam Jan
+summary: >
+    A number of ghosts and humans are placed on a square grid. The ghosts
+    want to scare all humans, but one ghost can scare only one human. The
+    time it takes to scare someone is equal to the distance to reach the
+    human's square and go back to the starting cell, plus two. Determine the
+    minimum amount of time necessary to scare all humans.

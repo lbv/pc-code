@@ -69,7 +69,7 @@ struct Graph {
 
 
 	//
-	// Ford-Fulkerson
+	// Ford-Fulkerson Max Flow
 	//
 	int dist[MAX_VERT], q[MAX_VERT], src, snk;
 	bool find_aug_paths() {
@@ -113,6 +113,86 @@ struct Graph {
 		return total;
 	}
 	void clear_flows() { for (int i = 0; i < m; ++i) edges[i].f = 0; }
+
+
+	//
+	// Min-cost max-flow
+	//
+	struct DNode {
+		int v; GraphT d;
+		DNode() {}
+		DNode(int V, GraphT D): v(V), d(D) {}
+		bool operator<(const DNode &n) const { return d > n.d; }
+	};
+	int src, snk;
+	GraphT cost[MAX_VERT][MAX_VERT];
+	GraphT cap[MAX_VERT][MAX_VERT];
+	GraphT flow[MAX_VERT][MAX_VERT];
+	GraphT dist[MAX_VERT];
+	GraphT price[MAX_VERT];
+	int from[MAX_VERT];
+	bool vis[MAX_VERT];
+
+	void init_cap(int N) { n = N, m = 0; Neg(adj); Clr(cost); Clr(cap); }
+	void add_cap(int u, int v, GraphT w, GraphT c) {
+		cost[u][v] = cost[v][u] = w;
+		cap[u][v] = cap[v][u] = c;
+		add(u, Edge(v));
+		add(v, Edge(u));
+	}
+	bool find_spath() {
+		Inf(dist); Neg(from); Clr(vis);
+		dist[src] = 0;
+
+		priority_queue<DNode> pq;
+		pq.push(DNode(src, 0));
+
+		while (! pq.empty()) {
+			int u = pq.top().v; pq.pop();
+			if (vis[u]) continue;
+			vis[u] = true;
+			for (int i = adj[u]; i >= 0; i = next[i]) {
+				int v = edges[i].v;
+
+				GraphT distp = dist[u] + price[u] - cost[v][u] - price[v];
+				if (flow[v][u] && distp < dist[v]) {
+					dist[v] = distp, from[v] = u;
+					pq.push(DNode(v, distp));
+				}
+				distp = dist[u] + price[u] + cost[u][v] - price[v];
+				if (flow[u][v] < cap[u][v] && distp < dist[v]) {
+					dist[v] = distp, from[v] = u;
+					pq.push(DNode(v, distp));
+				}
+			}
+		}
+
+		for (int i = 0; i < n; ++i) if (vis[i]) price[i] += dist[i];
+
+		return vis[snk];
+	}
+	GraphT mincost_maxflow(int s, int t, GraphT &fcost) {
+		src = s, snk = t;
+		Clr(flow); Clr(price);
+
+		GraphT mflow = fcost = 0;
+		while (find_spath()) {
+			GraphT df = INF;
+			for (int v = snk, u = from[v]; v != src; u = from[v=u]) {
+				GraphT f = flow[v][u] ? flow[v][u] : (cap[u][v] - flow[u][v]);
+				df = min(df, f);
+			}
+
+			for (int v = snk, u = from[v]; v != src; u = from[v=u]) {
+				if (flow[v][u])
+					flow[v][u] -= df, fcost -= df * cost[v][u];
+				else
+					flow[u][v] += df, fcost += df * cost[u][v];
+			}
+			mflow += df;
+		}
+		return mflow;
+	}
 
 	// ---------------
 

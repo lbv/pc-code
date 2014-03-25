@@ -1,0 +1,15 @@
+title: Data Flow
+keywords:
+    - max flow
+    - min cost
+annotations:
+    - underspecified
+judges:
+    uva: 10594
+setter: Md. Kamruzzaman
+summary: >
+    An undirected graph is given, where each edge has a cost and a fixed
+    capacity (the same for all edges). A certain amount of flow is
+    requested, to be transported from a source to a sink. Determine the
+    minimum cost to complete the transportation, or report if it is
+    impossible.

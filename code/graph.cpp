@@ -344,6 +344,12 @@ struct Graph {
 	//
 	// Hopcroft-Karp for bipartite matching.
 	//
+	void add_bipart(int v1, int v2) {
+		int u = 1 + v1;
+		int v = x + 1 + v2;
+		add(u, Edge(v));
+	}
+
 	int match[MAX_VERT];
 	int dist[MAX_VERT];
 	int q[MAX_VERT];

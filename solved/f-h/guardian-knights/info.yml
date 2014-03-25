@@ -1,0 +1,14 @@
+title: Guardian Knights
+keywords:
+    - max flow
+    - min cost
+    - maze
+    - bfs
+judges:
+    lightoj: 1243
+setter: Jane Alam Jan
+summary: >
+    A number of knights and mills are placed in a rectangular grid. All of
+    the mills have to be guarded by a knight. Each knight can guard a
+    certain number of mills, and the cost to guard a mill is equal to the
+    distance to that mill. Find the minimum cost to guard all mills.

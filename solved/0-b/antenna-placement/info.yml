@@ -1,0 +1,26 @@
+title: Antenna Placement
+keywords:
+    - bipartite matching
+    - max cardinality
+    - board
+judges:
+    uva: 10349
+    lightoj:
+        id: 1152
+        title: Hiding Gold
+        thanks: Jane Alam Jan
+contests:
+    - Swedish National Contest
+summary: >
+    Given a rectangular grid, some of its cells have to be covered by $2
+    \times 1$ blocks, that can be placed vertically or horizontally on the
+    board, and they can even overlap. Find the minimum number of blocks
+    required to cover all relevant cells.
+comments: >
+    If you think of the grid like a chess boards, the blocks will always
+    cover two cells of different colors. From this, a natural way to
+    partition the cells into two groups can be formulated.
+
+    What meaning could you give to a connection between a cell in one group
+    to a cell in the other group? What meaning would have the maximum
+    matching between these two groups?

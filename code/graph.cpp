@@ -14,21 +14,19 @@ struct Edge { int v; Edge() {} Edge(int V) : v(V) {} };
 template <typename T>
 struct _Edge { int v; T w; _Edge(int V, T W) : v(V), w(W) {} };
 
-template <typename T>
-struct _Edge {
-	int u, v; T w;
-	_Edge(int U, int V, T W) : u(U), v(V), w(W) {}
-	bool operator<(const _Edge &e) const { return w < e.w; }
+struct Edge {
+	int u, v; GraphT w;
+	Edge(int U, int V, GraphT W) : u(U), v(V), w(W) {}
+	bool operator<(const Edge &e) const { return w < e.w; }
 };
 
 // for max-flow models
-template <typename T>
-struct _Edge {
+struct Edge {
 	int v;
-	T c, f;
-	int o;
-	_Edge() {}
-	_Edge(int V, T C, int O) : v(V), c(C), f(0), o(O) {}
+	int c, f;  // capacity, flow
+	int r;     // reverse edge
+	Edge() {}
+	Edge(int V, int C, int R) : v(V), c(C), f(0), r(R) {}
 };
 
 struct Graph {
@@ -42,11 +40,6 @@ struct Graph {
 	void add(int u, const Edge &e) { next[m]=adj[u], adj[u]=m, edges[m++]=e; }
 	void add_dir(int u, int i) { next[i]=adj[u], adj[u]=i; }
 	void add_und(const Edge &e) { edges[m++] = e; }
-	// for max-flow
-	void add_pair(int u, int v, int c) {
-		add(u, Edge(v, c, m + 1));
-		add(v, Edge(u, 0, m - 1));
-	}
 
 
 	//
@@ -71,19 +64,23 @@ struct Graph {
 	//
 	// Ford-Fulkerson Max Flow
 	//
+	void add_pair(int u, int v, int c) {
+		add(u, Edge(v, c, m + 1));
+		add(v, Edge(u, 0, m - 1));
+	}
 	int dist[MAX_VERT], q[MAX_VERT], src, snk;
 	bool find_aug_paths() {
 		Neg(dist);
-		int qfront = -1, qback = 0;
-		q[++qfront] = src;
+		int qf = 0, qb = 0;
+		q[qb++] = src;
 		dist[src] = 0;
-		while (qback <= qfront) {
-			int u = q[qback++];
+		while (qf < qb) {
+			int u = q[qf++];
 			if (u == snk) return true;
 			for (int i = adj[u]; i >= 0; i = next[i]) {
 				Edge &e = edges[i];
 				if (dist[e.v] >= 0 || e.f >= e.c) continue;
-				q[++qfront] = e.v;
+				q[qb++] = e.v;
 				dist[e.v] = dist[u] + 1;
 			}
 		}
@@ -96,13 +93,13 @@ struct Graph {
 			Edge &e = edges[i];
 			if (e.f >= e.c || dist[e.v] != d + 1) continue;
 			int r = dfs(e.v, min(f, e.c - e.f), d + 1);
-			if (r > 0) e.f += r, edges[e.o].f -= r, ans += r, f -= r;
+			if (r > 0) e.f += r, edges[e.r].f -= r, ans += r, f -= r;
 		}
 		return ans;
 	}
 	int mod_paths() {
 		int ans = 0;
-		for (int f = dfs(src, INF, 0); f > 0; f = dfs(src,INF, 0))
+		for (int f = dfs(src, INF, 0); f > 0; f = dfs(src, INF, 0))
 			ans += f;
 		return ans;
 	}
@@ -116,6 +113,58 @@ struct Graph {
 
 
 	//
+	// Dinitz Algorithm (Max Flow)
+	//
+	void add_pair(int u, int v, int c) {
+		add(u, Edge(v, c, m + 1));
+		add(v, Edge(u, 0, m - 1)); // or Edge(u,c,m-1) for bi-directional
+	}
+	int src, snk;
+	int ptr[MAX_VERT];
+	int dist[MAX_VERT];
+	int q[MAX_VERT];
+
+	bool bfs() {
+		int qb = 0, qf = 0;
+		Neg(dist);
+		dist[src] = 0;
+		q[qb++] = src;
+		while (qf < qb) {
+			int u = q[qf++];
+			for (int i = adj[u]; i >= 0; i = next[i]) {
+				Edge &e = edges[i];
+				if (e.f >= e.c || dist[e.v] >= 0) continue;
+				dist[e.v] = dist[u] + 1, q[qb++] = e.v;
+			}
+		}
+		return dist[snk] >= 0;
+	}
+	int dfs(int u, int fl) {
+		if (u == snk) return fl;
+		for (int &i = ptr[u]; i >= 0; i = next[i]) {
+			Edge &e = edges[i]; int df;
+			if (e.f >= e.c || dist[e.v] != dist[u] + 1) continue;
+			if ((df = dfs(e.v, min(e.c - e.f, fl))) == 0) continue;
+			e.f += df, edges[e.r].f -= df;
+			return df;
+		}
+		return 0;
+	}
+	int max_flow(int s, int t) {
+		src = s, snk = t;
+		int ans = 0, df;
+		while (bfs()) {
+			for (int i = 0; i < n; ++i) ptr[i] = adj[i];
+			while (true) {
+				if ((df = dfs(src, INF)) == 0) break;
+				ans += df;
+			}
+		}
+		return ans;
+	}
+
+
+	//
 	// Min-cost max-flow
 	//
 	struct DNode {
@@ -126,17 +175,17 @@ struct Graph {
 	};
 	int src, snk;
 	GraphT cost[MAX_VERT][MAX_VERT];
-	GraphT cap[MAX_VERT][MAX_VERT];
-	GraphT flow[MAX_VERT][MAX_VERT];
 	GraphT dist[MAX_VERT];
 	GraphT price[MAX_VERT];
+	int cap[MAX_VERT][MAX_VERT];
+	int flow[MAX_VERT][MAX_VERT];
 	int from[MAX_VERT];
 	bool vis[MAX_VERT];
 
 	void init_cap(int N) { n = N, m = 0; Neg(adj); Clr(cost); Clr(cap); }
-	void add_cap(int u, int v, GraphT w, GraphT c) {
-		cost[u][v] = cost[v][u] = w;
-		cap[u][v] = cap[v][u] = c;
+	void add_cap(int u, int v, GraphT w, int c) {
+		cost[u][v] = w;  // set cost[v][u] also for bidirectional
+		cap[u][v] = c;   // same for cap[v][u]
 		add(u, Edge(v));
 		add(v, Edge(u));
 	}
@@ -171,23 +220,24 @@ struct Graph {
 
 		return vis[snk];
 	}
-	GraphT mincost_maxflow(int s, int t, GraphT &fcost) {
+	int mincost_maxflow(int s, int t, GraphT &fcost) {
 		src = s, snk = t;
 		Clr(flow); Clr(price);
 
-		GraphT mflow = fcost = 0;
+		fcost = 0;
+		int mflow = 0;
 		while (find_spath()) {
-			GraphT df = INF;
+			int df = INF;
 			for (int v = snk, u = from[v]; v != src; u = from[v=u]) {
-				GraphT f = flow[v][u] ? flow[v][u] : (cap[u][v] - flow[u][v]);
+				int f = flow[v][u] ? flow[v][u] : (cap[u][v] - flow[u][v]);
 				df = min(df, f);
 			}
 
 			for (int v = snk, u = from[v]; v != src; u = from[v=u]) {
 				if (flow[v][u])
-					flow[v][u] -= df, fcost -= df * cost[v][u];
+					flow[v][u] -= df, fcost -= cost[v][u] * df;
 				else
-					flow[u][v] += df, fcost += df * cost[u][v];
+					flow[u][v] += df, fcost += cost[u][v] * df;
 			}
 			mflow += df;
 		}

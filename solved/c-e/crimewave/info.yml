@@ -1,0 +1,13 @@
+title: Crimewave
+keywords:
+    - max flow
+judges:
+    uva: 563
+summary: >
+    Given a rectangular grid and a set of corners in that gris, determine if
+    it's possible to draw paths from each of those special corners out of
+    the grid, never visiting a corner more than once.
+comments: >
+    In typical fashion for many classic problems, there's a subtle catch: a
+    bank may be reported more than once. In such case, the answer should be
+    "not possible".

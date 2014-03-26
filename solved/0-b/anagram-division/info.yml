@@ -1,0 +1,20 @@
+title: Anagram Division
+keywords:
+    - dynamic programming
+    - math
+judges:
+    uva:
+        id: 11084
+        comments: >
+            Be careful with the large range for $d$, so your memoization
+            doesn't exceed the memory limit. A strategy that works fine is
+            memoizing only for some remainders, not the full range $0 \ldots
+            d-1$.
+
+    lightoj: 1158
+setter: Abdullah Al Mahmud
+contests:
+    - IIUPC 2006
+summary: >
+    Given a sequence of $n$ digits ($n \leq 10$), and an integer $d$, find
+    how many permutations of the digits are divisible by $d$.

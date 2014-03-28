@@ -1,0 +1,19 @@
+title: Finding Paths in Grid
+keywords:
+    - matrix exponentiation
+judges:
+    uva: 11486
+    lightoj:
+        id: 1160
+        title: Discovering Paths in Grid
+setter: Md. Arifuzzaman Arif
+thanks: Abdullah-al-Mahmud (Satej)
+summary: >
+    Four players take positions over a sequence of 7 cells. Each player
+    moves to an adjacent square each step, and no more than one player can
+    be over a single cell at any time. You are asked to count the number of
+    ways in which the players can reach the Nth step (for a very large $N$).
+comments: >
+    Although it may not be directly obvious from the problem statement, the
+    number of each player is not important. In other words, the total number
+    of states is only $\binom{7}{4}$.

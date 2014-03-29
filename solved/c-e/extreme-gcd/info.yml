@@ -1,0 +1,12 @@
+title: Extreme GCD
+keywords:
+    - number theory
+    - counting
+    - inclusion-exclusion
+judges:
+    lightoj: 1161
+similar: lightoj-1144
+summary: >
+    Given a list of $N$ integers ($4 \leq N \leq 10000$), determine the
+    number of subsets of 4 numbers such that the combined GCD of the 4
+    numbers is 1.

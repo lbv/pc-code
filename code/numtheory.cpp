@@ -148,12 +148,12 @@ void choose_table() {
 			bc[n][k] = (bc[n-1][k-1] + bc[n-1][k]) % MOD;
 }
 
-int choose(int n, int k) {
+template <typename T>
+T choose(T n, T k) {
 	if (k > n) return 0;
-	i64 r=1;
-	for (int d = 1; d <= k; d++) {
-		r *= n--;
-		r /= d;
-	}
+	if (n-k < k) k = n-k;
+	T r=1;
+	for (T d = 1; d <= k; d++)
+		r *= n--, r /= d;
 	return r;
 }

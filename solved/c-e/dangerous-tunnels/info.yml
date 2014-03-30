@@ -1,0 +1,14 @@
+title: Dangerous Tunnels
+keywords:
+    - max flow
+    - min cost
+judges:
+    lightoj: 1167
+    icpc-la: 4259
+summary: >
+    A directed, weighted graph, with a source and a sink are given. A number
+    $k$ denotes a certain number of paths to consider inside the graph, such
+    that for any given node (excep the source and sink) no more than one
+    path visits it. The cost of a path is defined as the cost of the
+    heaviest edge in that path. Determine the minimum cost from any group of
+    $k$ paths from the source to the sink.

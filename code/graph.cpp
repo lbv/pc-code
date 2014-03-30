@@ -11,8 +11,11 @@ struct Set {
 
 struct Edge { int v; Edge() {} Edge(int V) : v(V) {} };
 
-template <typename T>
-struct _Edge { int v; T w; _Edge(int V, T W) : v(V), w(W) {} };
+struct Edge {
+	int v; GraphT w;
+	Edge() {}
+	Edge(int V, GraphT W) : v(V), w(W) {}
+};
 
 struct Edge {
 	int u, v; GraphT w;

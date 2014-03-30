@@ -196,9 +196,9 @@ struct R2Tree {
 // Lowest Common Ancestor
 //
 struct LCA {
-	int L[MAXN];		// L[i]: level of node i
-	int A[MAXN][LOGN];	// A[i][j]: 2^j'th ancestor of i
-	int n, h, lh;		// n, height, log(h)
+	int L[MAXN];        // L[i]: level of node i
+	int A[MAXN][LOGN];  // A[i][j]: 2^j'th ancestor of i
+	int n, h, lh;       // n, height, log(h)
 	LCA() {}
 
 	void init(int N, int H) { n=N, h=H; Neg(A); lh = log2(h); }

@@ -1,0 +1,13 @@
+title: Min Max Roads
+keywords:
+    - lca
+annotations:
+    - large input
+judges:
+    lightoj: 1162
+setter: Jane Alam Jan
+summary: >
+    A weighted tree with a large number of nodes is given, and then a number
+    of queries, where each query is described by two nodes of the tree.
+    Answer each query with the largest and lowest edge weights in the path
+    from one node to the other.

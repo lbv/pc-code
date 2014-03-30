@@ -1,0 +1,14 @@
+title: Mobile Casanova
+keywords:
+    - strings
+    - ad-hoc
+judges:
+    uva: 12085
+setter: Shahriar Manzoor
+thanks: Syed Monowar Hossain
+contests:
+    - 2006 - Dhaka
+summary: >
+    Given a list of telephone numbers, print the list in reduced form, which
+    consists of grouping consecutive numbers, and printing the first number
+    followed by a suffix that indicates the end of the group.

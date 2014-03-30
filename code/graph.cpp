@@ -65,6 +65,66 @@ struct Graph {
 
 
 	//
+	// Tarjan for Strongly Connected Components
+	//
+	bool flg[MAX_VERT];
+	int low[MAX_VERT];
+	int idx[MAX_VERT];
+	int stk[MAX_VERT];
+	int s_top;
+	int cnt;
+	int nscc, nm;
+	int scc[MAX_VERT];
+	int scc_first[MAX_VERT];
+	int scc_next[MAX_VERT];
+	// int scc_size[MAX_VERT];
+
+	void visit(int v) {
+		idx[v] = low[v] = cnt++;
+		stk[s_top++] = v;
+		flg[v] = true;
+		for (int i = adj[v]; i >= 0; i = next[i]) {
+			int vp = edges[i].v;
+			if (low[vp] == 0) {
+				visit(vp);
+				low[v] = min(low[v], low[vp]);
+			}
+			else if (flg[vp])
+				low[v] = min(low[v], idx[vp]);
+		}
+		if (low[v] != idx[v]) return;
+		for (int u = -1; u != v;) {
+			u = stk[--s_top];
+			flg[u] = false;
+			scc_next[nm] = scc_first[nscc];
+			scc_first[nscc] = nm;
+			// ++scc_size[nscc];
+			scc[nm++] = u;
+		}
+		++nscc;
+	}
+	void tarjan_scc() {
+		cnt = 1, nscc = nm = s_top = 0;
+		Neg(scc_first); Clr(flg); Clr(low);
+		// Clr(scc_size);
+		for (int i = 0; i < n; ++i) if (low[i] == 0) visit(i);
+	}
+	int vcomp[MAX_VERT];
+	void scc_to_dag(Graph &dag) {
+		for (int i = 0; i < nscc; ++i)
+			for (int j = scc_first[i]; j >= 0; j = scc_next[j])
+				vcomp[scc[j]] = i;
+		dag.init(nscc);
+		for (int u = 0; u < n; u++)
+			for (int i = adj[u]; i >= 0; i = next[i]) {
+				int v = edges[i].v;
+				if (vcomp[u] != vcomp[v])
+					dag.add(vcomp[u], Edge(vcomp[v]));
+			}
+	}
+
+
+	//
 	// Ford-Fulkerson Max Flow
 	//
 	void add_pair(int u, int v, int c) {
@@ -335,54 +395,6 @@ struct Graph {
 			k.sccs.push_back(k.scc);
 		}
 		sccs = k.sccs;
-	}
-	// Tarjan
-	struct Tarjan {
-		IVV sccs; IS s; BV flg; IV low, idx; int cnt;
-		Tarjan(int n) {
-			flg = BV(n);
-			low = IV(n);
-			idx = IV(n);
-			cnt = 1;
-		}
-	};
-	void tarjan_scc(IVV &sccs) {
-		Tarjan t(n);
-		for (int i = 0; i < n; ++i)
-			if (t.low[i] == 0) tarjan_visit(i, t);
-		sccs = t.sccs;
-	}
-	void tarjan_visit(int v, Tarjan &t) {
-		t.idx[v] = t.low[v] = t.cnt++;
-		t.s.push(v); t.flg[v] = true;
-		cFor (EL, e, adj[v]) {
-			if (t.low[e->v] == 0) {
-				tarjan_visit(e->v, t);
-				t.low[v] = min(t.low[v], t.low[e->v]);
-			}
-			else if (t.flg[e->v])
-				t.low[v] = min(t.low[v], t.idx[e->v]);
-		}
-		if (t.low[v] != t.idx[v]) return;
-		IV scc;
-		for (int u=-1; u != v;) {
-			u=t.s.top(); t.s.pop();
-			t.flg[u]=false;
-			scc.push_back(u);
-		}
-		t.sccs.push_back(scc);
-	}
-	void scc_to_dag(const IVV &sccs, Graph &dag) {
-		int ndag = sccs.size();
-		IV vcomp(n);
-		for (int i=0; i < ndag; ++i)
-			for (int j=0, lim=sccs[i].size(); j < lim; ++j)
-				vcomp[sccs[i][j]] = i;
-		dag = Graph(ndag);
-		for (int u=0; u < n; u++)
-			cFor (EL, e, adj[u])
-				if (vcomp[u] != vcomp[e->v])
-					dag.add(vcomp[u], vcomp[e->v], 0);
 	}
 
 

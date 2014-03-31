@@ -1,0 +1,10 @@
+title: Points in Figures: Rectangles and Circles
+keywords:
+    - geometry
+    - beginner
+judges:
+    uva: 477
+similar: uva-476
+summary: >
+    Given a number of simple rectangles and circles, and a number of points,
+    identify for each point all the figures in which it is contained.

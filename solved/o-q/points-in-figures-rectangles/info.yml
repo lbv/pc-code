@@ -1,0 +1,10 @@
+title: Points in Figures: Rectangles
+keywords:
+    - geometry
+    - beginner
+judges:
+    uva: 476
+summary: >
+    Given a number of rectangles, with sides parallel to the axes, and a
+    number of points, identify for each point all the rectangles in which it
+    is contained.

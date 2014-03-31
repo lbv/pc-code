@@ -1,0 +1,16 @@
+title: Jollo
+keywords:
+    - ad-hoc
+judges:
+    uva: 12247
+summary: >
+    A game is played by two people, each one with three cards (all cards
+    have a distinct numeric value). On each round a card is played by both
+    players, and the winner of the round is the one with the highest card
+    (those cards are then discarded). The first player to win two out of the
+    three rounds wins the game.
+
+    Given the values of the three cards of one player, and two of the cards
+    for the second player, determine the lowest possible card that the
+    second player needs to guarantee a win, even if he plays in the worst
+    way possible.

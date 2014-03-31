@@ -1,0 +1,13 @@
+title: Counting Perfect BST
+keywords:
+    - binary search
+    - catalan numbers
+    - modular arithmetic
+judges:
+    lightoj: 1170
+setter: Shamim Hafiz
+contests:
+    - ACM ICPC Asia Regional Contest - Kanpur Site
+summary: >
+    Given a range of integer numbers $[a : b]$, count the number of ways you
+    can form a binary tree with the perfect powers found in the range.

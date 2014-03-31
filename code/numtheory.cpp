@@ -115,8 +115,27 @@ template<typename T>
 T mod_inv(T n, T m) {
 	T x, y, gcd;
 	ext_euclid(n, m, x, y, gcd);
-	if (gcd == 1) return x % m;
-	return 0;
+	if (gcd != 1) return 0;
+	if (x < 0) x += m;
+	else if (x >= m) x %= m;
+	return x;
+}
+
+int fact[MAXFACT];
+template<typename T>
+T catalan_mod(T n)
+{
+	T f1 = fact[2*n];
+	T f2 = mod_inv<T>(fact[n], MOD);
+	T f3 = mod_inv<T>(n+1, MOD);
+
+	T ans = f1*f2;
+	if (ans >= MOD) ans %= MOD;
+	ans *= f2;
+	if (ans >= MOD) ans %= MOD;
+	ans *= f3;
+	if (ans >= MOD) ans %= MOD;
+	return ans;
 }
 
 template <typename T>

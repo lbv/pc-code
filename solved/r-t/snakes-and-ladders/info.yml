@@ -7,3 +7,8 @@ judges:
 setter: Ondřej Lhoták
 contests:
   - Waterloo Local Spring 2008
+summary: >
+  Given an arbitrary configuration of a snake-and-ladders game (a board game
+  played with dice on a $10 \times 10$ grid), and the sequence of die rolls
+  that have been peroformed, determine the positions of all pieces on the
+  board.

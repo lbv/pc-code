@@ -3,7 +3,7 @@
 #include <ctime>
 
 
-#if 1
+#if 0
 #define MAXT  13
 #define MAXN  100000
 #define MAXX  1000000000
@@ -12,14 +12,16 @@
 #define MINX2 -10000
 #endif
 
-#if 0
+#if 1
 #define MAXT  20
-#define MAXN  20
-#define MAXX  1000
-#define MINX  -1000
-#define MAXX2 100
-#define MINX2 -100
-#define NL	  1
+#define MAXN  8
+#define MAXX  10
+#define MINX  -10
+#define MAXX2 3
+#define MINX2 -3
+
+#define USE_CRIT 0
+#define NL 1
 #endif
 
 
@@ -75,7 +77,9 @@ int main()
 	T = MAXT;
 	printf("%d\n", T);
 
+#if USE_CRIT
 	test_crit();
+#endif
 	test_case(true);
 	while (T) test_case();
 

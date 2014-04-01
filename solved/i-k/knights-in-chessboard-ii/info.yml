@@ -1,0 +1,12 @@
+title: Knights in Chessboard (II)
+keywords:
+    - chess
+    - bi-partite matching
+judges:
+    lightoj: 1171
+setter: Jane Alam Jan
+summary: >
+    A chess board with a arbitrary number or rows and columns, and a certain
+    number of "broken" cells is given. Determine the maximum number of
+    knights that can be placed in that board (on unbroken cells), such that
+    no pair of knights attack each other.

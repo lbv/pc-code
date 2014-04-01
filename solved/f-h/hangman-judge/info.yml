@@ -1,0 +1,13 @@
+title: Hangman Judge
+keywords:
+    - beginner
+    - strings
+    - simulation
+annotations:
+    - underspecified
+judges:
+    uva: 489
+summary: >
+    Write a program that determines if a given game of "hangman", described
+    by two strings (the original word and the guesses), has resulted in a
+    win, a lose or is unfinished.

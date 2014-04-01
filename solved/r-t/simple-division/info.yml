@@ -7,3 +7,7 @@ judges:
 setter: Piotr Rudnicki
 contests:
   - November 2002 Monthly Contest
+summary: >
+  For a set of signed integers, determine the largest integer which when
+  divided into each of the integers in the set, leaves the same remainder
+  for all.

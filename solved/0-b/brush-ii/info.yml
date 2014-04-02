@@ -1,4 +1,14 @@
 title: Brush (II)
-keywords: greedy
+keywords:
+    - greedy
+annotations:
+    - large input
 judges:
-  lightoj: 1016
+    lightoj: 1016
+setter: Muhammad Rifayat Samee
+thanks: Jane Alam Jan
+summary: >
+    A set of points in a 2D plane is given, and a "move" made by a brush of
+    width $w$ is defined as covering all points from a certain Y-coordinate
+    $y$ to $y+w$.  Determine the minimum number of moves required to cover
+    all points.

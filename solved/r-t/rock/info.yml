@@ -1,0 +1,15 @@
+title: Rock
+keywords:
+    - simulation
+    - grid
+judges:
+    uva: 10443
+contests:
+    - University of Waterloo Local and Internet Contest, January 2003
+summary: >
+    A rectangular grid is filled with three types of cells: Rock, Paper or
+    Scissor (just like in the game). In one time step adjacent cells fight
+    each other with the same rules as the RPS game, and the winner takes its
+    corresponding cells. Given an initial configuration of the grid, and a
+    number of steps, determine the state of the grid after that number of
+    steps.

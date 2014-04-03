@@ -2,9 +2,16 @@
 #include <cstdlib>
 #include <ctime>
 
+
+#if 0
 #define MAXT 200
-// #define MAXLEN 1000
-#define MAXLEN 15
+#define MAXLEN 1000
+#endif
+
+#if 1
+#define MAXT 20
+#define MAXLEN 60
+#endif
 
 char str[MAXLEN + 1];
 

@@ -24,14 +24,11 @@ struct Matrix {
 
 	MatrixT x[MAX_ROWS][MAX_COLS];
 	Matrix &operator*=(const Matrix &y) {
-		Clr(x); int v;
+		Clr(x);
 		for (int i = 0; i < r; ++i)
-			for (int j = 0; j < c; ++j) {
-				v = 0;
-				for (int k = 0; k < c; ++k)
-					v += 1LL * m[i][k] * y.m[k][j];
-				x[i][j] = v;
-			}
+			for (int k = 0; k < c; ++k)
+				for (int j = 0; j < c; ++j)
+					x[i][j] += m[i][k] * y.m[k][j];
 		memcpy(m, x, sizeof(m)); return *this;
 	}
 

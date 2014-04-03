@@ -1,0 +1,19 @@
+title: Krypton Number System
+keywords:
+    - matrix exponentiation
+    - adjacency matrix
+judges:
+    uva:
+        id: 11651
+        thanks: Manzurur Rahman Khan
+    lightoj: 1172
+setter: Jane Alam Jan
+contests:
+    - Once Again! A Bangladeshi Contest
+summary: >
+    Consider a numeric system in base $b$ (with $b \leq 6$), in which no
+    number has the same digit in two consecutive positions, and no number
+    begins with a zero. Each number also receives a "score" equal to the sum
+    of squares of the differences between consecutive digits. For a possibly
+    large score $s$, find out the total amount of numbers in that numeric
+    system that have a score $s$.

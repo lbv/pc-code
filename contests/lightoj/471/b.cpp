@@ -1,3 +1,12 @@
+/**
+ * LightOJ Contest #471: AIUB Practice Contest
+ *
+ * Problem B: Birthday Treat
+ *
+ * Keywords:
+ *   - beginner
+ */
+
 #include <cstdio>
 
 

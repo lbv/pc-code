@@ -1,3 +1,13 @@
+/**
+ * LightOJ Contest #471: AIUB Practice Contest
+ *
+ * Problem C: Clever Tigers
+ *
+ * Keywords:
+ *   - simulation
+ *   - grid
+ */
+
 #include <algorithm>
 #include <cstdio>
 using namespace std;

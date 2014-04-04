@@ -1,3 +1,13 @@
+/**
+ * LightOJ Contest #471: AIUB Practice Contest
+ *
+ * Problem A: Angry Fan
+ *
+ * Keywords:
+ *   - math
+ *   - beginner
+ */
+
 #include <cstdio>
 
 

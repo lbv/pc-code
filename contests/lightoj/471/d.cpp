@@ -1,3 +1,12 @@
+/**
+ * LightOJ Contest #471: AIUB Practice Contest
+ *
+ * Problem D: Hippo Circus
+ *
+ * Keywords:
+ *   - greedy
+ */
+
 #include <algorithm>
 #include <cstdio>
 using namespace std;

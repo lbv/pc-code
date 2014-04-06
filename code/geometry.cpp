@@ -1,51 +1,66 @@
 //
 // Basic floating point utils
 //
-bool eqz(double x) { return fabs(x) < EPS; }
-double sanitize(double x) { return eqz(x) ? 0.0 : x; }
-int cmp(double a, double b) {
-	double s;
-	if (eqz(s = a-b)) return 0;
+typedef double GeomT;
+
+bool eqz(GeomT x) { return fabs(x) < EPS; }
+GeomT sanitize(GeomT x) { return eqz(x) ? 0.0 : x; }
+int cmp(GeomT a, GeomT b)
+{
+	GeomT s; if (eqz(s = a-b)) return 0;
 	return s < 0 ? -1 : 1;
 }
+
+
 //
-// Geometry
+// Basic geometry
 //
-double circle_angle(double a) { return (a=sanitize(a)) >= 0.0 ? a : a+pi_t2; }
-double heron(double a, double b, double c)
+
+GeomT circle_angle(GeomT a) { return (a=sanitize(a)) >= 0.0 ? a : a+pi_t2; }
+
+// Area of triangle with sides a, b, c
+GeomT heron(GeomT a, GeomT b, GeomT c)
 {
-	double s = (a + b + c) / 2.0;
+	GeomT s = (a + b + c) / 2.0;
 	return sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
-template <typename T>
-struct _Point {
-	T x, y;
-	_Point() { x=y=0; }
-	_Point(T X, T Y) : x(X), y(Y) {}
-	T distance(const _Point &p) const {
-		T dx = p.x - x, dy = p.y - y; return sqrt(dx*dx + dy*dy);
+// Triangle's angle A - the opposite of side a
+GeomT triangle_opp_angle(GeomT a, GeomT b, GeomT c)
+{
+	return acos((b*b + c*c - a*a) / (b * c * 2));
+}
+
+
+//
+// 2D Data Types
+//
+struct Point {
+	GeomT x, y;
+	Point() { x=y=0; }
+	Point(T X, T Y) : x(X), y(Y) {}
+	GeomT distance(const Point &p) const {
+		GeomT dx = p.x - x, dy = p.y - y; return sqrt(dx*dx + dy*dy);
 	}
 
-	bool operator<(const _Point &p) const {
+	bool operator<(const Point &p) const {
 		return x < p.x || (x == p.x && y < p.y); }
-	bool operator==(const _Point &p) const { return x == p.x && y == p.y; }
-	_Point operator-(const _Point &b) const { return _Point(x - b.x, y - b.y); }
+	bool operator==(const Point &p) const { return x == p.x && y == p.y; }
+	Point operator-(const Point &b) const { return _Point(x - b.x, y - b.y); }
 
-	bool collinear(const _Point &b, const _Point &c) const {
+	bool collinear(const Point &b, const Point &c) const {
 		return (b.y - y) * (c.x - x) == (c.y - y) * (b.x - x);
 	}
-	bool in_box(const _Point &a, const _Point &b) const {
-		T lox = min(a.x, b.x), hix = max(a.x, b.x);
-		T loy = min(a.y, b.y), hiy = max(a.y, b.y);
+	bool in_box(const Point &a, const Point &b) const {
+		GeomT lox = min(a.x, b.x), hix = max(a.x, b.x);
+		GeomT loy = min(a.y, b.y), hiy = max(a.y, b.y);
 		return x >= lox && x <= hix && y >= loy && y <= hiy;
 	}
 	// cross product magnitude of axb, relative to this
-	T cross(const _Point &a, const _Point &b) const {
+	GeomT cross(const Point &a, const Point &b) const {
 		return (a.x-x)*(b.y-y) - (a.y-y)*(b.x-x);
 	}
 };
-typedef _Point<double> Point;
 
 template <typename T>
 struct _Line {
@@ -202,3 +217,109 @@ void convex_hull(Point<> *p, int n, Point<> *h, int &k) {
 		h[k++] = p[i];
 	}
 }
+
+
+//
+// 3D Data types
+//
+struct Point3D {
+	GeomT x, y, z;
+
+	Point3D() {}
+	Point3D(GeomT X, GeomT Y, GeomT Z): x(X), y(Y), z(Z) {}
+
+	void dbg() const {
+		printf("P(%.2lf, %.2lf, %.2lf)", x, y, z);
+	}
+
+	bool is_zero() const { return eqz(x) && eqz(y) && eqz(z); }
+	Point3D cross(const Point3D &p) const {
+		return Point3D(
+			y * p.z - z * p.y,
+			-x * p.z + z * p.x,
+			x * p.y - y * p.x);
+	}
+	GeomT dot(const Point3D &p) const { return x * p.x + y * p.y + z * p.z; }
+	GeomT norm() const { return sqrt(x*x + y*y + z*z); }
+
+	Point3D &operator+=(const Point3D &p) {
+		x += p.x, y += p.y, z += p.z; return *this; }
+	Point3D &operator-=(const Point3D &p) {
+		x -= p.x, y -= p.y, z -= p.z; return *this; }
+	Point3D &operator*=(GeomT s) {
+		x *= s, y *= s, z *= s; return *this; }
+
+	Point3D operator+(const Point3D &p) const {
+		Point3D ans = *this; ans += p; return ans; }
+	Point3D operator-(const Point3D &p) const {
+		Point3D ans = *this; ans -= p; return ans; }
+	Point3D operator*(GeomT s) const {
+		Point3D ans = *this; ans *= s; return ans; }
+};
+
+typedef Point3D Vector3D;
+
+struct Ray3D {
+	Point3D p0, p1;
+
+	Ray3D() {}
+	Ray3D(Point3D P0, Point3D P1): p0(P0), p1(P1) {}
+
+	void dbg() const {
+		printf("Ray("); p0.dbg(); printf(" - "); p1.dbg(); printf(")");
+	}
+};
+
+struct Triangle3D {
+	Point3D v0, v1, v2;
+
+	Triangle3D() {}
+	Triangle3D(Point3D V0, Point3D V1, Point3D V2): v0(V0), v1(V1), v2(V2) {}
+
+	void dbg() const {
+		printf("Tri("); v0.dbg(); printf(", ");
+		v1.dbg(); printf(", ");
+		v2.dbg(); printf(")");
+	}
+
+	bool intersect_ray(const Ray3D &ray, Point3D &it) {
+		Vector3D u = v1 - v0;
+		Vector3D v = v2 - v0;
+		Vector3D n = u.cross(v);
+
+		// triangle is degenerate
+		if (n.is_zero()) return false;
+
+		Vector3D dir = ray.p1 - ray.p0;
+		Vector3D w0 = ray.p0 - v0;
+		GeomT a = - n.dot(w0);
+		GeomT b = n.dot(dir);
+
+		// if a == 0 -> ray lies in plane, else ray is disjoint from plane
+		if (eqz(b)) return false;
+
+		GeomT r = a / b;
+		if (r < 0)
+			return false;  // ray is going away from the triangle
+		// for a segment, also test if (r > 1.0) => no intersect
+		it = ray.p0 + dir * r;
+
+		Vector3D w = it - v0;
+		GeomT uu = u.dot(u);
+		GeomT uv = u.dot(v);
+		GeomT vv = v.dot(v);
+		GeomT wu = w.dot(u);
+		GeomT wv = w.dot(v);
+		GeomT D = uv * uv - uu * vv;
+
+		GeomT s = (uv * wv - vv * wu) / D;
+		if (s < 0.0 || s > 1.0) return false;
+
+		GeomT t = (uv * wu - uu * wv) / D;
+		if (t < 0.0 || (s + t) > 1.0) return false;
+
+		// if s == 0 || t == 0 || s+t == 1.0 then point lies on an edge
+		return true;
+	}
+
+};

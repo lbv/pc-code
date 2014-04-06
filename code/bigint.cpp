@@ -128,15 +128,15 @@ struct BigInt {
 		for (int i=0, I=len(); i < I; i++) { res += d[i] * p; p *= BIBAS; }
 		return sgn ? -res : res;
 	}
-	BigInt operator+(const BigInt x) const {
+	BigInt operator+(const BigInt &x) const {
 		BigInt ans = *this; ans += x; return ans; }
-	BigInt operator-(const BigInt x) const {
+	BigInt operator-(const BigInt &x) const {
 		BigInt ans = *this; ans -= x; return ans; }
-	BigInt operator*(const BigInt x) const {
+	BigInt operator*(const BigInt &x) const {
 		BigInt ans = *this; ans *= x; return ans; }
-	BigInt operator/(const BigInt x) const {
+	BigInt operator/(const BigInt &x) const {
 		BigInt ans = *this; ans /= x; return ans; }
-	BigInt operator%(const BigInt x) const {
+	BigInt operator%(const BigInt &x) const {
 		BigInt ans = *this; ans %= x; return ans; }
 };
 

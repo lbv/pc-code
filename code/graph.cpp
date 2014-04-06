@@ -19,6 +19,7 @@ struct Edge {
 
 struct Edge {
 	int u, v; GraphT w;
+	Edge() {}
 	Edge(int U, int V, GraphT W) : u(U), v(V), w(W) {}
 	bool operator<(const Edge &e) const { return w < e.w; }
 };
@@ -54,7 +55,7 @@ struct Graph {
 		uf.init(n);
 		int nedges = 0;
 		ans = 0;
-		for (int i = 0, I = m; i < I; ++i) {
+		for (int i = 0; i < m; ++i) {
 			Edge &e = edges[i];
 			if (uf.find(e.u) == uf.find(e.v)) continue;
 			uf.merge(e.u, e.v);

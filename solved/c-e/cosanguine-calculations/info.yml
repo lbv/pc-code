@@ -1,0 +1,12 @@
+title: Cosanguine Calculations
+keywords:
+    - ad-hoc
+annotations:
+    - special judge
+judges:
+    uva: 1061
+summary: >
+    A blood type is determined by a couple of ABO alleles and a couple of Rh
+    alleles according to a set of known rules. Given the blood types of two
+    parent, or a parent and a child, determine the set of possible blood
+    types for the third person (the child, or second parent).

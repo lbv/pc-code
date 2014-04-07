@@ -1,0 +1,12 @@
+title: Traditional BINGO
+keywords:
+    - ad-hoc
+    - board
+judges:
+    uva: 10813
+contests:
+    - Waterloo Winter Contest
+summary:
+    Given the description of a BINGO board, and the order in which all
+    possible numbers are called out, determine the turn number in which you
+    have won the game.

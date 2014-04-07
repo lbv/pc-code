@@ -1,0 +1,11 @@
+title: The Department of Redundancy Department
+keywords:
+    - data structures
+    - beginner
+annotations:
+    - underspecified
+judges:
+    uva: 484
+summary: >
+    Given a list of integers, print the list of unique numbers in this list,
+    accompanied by the number of occurrences for each number.

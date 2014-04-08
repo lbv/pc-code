@@ -1,0 +1,11 @@
+title: Getting a T-Shirt
+keywords:
+    - max flow
+annotations:
+    - boolean output
+judges:
+    lightoj: 1176
+summary: >
+    Given $N$ sets of 6 shirts of different sizes, and two choices of shirt
+    sizes from $M$ people, determine if it's possible to assign shirts to
+    all people.

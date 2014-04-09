@@ -1,0 +1,13 @@
+title: Software Company
+keywords:
+    - dynamic programming
+    - binary search
+judges:
+    lightoj: 1180
+contests:
+    - Tehran Sharif 2004 Preliminary
+summary: >
+    Two groups of $m$ jobs have to be completed in the least amount of time
+    possible by $n$ people. Determine that minimum time, given the times
+    that each of the $n$ people takes to complete any job from either of the
+    groups.

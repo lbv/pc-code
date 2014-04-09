@@ -7,3 +7,8 @@ judges:
 setter: Rezaul Alam Chowdhury
 contests:
   - University of Valladolid End Of Millenium Contest
+summary: >
+  A weighted, undirected graph with relatively few nodes is given. Then a
+  large numebr of queries, containing a source and a sink node. For each
+  query, answer with the minimum weight of the heaviest edge among all
+  possible paths from the source to the sink.

@@ -1,0 +1,10 @@
+title: Marriage Media
+keywords:
+    - bipartite matching
+judges:
+    lightoj: 1184
+setter: Jane Alam Jan
+summary: >
+    A group of $m$ men and $n$ women may be matched in pairs according to
+    features like height, age and marital status. Find the maximum number of
+    matchings possible.

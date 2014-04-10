@@ -1,0 +1,12 @@
+title: Odd Looking Average
+keywords:
+    - math
+    - calculus
+annotations:
+    - special judge
+judges:
+    lightoj: 1181
+setter: Jane Alam Jan
+summary: >
+    Given the values of $k, a, b$ calculate the average of the real function
+    $x^k$ for the range $a \leq x \leq b$.

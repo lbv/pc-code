@@ -66,6 +66,62 @@ struct Graph {
 
 
 	//
+	// Dijkstra's Single Source Shortest Paths
+	//
+	struct Node {
+		GraphT d;
+		int v;
+		Node() {}
+		Node(GraphT D, int V): d(D), v(V) {}
+
+		bool operator<(const Node &n) const { return d > n.d; }
+	};
+	GraphT dis[MAX_VERT];
+	bool vis[MAX_VERT];
+
+	void dijkstra(int src) {
+		Inf(dis); Clr(vis);
+		priority_queue<Node> q;
+		q.push(Node(0, src));
+		dis[src] = 0;
+		while (! q.empty()) {
+			Node cur = q.top(); q.pop();
+			if (vis[cur.v]) continue;
+			vis[cur.v] = true;
+
+			for (int i = adj[cur.v]; i >= 0; i = next[i]) {
+				Edge &e = edges[i];
+				GraphT d2 = cur.d + e.w;
+				if (d2 >= dis[e.v]) continue;
+				dis[e.v] = d2;
+				q.push(Node(d2, e.v));
+			}
+		}
+	}
+
+
+	//
+	// Bellman-Ford to detect negative cycles
+	//
+	GraphT dis[MAX_VERT];
+	bool bellman_ford() {
+		Clr(dis);
+		for (int i = 1; i < n; ++i)
+			for (int j = 0; j < m; ++j) {
+				Edge &e = edges[j];
+				if(dis[e.u] + e.w < dis[e.v])
+					dis[e.v] = dis[e.u] + e.w;
+			}
+		for (int j = 0; j < m; ++j) {
+			Edge &e = edges[j];
+			if (dis[e.u] + e.w < dis[e.v])
+				return true;
+		}
+		return false;
+	}
+
+
+	//
 	// Tarjan for Strongly Connected Components
 	//
 	bool flg[MAX_VERT];
@@ -308,173 +364,6 @@ struct Graph {
 		return mflow;
 	}
 
-	// ---------------
-
-	int prim_mst(int src) {
-		IIS q;
-		IV dis(n, INF);
-		BV flg(n);
-		dis[src] = 0;
-		q.insert(II(0, src));
-		int mst = 0;
-		while (! q.empty()) {
-			int d = q.begin()->first;
-			int v = q.begin()->second;
-			q.erase(q.begin());
-			if (flg[v]) continue;
-			flg[v] = true;
-			mst += d;
-			For (EL, e, adj[v])
-				if (!flg[e->v] && e->w < dis[e->v]) {
-					dis[e->v] = e->w;
-					q.insert(II(dis[e->v], e->v));
-				}
-		}
-		return mst;
-	}
-	void dijkstra(int src, IV &dis) {
-		set<II> q;
-		dis = IV(n, INF);
-		BV vis(n);
-		q.insert(II(0, src));
-		dis[src] = 0;
-		while (! q.empty()) {
-			II p = *(q.begin()); q.erase(q.begin());
-			int d = p.first, v = p.second;
-			if (vis[v]) continue;
-			vis[v] = true;
-			For (EL, e, adj[v]) {
-				int d2 = d + e->w;
-				if (d2 < dis[e->v]) {
-					dis[e->v] = d2;
-					q.insert(II(d2, e->v));
-				}
-			}
-		}
-	}
-	void topo_sort(IV &in, IV &order) {
-		IQ q;
-		for (int i = 0; i < n; ++i) if (in[i] == 0) q.push(i);
-		order.clear();
-		while (! q.empty()) {
-			int v = q.front(); q.pop();
-			order.push_back(v);
-			For (EL, e, adj[v])
-				if (--in[e->v] == 0) q.push(e->v);
-		}
-	}
-
-	// Kosaraju's algorithm
-	struct Kos {
-		Graph &g; IVV sccs; IV scc; IK vs; BV vis; ELV radj;
-		Kos(Graph &G) : g(G) { vis = BV(g.n); radj.resize(g.n); }
-		void dfs(int v) {
-			vis[v] = true;
-			For (EL, ep, g.adj[v]) {
-				Edge e = *ep;
-				int u = e.v; e.v = v;
-				radj[u].push_back(e);
-				if (! vis[u]) dfs(u);
-			}
-			vs.push(v);
-		}
-		void dfs2(int v) {
-			vis[v] = true;
-			scc.push_back(v);
-			For (EL, e, radj[v]) if (! vis[e->v]) dfs2(e->v);
-		}
-	};
-	void kosaraju_scc(IVV &sccs) {
-		Kos k(*this);
-		for (int v=0; v<n; ++v) if (! k.vis[v]) k.dfs(v);
-		k.vis = BV(n);
-		while (! k.vs.empty()) {
-			int v = k.vs.top(); k.vs.pop();
-			if (k.vis[v]) continue;
-			k.scc = IV();
-			k.dfs2(v);
-			k.sccs.push_back(k.scc);
-		}
-		sccs = k.sccs;
-	}
-
-
-	// Articulations/bridges
-	int low[MAX_V], idx[MAX_V], cnt;
-	bool is_artic[MAX_V];
-	bool is_bridge[MAX_E];
-
-	void dfs(int u, int v) {
-		int children = 0;
-		low[v] = idx[v] = cnt++;
-		for (int i = adj[v]; i >= 0; i = next[i]) {
-			Edge &e = edges[i];
-			if (idx[e.v] == 0) {
-				++children;
-				dfs(v, e.v);
-				low[v] = min(low[v], low[e.v]);
-				if (low[e.v] >= idx[v] && u != v)
-					is_artic[v] = true;
-				if (low[e.v] == idx[e.v])
-					is_bridge[i] = is_bridge[e.o] = true;
-			}
-			else if (e.v != u)
-				low[v] = min(low[v], idx[e.v]);
-		}
-		if (u == v && children > 1)
-			is_artic[v] = true;
-	}
-	void articulations() {
-		Zero(idx); Zero(low);
-		Zero(is_artic); Zero(is_bridge);
-		cnt = 1;
-		for (int i = 0; i < n; ++i) if (idx[i] == 0) dfs(i, i);
-	}
-
-	// Eulerian Trail
-	struct Euler {
-		ELV adj; IV t;
-		Euler(ELV Adj) : adj(Adj) {}
-		void build(int u) {
-			while(! adj[u].empty()) {
-				int v = adj[u].front().v;
-				adj[u].erase(adj[u].begin());
-				build(v);
-			}
-			t.push_back(u);
-		}
-	};
-	bool eulerian_trail(IV &trail) {
-		Euler e(adj);
-		int odd = 0, s = 0;
-		/*
-		for (int v = 0; v < n; v++) {
-			int diff = abs(in[v] - out[v]);
-			if (diff > 1) return false;
-			if (diff == 1) {
-				if (++odd > 2) return false;
-				if (out[v] > in[v]) start = v;
-			}
-		}
-		*/
-		e.build(s);
-		reverse(e.t.begin(), e.t.end());
-		trail = e.t;
-		return true;
-	}
-
-	// Bellman-Ford
-	bool bellman_ford_neg_cycle(int n) {
-		IV dis(n);
-		for (int i = 0; i < n-1; i++)
-			For (EV, e, edges)
-				if(dis[e->u] + e->w < dis[e->v])
-					dis[e->v] = dis[e->u] + e->w;
-		For (EV, e, edges)
-			if (dis[e->u] + e->w < dis[e->v])
-				return true;
-		return false;
-	}
 
 	/////////////////////////////////////////////
 	////////// Bi-Partite Graphs ////////////////
@@ -712,7 +601,143 @@ struct Graph {
 
 		return true;
 	}
-}
+
+
+	// --------------------------------------------
+
+	int prim_mst(int src) {
+		IIS q;
+		IV dis(n, INF);
+		BV flg(n);
+		dis[src] = 0;
+		q.insert(II(0, src));
+		int mst = 0;
+		while (! q.empty()) {
+			int d = q.begin()->first;
+			int v = q.begin()->second;
+			q.erase(q.begin());
+			if (flg[v]) continue;
+			flg[v] = true;
+			mst += d;
+			For (EL, e, adj[v])
+				if (!flg[e->v] && e->w < dis[e->v]) {
+					dis[e->v] = e->w;
+					q.insert(II(dis[e->v], e->v));
+				}
+		}
+		return mst;
+	}
+	void topo_sort(IV &in, IV &order) {
+		IQ q;
+		for (int i = 0; i < n; ++i) if (in[i] == 0) q.push(i);
+		order.clear();
+		while (! q.empty()) {
+			int v = q.front(); q.pop();
+			order.push_back(v);
+			For (EL, e, adj[v])
+				if (--in[e->v] == 0) q.push(e->v);
+		}
+	}
+
+	// Kosaraju's algorithm
+	struct Kos {
+		Graph &g; IVV sccs; IV scc; IK vs; BV vis; ELV radj;
+		Kos(Graph &G) : g(G) { vis = BV(g.n); radj.resize(g.n); }
+		void dfs(int v) {
+			vis[v] = true;
+			For (EL, ep, g.adj[v]) {
+				Edge e = *ep;
+				int u = e.v; e.v = v;
+				radj[u].push_back(e);
+				if (! vis[u]) dfs(u);
+			}
+			vs.push(v);
+		}
+		void dfs2(int v) {
+			vis[v] = true;
+			scc.push_back(v);
+			For (EL, e, radj[v]) if (! vis[e->v]) dfs2(e->v);
+		}
+	};
+	void kosaraju_scc(IVV &sccs) {
+		Kos k(*this);
+		for (int v=0; v<n; ++v) if (! k.vis[v]) k.dfs(v);
+		k.vis = BV(n);
+		while (! k.vs.empty()) {
+			int v = k.vs.top(); k.vs.pop();
+			if (k.vis[v]) continue;
+			k.scc = IV();
+			k.dfs2(v);
+			k.sccs.push_back(k.scc);
+		}
+		sccs = k.sccs;
+	}
+
+
+	// Articulations/bridges
+	int low[MAX_V], idx[MAX_V], cnt;
+	bool is_artic[MAX_V];
+	bool is_bridge[MAX_E];
+
+	void dfs(int u, int v) {
+		int children = 0;
+		low[v] = idx[v] = cnt++;
+		for (int i = adj[v]; i >= 0; i = next[i]) {
+			Edge &e = edges[i];
+			if (idx[e.v] == 0) {
+				++children;
+				dfs(v, e.v);
+				low[v] = min(low[v], low[e.v]);
+				if (low[e.v] >= idx[v] && u != v)
+					is_artic[v] = true;
+				if (low[e.v] == idx[e.v])
+					is_bridge[i] = is_bridge[e.o] = true;
+			}
+			else if (e.v != u)
+				low[v] = min(low[v], idx[e.v]);
+		}
+		if (u == v && children > 1)
+			is_artic[v] = true;
+	}
+	void articulations() {
+		Zero(idx); Zero(low);
+		Zero(is_artic); Zero(is_bridge);
+		cnt = 1;
+		for (int i = 0; i < n; ++i) if (idx[i] == 0) dfs(i, i);
+	}
+
+	// Eulerian Trail
+	struct Euler {
+		ELV adj; IV t;
+		Euler(ELV Adj) : adj(Adj) {}
+		void build(int u) {
+			while(! adj[u].empty()) {
+				int v = adj[u].front().v;
+				adj[u].erase(adj[u].begin());
+				build(v);
+			}
+			t.push_back(u);
+		}
+	};
+	bool eulerian_trail(IV &trail) {
+		Euler e(adj);
+		int odd = 0, s = 0;
+		/*
+		for (int v = 0; v < n; v++) {
+			int diff = abs(in[v] - out[v]);
+			if (diff > 1) return false;
+			if (diff == 1) {
+				if (++odd > 2) return false;
+				if (out[v] > in[v]) start = v;
+			}
+		}
+		*/
+		e.build(s);
+		reverse(e.t.begin(), e.t.end());
+		trail = e.t;
+		return true;
+	}
+};
 
 // Shortest paths
 void floyd_warshall(int **g, int N)

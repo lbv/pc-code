@@ -61,6 +61,10 @@ struct Point {
 			cmp(loy, y) <= 0 && cmp(y, hiy) <= 0;
 	}
 
+	bool is_between(const Point &a, const Point &b) const {
+		return is_collinear(a, b) && in_box(a, b);
+	}
+
 	// cross product magnitude of {a}x{b}, relative to {this}
 	GeomT cross(const Point &a, const Point &b) const {
 		return (a.x-x)*(b.y-y) - (a.y-y)*(b.x-x);

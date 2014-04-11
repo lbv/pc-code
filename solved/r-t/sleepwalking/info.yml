@@ -1,0 +1,11 @@
+title: Sleepwalking
+keywords:
+    - computational geometry
+annotations:
+    - boolean output
+judges:
+    lightoj: 1190
+setter: Jane Alam Jan
+summary: >
+    Given the vertices of a polygon and a list of points, determine if each
+    point lies inside the polygon or not.

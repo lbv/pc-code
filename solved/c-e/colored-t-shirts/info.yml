@@ -1,0 +1,15 @@
+title: Colored T-Shirts
+keywords:
+    - inversion number
+    - dynamic programming
+    - bitwise calculations
+annotations:
+    - large input
+judges:
+    lightoj: 1194
+setter: Jane Alam Jan
+summary: >
+    A list of $N$ (with $N \leq 10^5$) integer is given, where each number is
+    in the range $[1:m]$ (with $m \leq 16$). Find the minimum number of swaps
+    of adjacent elements required to transform the list so all integers are
+    grouped (all ones are together, all twos, etc.).

@@ -303,15 +303,15 @@ struct KMP {
 //
 // Misc functions
 //
+// Returns first integer with exactly n bits set
+u32 popcnt_init(int n) { return (1 << n) - 1; }
 // next higher number with same number of 1's in binary
-u32 next_popcount(u32 n)
+u32 popcnt_next(u32 n)
 {
 	u32 c = (n & -n);
 	u32 r = n+c;
 	return (((r ^ n) >> 2) / c) | r;
 }
-// Returns first integer with exactly n bits set
-u32 init_popcount(int n) { return (1 << n) - 1; }
 // values of (1 << x) for x<32 are unique modulo 37
 static const int m37pos[] = {
 	32,  0,  1, 26,  2, 23, 27,  0,  3,

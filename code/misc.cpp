@@ -1,8 +1,6 @@
 //
 // Macros
 //
-#define GetFS(b) ((b) & -(b))
-#define ClrFS(b) (b &= ~GetFS(b))
 
 #define Clr(m) memset(m, 0, sizeof(m))
 #define Inf(m) memset(m, 0x3f, sizeof(m))
@@ -114,50 +112,6 @@ bool ida_star(NodeT &root, int limit, stack<DeltaT> &st)
 	return false;
 }
 
-//
-// Time - Leap years
-//
-// A[i] has the accumulated number of days from months previous to i
-const int A[13] = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
-// same as A, but for a leap year
-const int B[13] = { 0, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 };
-// returns number of leap years up to, and including, y
-int leap_years(int y) { return y / 4 - y / 100 + y / 400; }
-bool is_leap(int y) { return y % 400 == 0 || (y % 4 == 0 && y % 100 != 0); }
-// number of days in blocks of years
-const int p400 = 400*365 + leap_years(400);
-const int p100 = 100*365 + leap_years(100);
-const int p4   = 4*365 + 1;
-const int p1   = 365;
-int date_to_days(int d, int m, int y)
-{
-	return (y - 1) * 365 + leap_years(y - 1) + (is_leap(y) ? B[m] : A[m]) + d;
-}
-void days_to_date(int days, int &d, int &m, int &y)
-{
-	bool top100;  // are we in the top 100 years of a 400 block?
-	bool top4;	  // are we in the top 4 years of a 100 block?
-	bool top1;	  // are we in the top year of a 4 block?
-
-	y = 1;
-	top100 = top4 = top1 = false;
-
-	y += ((days-1) / p400) * 400;
-	d = (days-1) % p400 + 1;
-
-	if (d > p100*3) top100 = true, d -= 3*p100, y += 300;
-	else y += ((d-1) / p100) * 100, d = (d-1) % p100 + 1;
-
-	if (d > p4*24) top4 = true, d -= 24*p4, y += 24*4;
-	else y += ((d-1) / p4) * 4, d = (d-1) % p4 + 1;
-
-	if (d > p1*3) top1 = true, d -= p1*3, y += 3;
-	else y += (d-1) / p1, d = (d-1) % p1 + 1;
-
-	const int *ac = top1 && (!top4 || top100) ? B : A;
-	for (m = 1; m < 12; ++m) if (d <=  ac[m + 1]) break;
-	d -= ac[m];
-}
 
 //
 // Quickselect - for locating the median
@@ -300,32 +254,11 @@ struct KMP {
 	}
 };
 
+
 //
 // Misc functions
 //
-// Returns first integer with exactly n bits set
-u32 popcnt_init(int n) { return (1 << n) - 1; }
-// next higher number with same number of 1's in binary
-u32 popcnt_next(u32 n)
-{
-	u32 c = (n & -n);
-	u32 r = n+c;
-	return (((r ^ n) >> 2) / c) | r;
-}
-// values of (1 << x) for x<32 are unique modulo 37
-static const int m37pos[] = {
-	32,  0,  1, 26,  2, 23, 27,  0,  3,
-	16, 24, 30, 28, 11,  0, 13,  4,  7,
-	17,  0, 25, 22, 31, 15, 29, 10, 12,
-	 6,  0, 21, 14,  9,  5, 20,  8, 19, 18
-};
-#define Ctz(x) (m37pos[(x) % 37])
-// Finds the most significant bit set on n. The bit is left in b, and its
-// zero-indexed position in p
-void msb(i64 n, i64 &b, int &p)
-{
-	for (b = 1, p = 0, n >>= 1; n; b <<= 1, n >>= 1, ++p);
-}
+
 // returns the position of the last visited in range [0, n-1]
 int josephus(int n, int k)
 {
@@ -335,86 +268,49 @@ int josephus(int n, int k)
 
 
 //
-// Recursive Descent Parser
+// Stable Marriage Problem
 //
 
-/**
- * Example Grammar:
- *
- *   tree ::= '(' ( | INT <tree> <tree> ) ')'
- */
-enum TokenT {
-	NONE,
-	PAREN_OPEN,
-	PAREN_CLOSE,
-	INT
-};
+// man[i][j]: woman with priority j for man i
+int man[MAXN][MAXN];
 
-struct Token {
-	TokenT t;
-	int n;
-	Token() {}
-	Token(TokenT T): t(T) {}
-	Token(TokenT T, int N): t(T), n(N) {}
-};
+// woman[i][j]: priority for man j given by woman i
+int woman[MAXN][MAXN];
 
-struct Lexer {
-	Reader &rr;
-	bool has_tok;
-	Token tok;
-	Lexer(Reader &R): rr(R), has_tok(false) {}
+// next_for[i]: next priority to consider for man i
+int next_for[MAXN];
 
-	void read_token() {
-		if (rr.has_next_int())
-			tok = Token(INT, rr.next_int());
-		else if (rr.has_next()) {
-			char c = rr.next_char();
-			switch (c) {
-			case '(': tok = Token(PAREN_OPEN); break;
-			case ')': tok = Token(PAREN_CLOSE); break;
-			default: tok = Token(NONE);
-			}
-		}
-		else
-			tok = Token(NONE);
+struct Marriage {
+	int w, m;
+	Marriage() {}
+	Marriage(int W, int M): w(W), m(M) {}
 
-		has_tok = true;
-	}
-
-	TokenT peek() { if (! has_tok) read_token(); return tok.t; }
-	Token pop() { if (! has_tok) read_token(); has_tok = false; return tok; }
-};
-
-struct TreeNode {
-	bool empty, leaf, ok;
-	TreeNode(): empty(true), leaf(false), ok(false) {}
-};
-
-
-struct Parser {
-	Lexer lex;
-	Parser(Reader &R): lex(Lexer(R)) {}
-
-	TreeNode tree(int sum) {
-		lex.pop(); // must be a PAREN_OPEN
-
-		TreeNode ans;
-		if (lex.peek() == INT) {
-			ans.empty = false;
-			Token tok = lex.pop();
-
-			TreeNode lt = tree(sum - tok.n);
-			TreeNode rt = tree(sum - tok.n);
-
-			if (lt.empty && rt.empty) {
-				ans.leaf = true;
-				if (tok.n == sum) ans.ok = true;
-			}
-			else
-				ans.ok = lt.ok || rt.ok;
-		}
-
-		lex.pop();  // must be a PAREN_CLOSE
-		return ans;
+	bool operator<(const Marriage &x) const {
+		return woman[w][m] > woman[x.w][x.m];
 	}
 };
+
+// marriage[j]: current marriage for woman j
+Marriage marriage[MAXN];
+
+// Gale-Shapley algorithm.
+// pre-cond: Clr(next_for) Neg(marriage)
+void stable_match(int m)
+{
+	// if a solution is not guaranteed, add check here to see if maybe there
+	// are no more matches
+
+	int w = man[m][ next_for[m]++ ];
+
+	Marriage cur(w, m);
+
+	if (marriage[w].m < 0)
+		marriage[w] = cur;
+	else if (marriage[w] < cur) {
+		int mp = marriage[w].m;
+		marriage[w] = cur;
+		stable_match(mp);
+	}
+	else
+		stable_match(m);
+}

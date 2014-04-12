@@ -1,5 +1,12 @@
 title: University Entrance Examination
-keywords: stable matching, gale shapley
+keywords:
+    - stable marriage problem
 judges:
   icpc-la: 2345
-contests: ACM 2001-2002, Asia Region, Tehran
+contests:
+    - ACM 2001-2002, Asia Region, Tehran
+summary: >
+    A number of students have to be matched to a number of Universities. The
+    selection is affected by the location of students and universities,
+    students' scores and students preferences regarding Univerisities. Find
+    a stable matching according to these conditions.

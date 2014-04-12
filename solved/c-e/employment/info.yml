@@ -1,0 +1,12 @@
+title: Employment
+keywords:
+    - stable marriage problem
+annotations:
+    - special judge
+    - classic
+judges:
+    lightoj: 1400
+setter: Jane Alam Jan
+summary: >
+    A list of $n$ companies and $n$ job candidates, with a full list of
+    their ordered preferences are given. Find any stable matching.

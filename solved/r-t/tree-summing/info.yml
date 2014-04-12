@@ -1,0 +1,12 @@
+title: Tree Summing
+keywords:
+    - parsing
+annotations:
+    - underspecified
+    - boolean output
+judges:
+    uva: 112
+summary: >
+    An integer and a LISP-like list representation of a binary tree with
+    integer numbers in its nodes are given. Determine if there is any
+    root-to-leaf path in the tree whose sum is equal to the given integer.

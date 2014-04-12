@@ -1,0 +1,13 @@
+title: Mother Bear
+keywords:
+    - palindromes
+    - strings
+annotations:
+    - underspecified
+judges:
+    uva: 10945
+contests:
+    - UVa Local Qualification Contest
+summary: >
+    Given a string, determine if it's palindromic, ignoring punctuation and
+    in a case-insensitive fashion.

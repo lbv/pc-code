@@ -3,7 +3,7 @@
 #include <ctime>
 
 
-#if 0
+#if 1
 #define MAXT 15
 #define MAXN 10000
 #define MAXM 100000
@@ -12,7 +12,7 @@
 #define EXTA_LINES 0
 #endif
 
-#if 1
+#if 0
 #define MAXT 20
 #define MAXN 10
 #define MAXM 5

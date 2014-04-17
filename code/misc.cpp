@@ -197,10 +197,10 @@ void merge_sort(IVi lo, IVi hi)
 
 // Calculates LIS, returns the length of the LIS and store lengths for each
 // element of seq in ls
-int lis(IV &seq, IV &ls)
+typedef int LisT;
+LisT I[MAXN + 1];
+int lis(LisT *seq, int n, LisT *ls)
 {
-	IV I(n + 1);
-	ls = IV(n);
 	int len = 0;
 	for (int i = 0; i < n; ++i) {
 		int lo = 1, hi = len;

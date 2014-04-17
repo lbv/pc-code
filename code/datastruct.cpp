@@ -55,16 +55,18 @@ struct HM {
 	KV get(u64 id) const { return b[id>>32][id&0xFFFFFFFF]; }
 };
 
+
 //
 // Binary Indexed Tree
 //
 struct Bit {
-	int f[MAXBIT + 1]; int n;
-	void init(int N) { n=N; Zero(f); }
-	void add(int i, int v) { while (i <= n) { f[i] += v; i += GetFS(i); } }
-	int query(int i) {
-		int r = 0; while (i) { r += f[i]; i -= GetFS(i); } return r; }
+	BitT f[MAXBIT + 1];
+	int n;
+	void init(int N) { n=N; Clr(f); }
+	void add(int i, BitT v) { while (i <= n) { f[i] += v; i += GetFS(i); } }
+	BitT query(int i) { BitT r = 0; for (;i; ClrFS(i)) r += f[i]; return r; }
 };
+
 
 //
 // Segment Tree

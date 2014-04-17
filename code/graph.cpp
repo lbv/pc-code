@@ -26,9 +26,7 @@ struct Edge {
 
 // for max-flow models
 struct Edge {
-	int v;
-	int c, f;  // capacity, flow
-	int r;     // reverse edge
+	int v, c, f, r;  // capacity, flow, reverse edge
 	Edge() {}
 	Edge(int V, int C, int R) : v(V), c(C), f(0), r(R) {}
 };

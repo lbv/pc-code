@@ -43,9 +43,11 @@ struct BigInt {
 		IV res(s3); int c = 0;
 		for (int k=0; k < s3; ++k) {
 			int sum = c;
-			for (int i=max(0,k-s2+1), I=min(k+1, s1), j=k-i; i < I; ++i, --j)
+			c = 0;
+			for (int i=max(0,k-s2+1), I=min(k+1, s1), j=k-i; i < I; ++i, --j) {
 				sum += d[i] * b.d[j];
-			if (sum >= BIBAS) { c = sum / BIBAS; sum %= BIBAS; } else c = 0;
+				if (sum >= BIBAS) c += sum / BIBAS, sum %= BIBAS;
+			}
 			res[k] = sum;
 		}
 		d = res; sgn ^= b.sgn; clean();
@@ -277,4 +279,3 @@ struct U128 {
 	U128 operator-(const U128 &b) const { U128 a(*this); return a -= b; }
 	U128 operator%(const U128 &b) const { U128 a(*this); return a %= b; }
 };
-

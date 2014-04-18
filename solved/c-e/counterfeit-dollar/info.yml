@@ -1,0 +1,11 @@
+title: Counterfeit Dollar
+keywords:
+    - puzzle
+    - ad-hoc
+    - brute force
+judges:
+    uva: 608
+summary: >
+    There's a faxe coin in a set of 12 coins. With three uses of a balance,
+    you must determine which coin is the fake one and if it's lighter of
+    heavier.

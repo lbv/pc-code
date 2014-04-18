@@ -1,0 +1,13 @@
+title: Anagrams
+keywords:
+    - strings
+annotations:
+    - underspecified
+judges:
+    uva: 454
+summary: >
+    In a given set of strings, identify all pairs in which the two strings
+    are anagrams of each other.
+comments: >
+    The input contains cases with uppercase letters, and the algorithm
+    should be case-sensitive.

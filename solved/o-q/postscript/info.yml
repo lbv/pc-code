@@ -1,0 +1,10 @@
+title: Postscript
+keywords:
+    - ad-hoc
+    - rules
+judges:
+    uva: 403
+summary: >
+    You receive a list of commands, that describe how to write messages in
+    different ways on a grid of characters. Apply the commands and print the
+    resulting grid.

@@ -27,8 +27,9 @@ struct Matrix {
 		Clr(x);
 		for (int i = 0; i < r; ++i)
 			for (int k = 0; k < c; ++k)
-				for (int j = 0; j < c; ++j)
-					x[i][j] += m[i][k] * y.m[k][j];
+				if (m[i][k] != 0)
+					for (int j = 0; j < c; ++j)
+						x[i][j] += m[i][k] * y.m[k][j];
 		memcpy(m, x, sizeof(m)); return *this;
 	}
 

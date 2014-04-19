@@ -231,31 +231,6 @@ void cc(int *W, const int *C, int n, int k)
 
 
 //
-// Knuth-Morris-Pratt
-//
-#define MAXS MAXLEN
-#define MAXW MAXLEN
-struct KMP {
-	char S[MAXS + 1], W[MAXW + 1]; int ls, lw; int T[MAXW + 1];
-	void init() {
-		T[0] = -1, T[1] = 0;
-		for (int p = 2, c = 0; p < lw;) {
-			if (W[p-1] == W[c]) T[p++] = ++c;
-			else if (c > 0) c = T[c];
-			else T[p++] = 0;
-		}
-	}
-	int search() {
-		for (int m=0, i=0; m + i < ls;) {
-			if (W[i] == S[m + i]) { if (++i == lw) return m; }
-			else { m += i - T[i]; i = T[i] >= 0 ? T[i] : 0; }
-		}
-		return -1;
-	}
-};
-
-
-//
 // Misc functions
 //
 

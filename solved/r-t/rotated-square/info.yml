@@ -1,0 +1,14 @@
+title: Rotated Square
+keywords:
+    - strings
+    - grid
+annotations:
+    - underspecified
+judges:
+    uva: 10855
+summary: >
+    Given a two square grids of characters, count the number of times the
+    smaller grid occurs inside the bigger one, in all of its 4 rotations.
+comments: >
+    It has been claimed that $N \leq 100$. A simple, $O((N-n)^2 n^2)$,
+    approach should get AC.

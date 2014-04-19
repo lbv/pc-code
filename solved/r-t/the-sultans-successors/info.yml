@@ -1,0 +1,11 @@
+title: The Sultan's Successors
+keywords:
+    - chess
+annotations:
+    - output formatting
+judges:
+    uva: 167
+summary: >
+    A variation of the 8-Queen problem, where each cell in the chess board
+    has a numeric value. Find the configuration that maximizes the sum of
+    the cells.

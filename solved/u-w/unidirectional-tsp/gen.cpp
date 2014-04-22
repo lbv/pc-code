@@ -3,7 +3,7 @@
 #include <ctime>
 
 
-#if 0
+#if 1
 #define MAXT 100
 #define MAXM 10
 #define MAXN 100
@@ -11,7 +11,7 @@
 #define MINI -1000000
 #endif
 
-#if 1
+#if 0
 #define MAXT 20
 #define MAXM 6
 #define MAXN 15

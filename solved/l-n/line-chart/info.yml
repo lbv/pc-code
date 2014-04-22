@@ -1,0 +1,20 @@
+title: Line Chart
+keywords:
+    - binary indexed tree
+judges:
+    uva: 12141
+    lightoj: 1402
+    icpc-la: 4207
+setter: Md. Arifuzzaman Arif
+thanks:
+    - Abdullah-al-Mahmud (Satej)
+    - Rujia Liu
+    - Sohel Hafiz
+contests:
+    - The 2008 ACM Asia Programming Contest - Dhaka Site
+summary: >
+    For a list of integers, a $K$-peak line chart is defined as a plotting
+    of a subset of the integers, such that the resulting chart has exactly
+    $K$ peaks (points that strictly higher or lower than its two
+    neighbours). Calculate the total number of distinct $K$-peak charts for
+    a given ordered set.

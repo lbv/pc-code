@@ -65,6 +65,7 @@ struct Bit {
 	void init(int N) { n=N; Clr(f); }
 	void add(int i, BitT v) { while (i <= n) { f[i] += v; i += GetFS(i); } }
 	BitT query(int i) { BitT r = 0; for (;i; ClrFS(i)) r += f[i]; return r; }
+	BitT query(int from, int to) { return query(to) - query(from - 1); }
 };
 
 

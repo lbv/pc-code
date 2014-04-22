@@ -1,11 +1,13 @@
 //
 // Number Theory
 //
+
+// Prime sieve
 #define IsComp(n)  (_c[n>>6]&(1<<((n>>1)&31)))
 #define SetComp(n) _c[n>>6]|=(1<<((n>>1)&31))
 const int MAXP	 = 46341;  // sqrt(2^31)
-const int SQRP	 =	 216;  // sqrt(MAX)
-const int MAX_NP =	5435;  // 1.26 * MAXP/log(MAXP)
+const int SQRP	 = 216;    // sqrt(MAX)
+const int MAX_NP = 5435;   // 1.26 * MAXP/log(MAXP)
 int _c[(MAXP>>6)+1];
 int primes[MAX_NP];
 int nprimes;

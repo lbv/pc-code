@@ -1,0 +1,14 @@
+title: The Great Escape
+keywords:
+    - max flow
+annotations:
+    - boolean output
+judges:
+    lightoj: 1405
+similar: uva-563
+setter: Jane Alam Jan
+thanks: S. M. Ijaz-ul-Amin Chowdhury
+summary: >
+    Given a rectangular grid with some marked cells, determine if it's
+    possible to draw paths from each marked cell out of the grid, without
+    crossing paths.

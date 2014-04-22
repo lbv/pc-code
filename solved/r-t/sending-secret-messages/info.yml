@@ -1,0 +1,11 @@
+title: Sending Secret Messages
+keywords:
+    - max flow
+    - min cost
+judges:
+    lightoj: 1404
+setter: Jane Alam Jan
+summary: >
+    A classic setup of the max-flow/min-cost problem. Given an undirected
+    graph with capacities and costs, find the minimum cost to send $P$ flow
+    from a source to a sink.

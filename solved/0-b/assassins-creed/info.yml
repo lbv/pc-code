@@ -1,0 +1,15 @@
+title: Assassin's Creed
+keywords:
+    - dynamic programming
+    - dfs
+    - bitwise calculations
+judges:
+    lightoj: 1406
+setter: Muhammad Rifayat Samee
+thanks:
+    - S. M. Ijaz-ul-Amin Chowdhury
+    - Jane Alam Jan
+    - Momontho Mashak Monmoy
+summary: >
+    Given a directed graph, find the minimum number of vertex-disjoint paths
+    necessary to completely cover it.

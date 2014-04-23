@@ -1,0 +1,12 @@
+title: Spiral Tap
+keywords:
+    - ad-hoc
+    - grid
+judges:
+    uva: 10920
+setter: David Deharbe
+summary: >
+    The cells in a square grid (with an odd number of rows/columns) are
+    numbered from 1, starting in the center, and moving in a spiraling
+    fashion. Given the "spiral" number of a cell, translate it into regular
+    *row, column* coordinates.

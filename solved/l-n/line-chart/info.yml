@@ -1,6 +1,7 @@
 title: Line Chart
 keywords:
     - binary indexed tree
+    - dynamic programming
 judges:
     uva: 12141
     lightoj: 1402

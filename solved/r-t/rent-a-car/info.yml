@@ -1,0 +1,23 @@
+title: Rent a Car
+keywords:
+    - max flow
+    - min cost
+judges:
+    uva: 12433
+    lightoj: 1409
+setter: Jane Alam Jan
+thanks:
+    - Antony Stabile
+    - Derek Kisman
+contests:
+    - ACM ICPC World Finals Warmup 2012
+summary: >
+    A car rental business has to satisfy a number of requests. A certain
+    number of requests for cars are received on a number of days. To satisfy
+    a request, you must provide on that day either a brand new car, or a
+    used car that has been serviced. You know about a number of car dealers,
+    and car servicing places; for each dealer you know the amount of cars
+    and their prices, and from the servicing locals you know their prices
+    and how long it takes them to service a car.
+
+    Find the minimum cost to satisfy all requests.

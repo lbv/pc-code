@@ -1,0 +1,21 @@
+title: Save the Trees
+keywords:
+    - dynamic programming
+    - segment tree
+annotations:
+    - large input
+judges:
+    uva: 12440
+    lightoj: 1415
+setter: Jane Alam Jan
+thanks:
+    - Md. Mahbubul Hasan
+    - Md. Arifuzzaman Arif
+contests:
+    - ACM ICPC World Finals Warmup 2012
+summary: >
+    Trees are identified by a couple of integers, denoting their *type* and
+    *height*. A group of trees can be formed by consecutive trees all of
+    different types. The price of a group is equal to the height of the
+    tallest tree in that group. Given a list of trees, determine the least
+    cost possible for all the trees.

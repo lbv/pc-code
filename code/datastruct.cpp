@@ -72,66 +72,70 @@ struct Bit {
 //
 // Segment Tree
 //
-#define LOGN 21  // 1 + ceil(log2(MAXN))
-struct SegTree {
+#define TreeIsLeaf (a == b)
+#define TreeIsOut  (j < a || b < i)
+#define TreeIsIn   (i <= a && b <= j)
+#define TreeLeft   2*x, a, (a+b)/2
+#define TreeRight  2*x+1, (a+b)/2+1, b
+
+#define Tree  (T[x])
+#define Left  (T[2*x])
+#define Right (T[2*x+1])
+
+#define LOGN 19  // 1 + ceil(log2(MAXN))
+struct SegTreeH {
 	struct Node {
-		int v;	 // tree value
-		bool u;  // requires update
+		int i;  // some value
+		int p;  // propagation
 	};
 
 	Node T[1 << LOGN];
 	int n;
 
-	void init(int N) { n = N; tree_init(1, 0, n-1); }
-	void tree_init(int x, int a, int b) {
-		T[x].u = false;
-		if (a == b) { T[x].v = 1; return; }
-		int lt = 2*x, rt = lt + 1, md = (a+b)/2;
-		tree_init(lt, a, md);
-		tree_init(rt, md + 1, b);
-		T[x].v = T[lt].v + T[rt].v;
+	void init(int N) { n = N; init(1, 0, n-1); }
+	void init(int x, int a, int b) {
+		Tree.i = Tree.p = -1;
+		if (TreeIsLeaf) return;
+		init(TreeLeft);
+		init(TreeRight);
 	}
 
 	void propagate(int x, int a, int b) {
-		if (! T[x].u) return;
-		T[x].v = 0;
-		if (a != b) {
-			int lt = 2*x, rt = lt + 1;
-			T[lt].u = T[rt].u = true;
-		}
-		T[x].u = false;
+		if (Tree.p < 0) return;
+		Tree.i = Tree.p;
+		if (! TreeIsLeaf)
+			Left.p = Right.p = Tree.p;
+		Tree.p = -1;
 	}
 
-	void update(int i, int j, int v) { tree_update(i, j, v, 1, 0, n-1); }
-	void tree_update(int i, int j, int v, int x, int a, int b) {
+	void update(int i, int j, int v) { update(i, j, v, 1, 0, n-1); }
+	void update(int i, int j, int v, int x, int a, int b) {
 		propagate(x, a, b);
-		if (j < a || i > b) return;
-		if (a == b) { T[x].v += v; return; }
-		int lt = 2*x, rt = lt + 1, md = (a+b)/2;
-		if (a >= i && b <= j) {
-			T[x].v += v * (b - a + 1);
-			T[lt].u += v;
-			T[rt].u += v;
+		if (TreeIsOut) return;
+		if (TreeIsLeaf) { Tree.i = v; return; }
+
+		if (TreeIsIn) {
+			Tree.i = v;
+			Left.p = Right.p = v;
 			return;
 		}
-		tree_update(i, j, v, lt, a, md);
-		tree_update(i, j, v, rt, md + 1, b);
-		T[x].v = T[rt].v + T[lt].v;
+		update(i, j, v, TreeLeft);
+		update(i, j, v, TreeRight);
+		Tree.i = Right.i;
 	}
 
-	int query(int i, int j) { return tree_query(i, j, 1, 0, n-1); }
-	int tree_query(int i, int j, int x, int a, int b) {
-		if (j < a || i > b) return -1;
+	int query(int i, int j) { return query(i, j, 1, 0, n-1); }
+	int query(int i, int j, int x, int a, int b) {
+		if (TreeIsOut) return -1;
 		propagate(x, a, b);
-		if (a >= i && b <= j) return T[x].v;
-		int lt = 2*x, rt = lt + 1, md = (a+b)/2;
-		int q1 = tree_query(i, j, lt, a, md);
-		int q2 = tree_query(i, j, rt, md + 1, b);
-		if (q1 < 0) return q2;
-		if (q2 < 0) return q1;
-		return A[q1] <= A[q2] ? q1 : q2;
+		if (TreeIsIn) return Tree.i;
+		int q1 = query(i, j, TreeLeft);
+		int q2 = query(i, j, TreeRight);
+		return max(q1, q2);
 	}
+
 };
+
 
 //
 // R-Tree for 2D matrices

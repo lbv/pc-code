@@ -4,7 +4,7 @@
 struct Reader {
     int b; Reader() { read(); }
     void read() { b = getchar_unlocked(); }
-    void skip() { while (b >= 0 && b <= 32) read(); }
+    void skip() { while (0 <= b && b <= 32) read(); }
 
     u32 next_u32() {
         u32 v=0; for (skip(); 48<=b&&b<=57; read()) v = 10*v+b-48; return v; }

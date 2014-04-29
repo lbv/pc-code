@@ -8,7 +8,7 @@
 using namespace std;
 
 
-#if 1
+#if 0
 #define MAXT   20
 #define MAXN   10000
 #define MAXM   10000
@@ -18,7 +18,7 @@ using namespace std;
 #define MAXALL 100000
 #endif
 
-#if 0
+#if 1
 #define MAXT   20
 #define MAXN   8
 #define MAXM   12

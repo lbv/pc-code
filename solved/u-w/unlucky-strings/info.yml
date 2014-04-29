@@ -1,0 +1,11 @@
+title: Unlucky Strings
+keywords:
+    - KMP
+    - matrix exponentiation
+judges:
+    lightoj: 1268
+setter: Jane Alam Jan
+summary: >
+    Given a set of characters, a string $S$ of length $\leq 50$ and an
+    integer $n \leq 10^9$, calculate the total number of strings formed from
+    the given alphabet, of length $n$, which don't have the contain $S$.

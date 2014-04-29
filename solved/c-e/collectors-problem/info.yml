@@ -1,0 +1,11 @@
+title: Collectors Problem
+keywords:
+    - max flow
+judges:
+    uva: 10779
+setter: Adrian Kuegel
+summary: >
+    You are to trade stickers with a group of people. They will trade
+    stickers only with you, and will trade only if you give them a sticker
+    they don't have and you ask for a sticker they have more than once.
+    Determine the maximum number of different stickers you can collect.

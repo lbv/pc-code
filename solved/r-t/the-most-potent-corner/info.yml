@@ -1,0 +1,14 @@
+title: The Most Potent Corner
+keywords:
+    - bitwise calculations
+    - ad-hoc
+annotations:
+    - underspecified
+judges:
+    uva: 10264
+setter: Sergey Karpovich
+summary: >
+    Consider $N$-dimensional unit "cubes" (with $2 \leq N < 15$). Every
+    corner has a weight, and the potency of a corner is defined as the sum
+    of weights of all its neighbours. Find the greatest sum of potencies of
+    two neighbour corners.

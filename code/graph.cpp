@@ -36,7 +36,7 @@ struct Graph {
 	int next[MAX_EDGES];
 	int adj[MAX_VERT];
 	int n, m;
-	Graph() {}
+
 	void init(int N) { n = N, m = 0; Neg(adj); }
 
 	void add(int u, const Edge &e) { next[m]=adj[u], adj[u]=m, edges[m++]=e; }
@@ -120,6 +120,65 @@ struct Graph {
 
 
 	//
+	// Strongly Connected Components
+	//
+	int nscc, nm;
+	int scc[MAX_VERT];
+	int scc_first[MAX_VERT];
+	int scc_next[MAX_VERT];
+	// int scc_size[MAX_VERT];
+	void init_scc() { nscc = nm = 0; Neg(scc_first); }
+	void add_scc_element(int v) {
+		scc_next[nm] = scc_first[nscc];
+		scc_first[nscc] = nm;
+		scc[nm++] = v;
+		// ++scc_size[nscc];
+	}
+
+	//
+	// Kosaraju's SCC algorithm
+	//
+	int stk[MAX_VERT];
+	int stk_top;
+	bool vis[MAX_VERT];
+
+	Edge redges[MAX_EDGES];
+	int rnext[MAX_EDGES];
+	int radj[MAX_VERT];
+	int rm;
+	void radd(int u, const Edge &e) {
+		rnext[rm]=radj[u], radj[u]=rm, redges[rm++]=e; }
+	void dfs(int v) {
+		vis[v] = true;
+		for (int i = adj[v]; i >= 0; i = next[i]) {
+			int u = edges[i].v;
+			radd(u, Edge(v));
+			if (! vis[u]) dfs(u);
+		}
+		stk[stk_top++] = v;
+	}
+	void dfs2(int v) {
+		vis[v] = true;
+		add_scc_element(v);
+		for (int i = radj[v]; i >= 0; i = rnext[i]) {
+			int ev = redges[i].v;
+			if (! vis[ev]) dfs2(ev);
+		}
+	}
+	void kosaraju() {
+		rm = stk_top = 0;
+		init_scc();
+		Neg(radj);
+		Clr(vis);
+		for (int v = 0; v < n; ++v) if (! vis[v]) dfs(v);
+		Clr(vis);
+		while (stk_top > 0) {
+			int v = stk[--stk_top];
+			if (! vis[v]) { dfs2(v); ++nscc; }
+		}
+	}
+
+	//
 	// Tarjan for Strongly Connected Components
 	//
 	bool flg[MAX_VERT];
@@ -128,11 +187,6 @@ struct Graph {
 	int stk[MAX_VERT];
 	int s_top;
 	int cnt;
-	int nscc, nm;
-	int scc[MAX_VERT];
-	int scc_first[MAX_VERT];
-	int scc_next[MAX_VERT];
-	// int scc_size[MAX_VERT];
 
 	void visit(int v) {
 		idx[v] = low[v] = cnt++;
@@ -151,17 +205,13 @@ struct Graph {
 		for (int u = -1; u != v;) {
 			u = stk[--s_top];
 			flg[u] = false;
-			scc_next[nm] = scc_first[nscc];
-			scc_first[nscc] = nm;
-			// ++scc_size[nscc];
-			scc[nm++] = u;
+			add_scc_element(u);
 		}
 		++nscc;
 	}
 	void tarjan_scc() {
-		cnt = 1, nscc = nm = s_top = 0;
-		Neg(scc_first); Clr(flg); Clr(low);
-		// Clr(scc_size);
+		cnt = 1, s_top = 0;
+		init_scc(); Clr(flg); Clr(low);
 		for (int i = 0; i < n; ++i) if (low[i] == 0) visit(i);
 	}
 	int vcomp[MAX_VERT];
@@ -637,40 +687,6 @@ struct Graph {
 		}
 	}
 
-	// Kosaraju's algorithm
-	struct Kos {
-		Graph &g; IVV sccs; IV scc; IK vs; BV vis; ELV radj;
-		Kos(Graph &G) : g(G) { vis = BV(g.n); radj.resize(g.n); }
-		void dfs(int v) {
-			vis[v] = true;
-			For (EL, ep, g.adj[v]) {
-				Edge e = *ep;
-				int u = e.v; e.v = v;
-				radj[u].push_back(e);
-				if (! vis[u]) dfs(u);
-			}
-			vs.push(v);
-		}
-		void dfs2(int v) {
-			vis[v] = true;
-			scc.push_back(v);
-			For (EL, e, radj[v]) if (! vis[e->v]) dfs2(e->v);
-		}
-	};
-	void kosaraju_scc(IVV &sccs) {
-		Kos k(*this);
-		for (int v=0; v<n; ++v) if (! k.vis[v]) k.dfs(v);
-		k.vis = BV(n);
-		while (! k.vs.empty()) {
-			int v = k.vs.top(); k.vs.pop();
-			if (k.vis[v]) continue;
-			k.scc = IV();
-			k.dfs2(v);
-			k.sccs.push_back(k.scc);
-		}
-		sccs = k.sccs;
-	}
-
 
 	// Articulations/bridges
 	int low[MAX_V], idx[MAX_V], cnt;
@@ -737,7 +753,10 @@ struct Graph {
 	}
 };
 
-// Shortest paths
+
+//
+// Floyd-Warshall Shortest Paths
+//
 void floyd_warshall(int **g, int N)
 {
 	for (int k = 0; k < N; k++)
@@ -749,34 +768,36 @@ void floyd_warshall(int **g, int N)
 			}
 }
 
+
 //
 // 2-SAT
 //
 struct TwoSat {
 	Graph g;
 	int n;
-	TwoSat(int N) : n(N) { g = Graph(2*N); }
+	int sol[MAX_VERT];
+	int nsol;
+	int vscc[MAX_VERT];
+
+	void init(int N) { n = N, g.init(2*n); }
 	void add_cons(int a, bool ta, int b, bool tb) {
 		int p = val(a, ta), q = val(b, tb);
-		g.add(neg(p), q); g.add(neg(q), p);
+		g.add(neg(p), Edge(q)); g.add(neg(q), Edge(p));
 	}
 	int val(int v, bool t) { return 2*v + (t ? 0 : 1); }
 	int neg(int p) { return p ^ 1; }
-	bool solve(IV &sol) {
-		IVV sccs;
-		g.kosaraju_scc(sccs);
-		IV vscc(n);
-		sol.clear();
-		for (int i = 0, I = sccs.size(); i < I; ++i) {
-			for (int j=0, J=sccs[i].size(); j < J; ++j) {
-				int p = sccs[i][j];
-				int v = p/2;
+	bool solve() {
+		g.kosaraju();
+		Clr(vscc);
+		nsol = 0;
+		for (int i = 0; i < g.nscc; ++i)
+			for (int j = g.scc_first[i]; j >= 0; j = g.scc_next[j]) {
+				int p = g.scc[j], v = p/2;
 				if (vscc[v] == i+1) return false;
 				if (vscc[v] != 0) break;
 				vscc[v] = i+1;
-				if (p & 1) sol.push_back(v);
+				if (p & 1) sol[nsol++] = v;
 			}
-		}
 		return true;
 	}
 };

@@ -1,0 +1,10 @@
+title: Splitting Numbers
+keywords:
+    - beginner
+    - bitwise calculations
+judges:
+    uva: 11933
+setter: Zachary Friggstad
+summary: >
+    Given an integer, form two new integers, by splitting their one bits in
+    binary notation into two.

@@ -1,0 +1,13 @@
+title: Anagrams by Stack
+keywords:
+    - stacks
+    - anagrams
+    - backtracking
+annotations:
+    - underspecified
+judges:
+    uva: 732
+    icpc-la: 5369
+summary: >
+    Given a source string and a target string, determine all possible
+    sequences of stack operations that transform the source into the target.

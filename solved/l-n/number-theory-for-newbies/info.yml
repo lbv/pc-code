@@ -1,5 +1,11 @@
 title: Number Theory for Newbies
-keywords: ad-hoc
+keywords:
+    - ad-hoc
+    - sorting
 judges:
   uva: 11371
 setter: Mak Yan Kei
+summary: >
+    Given an integer, find two numbers $a, b$ that are permutations of the
+    given number, such that $a-b$ is maximum, and then show how this
+    difference is a multiple of 9.

@@ -1,0 +1,15 @@
+title: Containers
+keywords:
+    - LIS
+judges:
+    uva: 1062
+summary: >
+    A group of containers have to be loaded into a group of ships. The ships
+    are loaded i alphabetical order, and a sequence of letters represent the
+    order of arrival of the containers and ships they have to go to. Those
+    containers have to be stacked before loading them into the ships.
+    Determine the minimum number of stacks that have to be formed in order
+    to load all containers as quickly as possible.
+comments: >
+    This is equivalent to a sorting method known as "patience sort", and is
+    in turn related to the LIS problem.

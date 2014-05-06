@@ -1,0 +1,14 @@
+title: Valera and X
+keywords:
+    - beginner
+    - grid
+annotations:
+    - boolean output
+judges:
+    codeforces: 404A
+contests:
+    - Codeforces Round #237 (Div. 2)
+summary: >
+    Given a square grid of letters, determine if all the letters in the two
+    main diagonals are the same, and the rest of cells have a different
+    letter, forming a big X over a uniform background.

@@ -1,0 +1,12 @@
+title: Watermelon
+keywords:
+    - beginner
+annotations:
+    - boolean output
+judges:
+    codeforces: 4A
+contests:
+    - Codeforces Beta Round #4 (Div. 2 Only)
+summary: >
+    Given a positive integer, determine if it's possible to obtain it from
+    the sum of two even integers or not.

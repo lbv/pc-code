@@ -1,0 +1,11 @@
+title: Bit++
+keywords:
+    - beginner
+judges:
+    codeforces: 282A
+contests:
+    - Codeforces Round #173 (Div. 2)
+summary: >
+    Given a sequence of increment/decrement operations over a single
+    variable, calculate the value of this variable after applying all
+    operations.

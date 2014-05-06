@@ -1,0 +1,15 @@
+title: Police Patrol
+keywords:
+    - greedy
+    - median
+annotations:
+    - large input
+judges:
+    codeforces: 427E
+contests:
+    - Codeforces Round #244 (Div. 2)
+summary: >
+    A number of criminals are located in 1-D points, and you have a police
+    car that can carry at mostr $m$ criminals. Determine the minimum
+    distance required to travel back and forth to capture all criminals,
+    placing the police station at some arbitrary (optimal) location.

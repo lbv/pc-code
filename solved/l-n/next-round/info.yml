@@ -1,0 +1,10 @@
+title: Next Round
+keywords:
+    - beginner
+judges:
+    codeforces: 158A
+contests:
+    - VK Cup 2012 Qualification Round 1
+summary: >
+    Given a list of $n$ scores, and a value $k$, find the number of scores
+    that are positive and equal or greater than the $k$-th score.

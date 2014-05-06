@@ -1,0 +1,12 @@
+title: Theatre Square
+keywords:
+    - math
+    - beginner
+judges:
+    codeforces: 1A
+contests:
+    - Codeforces Beta Round #1
+summary: >
+    Given a rectangle of size $n \times m$, find how many squares of size $a
+    \times a$ are necessary to completely cover the rectangle, with their
+    side parallel to the rectangle.

@@ -1,0 +1,13 @@
+title: Checkposts
+keywords:
+    - strongly connected components
+judges:
+    codeforces: 427C
+contests:
+    - Codeforces Round #244 (Div. 2)
+summary: >
+    Given a directed graph, where each vertex has a cost, determine the
+    minimum cost and the number of different ways in which a smallest subset
+    of vertices can be selected, such that the entire graph can be visited
+    through tours from the selected subset of nodes---a tour being a path
+    that starts and ends on the same vertex.

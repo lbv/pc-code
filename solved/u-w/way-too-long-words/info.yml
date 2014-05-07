@@ -1,0 +1,13 @@
+title: Way Too Long Words
+keywords:
+    - beginner
+    - strings
+judges:
+    codeforces: 71A
+contests:
+    - Codeforces Beta Round #65 (Div. 2)
+summary: >
+    A string is "too long" if its length is greater than 10. In that case,
+    the words has to be abbreviated, as in the case of: localization
+    $\rightarrow$ l10n.  Given a list of strings, abbreviate all strings
+    that are too long.

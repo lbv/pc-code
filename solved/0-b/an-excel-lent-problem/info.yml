@@ -1,0 +1,9 @@
+title: An Excel-lent Problem
+keywords:
+    - math
+    - numeric bases
+judges:
+    icpc-la: 3143
+summary: >
+    Given the (row, column) coordinates of a cell in a spreadsheet-like
+    program, convert it into spreadsheet form (e.g. row 1, col 1 is A1).

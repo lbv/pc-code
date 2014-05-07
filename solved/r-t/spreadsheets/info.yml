@@ -1,0 +1,12 @@
+title: Spreadsheets
+keywords:
+    - numeric bases
+    - strings
+judges:
+    codeforces: 1B
+similar: icpc-la-3143
+contests:
+    - Codeforces Beta Round #1
+summary: >
+    Convert back and forth between (row, column) coordinates, and
+    "spreedsheet" coordinates.

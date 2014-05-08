@@ -1,0 +1,11 @@
+title: Prison Transfer
+keywords:
+    - arrays
+judges:
+    codeforces: 427B
+contests:
+    - Codeforces Round #244 (Div. 2)
+summary: >
+    Given an array of $n$ integers, find the number of subsets of $c$
+    consecutive elements inside the array, such that no element exceeds a
+    certain $t$.

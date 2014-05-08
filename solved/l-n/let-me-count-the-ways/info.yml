@@ -1,5 +1,6 @@
 title: Let Me Count the Ways
-keywords: dynamic programming
+keywords:
+    - coin change
+    - classic
 judges:
   uva: 357
-

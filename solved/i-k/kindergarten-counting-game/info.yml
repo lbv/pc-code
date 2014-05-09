@@ -1,6 +1,9 @@
 title: Kindergarten Counting Game
 keywords:
-  - beginner
-  - strings
+    - beginner
+    - strings
 judges:
-  uva: 494
+    uva: 494
+summary: >
+    Count the total number of words in a string. A word is defined as a
+    sequence of uppercase/lowercase letters.

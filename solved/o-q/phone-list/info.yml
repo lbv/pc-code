@@ -1,0 +1,18 @@
+title: Phone List
+keywords:
+    - trie tree
+annotations:
+    - boolean output
+judges:
+    uva: 11362
+    lightoj:
+        id: 1129
+        title: Consistency Checker
+        thanks:
+            - S. M. Ijaz-ul-Amin Chowdhury
+            - Jane Alam Jan
+contests:
+    - Nordic Collegiate Programming Contest NCPC 2007
+summary: >
+    Given a large set of integers, determine if any number happens to be a
+    prefix of another number or not.

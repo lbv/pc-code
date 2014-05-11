@@ -1,0 +1,16 @@
+title: Working Out
+keywords:
+    - dynamic programming
+    - grid
+judges:
+    codeforces: 429B
+contests:
+    - Codeforces Round #245 (Div. 1)
+setter: Chirica Florin
+summary: >
+    Given a rectangular grid filled with integers of size $n \times m$, find
+    the sum of values of two paths, one from $(1, 1)$ to $(n, m)$, and one
+    from $(n, 1)$ to $(1, m)$, such that they are disjoint except for only
+    one cell $(i, j)$, the paths only move right or down, or only move right or
+    up, and the sum is maximised. The value of cell $(i, j)$ must not be
+    part of the sum.

@@ -1,0 +1,16 @@
+title: Balls Game
+keywords:
+    - ad-hoc
+judges:
+    codeforces: 430B
+contests:
+    - Codeforces Round #245 (Div. 2)
+setter: Chirica Florin
+summary: >
+    A sequence of colored balls (identified by integers) is given such that
+    no three consecutive balls have the same color. You have an additional
+    ball, which can place anywhere inside the sequence. If after placing the
+    ball a group of three or more balls of the same color is formed, all the
+    balls in that group disappear, and this produce a chain reaction from
+    the remainding balls. Determine the maximum number of balls that can
+    disappear after placing the extra ball.

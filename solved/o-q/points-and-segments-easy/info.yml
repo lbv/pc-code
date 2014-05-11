@@ -1,0 +1,15 @@
+title: Points and Segments (Easy)
+keywords:
+    - beginner
+annotations:
+    - special judge
+judges:
+    codeforces: 430A
+contests:
+    - Codeforces Round #245 (Div. 2)
+setter: Chirica Florin
+summary: >
+    Given a set of 1D points and segments, determine a way to color all the
+    points (with two colors), such that the difference between the number of
+    points in one color and points in the other color in any segment is
+    never more than one.

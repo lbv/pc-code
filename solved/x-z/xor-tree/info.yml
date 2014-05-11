@@ -1,0 +1,15 @@
+title: Xor-tree
+keywords:
+    - depth first search
+judges:
+    codeforces: 429A
+contests:
+    - Codeforces Round #245 (Div. 1)
+setter: Chirica Florin
+summary: >
+    The nodes in a tree are filled with zeroes or ones. An operation over
+    this tree is defined as selecting a node, and then that node and all
+    its descendants on even-numbered levels (counting from that node) are
+    flipped. Given an initial tree and a goal tree, find the minimum number
+    of operations required to transform the initial tree into the goal, and
+    identify the nodes that have to be selected.

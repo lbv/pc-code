@@ -1,0 +1,11 @@
+title: String Task
+keywords:
+    - beginner
+    - strings
+judges:
+    codeforces: 118A
+contests:
+    - Codeforces Beta Round #89 (Div. 2)
+summary: >
+    Given a string, delete all vowels, insert a dot before each consonant,
+    and replace all uppercase consonants with lowercase letters.

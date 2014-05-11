@@ -1,0 +1,12 @@
+title: Taxi
+keywords:
+    - greedy
+judges:
+    codeforces: 158B
+contests:
+    - VK Cup 2012 Qualification Round 1
+summary: >
+    A set of groups of people is given, and each group consists of 1 to 4
+    people. They need to get a number of taxis, and each taxi can transport
+    at most 4 people. What is the minimum number of taxis required to
+    transport all people without breaking the groups?

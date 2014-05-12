@@ -8,7 +8,7 @@ struct Matrix {
 	MatrixT m[MAX_ROWS][MAX_COLS];
 
 	void init(int R, int C) { r = R, c = C; }
-	void init(int R, int C, MatrixT *v) {
+	void init(int R, int C, const MatrixT *v) {
 		r = R, c = C;
 		for (int i = 0, p = 0; i < r; ++i)
 			for (int j = 0; j < c; ++j)

@@ -1,5 +1,5 @@
 This is my repository of solved problems from online judges such as UVa,
-LightOJ, SPOJ, etc.
+LightOJ, Live Archive, Codeforces, SPOJ, etc.
 
 All of this is released into the public domain; feel free to do whatever you
 want with this.

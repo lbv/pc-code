@@ -1,0 +1,14 @@
+title: Police Recruits
+keywords:
+    - greedy
+judges:
+    codeforces: 427A
+setter: Bidhan Roy
+contests:
+    - Codeforces Round #244 (Div. 2)
+summary: >
+    A sequence of integers is given, representing a series of events. A -1
+    indicates a crime occuring, a positive number indicates a number of
+    police officers recruited. A crime is handled if there is at least one
+    police officer available, and when one officer gets busy, it will remain
+    that way. Determine the total number of crimes that are left unhandled.

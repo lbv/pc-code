@@ -1,0 +1,13 @@
+title: Domino Piling
+keywords:
+    - beginner
+    - math
+judges:
+    codeforces: 50A
+setter: Stepan Gatilov
+contests:
+    - Codeforces Beta Round #47
+summary: >
+    Determine the maximum number of dominoes that can be placed on a board
+    of size $M \times N$, such that no dominoes are placed on top of each
+    other or get outside the board.

@@ -1,0 +1,15 @@
+title: Array
+keywords:
+    - arrays
+    - ad-hoc
+annotations:
+    - special judge
+judges:
+    codeforces: 300A
+setter: John
+contests:
+    - Codeforces Round #181 (Div. 2)
+summary: >
+    Given an array of integers, partition the array in 3 groups, so that the
+    product of all numbers from each set produce a negative number, a
+    positive number, and zero, respectively.

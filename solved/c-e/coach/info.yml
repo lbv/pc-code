@@ -1,0 +1,14 @@
+title: Coach
+keywords:
+    - union-find
+annotations:
+    - special judge
+judges:
+    codeforces: 300B
+contests:
+    - Codeforces Round #181 (Div. 2)
+summary: >
+    Given a set of $n$ elements ($n$ multiple of 3), and a set of rules,
+    determine if it's possible to partition the elements in groups of 3, and
+    if it is, print a valid arrangement. Each rule describes two elements
+    that must be in the same group.

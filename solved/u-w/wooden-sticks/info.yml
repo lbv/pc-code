@@ -1,0 +1,12 @@
+title: Wooden Sticks
+keywords:
+    - lis
+judges:
+    spoj: MSTICK
+summary: >
+    A machine has to process a set of $n$ sticks, represented as 2-integer
+    tuples. A machine can handle a sequence of sticks in one pass, as long
+    as for any pair of tuples $(l_i, w_i), (l_j, w_j)$ with $i<j$, it holds
+    that $l_i \le l_j$ and $w_i \le w_j$. Determine the minimum number of
+    passes the machine has to do to handle all sticks, if you can arrange
+    the sticks in any order.

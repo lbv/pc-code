@@ -199,7 +199,7 @@ void merge_sort(IVi lo, IVi hi)
 // element of seq in ls
 typedef int LisT;
 LisT I[MAXN + 1];
-int lis(LisT *seq, int n, LisT *ls)
+int lis(const LisT *seq, int n, LisT *ls)
 {
 	int len = 0;
 	for (int i = 0; i < n; ++i) {

@@ -1,0 +1,15 @@
+title: Football Kit
+keywords:
+    - beginner
+judges:
+    codeforces: 432B
+contests:
+    - Codeforces Round #247 (Div. 2)
+summary: >
+    A set of $n$ football teams have matches against each other. Each team
+    has two kits: one for home games, and one for visitor games. All teams play
+    two matches against all other teams, exactly one mhome and one visitor
+    match against each team. Two teams can't play with the same kit color,
+    so if that situation happens, the visiting team usus its home kit. Given
+    the colors of the kits for all $n$ teams, count how many times a team
+    uses its home and visitor kits.

@@ -1,0 +1,11 @@
+title: Choosing Teams
+keywords:
+    - beginner
+judges:
+    codeforces: 432A
+contests:
+    - Codeforces Round #246 (Div. 2)
+summary: >
+    From a set of people, determine the maximum number of teams of three
+    people can be chosen, such that all people pass a simple elegibility
+    rule.

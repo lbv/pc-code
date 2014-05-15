@@ -1,0 +1,15 @@
+title: Prime Swaps
+keywords:
+    - number theory
+    - arrays
+annotations:
+    - special judge
+judges:
+    codeforces: 432C
+contests:
+    - Codeforces Round #246 (Div. 2)
+summary: >
+    Given a permutation of the first $n$ positive integers, given as $a[1],
+    a[2], \ldots, a[n]$, find a valid way to sort the list by choosing pairs
+    of indices $i,j$ and swapping $a[i], a[j]$, such that $j-i+1$ is always
+    a prime number, and the total number of swaps doesn't exceed $5n$.

@@ -1,0 +1,13 @@
+title: Square Tiling
+keywords:
+    - greedy
+    - grid
+judges:
+    codeforces: 432E
+contests:
+    - Codeforces Round #246 (Div. 2)
+summary: >
+    Given a rectangle grid of size $n \times m$, you have to fill its cells
+    with differents letters, such that each connected group of the same
+    letter has a square shape, and the total concatenation of all lines in
+    the grid form the lowest lexicographical string possible.

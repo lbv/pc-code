@@ -63,7 +63,7 @@ struct SuffixArray {
 	 * pre-cond: s[n]=s[n+1]=s[n+2] = 0, n >= 2
 	 */
 	void skew(const int *S, int *SA, int n, int K) {
-		int n0 = (n + 2) / 3, n1 = (n + 1) / 3, n2 = n / 3, n02 = n0 + n2;
+		int n0 = (n+2) / 3, n1 = (n+1) / 3, n2 = n / 3, n02 = n0 + n2;
 
 		int *S12 = pp; pp += n02 + 3;
 		int *SA12 = pp; pp += n02 + 3;
@@ -80,12 +80,12 @@ struct SuffixArray {
 		radix_pass(S12, SA12, S + 0, n02, K);
 
 		int name = 0;
-		int trip[3];
-		memset(trip, -1, sizeof(trip));
+		int tri[3];
+		memset(tri, -1, sizeof(tri));
 		for (int i = 0; i < n02; ++i) {
-			if (memcmp(S + SA12[i], trip, sizeof(trip)) != 0) {
+			if (memcmp(S + SA12[i], tri, sizeof(tri)) != 0) {
 				++name;
-				memcpy(trip, S + SA12[i], sizeof(trip));
+				memcpy(tri, S + SA12[i], sizeof(tri));
 			}
 			int off = SA12[i] % 3 == 1 ? 0 : n0;
 			S12[SA12[i] / 3 + off] = name;

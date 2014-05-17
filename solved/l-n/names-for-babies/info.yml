@@ -1,0 +1,11 @@
+title: Names for Babies
+keywords:
+    - string suffix
+judges:
+    lightoj: 1314
+setter: Jane Alam Jan
+contests:
+    - LightOJ Team Practice Contest 2011.08.11
+summary: >
+    Given a string $S$ and two integers $p, q$, find the total number of
+    distinct substrings of size $p \le s \leq q$ in $S$.

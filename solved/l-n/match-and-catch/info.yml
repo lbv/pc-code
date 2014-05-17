@@ -1,0 +1,12 @@
+title: Match & Catch
+keywords:
+    - string suffix
+judges:
+    codeforces: 427D
+setter: Shiplu Hawlader
+contests:
+    - Codeforces Round #244 (Div. 2)
+summary: >
+    Given two strings $s1, s2$, find the length of the shortest possible
+    string $s$, such that $s$ is a substring of both $s1, s2$, and $s$
+    occurs only once in those two strings.

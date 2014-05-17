@@ -1,0 +1,11 @@
+title: Prefixes and Suffixes
+keywords:
+    - string suffix
+judges:
+    codeforces: 432D
+contests:
+    - Codeforces Round #246 (Div. 2)
+summary: >
+    A string $s$ is given, with length $n$. For all $1 \le i \le n$,
+    and if a string of length $i$ occurs as a prefix and a suffix of $s$,
+    determine the total number of times such substring occurs in $s$.

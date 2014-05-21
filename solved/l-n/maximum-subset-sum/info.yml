@@ -1,0 +1,9 @@
+title: Maximum Subset Sum
+keywords:
+    - bitwise manipulations
+    - gaussian elimination
+judges:
+    lightoj: 1272
+related: spoj-XMAX
+summary: >
+    Find the maximum XOR value for any subset of a group of $N$ integers.

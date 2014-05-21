@@ -1,0 +1,14 @@
+title: Shower Line
+keywords:
+    - beginner
+    - brute force
+    - permutations
+    - grid
+judges:
+    codeforces: 431B
+contests:
+    - Codeforces Round #247 (Div. 2)
+summary: >
+    A certain function $f$ is defined from summing values taken from a
+    matrix of size $5 \times 5$. Given the values of the matrix, calculate
+    the maximum possible value for $f$.

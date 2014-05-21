@@ -1,0 +1,11 @@
+title: XOR Maximization
+keywords:
+    - bitwise manipulations
+    - gaussian elimination
+judges:
+    spoj: XMAX
+setter: Gustav Matula
+summary: >
+    Given a list of integers, find the maximum XOR value possible of any
+    subset of the original list. The XOR value is the result of reducing the
+    subset using the XOR operator.

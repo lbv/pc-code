@@ -1,0 +1,14 @@
+title: k-Tree
+keywords:
+    - dynamic programming
+judges:
+    codeforces: 431C
+contests:
+    - Codeforces Round #247 (Div. 2)
+summary: >
+    A k-tree is defined as an infinite tree where each node has exactly $k$
+    children, and each edge has a weight. For a given node, the weights of
+    all the edges connected to its children are: $1, 2, 3, \ldots, k$. Given
+    three values: $n, k, d$, determine the total number of paths from the
+    root that have a total weight of exactly $n$, and where at least one
+    edge has a weight $\ge d$.

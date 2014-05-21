@@ -1,0 +1,11 @@
+title: Black Square
+keywords:
+    - beginner
+judges:
+    codeforces: 431A
+contests:
+    - Codeforces Round #247 (Div. 2)
+summary: >
+    Four values $a_1, a_2, a_3, a_4$ are given and a string formed by the
+    alphabet ${1, 2, 3, 4}$, describing a series of values from the $a$ set.
+    Calculate the total sum deduced from the string.

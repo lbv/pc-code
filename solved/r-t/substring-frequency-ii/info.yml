@@ -1,0 +1,12 @@
+title: Substring Frequency (II)
+keywords:
+    - string suffix
+annotations:
+    - large input
+judges:
+    lightoj: 1427
+setter: Jane Alam Jan
+summary: >
+    Given a possibly large string $T$, and a number of other, not as large
+    strings, determine how many times each string occurs as a substring of
+    $T$.

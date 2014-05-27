@@ -27,10 +27,8 @@ struct KMP {
 //
 // Suffix Array
 //
-const int MAXK = 6667;  // max(MAXLEN*2/3, size of alphabet)
-const int MAXP = 3 * (3 * MAXLEN + 30);
+const int MAXP = 3 * (3 * MAXLEN + 30) + (MAXLEN + 2)/3 + MAXLEN/3;
 struct SuffixArray {
-	int c[MAXK + 1];
 	int pool[MAXP];
 	int *pp;
 
@@ -42,6 +40,7 @@ struct SuffixArray {
 	// stably sort a[0..n-1] to b[0..n-1] with keys in [0:k] from r
 	void radix_pass(const int *a, int *b, const int *r, int n, int k)
 	{
+		int *c = pp;
 		memset(c, 0, sizeof(int)*(k+1));
 		for (int i = 0; i < n; ++i) ++c[r[a[i]]];
 		for (int i = 0, sum = 0; i <= k; ++i) {
@@ -72,8 +71,7 @@ struct SuffixArray {
 		S12[n02] = S12[n02 + 1] = S12[n02 + 2] = 0;
 		SA12[n02] = SA12[n02 + 1] = SA12[n02 + 2] = 0;
 
-		for (int i = 1, j = 0, I = n+n0-n1; i < I; ++i)
-			if (i % 3 != 0) S12[j++] = i;
+		for (int i = 1, j = 0; i < n+n0-n1; ++i) if (i % 3 != 0) S12[j++] = i;
 
 		radix_pass(S12, SA12, S + 2, n02, K);
 		radix_pass(SA12, S12, S + 1, n02, K);
@@ -102,7 +100,7 @@ struct SuffixArray {
 		radix_pass(S0, SA0, S, n0, K);
 
 #define GetI() (SA12[t] < n0 ? SA12[t]*3 + 1 : (SA12[t] - n0)*3 + 2)
-		for (int p = 0, t = n0 - n1, k = 0; k < n; k++) {
+		for (int p = 0, t = n0 - n1, k = 0; k < n; ++k) {
 			int i = GetI();
 			int j = SA0[p];
 
@@ -111,10 +109,10 @@ struct SuffixArray {
 				leq(S[i], S[i + 1], S12[SA12[t] - n0 + 1],
 					S[j], S[j + 1], S12[j / 3 + n0])) {
 				SA[k] = i;
-				if (++t == n02) for (++k; p < n0; ++k) SA[k] = SA0[p++];
+				if (++t == n02) for (++k; p < n0; ) SA[k++] = SA0[p++];
 			} else {
 				SA[k] = j;
-				if (++p == n0) for (++k; t < n02; ++t, ++k) SA[k] = GetI();
+				if (++p == n0) for (++k; t < n02; ++t) SA[k++] = GetI();
 			}
 		}
 	}
@@ -137,6 +135,7 @@ struct SuffixArray {
 		skew(si, sa, n, k);
 	}
 
+	// Calculates the Longest Common Prefix between consecutive suffixes
 	int rank[MAXLEN];
 	int lcp[MAXLEN];
 	void calc_lcp(const char *s, int n) {

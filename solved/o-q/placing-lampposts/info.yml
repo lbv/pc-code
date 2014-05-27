@@ -1,0 +1,17 @@
+title: Placing Lampposts
+keywords:
+    - dynamic programming
+    - dfs
+judges:
+    uva: 10859
+    lightoj: 1230
+setter: Sohel Hafiz
+thanks: Per Austrin
+contests:
+    - Next Generation Contest 1
+summary: >
+    A tree is given, where nodes represent junctions and the edges roads.
+    All the roads have to receive light froma lamppost and lampposts can
+    only be placed in junctions. Determine the minimum number of lampposts
+    required to cover all edges, and at the same time maximising the number
+    of edges receiving light from two lampposts.

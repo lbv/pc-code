@@ -3,7 +3,7 @@ keywords:
   - beginner
   - strings
 annotations:
-  assumptions
+  - underspecified
 judges:
   uva: 499
 summary: >

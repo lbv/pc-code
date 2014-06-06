@@ -1,0 +1,16 @@
+title: Superb Sequence
+keywords:
+    - dynamic programming
+    - strings
+judges:
+    uva: 12441
+    lightoj: 1416
+setter: Anindya Das
+thanks: Jane Alam Jan
+contests:
+    - ACM ICPC World Finals Warmup 2012
+summary: >
+    Given three strings, $A, B, C$, find the total number of distinct
+    shortest strings that are super-sequences of $A$ and $B$, and a
+    sub-sequence of $C$, and identify the lexicographically lowest of those
+    strings.

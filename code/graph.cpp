@@ -127,7 +127,7 @@ struct Graph {
 	int scc_first[MAX_VERT];
 	int scc_next[MAX_VERT];
 	// int scc_size[MAX_VERT];
-	void init_scc() { nscc = nm = 0; Neg(scc_first); }
+	void init_scc() { nscc = nm = 0; Neg(scc_first); /* Clr(scc_size); */ }
 	void add_scc_element(int v) {
 		scc_next[nm] = scc_first[nscc];
 		scc_first[nscc] = nm;

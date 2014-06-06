@@ -1,0 +1,14 @@
+title: Forwarding Emails
+keywords:
+    - strongly connected components
+judges:
+    uva: 12442
+    lightoj: 1417
+setter: Zachary J. Wheeler
+thanks: Jane Alam Jan
+contests:
+    - ACM ICPC World Finals Warmup 2012
+summary: >
+    A directed graph is given, where each node has one and only one outgoing
+    edge into another node. Choose the node from which the maximum number of
+    nodes can be reached.

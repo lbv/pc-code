@@ -1,0 +1,14 @@
+title: Strings
+keywords:
+    - dynamic programming
+    - strings
+judges:
+    uva: 11081
+    lightoj:
+        id: 1420
+        title: Subsequences Forming Strings
+setter: Abdullah-al-Mahmud
+thanks: Md. Kamruzzaman
+summary: >
+    Given three strings, $A, B, C$, count the total number of ways in which
+    $C$ can be formed by combining subsequences of $A$ and $B$.

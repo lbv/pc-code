@@ -1,0 +1,14 @@
+title: I Love Strings!!
+keywords:
+    - string suffix
+    - binary search
+annotations:
+    - large input
+    - boolean output
+judges:
+    uva: 10679
+setter: Mohammad Sajjad Hossain
+related: lightoj-1427
+summary: >
+    Given a large string $S$, and a number of queries, each formed by an
+    arbitrary string, determine if the query string is a substring of $S$.

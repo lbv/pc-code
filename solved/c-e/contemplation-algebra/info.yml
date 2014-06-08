@@ -11,7 +11,7 @@ thanks: Mohammad Sajjad Hossain
 contests:
     - UVa Local and May Monthly Contest
 summary: >
-    Given the values of $a + b$ and $ab4 and $n$, calculate $a^n + b^n$.
+    Given the values of $a + b$, $ab$ and $n$, calculate $a^n + b^n$.
 comments: >
     LightOJ's version of the problem statement is much clearer, indicating
     how the values of $a$ and $b$ don't have to be real numbers, and that

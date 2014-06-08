@@ -203,6 +203,36 @@ int josephus(int n, int k)
 	return (josephus(n-1, k) + k) % n;
 }
 
+//
+// Max Area Rectangle in an Histogram
+//
+typedef int AreaT;
+AreaT areas[MAXN];
+int stk[MAXN], stk_top;
+AreaT histo_area(AreaT *h, int n)
+{
+	stk_top = 0;
+	for (int i = 0; i < n; ++i) {
+		while (stk_top > 0 && h[ stk[stk_top-1] ] >= h[i]) --stk_top;
+		int bound = stk_top > 0 ? stk[stk_top - 1] : -1;
+		areas[i] = i - bound;
+		stk[stk_top++] = i;
+	}
+
+	stk_top = 0;
+	for (int i = n-1; i >= 0; --i) {
+		while (stk_top > 0 && h[ stk[stk_top-1] ] >= h[i]) --stk_top;
+		int bound = stk_top > 0 ? stk[stk_top - 1] : n;
+		areas[i] += bound - i - 1;
+		stk[stk_top++] = i;
+	}
+
+	AreaT ans = 0;
+	for (int i = 0; i < n; ++i)
+		if (h[i] > 0 && areas[i]*h[i] > ans) ans = areas[i]*h[i];
+	return ans;
+}
+
 
 //
 // Stable Marriage Problem

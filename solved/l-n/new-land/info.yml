@@ -1,0 +1,16 @@
+title: New Land
+keywords:
+    - histogram area
+    - grids
+annotations:
+    - large input
+judges:
+    uva: 11871
+    lightoj: 1424
+setter: Jane Alam Jan
+thanks: Md. Towhidul Islam Talukder
+contests:
+    - Anupam Bhattacharjee Memorial Contest
+summary: >
+    A matrix of zeros and ones is given. Determine the area of the largest
+    rectangular area of only ones.

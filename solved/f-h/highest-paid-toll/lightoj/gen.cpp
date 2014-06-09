@@ -3,53 +3,59 @@
 #include <ctime>
 
 
+#if 0
 #define MAXT 10
-
-/*
 #define MAXN 10000
 #define MAXM 50000
 #define MAXP 1000000
 #define MAXC 100000
-*/
+#endif
 
+#if 1
+#define MAXT 20
 #define MAXN 10
-#define MAXM 25
+#define MAXM 15
 #define MAXP 500
 #define MAXC 50
+#define NL 1
+#endif
 
 
 void test_case()
 {
-    int N = rand() % (MAXN - 1) + 2;
-    int M = rand() % MAXM + 1;
+#if NL
+	puts("");
+#endif
+	int N = rand() % (MAXN - 1) + 2;
+	int M = rand() % MAXM + 1;
 
-    int s = rand() % N + 1;
-    int t = rand() % N + 1;
-    int p = rand() % MAXP + 1;
+	int s = rand() % N + 1;
+	int t = rand() % N + 1;
+	int p = rand() % MAXP + 1;
 
-    printf("%d %d %d %d %d\n", N, M, s, t, p);
+	printf("%d %d %d %d %d\n", N, M, s, t, p);
 
-    while (M--) {
-        int u, v;
-        do {
-            u = rand() % N + 1;
-            v = rand() % N + 1;
-        } while (u == v);
+	while (M--) {
+		int u, v;
+		do {
+			u = rand() % N + 1;
+			v = rand() % N + 1;
+		} while (u == v);
 
-        int c = rand() % (MAXC + 1);
+		int c = rand() % (MAXC + 1);
 
-        printf("%d %d %d\n", u, v, c);
-    }
+		printf("%d %d %d\n", u, v, c);
+	}
 }
 
 int main()
 {
-    srand(time(NULL));
+	srand(time(NULL));
 
-    int T = MAXT;
-    printf("%d\n", T);
+	int T = MAXT;
+	printf("%d\n", T);
 
-    while (T--) test_case();
+	while (T--) test_case();
 
-    return 0;
+	return 0;
 }

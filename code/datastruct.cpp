@@ -24,35 +24,37 @@ struct Trie {
 //
 // Hash Map
 //
-#define HASHB 4096
-const size_t KeySz = sizeof(int) * 5;
-struct HM {
-	struct Key {
-		int n[5];
-		Key(int *N) { memcpy(n, N, KeySz); sort(n, n + 5); }
-		bool operator==(const Key &x) const {
-			return memcmp(n, x.n, KeySz) == 0; }
-	};
-	struct KV {
-		Key k; int v;
-		KV(const Key &K, int V) : k(K), v(V) {}
-	};
-	typedef vector<KV> KVV; KVV b[HASHB];
-	u32 fnv_hash(const Key &k, int len) const {
-		uch *p = reinterpret_cast<uch*>(const_cast<int*>(k.n));
+struct HashT {
+	int k, v;
+
+	HashT() {}
+	HashT(int K, int V): k(K), v(V) {}
+
+	bool operator==(const HashT &x) const { return k == x.k; }
+};
+#define HASHB (1<<15)
+#define HASHN 1000000
+#define HASHT_SZ (sizeof(int))
+#define HASHT_PTR(x) (reinterpret_cast<u8*>(&( (x).k )))
+struct HashMap {
+	HashT data[HASHN];
+	int next[HASHN];
+	int buckets[HASHB];
+	int n;
+
+	void init() { Neg(buckets); n = 0; }
+	u32 fnv_hash(const u8 *p, int n) const {
 		u32 h = 2166136261U;
-		for (int i = 0; i < len; ++i) h = (h * 16777619U) ^ p[i];
+		for (int i = 0; i < n; ++i) h = (h * 16777619U) ^ p[i];
 		return h;
 	}
-	bool add(const Key &k, u64 &id) {
-		int i = fnv_hash(k, KeySz) % HASHB;
-		for (int j = 0, J = b[i].size(); j < J; ++j)
-			if (b[i][j].k == k) { id = i; id <<= 32; id |= j; return false; }
-		b[i].push_back(KV(k, 1));
-		id = i; id <<= 32; id |= (b[i].size() - 1);
-		return true;
+	HashT *add(HashT &h, bool &found) {
+		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ) % HASHB;
+		for (int i = buckets[b]; i >= 0; i = next[i])
+			if (data[i] == h) { found = true; return &data[i]; }
+		found = false, next[n] = buckets[b], buckets[b] = n, data[n] = h;
+		return &data[n++];
 	}
-	KV get(u64 id) const { return b[id>>32][id&0xFFFFFFFF]; }
 };
 
 

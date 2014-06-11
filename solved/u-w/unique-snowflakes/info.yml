@@ -1,0 +1,13 @@
+title: Unique Snowflakes
+keywords:
+    - hashing
+judges:
+    uva: 11572
+setter:
+    - Ondřej Lhoták
+    - Richard Peng
+contests:
+    - Waterloo ACM Programming Contest - February 8, 2009
+summary: >
+    Given a sequence of integers, determine the length of the longest
+    subsequence of consecutive distinct numbers.

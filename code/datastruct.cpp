@@ -48,6 +48,21 @@ struct HashMap {
 		for (int i = 0; i < n; ++i) h = (h * 16777619U) ^ p[i];
 		return h;
 	}
+
+	void add(HashT &h) {
+		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ) % HASHB;
+		for (int i = buckets[b]; i >= 0; i = next[i])
+			if (data[i] == h) return;
+		next[n] = buckets[b], buckets[b] = n, data[n++] = h;
+	}
+	bool find(HashT &h) {
+		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ) % HASHB;
+		for (int i = buckets[b]; i >= 0; i = next[i])
+			if (data[i] == h) return true;
+		return false;
+	}
+
+	// combines add/find
 	HashT *add(HashT &h, bool &found) {
 		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ) % HASHB;
 		for (int i = buckets[b]; i >= 0; i = next[i])

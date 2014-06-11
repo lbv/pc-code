@@ -1,0 +1,12 @@
+title: CD
+keywords:
+    - hashing
+    - beginner
+judges:
+    uva: 11849
+setter: Gordon Cormack
+contests:
+    - Waterloo ACM Programming Contest - September 26, 2010
+summary: >
+    Two sets of distinct integers are given. Determine the total number of
+    elements that are found in both sets.

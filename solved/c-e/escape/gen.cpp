@@ -7,49 +7,53 @@
 #if 1
 #define MAXT 210
 #define MAXN 100
+#define NCRIT 10
 #endif
 
 #if 0
 #define MAXT 20
 #define MAXN 8
+#define NCRIT 3
 #endif
 
 
 #define Zero(v) memset((v), 0, sizeof(v))
 
 
+int T;
 bool vis[MAXN][MAXN];
 
 void test_case(bool crit = false)
 {
-    int n = crit ? MAXN : rand() % MAXN + 1;
-    int MaxM = n*(n-1) / 2;
-    int m = crit ? MaxM : rand() % (MaxM + 1);
+	int n = crit ? MAXN : rand() % MAXN + 1;
+	int MaxM = n*(n-1) / 2;
+	int m = crit ? MaxM : rand() % (MaxM + 1);
 
-    printf("\n%d %d\n", n, m);
+	printf("\n%d %d\n", n, m);
 
-    Zero(vis);
-    while (m--) {
-        int a, b;
-        do {
-            a = rand() % n;
-            b = rand() % n;
-        } while (a == b || vis[a][b]);
+	Zero(vis);
+	while (m--) {
+		int a, b;
+		do {
+			a = rand() % n;
+			b = rand() % n;
+		} while (a == b || vis[a][b]);
 
-        vis[a][b] = vis[b][a] = true;
-        printf("%d %d\n", a + 1, b + 1);
-    }
+		vis[a][b] = vis[b][a] = true;
+		printf("%d %d\n", a + 1, b + 1);
+	}
+	--T;
 }
 
 int main()
 {
-    srand(time(NULL));
+	srand(time(NULL));
 
-    int T = MAXT;
-    printf("%d\n", T);
+	T = MAXT;
+	printf("%d\n", T);
 
-    test_case(true); --T;
-    while (T--) test_case();
+	for (int i = 0; i < NCRIT; ++i) test_case(true);
+	while (T) test_case();
 
-    return 0;
+	return 0;
 }

@@ -1,0 +1,11 @@
+title: Melody Comparison
+keywords:
+    - string suffix
+judges:
+    lightoj: 1428
+setter: Jose Luis Castrillon Garrido
+contests:
+    - A Contest Dedicated to Setu
+summary: >
+    Given two strings, $A$ and $B$, determine the total number of distinct
+    substrings of $A$, which don't have $B$ as a substring.

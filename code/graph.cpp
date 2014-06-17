@@ -31,6 +31,8 @@ struct Edge {
 	Edge(int V, int C, int R) : v(V), c(C), f(0), r(R) {}
 };
 
+const int MAX_VERT = MAXN;
+const int MAX_EDGES = MAXM;
 struct Graph {
 	Edge edges[MAX_EDGES];
 	int next[MAX_EDGES];
@@ -124,15 +126,29 @@ struct Graph {
 	//
 	int nscc, nm;
 	int scc[MAX_VERT];
-	int scc_first[MAX_VERT];
+	int scc_head[MAX_VERT];
 	int scc_next[MAX_VERT];
 	// int scc_size[MAX_VERT];
-	void init_scc() { nscc = nm = 0; Neg(scc_first); /* Clr(scc_size); */ }
+	void init_scc() { nscc = nm = 0; Neg(scc_head); /* Clr(scc_size); */ }
 	void add_scc_element(int v) {
-		scc_next[nm] = scc_first[nscc];
-		scc_first[nscc] = nm;
+		scc_next[nm] = scc_head[nscc];
+		scc_head[nscc] = nm;
 		scc[nm++] = v;
 		// ++scc_size[nscc];
+	}
+
+	int vcomp[MAX_VERT];
+	void scc_to_dag(Graph &dag) {
+		for (int i = 0; i < nscc; ++i)
+			for (int j = scc_head[i]; j >= 0; j = scc_next[j])
+				vcomp[scc[j]] = i;
+		dag.init(nscc);
+		for (int u = 0; u < n; u++)
+			for (int i = adj[u]; i >= 0; i = next[i]) {
+				int v = edges[i].v;
+				if (vcomp[u] != vcomp[v])
+					dag.add(vcomp[u], Edge(vcomp[v]));
+			}
 	}
 
 	//
@@ -213,19 +229,6 @@ struct Graph {
 		cnt = 1, s_top = 0;
 		init_scc(); Clr(flg); Clr(low);
 		for (int i = 0; i < n; ++i) if (low[i] == 0) visit(i);
-	}
-	int vcomp[MAX_VERT];
-	void scc_to_dag(Graph &dag) {
-		for (int i = 0; i < nscc; ++i)
-			for (int j = scc_first[i]; j >= 0; j = scc_next[j])
-				vcomp[scc[j]] = i;
-		dag.init(nscc);
-		for (int u = 0; u < n; u++)
-			for (int i = adj[u]; i >= 0; i = next[i]) {
-				int v = edges[i].v;
-				if (vcomp[u] != vcomp[v])
-					dag.add(vcomp[u], Edge(vcomp[v]));
-			}
 	}
 
 
@@ -791,7 +794,7 @@ struct TwoSat {
 		Clr(vscc);
 		nsol = 0;
 		for (int i = 0; i < g.nscc; ++i)
-			for (int j = g.scc_first[i]; j >= 0; j = g.scc_next[j]) {
+			for (int j = g.scc_head[i]; j >= 0; j = g.scc_next[j]) {
 				int p = g.scc[j], v = p/2;
 				if (vscc[v] == i+1) return false;
 				if (vscc[v] != 0) break;

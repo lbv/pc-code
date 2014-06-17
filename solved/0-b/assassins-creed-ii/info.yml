@@ -1,0 +1,16 @@
+title: Assassin's Creed (II)
+keywords:
+    - bipartite matching
+    - strongly connected components
+    - topological sort
+annotations:
+    - large input
+judges:
+    lightoj: 1429
+setter: Jane Alam Jan
+thanks: Abdullah Al Mahmud
+contests:
+    - A Contest Dedicated to Setu
+summary: >
+    Given an arbitrary directed graph, determine the minimum number of paths
+    to cover it.

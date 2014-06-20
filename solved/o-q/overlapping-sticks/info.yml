@@ -1,0 +1,14 @@
+title: Overlapping Sticks
+keywords:
+    - geometry
+    - greedy
+annotations:
+    - large input
+judges:
+    lightoj: 1432
+contests:
+    - A Contest Dedicated to Setu
+summary: >
+    Given the coordinates of line segments over a 2D plane, determine the
+    total number of pairs of segments that overlap (have an infinite number
+    of intersecting points).

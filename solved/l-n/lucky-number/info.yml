@@ -2,7 +2,7 @@ title: Lucky Number
 keywords:
   - binary search tree
 judges:
-  uva:
+  uva: 10909
   lightoj:
     id: 1097
     summary: >

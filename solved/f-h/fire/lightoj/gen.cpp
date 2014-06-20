@@ -1,127 +1,70 @@
-/*
-	Author       :	Jan
-	Problem Name :	Fire!
-	Algorithm    :	BFS
-	Complexity   :
-*/
-
-#include <vector>
-#include <list>
-#include <map>
-#include <set>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <iostream>
 #include <cstdio>
-#include <cmath>
 #include <cstdlib>
-#include <cctype>
-#include <string>
-#include <sstream>
+#include <ctime>
 
-using namespace std;
 
-#define inf 1000000000
+#if 0
+#define MAXT 50
+#define MAXR 200
+#define MAXC 200
+#define NCRIT 3
+#endif
 
-int dx[] = {1, -1, 0, 0};
-int dy[] = {0, 0, 1, -1};
+#if 1
+#define MAXT 20
+#define MAXR 8
+#define MAXC 8
+#define NCRIT 3
+#endif
 
-int cases, m, n, val[1002][1002], v[1002][1002], caseno;
-char a[1002][1002];
 
-struct pos {
-	int x, y;
-	pos() {}
-	pos( int xx, int yy ) { x = xx, y = yy; }
-}st;
+int T;
+char grid[MAXR][MAXC + 1];
 
-queue <pos> Q;
 
-bool valid( int x, int y ) {
-	if( x >= 0 && x < m && y >= 0 && y < n ) {
-		return a[x][y] == '.';
+void gen(bool crit = false)
+{
+	int R = crit ? MAXR : rand() % MAXR + 1;
+	int C = crit ? MAXC : rand() % MAXC + 1;
+	printf("%d %d\n", R, C);
+
+	for (int i = 0; i < R; ++i)
+		for (int j = 0; j < C; ++j)
+			grid[i][j] = '.';
+
+	int obs = rand() % 60;
+	for (int i = 0; i < R; ++i)
+		for (int j = 0; j < C; ++j)
+			if (rand() % 100 < obs)
+				grid[i][j] = '#';
+
+	int fir = rand() % 30;
+	for (int i = 0; i < R; ++i)
+		for (int j = 0; j < C; ++j)
+			if (rand() % 100 < fir)
+				grid[i][j] = 'F';
+
+	int jr = rand() % R;
+	int jc = rand() % C;
+	grid[jr][jc] = 'J';
+
+	for (int i = 0; i < R; ++i) {
+		grid[i][C] = 0;
+		puts(grid[i]);
 	}
-	return false;
+
+	--T;
 }
 
-char grid[205][205];
-
-int main() {
-	freopen("f.in", "w", stdout);
-
-	int cases = 49;
-	printf("%d\n", cases + 1);
+int main()
+{
 	srand(time(NULL));
-	while( cases-- ) {
 
-	
-		int m = rand() % 200 + 1;
-		int n = rand() % 200 + 1;
+	T = MAXT;
+	printf("%d\n", T);
 
+	for (int i = 0; i < NCRIT; ++i) gen(true);
+	while (T) gen();
 
-/*
-    	int m = rand() % 10 + 1;
-		int n = rand() % 10 + 1;
-*/
-
-
-		if( cases % 4 ) {
-			m = 200 - rand() % 50;
-			n = 200 - rand() % 50;
-		}
-		if( cases % 10 == 0 ) m = n = 200;
-
-
-		printf("%d %d\n", m, n);
-		for( int i = 0; i < m; i++ ) {
-			for( int j = 0; j < n; j++ ) grid[i][j] = '.';
-			grid[i][n] = 0;
-		}
-		for( int i = 0; i < m; i++ ) {
-			for( int j = 0; j < n; j++ ) {
-				if( rand() % 10 == 0 ) grid[i][j] = '#';
-				if( cases % 12 == 0 && rand() % 10 == 0 ) grid[i][j] = 'F';
-			}
-		}
-		int k;
-		while(1) {
-			k = rand() % 10 ;
-			if( k * 10 <= m * n ) break;
-		}
-		while( k-- ) {
-			int x = rand() % m;
-			int y = rand() % n;
-			grid[x][y] = 'F';
-		}
-
-		int x = rand() % m;
-		int y = rand() % n;
-		grid[x][y] = 'J';
-
-		for( int i = 0; i < m; i++ ) puts(grid[i]);
-	}
-
-	int m, n;
-	m = n = 200;
-
-	for( int i = 0; i < m; i++ ) {
-		for( int j = 0; j < n; j++ ) {
-			grid[i][j] = '.';
-			if( rand() % 10 == 0 ) grid[i][j] = '#';
-		}
-		grid[i][n] = 0;
-	}
-	for( int i = 0; i < n; i++ ) if( rand() % 5 == 0 ) grid[100][i] = '#';
-	for( int i = 101; i < m; i++ ) for( int j = 0; j < n; j++ ) grid[i][j] = 'F';
-
-	int x = rand() % 100;
-	int y = rand() % n;
-	grid[x][y] = 'J';
-
-	printf("%d %d\n", m, n);
-
-	for( int i = 0; i < m; i++ ) puts(grid[i]);
 	return 0;
 }
-

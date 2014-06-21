@@ -10,42 +10,50 @@ using namespace std;
 #define MAXT 12
 #define MAXN 100000
 #define MAXR 1000000000
+#define NCRIT 2
 #endif
 
 #if 1
-#define MAXT 25
-#define MAXN 10
-#define MAXR 1000000
+#define MAXT 20
+#define MAXN 8
+#define MAXR 100000
+#define NCRIT 5
 #endif
 
 
-void test_case()
+int T;
+
+
+void gen(bool crit = false)
 {
-    vector<int> rs;
-    int n = rand() % MAXN + 1;
+	int n = crit ? MAXN : rand() % MAXN + 1;
 
-    for (int i = 0; i < n; ++i)
-        rs.push_back(rand() % MAXR + 1);
+	vector<int> rs;
+	for (int i = 0; i < n; ++i)
+		rs.push_back(rand() % MAXR + 1);
 
-    sort(rs.begin(), rs.end());
-    vector<int>::iterator it = unique(rs.begin(), rs.end());
-    rs.resize(it - rs.begin());
+	sort(rs.begin(), rs.end());
+	vector<int>::iterator it = unique(rs.begin(), rs.end());
+	rs.resize(it - rs.begin());
 
-    n = rs.size();
-    printf("%d\n%d", n, rs[0]);
-    for (int i = 1; i < n; ++i)
-        printf(" %d", rs[i]);
-    putchar('\n');
+	n = rs.size();
+	printf("%d\n%d", n, rs[0]);
+	for (int i = 1; i < n; ++i)
+		printf(" %d", rs[i]);
+	putchar('\n');
+
+	--T;
 }
 
 int main()
 {
-    srand(time(NULL));
+	srand(time(NULL));
 
-    int T = MAXT;
-    printf("%d\n", T);
+	T = MAXT;
+	printf("%d\n", T);
 
-    while (T--) test_case();
+	for (int i = 0; i < NCRIT; ++i) gen(true);
+	while (T) gen();
 
-    return 0;
+	return 0;
 }

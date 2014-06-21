@@ -1,6 +1,16 @@
 title: Arrange the Numbers
-keywords: counting, inclusion-exclusion principle, binomial coefficients
+keywords:
+    - counting
+    - inclusion-exclusion principle
+    - binomial coefficients
 judges:
-  lightoj: 1095
-  uva: 11481
+    lightoj: 1095
+    uva: 11481
 setter: Md. Arifuzzaman Arif
+thanks:
+    - Abdullah Al Mahmud
+    - Jane Alam Jan
+summary: >
+    Given a sequence of the first $N$ positive integers, calculate the total
+    number of permutations, such that in the first $M$ positions, exactly
+    $K$ numbers are in their original positions.

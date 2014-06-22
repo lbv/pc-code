@@ -3,7 +3,7 @@
 #include <ctime>
 
 
-#if 1
+#if 0
 #define MAXT 100
 #define MAXM 10
 #define MAXN 100
@@ -11,14 +11,14 @@
 #define MINI -1000000
 #endif
 
-#if 0
+#if 1
 #define MAXT 20
-#define MAXM 6
-#define MAXN 15
-#define MAXI 100
-#define MINI -100
+#define MAXM 10
+#define MAXN 12
+#define MAXI 20
+#define MINI -20
 #define NL 1
-#define NWDTH "4"
+#define NWDTH "3"
 #endif
 
 const int RangeI = MAXI - MINI + 1;

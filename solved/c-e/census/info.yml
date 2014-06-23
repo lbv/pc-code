@@ -2,7 +2,7 @@ title: Census
 keywords:
   - segment tree
 annotations:
-  - assumptions
+  - underspecified
 judges:
   uva: 11297
 setter: Rodrigo Burgos Domínguez
@@ -27,8 +27,6 @@ comments: >
     description. For example, the queries do start with a character 'q' or
     'c'.
   * All integers seem to fit in a 32bit signed integer.
-  * Apparently it's possible that the queries provide indices that go
-    outside the bounderies of the grid. Make sure you handle this correctly.
   * The "change" in population is simply setting the cell to a new value,
     not adding or subtracting from it.
   * The indices are in the following ranges:

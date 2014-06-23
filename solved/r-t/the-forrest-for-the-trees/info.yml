@@ -1,0 +1,8 @@
+title: The Forrest for the Trees
+keywords:
+    - dfs
+judges:
+    uva: 599
+summary: >
+    Given an arbitrary undirected graph, determine the number of connected
+    components of size 1 (called acorns) or bigger (called trees).

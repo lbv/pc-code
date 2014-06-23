@@ -1,0 +1,10 @@
+title: Interval Product
+keywords:
+    - segment tree
+judges:
+    uva: 12532
+summary: >
+    An array of integers is given, and a sequence of commands. The commands
+    can be of two types: change one of the elements of the array, or
+    determine the sign of the product of a given interval of consecutive
+    elements. Write a program to execute all commands.

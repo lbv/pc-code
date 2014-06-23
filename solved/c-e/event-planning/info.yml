@@ -1,4 +1,9 @@
 title: Event Planning
-keywords: beginner
+keywords:
+    - beginner
 judges:
-  uva: 11559
+    uva: 11559
+summary: >
+    A set of simple rules are given to choose from a series of options to
+    book a week in a hotel for a group of people. Determine the cheapest
+    option.

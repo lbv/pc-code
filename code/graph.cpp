@@ -562,24 +562,6 @@ struct Graph {
 	//
 	// Min-cost matching.
 	//
-	void init_bipart(int X) {
-		init_bipart_basic(X);
-		Clr(price);
-		InfRange(price + x + 1, x, int);
-	}
-	vod add_bipart(int v1, int v2, int w) {
-		int u = 1 + v1;
-		int v = x + 1 + v2;
-		add_pair(u, v, w);
-		price[v] = min(price[v], w);
-	}
-	void add_pair(int u, int v, int c) {
-		use_edge[m] = true;
-		add(u, Edge(u, v, c, m + 1));
-		use_edge[m] = false;
-		add(v, Edge(v, u, -c, m - 1));
-	}
-
 	int price[MAX_VERT];
 	int dist[MAX_VERT];
 	int from[MAX_VERT];
@@ -591,6 +573,24 @@ struct Graph {
 		DNode(int V, int D): v(V), d(D) {}
 		bool operator<(const DNode &n) const { return d > n.d; }
 	};
+
+	void init_bipart(int X) {
+		init_bipart_basic(X);
+		Clr(price);
+		InfRange(price + x + 1, x, int);
+	}
+	void add_bipart(int v1, int v2, int w) {
+		int u = 1 + v1;
+		int v = x + 1 + v2;
+		add_pair(u, v, w);
+		price[v] = min(price[v], w);
+	}
+	void add_pair(int u, int v, int c) {
+		use_edge[m] = true;
+		add(u, Edge(u, v, c, m + 1));
+		use_edge[m] = false;
+		add(v, Edge(v, u, -c, m - 1));
+	}
 
 	void dijkstra_paths() {
 		Inf(dist);

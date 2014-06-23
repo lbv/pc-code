@@ -100,7 +100,7 @@ struct Bit {
 #define Right (T[2*x+1])
 
 #define LOGN 19  // 1 + ceil(log2(MAXN))
-struct SegTreeH {
+struct SegTree {
 	struct Node {
 		int i;  // some value
 		int p;  // propagation

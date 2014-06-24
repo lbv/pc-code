@@ -1,4 +1,10 @@
 title: The 3n+1 Problem
-keywords: beginner
+keywords:
+    - beginner
+    - simulation
 judges:
-  uva: 100
+    uva: 100
+summary: >
+    Given two integers $i, j$, determine the maximum cycle length over the
+    sequences defined by the Collatz conjecture starting on the numbers in
+    the range between $i$ and $j$.

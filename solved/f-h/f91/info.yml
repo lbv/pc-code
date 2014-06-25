@@ -1,8 +1,11 @@
 title: f91
 keywords:
-  - beginner
-  - recursion
+    - beginner
+    - recursion
 judges:
-  uva: 10696
+    uva: 10696
 contests:
-  - Federal University of Rio Grande do Norte Classifying Contest - Round 2
+    - Federal University of Rio Grande do Norte Classifying Contest - Round 2
+summary: >
+    A certain mathematical function is defined recursively. Calculate its
+    result for several inputs.

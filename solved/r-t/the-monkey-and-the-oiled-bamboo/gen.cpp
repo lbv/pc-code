@@ -15,9 +15,9 @@ using namespace std;
 
 #if 1
 #define MAXT 20
-#define MAXN 8
-#define MAXR 100000
-#define NCRIT 5
+#define MAXN 10
+#define MAXR 200
+#define NCRIT 3
 #endif
 
 

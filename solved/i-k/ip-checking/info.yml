@@ -1,10 +1,12 @@
 title: IP Checking
 keywords:
-  - beginner
+    - beginner
+annotations:
+    - boolean output
 judges:
-  lightoj: 1354
+    lightoj: 1354
 setter: Jane Alam Jan
 summary: >
-  You get an IPv4 address in two forms: first a standard way with decimal
-  numbers separated by dots, and then the numbers are in binary
-  representation. Determine if the two addresses are equivalent.
+    You get an IPv4 address in two forms: first a standard way with decimal
+    numbers separated by dots, and then the numbers are in binary
+    representation. Determine if the two addresses are equivalent.

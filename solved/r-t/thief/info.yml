@@ -1,0 +1,13 @@
+title: Thief
+keywords:
+    - dynamic programming
+judges:
+    lightoj: 1200
+setter: Jane Alam Jan
+summary: >
+    A certain number of items are to be stolen. Each different kind of item
+    has a price, a requirement (minimum number of items of this kind that
+    have to be stolen) and a weight. Given the information for $n$ types of
+    items, and a weight $W$, you have to select items such that the
+    requeriments are satisfied, the items don't weight more than $W$, and
+    the price of any extra items (not in the requirements) is maximized.

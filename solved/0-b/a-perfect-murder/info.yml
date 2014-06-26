@@ -1,0 +1,12 @@
+title: A Perfect Murder
+keywords:
+    - dynamic programming
+    - dfs
+judges:
+    lightoj: 1201
+setter: Jane Alam Jan
+summary: >
+    An acyclic undirected graph is given, where each node represents a
+    mosquito and each edge a friendship between two mosquitoes. If you kill
+    a given mosquito, its friends become impossible to kill. Determine the
+    maximum number of mosquitoes that can be killed.

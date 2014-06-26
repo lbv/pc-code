@@ -1,0 +1,22 @@
+title: Maximum Sum on a Torus
+keywords:
+    - kadane
+judges:
+    uva: 10827
+setter: Jimmy Mårdell
+thanks:
+    - Derek Kisman
+    - Md. Kamruzzaman
+contests:
+    - ACM ICPC World Finals Warmup 1
+summary: >
+    Given a square matrix of integers, find the maximum sum from a rectangle
+    (with wrap-arounds) in the matrix.
+comments: >
+    A $O(n^3)$ solution is possible by using prefix sums on the columns or
+    rows, and a simple variant of Kadane's algorithm. To deal with the
+    wraparound, you could replicate the original matrix (size $N \times N$)
+    into a matrix of size $2N \times 2N$).
+
+    Notice that an empty rectangle is valid (with sum 0). See also problem
+    UVa 108.

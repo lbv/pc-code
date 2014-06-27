@@ -1,0 +1,16 @@
+title: Weird Advertisement
+keywords:
+    - segment tree
+    - sweep line
+annotations:
+    - large input
+judges:
+    uva: 11983
+    lightoj: 1204
+setter: Jane Alam Jan
+thanks: Md. Mahbubul Hasan
+contests:
+    - A Contest dedicated to Renat Mullakhanov
+summary: >
+    Given a set of rectangles over a 2D plane, determine the total of
+    lattice points that are covered by at least $k$ rectangles.

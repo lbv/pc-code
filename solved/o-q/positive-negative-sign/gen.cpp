@@ -1,59 +1,47 @@
-/*
-	Author       :	Jan
-	Problem Name :
-	Algorithm    :
-	Complexity   :
-*/
-
-#include <set>
-#include <map>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <cctype>
 #include <cstdio>
-#include <string>
-#include <vector>
-#include <cassert>
 #include <cstdlib>
-#include <cstring>
-#include <sstream>
-#include <iostream>
-#include <algorithm>
+#include <ctime>
 
-using namespace std;
 
-#define LIM 1000000000
+#if 0
+#define MAXT 10000
+#define MAXN 1000000000
+#define MAXM 10000
+#endif
 
-int main() {
-	freopen("a.in", "w", stdout);
+#if 1
+#define MAXT 20
+#define MAXN 10000
+#define MAXM 100
+#endif
 
-    srand(time(NULL));
-	int cases = 100000;
-	printf("%d\n", cases);
 
-	while( cases-- ) {
-		int n, m;
+int T;
 
-        if (rand() % 5 == 0)
-            m = rand() % (100) + 1;
-        else
-            m = rand() % (LIM / 2) + 1;
-            
-        n = m*2;
-        
-        int maxf = LIM/n;
-        if (maxf > 100 && rand() % 3 == 0)
-            maxf = rand() % 100 + 1;
 
-        int f = rand() % maxf + 1;
-        n *= f;
+void gen()
+{
+	int n, m;
 
-		printf("%d %d\n", n, m);
-	}
-	return 0;
+	do {
+		m = rand() % MAXM + 1;
+		int maxmul = MAXN / (2*m);
+		int mul = rand() % maxmul + 1;
+		n = 2*m * mul;
+	} while (n > MAXN);
+
+	printf("%d %d\n", n, m);
+	--T;
 }
 
+int main()
+{
+	srand(time(NULL));
+
+	T = MAXT;
+	printf("%d\n", T);
+
+	while (T) gen();
+
+	return 0;
+}

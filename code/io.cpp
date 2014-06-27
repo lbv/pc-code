@@ -34,8 +34,10 @@ struct Reader {
 struct LineReader {
 	char b; LineReader() { read(); }
 	void read() { b = getchar_unlocked(); }
-	void skip() { while (b >= 0 && b <= 32 && b != 10) read(); }
+	void skip() { while (0 <= b && b <= 32 && b != 10) read(); }
 	void skip_line() { skip(); if (b == 10) { read(); skip(); } }
 	bool has_next() { skip(); return b > 0 && b != 10; }
 	bool eof() { skip(); return b == 0; }
+
+	// the rest of methods from Reader apply
 };

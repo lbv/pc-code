@@ -9,27 +9,16 @@ struct Set {
 	void merge(int i, int j) { s[find(i)] = find(j); }
 };
 
-struct Edge { int v; Edge() {} Edge(int V) : v(V) {} };
-
-struct Edge {
-	int v; GraphT w;
-	Edge() {}
-	Edge(int V, GraphT W) : v(V), w(W) {}
-};
-
+struct Edge { int v; };
+struct Edge { int v; GraphT w; };
 struct Edge {
 	int u, v; GraphT w;
-	Edge() {}
-	Edge(int U, int V, GraphT W) : u(U), v(V), w(W) {}
+
 	bool operator<(const Edge &e) const { return w < e.w; }
 };
 
-// for max-flow models
-struct Edge {
-	int v, c, f, r;  // capacity, flow, reverse edge
-	Edge() {}
-	Edge(int V, int C, int R) : v(V), c(C), f(0), r(R) {}
-};
+// for max-flow models -- capacity, flow (starts at zero), reverse edge
+struct Edge { int v, c, f, r; };
 
 const int MAX_VERT = MAXN;
 const int MAX_EDGES = MAXM;
@@ -39,7 +28,7 @@ struct Graph {
 	int adj[MAX_VERT];
 	int n, m;
 
-	void init(int N) { n = N, m = 0; Neg(adj); }
+	void init(int N) { n = N, m = 0; memset(adj, -1, sizeof(int)*n); }
 
 	void add(int u, const Edge &e) { next[m]=adj[u], adj[u]=m, edges[m++]=e; }
 	void add_dir(int u, int i) { next[i]=adj[u], adj[u]=i; }

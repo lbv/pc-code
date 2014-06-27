@@ -1,0 +1,16 @@
+title: Alternative Arborescence
+keywords:
+    - dynamic programming
+    - dfs
+annotations:
+    - irregular input
+judges:
+    uva: 11307
+setter: Darko Aleksic
+contests:
+    - Calgary Collegiate Programming Contest 2007
+summary: >
+    A simple tree graph is given. A positive integer has to be assigned to
+    each node, with the condition that no two adjacent nodes share the same
+    integer. Determine the minimum sum possible from all nodes after
+    assigning their integers.

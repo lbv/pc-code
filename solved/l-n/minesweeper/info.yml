@@ -1,4 +1,12 @@
 title: Minesweeper
-keywords: beginner
+keywords:
+    - beginner
+    - grid
 judges:
-  uva: 10189
+    uva: 10189
+contests:
+    - Universidade do Brasil (UFRJ) Internal Contest Warmup 2001
+summary: >
+    Given a minesweeper board (a rectangle with bombs in some locations),
+    fill all the empty cells with the number of adjacent bombs of that
+    position.

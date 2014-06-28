@@ -7,17 +7,18 @@ struct Trie {
 		int n;
 	};
 	Node nodes[MAX_NODES];
-	int sz;
-	void init() { Zero(nodes); sz = 1; }
+	int n;
+
+	void init() { Clr(nodes); n = 1; }
 	int insert(const char *s) {
-		int idx, cur = 0;
+		int i = 0;
 		for (; *s; ++s) {
-			idx = toupper(s[i]) - 'A';
-			if (! nodes[cur].ch[idx])
-				nodes[cur].ch[idx] = sz++;
-			cur = nodes[cur].ch[idx];
+			int idx = *s - 'A';
+			if (nodes[i].ch[idx] == 0)
+				nodes[i].ch[idx] = n++;
+			i = nodes[i].ch[idx];
 		}
-		return ++nodes[cur].n;
+		return ++nodes[i].n;
 	}
 };
 
@@ -76,12 +77,14 @@ struct HashMap {
 //
 // Binary Indexed Tree
 //
+const int MAXBIT = MAXN;
+typedef int BitT;
 struct Bit {
 	BitT f[MAXBIT + 1];
 	int n;
-	void init(int N) { n=N; Clr(f); }
-	void add(int i, BitT v) { while (i <= n) { f[i] += v; i += GetFS(i); } }
-	BitT query(int i) { BitT r = 0; for (;i; ClrFS(i)) r += f[i]; return r; }
+	void init(int N) { n=N; memset(f, 0, sizeof(BitT) * (n+1)); }
+	void add(int i, BitT v) { while (i <= n) { f[i] += v; i += GetLSB(i); } }
+	BitT query(int i) { BitT r = 0; for (;i; ClrLSB(i)) r += f[i]; return r; }
 	BitT query(int from, int to) { return query(to) - query(from - 1); }
 };
 

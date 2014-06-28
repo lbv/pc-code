@@ -5,7 +5,7 @@
 #define BIDIG 3
 #define BIFMT "%03d"
 struct BigInt {
-	IV d; bool sgn;
+	VI d; bool sgn;
 	BigInt(int n=0) {
 		if (n < 0) sgn = true, n = -n; else sgn = false;
 		if (n < BIBAS) d.push_back(n);
@@ -24,7 +24,7 @@ struct BigInt {
 	void flip() { sgn = !sgn; }
 	BigInt neg() const { BigInt x = *this; x.flip(); return x; }
 	void clean() {
-		IVi i; for (i=d.end()-1; *i == 0 && i != d.begin(); i--);
+		VIi i; for (i=d.end()-1; *i == 0 && i != d.begin(); i--);
 		d.erase(i+1, d.end());
 		if (sgn && is_zero()) sgn = false;
 	}
@@ -40,7 +40,7 @@ struct BigInt {
 	}
 	BigInt &operator*=(const BigInt &b) {
 		int s1 = len(), s2 = b.len(), s3 = s1+s2;
-		IV res(s3); int c = 0;
+		VI res(s3); int c = 0;
 		for (int k=0; k < s3; ++k) {
 			int sum = c;
 			c = 0;
@@ -56,7 +56,7 @@ struct BigInt {
 	BigInt &operator+=(const BigInt &b) {
 		if (sgn != b.sgn) { (*this) -= b.neg(); return *this; }
 		int s1 = len(), s2 = b.len(), s3 = max(s1, s2) + 1;
-		IV res(s3); int c = 0;
+		VI res(s3); int c = 0;
 		for (int i = 0; i < s3; ++i) {
 			int sum = c;
 			sum += i < s1 ? d[i] : 0;
@@ -73,7 +73,7 @@ struct BigInt {
 		if (*this < b) {
 			b -= *this; *this = sbk ? b : b.neg(); return *this; }
 		int s1 = len(), s2 = b.len(), s3 = s1;
-		IV res(s3); int c = 0;
+		VI res(s3); int c = 0;
 		for (int i = 0; i < s3; ++i) {
 			int sum = d[i] - (i < s2 ? b.d[i] : 0) - c;
 			if (sum < 0) { sum += BIBAS; c = 1; } else c = 0;
@@ -93,7 +93,7 @@ struct BigInt {
 		if (n == 1) return short_div(b.d[0]);
 		if (l < n || (l == n && d.back() < b.d.back()))
 			return *this = BigInt(0);
-		BigInt r(0); IV res(l);
+		BigInt r(0); VI res(l);
 		for (int i = l - 1; i >= 0; --i) {
 			r.d.insert(r.d.begin(), d[i]); r.clean();
 			int x = r.len() >= n ? r.d[n-1] : 0;
@@ -108,7 +108,7 @@ struct BigInt {
 	void print(bool nl = true) {
 		if (sgn) putchar('-');
 		bool flg = true;
-		RFor (IV, i, d) {
+		RFor (VI, i, d) {
 			if (flg) { printf("%d", *i); flg=false; }
 			else printf(BIFMT, *i);
 		}
@@ -118,7 +118,7 @@ struct BigInt {
 		char buf[BIDIG+1]; string str;
 		if (sgn) str.push_back('-');
 		bool flg = true;
-		RFor (IV, i, d) {
+		RFor (VI, i, d) {
 			if (flg) { sprintf(buf, "%d", *i); flg=false; }
 			else sprintf(buf, BIFMT, *i);
 			str.append(buf);

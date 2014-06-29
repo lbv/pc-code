@@ -1,4 +1,4 @@
-4
+6
 2
 A B
 B C
@@ -13,3 +13,31 @@ c a
 2
 a b
 b c
+6
+fb fc
+eb bf
+bf fb
+fc eb
+fb a
+eb a
+20
+ffbca efebe
+cfcde ad
+c cfcde
+ffbca cfcde
+fcbe e
+c aff
+aeb c
+cfcde aeb
+fcbe efebe
+cfcde efebe
+aeb ad
+e ffbca
+e aff
+ad aff
+a e
+a ffbca
+ad c
+e ad
+fcbe cfcde
+ffbca c

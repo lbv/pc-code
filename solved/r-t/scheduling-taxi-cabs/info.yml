@@ -1,0 +1,13 @@
+title: Scheduling Taxi Cabs
+keywords:
+    - bipartite matching
+judges:
+    lightoj: 1206
+summary: >
+    A city is modeled as a 2D plane. Taxis have to make trips between
+    locations, such that each location is a lattice point and the time it
+    takes to travel between two points is equal to the manhattan distance,
+    in minutes. Given a list of all the trips that need to be covered,
+    determine the minimum amount of taxis required to satisfy them. Each
+    taxi has to be able to reach the starting point of a trip at least one
+    minute in advance in order to take it.

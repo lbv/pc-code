@@ -18,39 +18,44 @@
 #endif
 
 
-void test_case()
+int T;
+
+
+void gen()
 {
-    int N = rand() % (MAXN - 1) + 2;
-    int R = rand() % (MAXR - N + 1) + N;
-    
-    printf("%d %d\n", N, R);
+	int N = rand() % (MAXN - 1) + 2;
+	int R = rand() % (MAXR - N + 1) + N;
 
-    int u, v, w;
-    for (int i = 1; i <= N - 1; ++i) {
-        u = i;
-        v = i + 1;
-        w = rand() % MAXR + 1;
-        printf("%d %d %d\n", u, v, w);
-        R--;
-    }
+	printf("%d %d\n", N, R);
 
-    while (R--) {
-        do {
-            u = rand() % N + 1;
-            v = rand() % N + 1;
-        } while (u == v);
+	int u, v, w;
+	for (int i = 1; i <= N - 1; ++i) {
+		u = i;
+		v = i + 1;
+		w = rand() % MAXR + 1;
+		printf("%d %d %d\n", u, v, w);
+		R--;
+	}
 
-        w = rand() % MAXR + 1;
-        printf("%d %d %d\n", u, v, w);
-    }
+	while (R--) {
+		do {
+			u = rand() % N + 1;
+			v = rand() % N + 1;
+		} while (u == v);
+
+		w = rand() % MAXR + 1;
+		printf("%d %d %d\n", u, v, w);
+	}
+
+	--T;
 }
 
 int main()
 {
-    srand(time(NULL));
-    int T = MAXT;
-    printf("%d\n", T);
+	srand(time(NULL));
+	T = MAXT;
+	printf("%d\n", T);
 
-    while (T--) test_case();
-    return 0;
+	while (T) gen();
+	return 0;
 }

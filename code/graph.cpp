@@ -410,9 +410,8 @@ struct Graph {
 	/////////////////////////////////////////////
 	int x, src, snk;
 	void init_bipart_basic(int X) {
-		x = X;
-		n = 2*x + 2, src = 0, snk = 2*x + 1, m = 0;
-		Neg(adj);
+		x = X, n = 2*x + 2, src = 0, snk = 2*x + 1, m = 0;
+		memset(adj, -1, sizeof(int) * n);
 	}
 
 
@@ -422,7 +421,7 @@ struct Graph {
 	void add_bipart(int v1, int v2) {
 		int u = 1 + v1;
 		int v = x + 1 + v2;
-		add(u, Edge(v));
+		add(u, (Edge) { v });
 	}
 
 	int match[MAX_VERT];
@@ -465,7 +464,7 @@ struct Graph {
 	}
 	int max_matching() {
 		int m = 0;
-		Clr(match);
+		memset(match, 0, sizeof(int)*n);
 		while (bfs())
 			for (int i = 1; i <= x; ++i)
 				if (match[i] == 0 && dfs(i)) ++m;

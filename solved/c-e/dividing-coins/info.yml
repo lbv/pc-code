@@ -1,0 +1,9 @@
+title: Dividing Coins
+keywords:
+    - dynamic programming
+judges:
+    uva: 562
+similar: uva-10032
+summary: >
+    Given a list of integers, determine the minimum difference possible
+    after divigind them into two groups.

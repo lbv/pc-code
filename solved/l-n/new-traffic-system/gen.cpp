@@ -18,10 +18,10 @@ using namespace std;
 
 #if 1
 #define MAXT 20
-#define MAXN 6
+#define MAXN 10
 #define MAXM 8
-#define MAXK 6
-#define MAXD 3
+#define MAXK 8
+#define MAXD 6
 #define MAXW 100
 #define NCRIT 3
 #define NL 1

@@ -1,0 +1,11 @@
+title: Strange Voting
+keywords:
+    - bipartite matching
+judges:
+    lightoj: 1209
+summary: >
+    An election is prepared, such that a number of male and female
+    candidates are given. Each vote either is for electing a male and
+    rejecting a female, or for electing a female and rejecting a male. A
+    voter is satisfied if both his/her wishes are honored. Given the list of
+    votes, determine the maximum number of voters who will be satisfied.

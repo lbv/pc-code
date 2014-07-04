@@ -1,0 +1,11 @@
+title: Efficient Traffic System
+keywords:
+    - strongly connected components
+    - topological sorting
+annotations:
+    - large input
+judges:
+    lightoj: 1210
+summary: >
+    Given a directed graph, determine the minimum number of directed edges
+    that have to be added so the whole graph is strongly connected.

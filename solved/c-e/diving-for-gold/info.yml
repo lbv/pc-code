@@ -1,0 +1,15 @@
+title: Diving for Gold
+keywords:
+    - dynamic programming
+annotations:
+    - underspecified
+judges:
+    uva: 990
+summary: >
+    A group of treasures can be picked by diving and taking them to the
+    surface, one at a time. Each treasure has a value and is located at a
+    ceretain depth. The time required to take each treasure is proportional
+    to its depth. You have only an air bottle with a fixed capacity for a
+    certain amount of time under water. Determine the maximum value for the
+    treasures that can be taken, and print the ordered sequence of
+    treasures.

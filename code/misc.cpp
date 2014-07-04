@@ -3,10 +3,12 @@
 //
 
 #define Clr(m) memset(m, 0, sizeof(m))
-#define Inf(m) memset(m, 0x3f, sizeof(m))
 #define Neg(m) memset(m, -1, sizeof(m))
+#define Inf(m) memset(m, 0x3f, sizeof(m))
 
-#define InfRange(p,n,t) memset(p, 0x3f, sizeof(t)*(n))
+#define ClrN(m,n,t) memset(m, 0, sizeof(t)*(n))
+#define NegN(m,n,t) memset(m, -1, sizeof(t)*(n))
+#define InfN(m,n,t) memset(m, 0x3f, sizeof(t)*(n))
 
 #define For(t,i,c) for(t::iterator i=(c).begin(); i != (c).end(); ++i)
 #define RFor(t,v,c) for(t::reverse_iterator i=(c).rbegin(); i!=(c).rend(); ++i)

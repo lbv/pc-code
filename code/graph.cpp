@@ -28,7 +28,7 @@ struct Graph {
 	int adj[MAX_VERT];
 	int n, m;
 
-	void init(int N) { n = N, m = 0; memset(adj, -1, sizeof(int)*n); }
+	void init(int N) { n = N, m = 0; NegN(adj, n, int); }
 
 	void add(int u, const Edge &e) { next[m]=adj[u], adj[u]=m, edges[m++]=e; }
 	void add_dir(int u, int i) { next[i]=adj[u], adj[u]=i; }
@@ -118,7 +118,8 @@ struct Graph {
 	int scc_head[MAX_VERT];
 	int scc_next[MAX_VERT];
 	// int scc_size[MAX_VERT];
-	void init_scc() { nscc = nm = 0; Neg(scc_head); /* Clr(scc_size); */ }
+	void init_scc() { nscc = nm = 0; NegN(scc_head, n, int); }
+	/* Clr(scc_size); */
 	void add_scc_element(int v) {
 		scc_next[nm] = scc_head[nscc];
 		scc_head[nscc] = nm;
@@ -157,7 +158,7 @@ struct Graph {
 		vis[v] = true;
 		for (int i = adj[v]; i >= 0; i = next[i]) {
 			int u = edges[i].v;
-			radd(u, Edge(v));
+			radd(u, (Edge) { v });
 			if (! vis[u]) dfs(u);
 		}
 		stk[stk_top++] = v;
@@ -173,10 +174,10 @@ struct Graph {
 	void kosaraju() {
 		rm = stk_top = 0;
 		init_scc();
-		Neg(radj);
-		Clr(vis);
+		NegN(radj, n, int);
+		ClrN(vis, n, bool);
 		for (int v = 0; v < n; ++v) if (! vis[v]) dfs(v);
-		Clr(vis);
+		ClrN(vis, n, bool);
 		while (stk_top > 0) {
 			int v = stk[--stk_top];
 			if (! vis[v]) { dfs2(v); ++nscc; }

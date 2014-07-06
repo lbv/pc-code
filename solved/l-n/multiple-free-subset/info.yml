@@ -1,0 +1,10 @@
+title: Multiple Free Subset
+keywords:
+    - bipartite matching
+judges:
+    lightoj: 1218
+setter: Jane Alam Jan
+summary: >
+    Given a set of integers, find the lexicographically lowest, largest
+    possible subset of numbers such that no integer in the subset is a
+    multiple of another.

@@ -1,0 +1,10 @@
+title: SuperSale
+keywords:
+    - dynamic programming
+judges:
+    uva: 10130
+setter: Marcin Wojciechowsky
+summary: >
+    Gvein a list of products with their prices and weights, and a list of
+    people, with their maximum weight capacities, determine the maximum
+    value of products that can possibly be picked up by the group of people.

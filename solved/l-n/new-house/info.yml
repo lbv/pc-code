@@ -1,0 +1,13 @@
+title: New House
+keywords:
+    - histogram
+    - grid
+annotations:
+    - underspecified
+judges:
+    coj: 1002
+similar: uva-11871
+contests:
+    - 2009 ACM-ICPC INC
+summary: >
+    Given a boolean square matrix, find the size of the largest square.

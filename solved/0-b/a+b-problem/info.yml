@@ -1,0 +1,8 @@
+title: A+B Problem
+keywords:
+    - beginner
+judges:
+    coj: 1000
+similar: lightoj-1000
+summary: >
+    Given two small integers, print their sum.

@@ -1,0 +1,20 @@
+title: Pipes
+keywords:
+    - backtracking
+    - grid
+annotations:
+    - boolean output
+judges:
+    uva: 11700
+    coj: 1001
+setter: Malcolm Sharpe
+contests:
+    - Waterloo ACM Programming Contest - October 3, 2009
+summary: >
+    A system of pipes can be seen as a rectangular grid, where each cell can
+    have between 0 and 4 lines, going out from the center of the cell, into
+    any of the 4 cardinal directions. The "pipes" in each cell can be
+    rotated (so NE can become ES, for example). Given the description of
+    lines in each cell, determine if it's possible to rotate them until no
+    boundary is left unstable (that is, at each boundary either zero or two
+    lines meet).

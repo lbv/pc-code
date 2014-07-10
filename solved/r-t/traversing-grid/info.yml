@@ -1,0 +1,14 @@
+title: Traversing Grid
+keywords:
+    - math
+    - grid
+judges:
+    spoj: TRGRID
+    coj: 1004
+summary: >
+    Consider a rectangular board with a certain number of rows and columns.
+    A traveler starts from the upper-left corner, facing right, and it moves
+    until it reaches the end of the board, or his next step puts him in a
+    cell he has already visited. In that case, he stops if the whole board
+    is covered, or turns right and continues otherwise. Given the dimensions
+    of the board, determine the direction the traveler faces when he stops.

@@ -1,0 +1,10 @@
+title: General Election
+keywords:
+    - beginner
+judges:
+    coj: 1003
+contests:
+    - 2009 ACM-ICPC INC
+summary: >
+    Given the total number of votes for each of $n$ candidates, split into
+    $m$ regions, determine the candidate with the most total votes.

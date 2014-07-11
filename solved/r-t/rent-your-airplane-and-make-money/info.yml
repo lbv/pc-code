@@ -1,0 +1,22 @@
+title: Rent Your Airplane and Make Money
+keywords:
+    - dynamic programming
+    - sweep line
+judges:
+    uva: 1133
+    icpc-la: 2942
+    spoj:
+        id: RENT
+        annotations:
+            - large input
+    coj:
+        id: 1005
+        annotations:
+            - large input
+contests:
+    - 2003 ACM-ICPC Southwestern European Regional Contest
+summary: >
+    A numer of customers rent an airplane, and each rental consists of a
+    starting time, a duration for the rental, and a price to pay. Determine
+    the maximum profit possible from renting a single plane, given the list
+    of potential rentals.

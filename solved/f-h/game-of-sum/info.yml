@@ -1,12 +1,18 @@
 title: Game of Sum
 keywords:
-  - dynamic programming
+    - dynamic programming
 judges:
-  uva: 10891
-  lightoj:
-    id: 1031
-    title: Easy Game
+    uva: 10891
+    lightoj:
+        id: 1031
+        title: Easy Game
 setter: Syed Monowar Hossain
 thanks: Derek Kisman, Mohammad Sajjad Hossain
 contests:
-  - UVa Monthly Contest August 200
+    - UVa Monthly Contest August 200
+summary: >
+    An array of integers is given and two players play a game consisting of
+    choosing one end of the array, and picking as many numbers from it as he
+    wants. Each player receives a score equal to the sum of numbers picked
+    at each turn. Determine the maximum difference possible of points in the
+    game when both players play optimally.

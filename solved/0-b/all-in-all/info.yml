@@ -5,7 +5,8 @@ keywords:
   - subsequences
   - greedy
 annotations:
-  - assumptions
+  - underspecified
+  - boolean output
 judges:
   uva: 10340
 summary: >

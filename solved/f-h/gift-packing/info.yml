@@ -1,0 +1,12 @@
+title: Gift Packing
+keywords:
+    - bipartite matching
+    - max cost
+judges:
+    lightoj: 1222
+seeAlso: lightoj-1011
+setter: Jane Alam Jan
+summary: >
+    A square matrix of integers of size $n \times n$ describes the profit of
+    associating gifts and boxes (one gift per box). Find the maximal
+    matching.

@@ -1,0 +1,14 @@
+title: Arranging Amplifiers
+keywords:
+    - math
+annotations:
+    - large input
+judges:
+    spoj: ARRANGE
+    coj: 1009
+contests:
+    - 2008 CodeCraft
+summary: >
+    Given a list of positive integers $A_1, A_2, A_3, \ldots, A_n$, find the
+    permutation for which $A_{p_n}^(A_{p_{n-1}}^(\dots^A_{p1}))$ is
+    maximised.

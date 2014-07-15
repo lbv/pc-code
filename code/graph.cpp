@@ -19,6 +19,8 @@ struct Edge {
 
 // for max-flow models -- capacity, flow (starts at zero), reverse edge
 struct Edge { int v, c, f, r; };
+// for min-cost bipartite matching
+struct Edge { int u, v, w, r; };
 
 const int MAX_VERT = MAXN;
 const int MAX_EDGES = MAXM;
@@ -564,8 +566,8 @@ struct Graph {
 
 	void init_bipart(int X) {
 		init_bipart_basic(X);
-		Clr(price);
-		InfRange(price + x + 1, x, int);
+		ClrN(price, n, int);
+		InfN(price + x + 1, x, int);
 	}
 	void add_bipart(int v1, int v2, int w) {
 		int u = 1 + v1;
@@ -575,15 +577,15 @@ struct Graph {
 	}
 	void add_pair(int u, int v, int c) {
 		use_edge[m] = true;
-		add(u, Edge(u, v, c, m + 1));
+		add(u, (Edge) { u, v, c, m + 1 });
 		use_edge[m] = false;
-		add(v, Edge(v, u, -c, m - 1));
+		add(v, (Edge) { v, u, -c, m - 1 });
 	}
 
 	void dijkstra_paths() {
-		Inf(dist);
-		Neg(from);
-		Clr(vis);
+		InfN(dist, n, int);
+		NegN(from, n, int);
+		ClrN(vis, n, bool);
 		priority_queue<DNode> pq;
 		pq.push(DNode(src, 0));
 		dist[src] = 0;
@@ -609,7 +611,7 @@ struct Graph {
 		for (int i = from[snk]; i >= 0; ) {
 			Edge &e = edges[i];
 			use_edge[i] = false;
-			use_edge[e.o] = true;
+			use_edge[e.r] = true;
 			i = from[e.u];
 		}
 	}
@@ -635,7 +637,7 @@ struct Graph {
 			for (int j = adj[i]; j >= 0; j = next[j]) {
 				if (! use_edge[j]) continue;
 				Edge &e = edges[j];
-				if (-e.w > cost) cost = -e.w;
+				cost += -e.w;
 			}
 
 		return true;

@@ -1,0 +1,21 @@
+title: Square Town Tales: Power Down
+keywords:
+    - grid
+    - dynamic programming
+    - binary search
+judges:
+    coj: 1007
+contests:
+    - 2010 Copa Pascal UCI
+summary: >
+    A square grid of positive integers representing population is given, and
+    a list of additional integers, representing capacities of power plants.
+    For each power plant, determine the largest possible square area that can be
+    covered by the plant, and the population it covers, maximising first the
+    area and second the population coverage.
+comments: >
+    Perhaps the main difficulty in this problem is simply decoding the
+    confusing problem statement. The description is very strange, certain
+    elements of the problem are obscured by the wording, the input
+    specification is inconsistent with the samples while some things are
+    left to be assumed from the samples, etc. Absolutely delicious.

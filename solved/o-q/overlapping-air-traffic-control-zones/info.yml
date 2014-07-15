@@ -1,0 +1,20 @@
+title: Overlapping Air Traffic Control Zones
+keywords:
+    - geometry
+    - inclusion-exclusion
+annotations:
+    - underspecified
+judges:
+    uva: 904
+    coj:
+        id: 1008
+        comments: >
+            Better use 64-bit integers to calculate the answer in this judge.
+setter: Fernando Silva
+seeAlso: lightoj-1211
+contests:
+    - University of Porto Local Contest
+summary: >
+    Given the description of a group of parallelepipeds, with their sides
+    parallel to the axes, determine the total volume covered by more than
+    one figure.

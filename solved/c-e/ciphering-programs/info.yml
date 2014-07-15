@@ -1,0 +1,10 @@
+title: Ciphering Programs
+keywords:
+    - beginner
+    - divide-and-conquer
+judges:
+    coj: 1006
+contests:
+    - 2010 Copa Pascal UCI
+summary: >
+    A text is ciphered using a seet of simple rules. Write a decoder.

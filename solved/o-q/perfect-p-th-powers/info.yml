@@ -3,6 +3,7 @@ keywords:
   - number theory
 judges:
   uva: 10622
+  coj: 1013
   lightoj:
     id: 1220
     title: Mysterious Bacteria

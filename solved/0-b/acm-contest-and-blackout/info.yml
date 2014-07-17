@@ -1,0 +1,20 @@
+title: ACM Contest and Blackout
+keywords:
+    - minimum spanning tree
+    - floyd-warshall
+    - min-max paths
+annotations:
+    - underspecified
+judges:
+    uva: 10600
+    coj:
+        id: 1010
+        comments: >
+            Beware that in this judge there are test cases with $A_i = B_i$,
+            which may affect your algorithm.
+setter: Shamil Yagiyayev
+contests:
+    - Ukrainian National Olympiad in Informatics 2001
+summary: >
+    Given an undirected graph, find the total cost of the two cheapest
+    spanning trees.

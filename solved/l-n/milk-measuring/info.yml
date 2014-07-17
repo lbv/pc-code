@@ -1,0 +1,9 @@
+title: Milk Measuring
+keywords:
+    - dynamic programming
+judges:
+    coj: 1012
+summary: >
+    Given a list of integers and a target number, determine the minimal
+    subset (smallest and lexicographically lowest set) of integers such that
+    summing multiples of those elements reach the target number.

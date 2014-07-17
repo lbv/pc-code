@@ -1,0 +1,17 @@
+title: Army Strength
+keywords:
+    - beginner
+    - simulation
+annotations:
+    - underspecified
+    - boolean output
+judges:
+    spoj: ARMY
+    coj: 1011
+contests:
+    - IPSC 2008
+summary: >
+    Two armies are represented by lists of integers. They battle for a
+    number of rounds, with specific rules about what happens on each round
+    (at least one member of either army is killed). The first army that is
+    left without members loses. Determine who wins.

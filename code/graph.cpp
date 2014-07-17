@@ -750,11 +750,11 @@ struct Graph {
 //
 // Floyd-Warshall Shortest Paths
 //
-void floyd_warshall(int **g, int N)
+void floyd_warshall()
 {
-	for (int k = 0; k < N; k++)
-		for(int i = 0; i < N; i++)
-			for (int j = 0; j < N; j++) {
+	for (int k = 0; k < N; ++k)
+		for(int i = 0; i < N; ++i)
+			for (int j = 0; j < N; ++j) {
 				if (g[i][k] == INF || g[k][j] == INF) continue;
 				int t = g[i][k] + g[k][j];
 				if (t < g[i][j]) g[i][j] = t;

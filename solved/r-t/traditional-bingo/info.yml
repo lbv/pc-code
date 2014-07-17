@@ -4,6 +4,7 @@ keywords:
     - board
 judges:
     uva: 10813
+    coj: 1014
 contests:
     - Waterloo Winter Contest
 summary:

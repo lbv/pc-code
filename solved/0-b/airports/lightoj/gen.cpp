@@ -3,58 +3,63 @@
 #include <ctime>
 
 
-#if 1
+#if 0
 #define MAXT 15
 #define MAXN 10000
 #define MAXM 100000
 #define MAXA 10000
 #define MAXC 10000
-#define EXTA_LINES 0
+#define NCRIT 2
 #endif
 
-#if 0
+#if 1
 #define MAXT 20
 #define MAXN 10
 #define MAXM 5
 #define MAXA 100
 #define MAXC 50
+#define NCRIT 3
 #define EXTRA_LINES 1
 #endif
 
 
-void test_case(bool crit = false)
-{
-    int N = crit ? MAXN : rand() % (MAXN - 1) + 2;
-    int M = crit ? MAXM : rand() % MAXM + 1;
-    int A = rand() % MAXA + 1;
+int T;
 
+
+void gen(bool crit = false)
+{
 #if EXTRA_LINES
-    putchar('\n');
+	putchar('\n');
 #endif
 
-    printf("%d %d %d\n", N, M, A);
+	int N = crit ? MAXN : rand() % (MAXN - 1) + 2;
+	int M = crit ? MAXM : rand() % MAXM + 1;
+	int A = rand() % MAXA + 1;
 
-    while (M--) {
-        int X, Y, C;
-        do {
-            X = rand() % N + 1;
-            Y = rand() % N + 1;
-        } while (X == Y);
-        C = rand() % MAXC + 1;
+	printf("%d %d %d\n", N, M, A);
 
-        printf("%d %d %d\n", X, Y, C);
-    }
+	while (M--) {
+		int X, Y, C;
+		do {
+			X = rand() % N + 1;
+			Y = rand() % N + 1;
+		} while (X == Y);
+		C = rand() % MAXC + 1;
+
+		printf("%d %d %d\n", X, Y, C);
+	}
+	--T;
 }
 
 int main()
 {
-    srand(time(NULL));
+	srand(time(NULL));
 
-    int T = MAXT;
-    printf("%d\n", T);
+	T = MAXT;
+	printf("%d\n", T);
 
-    test_case(true); --T;
-    while (T--) test_case();
+	for (int i = 0; i < NCRIT; ++i) gen(true);
+	while (T) gen();
 
-    return 0;
+	return 0;
 }

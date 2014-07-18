@@ -1,0 +1,12 @@
+title: Polygon Inside a Circle
+keywords:
+    - beginner
+    - geometry
+judges:
+    uva: 10432
+setter: Suman Mahbub
+contests:
+    - Brightness of Brain Contest
+summary: >
+    Given the radius of a circle, and the number of sides of a regular
+    polygon that fits inside, calculate the area of the polygon.

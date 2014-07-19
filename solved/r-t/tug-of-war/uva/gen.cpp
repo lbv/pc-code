@@ -3,17 +3,17 @@
 #include <ctime>
 
 
-#if 1
+#if 0
 #define MAXT 100
 #define MAXN 100
 #define MAXW 450
 #define NCRIT 5
 #endif
 
-#if 0
+#if 1
 #define MAXT 20
-#define MAXN 10
-#define MAXW 100
+#define MAXN 8
+#define MAXW 450
 #define NCRIT 3
 #endif
 

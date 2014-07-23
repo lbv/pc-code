@@ -104,12 +104,12 @@ T gcd(T a, T b) { for (T c = a%b; c != 0; a=b,b=c,c=a%b); return b; }
 
 template<typename T>
 void ext_euclid(T a, T b, T &x, T &y, T &g) {
-	x = 0; y = 1; g = b;
+	x = 0, y = 1, g = b;
 	T m, n, q, r;
 	for (T u=1, v=0; a != 0; g=a, a=r) {
-		q = g / a; r = g % a;
-		m = x-u*q; n = y-v*q;
-		x=u; y=v; u=m; v=n;
+		q = g / a, r = g % a;
+		m = x-u*q, n = y-v*q;
+		x=u, y=v, u=m, v=n;
 	}
 }
 
@@ -122,6 +122,14 @@ T mod_inv(T n, T m) {
 	else if (x >= m) x %= m;
 	return x;
 }
+
+//
+// ceil(x/y) and floor(x/y) for integer types; assumes positive y
+//
+template<typename T>
+T int_ceil(T x, T y) { return x > 0 ? (x-1)/y + 1 : x/y; }
+template<typename T>
+T int_floor(T x, T y) { return x >= 0 ? x/y : (x+1)/y - 1; }
 
 int fact[MAXFACT];
 template<typename T>

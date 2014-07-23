@@ -1,0 +1,9 @@
+title: Gift Dilemma
+keywords:
+    - extended euclid
+judges:
+    uva: 12775
+summary: >
+    Given four integers $A, B, C, P$, find the total number of ways in which
+    non-negative variables $x, y, z$ can be chosen such that $Ax + By + Cz =
+    P$.

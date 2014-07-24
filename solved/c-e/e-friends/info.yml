@@ -1,0 +1,16 @@
+title: e-Friends
+keywords:
+    - dynamic programming
+    - bitwise calculations
+judges:
+    uva: 11903
+    lightoj: 1228
+setter: Jane Alam Jan
+thanks: Sohel Hafiz
+contests:
+    - A National Bangladeshi Contest
+summary: >
+    A number of people ($n \le 12$) have to be arranged in a line. However,
+    certain people may have conflicts when an "enemy" is placed in front of
+    them. Given the list of conflicts, find the total number of permutations
+    such that no more than a certain number of conflicts occur in the line.

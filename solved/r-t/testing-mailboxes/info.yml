@@ -1,0 +1,12 @@
+title: Testing Mailboxes
+keywords:
+    - dynamic programming
+judges:
+    lightoj: 1223
+summary: >
+    You are given two integers: $k$ represents a number of mailboxes, and
+    $m$ which represents the number of firecrackers that can be placed
+    inside a mailbox. You are to test the maximum amount of firecrackers
+    that can be exploded inside a mailbox without destroying it. Find the
+    minimum amount of firecrackers to buy to conduct experiments using the
+    $k$ mailboxes until the correct answer can be determined.

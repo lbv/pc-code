@@ -1,5 +1,5 @@
 //
-// I/O
+// Input
 //
 struct Reader {
 	int b; Reader() { read(); }

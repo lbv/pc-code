@@ -279,8 +279,8 @@ struct Graph {
 	// Dinitz Algorithm (Max Flow)
 	//
 	void add_pair(int u, int v, int c) {
-		add(u, Edge(v, c, m + 1));
-		add(v, Edge(u, 0, m - 1)); // or Edge(u,c,m-1) for bi-directional
+		add(u, (Edge) { v, c, 0, m + 1 });
+		add(v, (Edge) { u, 0, 0, m - 1 }); // { u,c,0,m-1 } for bi-directional
 	}
 	int src, snk;
 	int ptr[MAX_VERT];
@@ -289,7 +289,7 @@ struct Graph {
 
 	bool bfs() {
 		int qb = 0, qf = 0;
-		Neg(dist);
+		NegN(dist, n, int);
 		dist[src] = 0;
 		q[qb++] = src;
 		while (qf < qb) {

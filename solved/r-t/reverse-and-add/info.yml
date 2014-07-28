@@ -1,7 +1,11 @@
 title: Reverse and Add
 keywords:
-  - beginner
-  - math
-  - palindromes
+    - beginner
+    - math
+    - palindromes
 judges:
-  uva: 10018
+    uva: 10018
+summary: >
+    Given an integer, process it by reversing its digits and adding the two
+    numbers (the original and the reverse). Keep doing it until the result
+    is a palindrome. Print the number of iterations and the final number.

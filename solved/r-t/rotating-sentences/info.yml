@@ -1,0 +1,9 @@
+title: Rotating Sentences
+keywords:
+    - beginner
+    - strings
+judges:
+    uva: 490
+summary: >
+    Given a set of strings, "rotate" them clockwise, so the string go from
+    reading left-to-right, top-to-bottom, to top-to-bottom, right-to-left.

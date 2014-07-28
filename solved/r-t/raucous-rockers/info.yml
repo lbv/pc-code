@@ -1,0 +1,16 @@
+title: Raucous Rockers
+keywords:
+    - dynamic programming
+annotations:
+    - underspecified
+judges:
+    uva: 473
+summary: >
+    Given $n$ integers, representing lengths of songs and two more values,
+    $t, m$, the maximum capacity of a disc and the number of discs, find out
+    the maximum number of songs that can ba recorded in the $m$ discs. The
+    songs have to be processed in a single pass and recorded on the discs in
+    order; that is, song $s_i$ can be recorded on disc $d_i$ and song $s_j$
+    on $d_j$ iif $s_j \ge s_i \Rightarrow d_j \ge d_j$.
+comments: >
+    Some tested boundaries for the input are: $n < 1024$, $m, t < 128$.

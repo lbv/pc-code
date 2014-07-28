@@ -1,0 +1,13 @@
+title: Summing Digits
+keywords:
+    - beginner
+    - math
+judges:
+    uva: 11332
+    lightoj: 1000
+setter: Zachary Friggstad
+contests:
+    - Alberta Collegiate Programming Contest - October 27, 2007
+summary: >
+    Given an integer, keep summing its digits until the result has only one
+    digit.  Print the final result.

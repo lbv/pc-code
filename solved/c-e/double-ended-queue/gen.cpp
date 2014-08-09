@@ -3,64 +3,68 @@
 #include <ctime>
 
 
-#if 0
+#if 1
 #define MAXT 20
 #define MAXN 10
 #define MAXM 100
 #define MINX -100
 #define MAXX 100
-#define NL   0
+#define NCRIT 3
 #endif
 
-#if 1
+#if 0
 #define MAXT 20
 #define MAXN 10
-#define MAXM 8
+#define MAXM 16
 #define MINX -100
 #define MAXX 100
-#define NL   1
+#define NL	 1
+#define NCRIT 2
 #endif
 
 
 const int XRange = MAXX - MINX + 1;
 const char cmds[4][20] = {
-    "pushLeft",
-    "pushRight",
-    "popLeft",
-    "popRight"
+	"pushLeft",
+	"pushRight",
+	"popLeft",
+	"popRight"
 };
 
+int T;
 
-void test_case(bool crit = false)
+
+void gen(bool crit = false)
 {
 #if NL
-    puts("");
+	puts("");
 #endif
 
-    int n = crit ? MAXN : rand() % MAXN + 1;
-    int m = crit ? MAXM : rand() % MAXM + 1;
-    printf("%d %d\n", n, m);
+	int n = crit ? MAXN : rand() % MAXN + 1;
+	int m = crit ? MAXM : rand() % MAXM + 1;
+	printf("%d %d\n", n, m);
 
-    while (m--) {
-        int cmd = rand() % 4;
-        printf("%s", cmds[cmd]);
-        if (cmd <= 1) {
-            int x = rand() % XRange + MINX;
-            printf(" %d", x);
-        }
-        putchar('\n');
-    }
+	while (m--) {
+		int cmd = rand() % 4;
+		printf("%s", cmds[cmd]);
+		if (cmd <= 1) {
+			int x = rand() % XRange + MINX;
+			printf(" %d", x);
+		}
+		putchar('\n');
+	}
+	--T;
 }
 
 int main()
 {
-    srand(time(NULL));
+	srand(time(NULL));
 
-    int T = MAXT;
-    printf("%d\n", T);
+	T = MAXT;
+	printf("%d\n", T);
 
-    test_case(true); --T;
-    while (T--) test_case();
+	for (int i = 0; i < NCRIT; ++i) gen(true);
+	while (T) gen();
 
-    return 0;
+	return 0;
 }

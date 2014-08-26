@@ -17,9 +17,6 @@ enum TokenT {
 struct Token {
 	TokenT t;
 	int n;
-	Token() {}
-	Token(TokenT T): t(T) {}
-	Token(TokenT T, int N): t(T), n(N) {}
 };
 
 struct Lexer {
@@ -30,17 +27,17 @@ struct Lexer {
 
 	void read_token() {
 		if (rr.has_next_int())
-			tok = Token(INT, rr.next_int());
+			tok = (Token) { INT, rr.next_int() };
 		else if (rr.has_next()) {
 			char c = rr.next_char();
 			switch (c) {
-			case '(': tok = Token(PAREN_OPEN); break;
-			case ')': tok = Token(PAREN_CLOSE); break;
-			default: tok = Token(NONE);
+			case '(': tok = (Token) { PAREN_OPEN }; break;
+			case ')': tok = (Token) { PAREN_CLOSE }; break;
+			default: tok = (Token) { NONE };
 			}
 		}
 		else
-			tok = Token(NONE);
+			tok = (Token) { NONE };
 
 		has_tok = true;
 	}
@@ -49,11 +46,11 @@ struct Lexer {
 	Token pop() { if (! has_tok) read_token(); has_tok = false; return tok; }
 };
 
+// Problem-specific data structure
 struct TreeNode {
 	bool empty, leaf, ok;
 	TreeNode(): empty(true), leaf(false), ok(false) {}
 };
-
 
 struct Parser {
 	Lexer lex;

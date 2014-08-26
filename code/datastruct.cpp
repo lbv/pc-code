@@ -28,15 +28,12 @@ struct Trie {
 struct HashT {
 	int k, v;
 
-	HashT() {}
-	HashT(int K, int V): k(K), v(V) {}
-
 	bool operator==(const HashT &x) const { return k == x.k; }
 };
-#define HASHB (1<<15)
-#define HASHN 1000000
-#define HASHT_SZ (sizeof(int))
-#define HASHT_PTR(x) (reinterpret_cast<u8*>(&( (x).k )))
+const int HASHB = 1 << 15;
+const int HASHN = 1000000;
+#define HASHT_SZ(x)  (sizeof(int))
+#define HASHT_PTR(x) (reinterpret_cast<const u8*>(&( (x).k )))
 struct HashMap {
 	HashT data[HASHN];
 	int next[HASHN];
@@ -50,26 +47,23 @@ struct HashMap {
 		return h;
 	}
 
-	void add(HashT &h) {
-		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ) % HASHB;
+	// Adds an element to the hash map. Returns null if it is a new element,
+	// or a pointer to a HashT if it was already stored.
+	HashT *add(HashT &h) {
+		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ(h)) % HASHB;
 		for (int i = buckets[b]; i >= 0; i = next[i])
-			if (data[i] == h) return;
+			if (data[i] == h) return &data[i];
 		next[n] = buckets[b], buckets[b] = n, data[n++] = h;
-	}
-	bool find(HashT &h) {
-		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ) % HASHB;
-		for (int i = buckets[b]; i >= 0; i = next[i])
-			if (data[i] == h) return true;
-		return false;
+		return NULL;
 	}
 
-	// combines add/find
-	HashT *add(HashT &h, bool &found) {
-		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ) % HASHB;
+	// Finds an element in the hash map. Returns a pointer if found, or NULL
+	// otherwise.
+	HashT *find(HashT &h) {
+		int b = fnv_hash(HASHT_PTR(h), HASHT_SZ(h)) % HASHB;
 		for (int i = buckets[b]; i >= 0; i = next[i])
-			if (data[i] == h) { found = true; return &data[i]; }
-		found = false, next[n] = buckets[b], buckets[b] = n, data[n] = h;
-		return &data[n++];
+			if (data[i] == h) return &data[i];
+		return NULL;
 	}
 };
 

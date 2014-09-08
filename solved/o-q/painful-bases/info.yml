@@ -6,3 +6,7 @@ keywords:
 judges:
   lightoj: 1021
 setter: Jane Alam Jan
+summary: >
+  A base, a number in that base with distinct digits, and an integer $K$ are
+  given. Determine the total number of permutations of the number are
+  divisible by $K$.
